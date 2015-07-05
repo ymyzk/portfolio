@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Yusuke Miyazaki</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>Yusuke Miyazaki</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>About</h2>
+        </div>
+        <div class="col-sm-6">
+          <h3>Profile</h3>
+          <dl>
+            <dt>Name</dt>
+            <dd>Yusuke Miyazaki</dd>
+            <dt>Location</dt>
+            <dd>Kyoto, Japan</dd>
+          </dl>
+        </div>
+        <div class="col-sm-6">
+          <h3>Belonging to</h3>
+          <dl>
+            <dt>University</dt>
+            <dd><a href="http://www.fos.kuis.kyoto-u.ac.jp/">Faculty of Engineering, Kyoto University</a></dd>
+            <dt>Company</dt>
+            <dd><a href="http://www.unimap.co.jp/">President & Co-founder, Unimap, Inc.</a></dd>
+            <dt>Community</dt>
+            <dd><a href="http://camph.net/">CAMPHOR-</a></dd>
+          </dl>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Works</h2>
+          <ul>
+            {% for work in works %}
+            <li><a href="{{ work.link }}">{{ work.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Talks</h2>
+          <ul>
+            {% for talk in talks %}
+            <li><a href="{{ talk.link }}">{{ talk.title }} @{{ talk.event }} ({{ talk.date }})</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Links</h2>
+        </div>
+        <div class="col-sm-6">
+          <ul>
+            {% for link in links %}
+            <li><a href="{{ link.link }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="col-sm-6">
+          <ul>
+            {% for link in links2 %}
+            <li><a href="{{ link.link }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <footer>
+        Copyright &copy; 2013-2015, Yusuke Miyazaki.
+      </footer>
+    </div>
+  </body>
+</html>

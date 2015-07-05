@@ -1,0 +1,26 @@
+html, body {
+  background-color: #222;
+  color: white;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+a {
+  color: white;
+}
+
+a:hover,
+a:focus {
+  color: white;
+}
+
+li {
+  margin-bottom: 2px;
+}
+
+dd {
+  margin-bottom: 6px;
+}
