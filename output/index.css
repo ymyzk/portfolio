@@ -17,6 +17,10 @@ a:focus {
   color: white;
 }
 
+footer {
+  margin: 20px 0;
+}
+
 li {
   margin-bottom: 2px;
 }
