@@ -15,7 +15,7 @@ works = [
     },
     {
         "title": "鶉野マップ",
-        "link": "https://itunes.apple.com/jp/app/chun-yemappu/id655525538?mt=8&uo=4",
+        "link": "https://geo.itunes.apple.com/jp/app/chun-yemappu/id655525538?mt=8",
         "tags": ["iOS"]
     },
     {
