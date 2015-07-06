@@ -29,10 +29,18 @@ li {
   margin-bottom: 2px;
 }
 
+ul.works > li {
+  margin-bottom: 5px;
+}
+
 dd {
   margin-bottom: 6px;
 }
 
 .text-muted {
   color: #888;
+}
+
+.label-default {
+  background-color: #666;
 }

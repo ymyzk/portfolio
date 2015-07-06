@@ -46,9 +46,14 @@
       <div class="row">
         <div class="col-xs-12">
           <h2>Works</h2>
-          <ul>
+          <ul class="works">
             {% for work in works %}
-            <li><a href="{{ work.link }}">{{ work.title }}</a></li>
+            <li>
+              <a href="{{ work.link }}">{{ work.title }}</a>
+              {% for tag in work.tags %}
+              <span class="label label-default">{{ tag }}</span>
+              {% endfor %}
+            </li>
             {% endfor %}
           </ul>
         </div>

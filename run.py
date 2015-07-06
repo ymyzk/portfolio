@@ -11,7 +11,7 @@ works = [
     {
         "title": "京大マップ",
         "link": "http://www.kyodaimap.net/",
-        "tags": ["Android", "iOS", "Web"]
+        "tags": ["Django", "iOS", "Python", "Web"]
     },
     {
         "title": "鶉野マップ",
