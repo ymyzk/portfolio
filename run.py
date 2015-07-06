@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 from datetime import date
 from os import path
+import sys
 
 from jinja2 import Environment, FileSystemLoader
 
@@ -154,7 +155,7 @@ links2 = [
     }
 ]
 
-def main():
+def main(debug=False):
     source_dir = path.dirname(path.abspath(__file__)) + "/source"
     output_dir = path.dirname(path.abspath(__file__)) + "/output/"
     loader = FileSystemLoader(source_dir, encoding="utf-8")
@@ -180,4 +181,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    debug = "--debug" in sys.argv
+    main(debug=debug)
