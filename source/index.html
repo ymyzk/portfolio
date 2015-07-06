@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -58,7 +58,7 @@
           <h2>Talks</h2>
           <ul>
             {% for talk in talks %}
-            <li><a href="{{ talk.link }}">{{ talk.title }} @{{ talk.event }} ({{ talk.date }})</a></li>
+            <li><a href="{{ talk.link }}">{{ talk.title }}</a> &mdash; {{ talk.event }} <span class="text-muted">{{ talk.date }}</span></li>
             {% endfor %}
           </ul>
         </div>

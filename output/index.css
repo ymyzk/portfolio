@@ -21,10 +21,18 @@ footer {
   margin: 20px 0;
 }
 
+ul {
+  padding-left: 24px;
+}
+
 li {
   margin-bottom: 2px;
 }
 
 dd {
   margin-bottom: 6px;
+}
+
+.text-muted {
+  color: #888;
 }
