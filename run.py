@@ -163,7 +163,14 @@ def main():
     filename = "index.html"
     template = env.get_template(filename)
     with open(output_dir + filename, "w") as f:
+        today = date.today()
+        born = date(1993, 10, 25)
+        age = (today.year
+               - born.year
+               - int((today.month, today.day) < (born.month, born.day)))
         context = {
+            "debug": debug,
+            "age": age,
             "works": works,
             "talks": talks,
             "links": links,
