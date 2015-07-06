@@ -42,5 +42,9 @@ dd {
 }
 
 .label-default {
-  background-color: #666;
+  background-color: #555;
+}
+
+.label-primary {
+  background-color: #777;
 }

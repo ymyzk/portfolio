@@ -57,6 +57,8 @@ def main(debug=False):
         filename = "index.html"
         template = env.get_template(filename)
 
+        with open(data_dir + "skills.json") as f:
+            skills = json.load(f)
         with open(data_dir + "works.json") as f:
             works = json.load(f)
         with open(data_dir + "talks.json") as f:
@@ -71,6 +73,7 @@ def main(debug=False):
             context = {
                 "debug": debug,
                 "age": age,
+                "skills": skills,
                 "works": works,
                 "talks": talks,
                 "links": links,

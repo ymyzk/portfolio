@@ -20,7 +20,7 @@
         <div class="col-xs-12">
           <h2>About</h2>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-4">
           <h3>Profile</h3>
           <dl>
             <dt>Name</dt>
@@ -31,7 +31,7 @@
             <dd>{{ age }}</dd>
           </dl>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-4">
           <h3>Belonging to</h3>
           <dl>
             <dt>University</dt>
@@ -41,6 +41,14 @@
             <dt>Community</dt>
             <dd><a href="http://camph.net/">CAMPHOR-</a></dd>
           </dl>
+        </div>
+        <div class="col-sm-4">
+          <h3>Skills</h3>
+          <div>
+            {% for skill in skills %}
+            <span class="label label-primary">{{ skill }}</span>
+            {% endfor %}
+          </div>
         </div>
       </div>
       <div class="row">
