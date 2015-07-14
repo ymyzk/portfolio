@@ -9,44 +9,6 @@ from jinja2 import Environment, FileSystemLoader
 import yaml
 
 
-links = [
-    {
-        "title": "Blog",
-        "link": "https://blog.ymyzk.com/"
-    },
-    {
-        "title": "Facebook",
-        "link": "https://www.facebook.com/yusuke.miy"
-    },
-    {
-        "title": "GitHub",
-        "link": "https://github.com/ymyzk"
-    },
-    {
-        "title": "LinkedIn",
-        "link": "http://www.linkedin.com/profile/view?id=265164037"
-    },
-    {
-        "title": "Twitter",
-        "link": "https://twitter.com/ymyzk"
-    },
-    {
-        "title": "Wantedly",
-        "link": "https://www.wantedly.com/users/2289515"
-    }
-]
-
-links2 = [
-    {
-        "title": "株式会社Unimap、アカリクVALUATORを引受先とした第三者割当増資を実施 (@Press, 2014-04-02)",
-        "link": "http://www.atpress.ne.jp/view/44784"
-    },
-    {
-        "title": "「鶉野飛行場」スマホで案内　京大生のアプリ好評 (神戸新聞朝刊 北播版, 2014-01-14)",
-        "link": "http://www.kobe-np.co.jp/news/hokuban/201401/0006636797.shtml"
-    }
-]
-
 def main(debug=False):
     root_dir = path.dirname(path.abspath(__file__))
     data_dir = root_dir + "/data/"
@@ -64,6 +26,8 @@ def main(debug=False):
             works = json.load(f)
         with open(data_dir + "talks.yml") as f:
             talks = yaml.load(f)
+        with open(data_dir + "links.yml") as f:
+            links, links2 = yaml.load_all(f)
 
         with open(output_dir + filename, "w") as f:
             today = date.today()
