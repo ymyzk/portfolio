@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from datetime import date
+from datetime import date, datetime
 import json
 from os import path
 import sys
@@ -63,6 +63,8 @@ def main(debug=False):
             works = json.load(f)
         with open(data_dir + "talks.json") as f:
             talks = json.load(f)
+            for talk in talks:
+                talk["date"] = datetime.strptime(talk["date"], "%Y-%m-%d").date()
 
         with open(output_dir + filename, "w") as f:
             today = date.today()
