@@ -6,6 +6,7 @@ from os import path
 import sys
 
 from jinja2 import Environment, FileSystemLoader
+import yaml
 
 
 links = [
@@ -57,14 +58,12 @@ def main(debug=False):
         filename = "index.html"
         template = env.get_template(filename)
 
-        with open(data_dir + "skills.json") as f:
-            skills = json.load(f)
+        with open(data_dir + "skills.yml") as f:
+            skills = yaml.load(f)
         with open(data_dir + "works.json") as f:
             works = json.load(f)
-        with open(data_dir + "talks.json") as f:
-            talks = json.load(f)
-            for talk in talks:
-                talk["date"] = datetime.strptime(talk["date"], "%Y-%m-%d").date()
+        with open(data_dir + "talks.yml") as f:
+            talks = yaml.load(f)
 
         with open(output_dir + filename, "w") as f:
             today = date.today()
