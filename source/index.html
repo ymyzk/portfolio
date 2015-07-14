@@ -51,12 +51,12 @@
           </div>
         </div>
       </div>
-      <div class="row works">
+      <div class="row">
         <div class="col-xs-12">
           <h2>Works</h2>
         </div>
         {% for work in works %}
-        <div class="col-sm-3">
+        <div class="col-sm-3 work">
           <h3><a href="{{ work.link }}">{{ work.title }}</a></h3>
           <p class="description">{{ work.description }}</p>
           {% for tag in work.tags %}

@@ -29,16 +29,20 @@ li {
   margin-bottom: 2px;
 }
 
-.works h3 {
+.work {
+  margin-bottom: 16px;
+}
+
+.work h3 {
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.works img {
+.work img {
   width: 100%;
 }
 
-.works .description {
+.work .description {
   min-height: 80px;
 }
 
