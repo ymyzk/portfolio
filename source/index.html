@@ -51,20 +51,19 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row works">
         <div class="col-xs-12">
           <h2>Works</h2>
-          <ul class="works">
-            {% for work in works %}
-            <li>
-              <a href="{{ work.link }}">{{ work.title }}</a>
-              {% for tag in work.tags %}
-              <span class="label label-default">{{ tag }}</span>
-              {% endfor %}
-            </li>
-            {% endfor %}
-          </ul>
         </div>
+        {% for work in works %}
+        <div class="col-sm-3">
+          <h3><a href="{{ work.link }}">{{ work.title }}</a></h3>
+          <p class="description">{{ work.description }}</p>
+          {% for tag in work.tags %}
+          <span class="label label-default">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endfor %}
       </div>
       <div class="row">
         <div class="col-xs-12">

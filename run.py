@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from datetime import date, datetime
-import json
 from os import path
 import sys
 
@@ -22,8 +21,8 @@ def main(debug=False):
 
         with open(data_dir + "skills.yml") as f:
             skills = yaml.load(f)
-        with open(data_dir + "works.json") as f:
-            works = json.load(f)
+        with open(data_dir + "works.yml") as f:
+            works = yaml.load(f)
         with open(data_dir + "talks.yml") as f:
             talks = yaml.load(f)
         with open(data_dir + "links.yml") as f:

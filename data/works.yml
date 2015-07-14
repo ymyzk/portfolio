@@ -1,0 +1,53 @@
+- title: 京大マップ
+  link: http://www.kyodaimap.net/
+  start: 2012-10-01
+  end: null
+  tags: [Django, iOS, Python, Web]
+  description: 京都大学内の情報共有地図アプリ。大学内の地図情報・イベント情報共有機能など。
+
+- title: 鶉野マップ
+  link: https://geo.itunes.apple.com/jp/app/chun-yemappu/id655525538?mt=8
+  start: 2013-06-04
+  end: null
+  tags: [iOS]
+  description: 全国でも珍しい戦争遺跡群が残る、兵庫県加西市鶉野(うずらの)飛行場跡の地図・ナビアプリ。
+
+- title: django-channels
+  link: https://github.com/ymyzk/django-channels
+  tags: [Library, Python]
+  description: Django アプリケーションから簡単に Slack や HipChat に通知を送ることができるライブラリ。
+
+- title: python-gyazo
+  link: https://github.com/ymyzk/python-gyazo
+  tags: [Library, Python]
+  description: Python から Gyazo API を利用するためのラッパーとユーティリティー
+
+- title: YMNetworkActivityManager
+  link: https://github.com/ymyzk/YMNetworkActivityManager
+  tags: [iOS, Library]
+  description: YMNetworkActivityManager。iOS のステータスバーの network activity indicator を管理するためのシンプルなライブラリ。
+
+- title: itcdownloader
+  link: https://github.com/ymyzk/itcdownloader
+  tags: [Utility]
+  description: iTunes Connect からレポートファイルを自動的にダウンロードするためのユーティリテイー。
+
+- title: sasm
+  link: https://github.com/ymyzk/sasm
+  tags: [Python, Web]
+  description: Python で実装されたシンプルで拡張しやすいアセンブラー。
+
+- title: YMCalendarActivity
+  link: http://ymyzk.github.io/YMCalendarActivity/
+  tags: [iOS, Library]
+  description: カレンダーにイベントを追加する機能を追加する UIActivity。
+
+- title: iOS Compatibility Chart
+  link: http://ioschart.herokuapp.com/
+  tags: [Python, Web]
+  description: iOS の各バージョンとそのバージョンに対応した iOS デバイスが簡単に分かるサービス。
+
+- title: RTConnect
+  link: http://cran.r-project.org/web/packages/RTConnect/index.html
+  tags: [Library, R]
+  description: iTunes Connect のレポートファイルを R で解析するためのライブラリ。

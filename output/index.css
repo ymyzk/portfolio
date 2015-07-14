@@ -29,8 +29,17 @@ li {
   margin-bottom: 2px;
 }
 
-ul.works > li {
-  margin-bottom: 5px;
+.works h3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.works img {
+  width: 100%;
+}
+
+.works .description {
+  min-height: 80px;
 }
 
 dd {
