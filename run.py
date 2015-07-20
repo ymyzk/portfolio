@@ -23,6 +23,16 @@ def main(debug=False):
             skills = yaml.load(f)
         with open(data_dir + "works.yml") as f:
             works = yaml.load(f)
+            for work in works:
+                if work["end"] is None:
+                    work["duration"] = work["start"].strftime("%Y -")
+                elif work["start"].year == work["end"].year:
+                    work["duration"] = work["start"].strftime("%Y")
+                else:
+                    work["duration"] = (
+                        work["start"].strftime("%Y")
+                        + " - "
+                        + work["end"].strftime("%Y"))
         with open(data_dir + "talks.yml") as f:
             talks = yaml.load(f)
         with open(data_dir + "links.yml") as f:

@@ -63,8 +63,9 @@
               {{ work.description }}
             </p>
             <p>
+              <span class="label label-success">{{ work.duration }}</span>
               {% for tag in work.tags %}
-              <span class="label label-default">{{ tag }}</span>
+                <span class="label label-default">{{ tag }}</span>
               {% endfor %}
             </p>
           </div>

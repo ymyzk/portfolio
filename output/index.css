@@ -61,3 +61,11 @@ dd {
 .label-primary {
   background-color: #777;
 }
+
+.label-success {
+  background-color: #62c462;
+}
+
+.label-info {
+  background-color: #5bc0de;
+}
