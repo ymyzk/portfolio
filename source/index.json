@@ -10,8 +10,13 @@
   {
     "@context": "http://schema.org",
     "@type": "Person",
-    "name": "宮﨑 勇輔",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "Japan",
+      "addressRegion": "Kyoto"
+    },
+    "familyName": "Miyazaki",
     "givenName": "Yusuke",
-    "familyName": "Miyazaki"
+    "name": "宮﨑 勇輔"
   }
 ]
