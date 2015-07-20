@@ -1,0 +1,17 @@
+[
+  {
+    "@context" : "http://schema.org",
+    "@type" : "WebSite",
+    "name" : "Yusuke Miyazaki",
+    "alternateName" : "Yusuke Miyazaki",
+    "url" : "http://www.ymyzk.com",
+    "copyrightYear": 2013
+  },
+  {
+    "@context": "http://schema.org",
+    "@type": "Person",
+    "name": "宮﨑 勇輔",
+    "givenName": "Yusuke",
+    "familyName": "Miyazaki"
+  }
+]
