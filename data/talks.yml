@@ -1,17 +1,27 @@
+- title: CAMPHOR- のご紹介
+  event: 町家交流会「町家BAR vol.26」
+  date: 2015-05-15
+  link: https://www.facebook.com/events/864525543585858/
+
 - title: iOS 開発のいま
   event: ADF2015 LT会
-  date: 2015-03-08
+  date: 2015-03-28
   link: http://www.slideshare.net/yusukemiy/ios-adf2015
+
+- title: iOS 開発のいま
+  event: CAMPHOR- x KMC 合同LT会
+  date: 2015-03-24
+  link: http://www.slideshare.net/yusukemiy/20150324-camphor-ltios
+
+- title: 京大マップのご紹介
+  event: 町家交流会「町家BAR vol.24」
+  date: 2015-01-16
+  link: https://www.facebook.com/events/455714917935343/
 
 - title: Swift の問題点
   event: CAMPHOR- x KMC 合同LT会
   date: 2014-10-25
   link: http://www.slideshare.net/yusukemiy/20141025-camphor-ltswift
-
-- title: iOS 開発のいま
-  event: CAMPHOR- x KMC 合同LT会
-  date: 2014-10-25
-  link: http://www.slideshare.net/yusukemiy/20150324-camphor-ltios
 
 - title: 最新の iOS に対応したアプリの開発
   event: CAMPHOR- x KMC 合同LT会
