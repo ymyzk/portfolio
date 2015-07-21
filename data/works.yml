@@ -37,7 +37,7 @@
   link: https://github.com/ymyzk/itcdownloader
   start: 2013-07-21
   end: null
-  tags: [Utility]
+  tags: [Bash, Utility]
   description: iTunes Connect からレポートファイルを自動的にダウンロードするためのユーティリテイー。
 
 - title: sasm
