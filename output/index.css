@@ -30,12 +30,12 @@ li {
 }
 
 .skills {
-  line-height: 1.9;
+  line-height: 1.75;
 }
 
 .skills .label {
   margin-right: 3px;
-  font-size: 85%;
+  font-size: 80%;
 }
 
 .work {
