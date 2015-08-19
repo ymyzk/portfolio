@@ -29,6 +29,15 @@ li {
   margin-bottom: 2px;
 }
 
+.skills {
+  line-height: 1.9;
+}
+
+.skills .label {
+  margin-right: 3px;
+  font-size: 85%;
+}
+
 .work {
   margin-bottom: 16px;
 }
