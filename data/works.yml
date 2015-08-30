@@ -40,6 +40,13 @@
   tags: [Bash, Utility]
   description: iTunes Connect からレポートファイルを自動的にダウンロードするためのユーティリテイー。
 
+- title: fj
+  link: https://github.com/ymyzk/fj
+  start: 2015-06-29
+  end: null
+  tags: [Java, OCaml]
+  description: OCaml で実装された Featherweight Java の型検査器。
+
 - title: sasm
   link: https://github.com/ymyzk/sasm
   start: 2014-05-02
