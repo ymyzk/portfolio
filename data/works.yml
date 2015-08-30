@@ -51,8 +51,15 @@
   link: https://github.com/ymyzk/sasm
   start: 2014-05-02
   end: 2014-05-26
-  tags: [Python, Web]
+  tags: [Python]
   description: Python で実装されたシンプルで拡張しやすいアセンブラー。
+
+- title: sasmweb
+  link: https://sasm.herokuapp.com/
+  start: 2014-05-23
+  end: null
+  tags: [Python, Web]
+  description: sasm をブラウザから簡単に利用できるようにした Web アプリケーション。
 
 - title: YMCalendarActivity
   link: http://ymyzk.github.io/YMCalendarActivity/
