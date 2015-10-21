@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from datetime import date, datetime
+from operator import itemgetter
 from os import path
 import sys
 
@@ -35,6 +36,9 @@ def main(debug=False):
                         + work["end"].strftime("%Y"))
         with open(data_dir + "talks.yml") as f:
             talks = yaml.load(f)
+        with open(data_dir + "contributions.yml") as f:
+            contributions = yaml.load(f)
+            contributions.sort(key=itemgetter("name"))
         with open(data_dir + "links.yml") as f:
             links, links2 = yaml.load_all(f)
 
@@ -50,6 +54,7 @@ def main(debug=False):
                 "skills": skills,
                 "works": works,
                 "talks": talks,
+                "contributions": contributions,
                 "links": links,
                 "links2": links2
             }

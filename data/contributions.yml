@@ -1,0 +1,29 @@
+- name: Django
+  roles:
+    - Patches
+    - Translation
+
+- name: Flashlight
+  roles:
+    - Plugins
+    - Translation
+
+- name: XCGLogger
+  roles:
+    - Patches
+
+- name: sorl-thumbnail
+  roles:
+    - Patches
+
+- name: Homebrew
+  roles:
+    - Formulae
+
+- name: Debian
+  roles:
+    - Translation
+
+- name: Python
+  roles:
+    - Translation
