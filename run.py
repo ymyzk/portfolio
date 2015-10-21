@@ -9,57 +9,85 @@ from jinja2 import Environment, FileSystemLoader
 import yaml
 
 
+root_dir = path.dirname(path.abspath(__file__))
+data_dir = root_dir + "/data/"
+output_dir = root_dir + "/output/"
+loader = FileSystemLoader(root_dir + "/source", encoding="utf-8")
+env = Environment(loader=loader)
+
+
+def load_skills():
+    with open(data_dir + "skills.yml") as f:
+        skills = yaml.load(f)
+    return skills
+
+
+def load_works():
+    def format(work):
+        if work["end"] is None:
+            # 継続中のプロジェクトなら "YYYY-"
+            work["duration"] = work["start"].strftime("%Y-")
+        else:
+            # 終了済みのプロジェクトなら "YYYY" または "YYYY-YYYY"
+            work["duration"] = work["start"].strftime("%Y")
+            if work["start"].year < work["end"].year:
+                work["duration"] += "-" + work["end"].strftime("%Y")
+        return work
+
+    with open(data_dir + "works.yml") as f:
+        works = yaml.load(f)
+
+    return [format(work) for work in works]
+
+
+def load_talks():
+    with open(data_dir + "talks.yml") as f:
+        talks = yaml.load(f)
+    # TODO: soet
+    return talks
+
+
+def load_contributions():
+    with open(data_dir + "contributions.yml") as f:
+        contributions = yaml.load(f)
+    contributions.sort(key=itemgetter("name"))
+    return contributions
+
+
+def load_links():
+    with open(data_dir + "links.yml") as f:
+        links, links2 = yaml.load_all(f)
+    return links, links2
+
+
+def calc_age():
+    today = date.today()
+    born = date(1993, 10, 25)
+    return (today.year
+            - born.year
+            - int((today.month, today.day) < (born.month, born.day)))
+
+
+def index():
+    filename = "index.html"
+    template = env.get_template(filename)
+    context = {
+        "debug": debug,
+        "age": calc_age(),
+        "skills": load_skills(),
+        "works": load_works(),
+        "talks": load_talks(),
+        "contributions": load_contributions(),
+        "links": load_links()[0],
+        "links2": load_links()[1]
+    }
+    html = template.render(**context).encode("utf-8")
+
+    with open(output_dir + filename, "w") as f:
+        f.write(html)
+
+
 def main(debug=False):
-    root_dir = path.dirname(path.abspath(__file__))
-    data_dir = root_dir + "/data/"
-    output_dir = root_dir + "/output/"
-    loader = FileSystemLoader(root_dir + "/source", encoding="utf-8")
-    env = Environment(loader=loader)
-
-    def index():
-        filename = "index.html"
-        template = env.get_template(filename)
-
-        with open(data_dir + "skills.yml") as f:
-            skills = yaml.load(f)
-        with open(data_dir + "works.yml") as f:
-            works = yaml.load(f)
-            for work in works:
-                if work["end"] is None:
-                    work["duration"] = work["start"].strftime("%Y-")
-                elif work["start"].year == work["end"].year:
-                    work["duration"] = work["start"].strftime("%Y")
-                else:
-                    work["duration"] = (
-                        work["start"].strftime("%Y")
-                        + "-"
-                        + work["end"].strftime("%Y"))
-        with open(data_dir + "talks.yml") as f:
-            talks = yaml.load(f)
-        with open(data_dir + "contributions.yml") as f:
-            contributions = yaml.load(f)
-            contributions.sort(key=itemgetter("name"))
-        with open(data_dir + "links.yml") as f:
-            links, links2 = yaml.load_all(f)
-
-        with open(output_dir + filename, "w") as f:
-            today = date.today()
-            born = date(1993, 10, 25)
-            age = (today.year
-                   - born.year
-                   - int((today.month, today.day) < (born.month, born.day)))
-            context = {
-                "debug": debug,
-                "age": age,
-                "skills": skills,
-                "works": works,
-                "talks": talks,
-                "contributions": contributions,
-                "links": links,
-                "links2": links2
-            }
-            f.write(template.render(**context).encode("utf-8"))
-
     index()
 
 
