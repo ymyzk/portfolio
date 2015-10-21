@@ -90,7 +90,7 @@
           <ul>
             {% for contrib in contributions %}
             <li>
-              {{ contrib.name }}
+              <a href="{{ contrib.link }}">{{ contrib.name }}</a>
               {% for role in contrib.roles %}
               <span class="label label-default">{{ role }}</span>
               {% endfor %}
