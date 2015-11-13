@@ -30,8 +30,15 @@
   link: https://camph.net
   start: 2014-10-16
   end: null
-  tags: [Django, Python, HTML, CSS, JavaScript]
+  tags: [Django, Python, HTML, CSS, JavaScript, Web]
   description: CAMPHOR- の Web サイト。デザイン以外の実装や運用全般を担当。
+
+- title: IPSJ77Now⤴︎⤴︎
+  link: http://ipsj.camph.net
+  start: 2015-01-18
+  end: 2015-03-20
+  tags: [Node.js, HTML, CSS, JavaScript, Web]
+  description: 情報処理学会第77回全国大会のために作成したサービス。主にフロントエンドとインフラ周りを担当。
 
 - title: YMNetworkActivityManager
   link: https://github.com/ymyzk/YMNetworkActivityManager
