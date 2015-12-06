@@ -68,6 +68,13 @@ def calc_age():
             - int((today.month, today.day) < (born.month, born.day)))
 
 
+def calc_copyright_years():
+    return {
+        "start": 2013,
+        "end": date.today().year
+    }
+
+
 def minify_html(html):
     lines = html.split("\n")
     lines = map(lambda l: l.strip(), lines)
@@ -86,7 +93,8 @@ def index(debug=False):
         "talks": load_talks(),
         "contributions": load_contributions(),
         "links": load_links()[0],
-        "links2": load_links()[1]
+        "links2": load_links()[1],
+        "copyright_years": calc_copyright_years()
     }
     html = template.render(**context)
 
