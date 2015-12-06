@@ -68,7 +68,14 @@ def calc_age():
             - int((today.month, today.day) < (born.month, born.day)))
 
 
-def index():
+def minify_html(html):
+    lines = html.split("\n")
+    lines = map(lambda l: l.strip(), lines)
+    lines = filter(lambda l: l != "", lines)
+    return "".join(lines)
+
+
+def index(debug=False):
     filename = "index.html"
     template = env.get_template(filename)
     context = {
@@ -81,16 +88,20 @@ def index():
         "links": load_links()[0],
         "links2": load_links()[1]
     }
-    html = template.render(**context).encode("utf-8")
+    html = template.render(**context)
+
+    if not debug:
+        html = minify_html(html)
 
     with open(output_dir + filename, "w") as f:
-        f.write(html)
+        f.write(html.encode("utf-8"))
 
 
-def main(debug=False):
-    index()
+def main():
+    debug = "--debug" in sys.argv
+    index(debug=debug)
+    return 0
 
 
 if __name__ == "__main__":
-    debug = "--debug" in sys.argv
-    main(debug=debug)
+    sys.exit(main())
