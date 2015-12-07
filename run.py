@@ -43,7 +43,6 @@ def load_works():
 def load_talks():
     with open(data_dir + "talks.yml") as f:
         talks = yaml.load(f)
-    # TODO: soet
     return talks
 
 
