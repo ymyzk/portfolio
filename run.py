@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from datetime import date, datetime
+from datetime import date
 from operator import itemgetter
 from os import path
 import sys
