@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
 from datetime import date
 from operator import itemgetter
 from os import path
@@ -101,7 +99,7 @@ def index(debug=False):
         html = minify_html(html)
 
     with open(output_dir + filename, "w") as f:
-        f.write(html.encode("utf-8"))
+        f.write(html)
 
 
 def main():
