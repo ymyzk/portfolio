@@ -5,3 +5,4 @@ install:
   - pip install -U -r requirements.txt -r requirements.test.txt
 script:
   - flake8 run.py
+  - mypy --silent-imports run.py
