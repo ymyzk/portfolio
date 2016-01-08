@@ -2,6 +2,7 @@ from datetime import date
 from operator import itemgetter
 from os import path
 import sys
+from typing import Any, Dict, List, Tuple
 
 from jinja2 import Environment, FileSystemLoader
 import yaml
@@ -14,14 +15,14 @@ loader = FileSystemLoader(root_dir + "/source", encoding="utf-8")
 env = Environment(loader=loader)
 
 
-def load_skills():
+def load_skills() -> List[str]:
     with open(data_dir + "skills.yml") as f:
         skills = yaml.load(f)
     return skills
 
 
-def load_works():
-    def format(work):
+def load_works() -> List[Dict[str, Any]]:
+    def format(work: Dict[str, Any]) -> Dict[str, Any]:
         if work["end"] is None:
             # 継続中のプロジェクトなら "YYYY-"
             work["duration"] = work["start"].strftime("%Y-")
@@ -38,26 +39,26 @@ def load_works():
     return [format(work) for work in works]
 
 
-def load_talks():
+def load_talks() -> List[Dict[str, Any]]:
     with open(data_dir + "talks.yml") as f:
         talks = yaml.load(f)
     return talks
 
 
-def load_contributions():
+def load_contributions() -> List[Dict[str, Any]]:
     with open(data_dir + "contributions.yml") as f:
         contributions = yaml.load(f)
     contributions.sort(key=itemgetter("name"))
     return contributions
 
 
-def load_links():
+def load_links() -> Tuple[List[Dict[str, str]], List[Dict[str, str]]]:
     with open(data_dir + "links.yml") as f:
         links, links2 = yaml.load_all(f)
     return links, links2
 
 
-def calc_age():
+def calc_age() -> int:
     today = date.today()
     born = date(1993, 10, 25)
     return (today.year
@@ -65,21 +66,20 @@ def calc_age():
             - int((today.month, today.day) < (born.month, born.day)))
 
 
-def calc_copyright_years():
+def calc_copyright_years() -> Dict[str, int]:
     return {
         "start": 2013,
         "end": date.today().year
     }
 
 
-def minify_html(html):
-    lines = html.split("\n")
-    lines = map(lambda l: l.strip(), lines)
+def minify_html(html: str) -> str:
+    lines = map(lambda l: l.strip(), html.split("\n"))
     lines = filter(lambda l: l != "", lines)
     return "\n".join(lines)
 
 
-def index(debug=False):
+def index(debug: bool=False):
     filename = "index.html"
     template = env.get_template(filename)
     context = {
@@ -102,7 +102,7 @@ def index(debug=False):
         f.write(html)
 
 
-def main():
+def main() -> int:
     debug = "--debug" in sys.argv
     index(debug=debug)
     return 0
