@@ -61,9 +61,9 @@ def load_links() -> Tuple[List[Dict[str, str]], List[Dict[str, str]]]:
 def calc_age() -> int:
     today = date.today()
     born = date(1993, 10, 25)
-    return (today.year
-            - born.year
-            - int((today.month, today.day) < (born.month, born.day)))
+    return (today.year -
+            born.year -
+            int((today.month, today.day) < (born.month, born.day)))
 
 
 def calc_copyright_years() -> Dict[str, int]:
