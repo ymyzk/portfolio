@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://www.ymyzk.com/sitemap.xml
+Sitemap: https://www.ymyzk.com/sitemap.xml
