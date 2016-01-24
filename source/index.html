@@ -24,16 +24,14 @@
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <h1>Yusuke Miyazaki</h1>
-        </div>
-      </div>
-      <div class="row" id="about">
+      <header>
+        <h1>Yusuke Miyazaki</h1>
+      </header>
+      <section class="row" id="about">
         <div class="col-xs-12">
           <h2>About</h2>
         </div>
-        <div class="col-sm-4">
+        <section class="col-sm-4">
           <h3>Profile</h3>
           <dl>
             <dt>Name</dt>
@@ -43,8 +41,8 @@
             <dt>Age</dt>
             <dd>{{ age }}</dd>
           </dl>
-        </div>
-        <div class="col-sm-4">
+        </section>
+        <section class="col-sm-4">
           <h3>Affiliation</h3>
           <dl>
             <dt>University</dt>
@@ -54,17 +52,17 @@
             <dt>Community</dt>
             <dd><a href="https://camph.net/">CAMPHOR-</a></dd>
           </dl>
-        </div>
-        <div class="col-sm-4">
+        </section>
+        <section class="col-sm-4">
           <h3>Skills</h3>
           <div class="skills">
             {% for skill in skills %}
             <span class="label label-primary">{{ skill }}</span>
             {% endfor %}
           </div>
-        </div>
-      </div>
-      <div class="row" id="works">
+        </section>
+      </section>
+      <section class="row" id="works">
         <div class="col-xs-12">
           <h2>Works</h2>
         </div>
@@ -84,17 +82,17 @@
           </div>
         </div>
         {% endfor %}
-      </div>
+      </section>
       <div class="row">
-        <div class="col-sm-6" id="talks">
+        <section class="col-sm-6" id="talks">
           <h2>Talks</h2>
           <ul>
             {% for talk in talks %}
             <li><a href="{{ talk.link }}">{{ talk.title }}</a> &nbsp;&mdash;&nbsp; {{ talk.event }} &nbsp;<span class="text-muted">{{ talk.date }}</span></li>
             {% endfor %}
           </ul>
-        </div>
-        <div class="col-sm-6" id="contributions">
+        </section>
+        <section class="col-sm-6" id="contributions">
           <h2>Contributions</h2>
           <ul>
             {% for contrib in contributions %}
@@ -106,9 +104,9 @@
             </li>
             {% endfor %}
           </ul>
-        </div>
+        </section>
       </div>
-      <div class="row" id="links">
+      <section class="row" id="links">
         <div class="col-xs-12">
           <h2>Links</h2>
         </div>
@@ -126,7 +124,7 @@
             {% endfor %}
           </ul>
         </div>
-      </div>
+      </section>
       <footer class="text-right">
         Powered by <a href="https://github.com/ymyzk/portfolio" target="_blank">the static site generator</a> written in Python.<br>
         Copyright &copy; {{ copyright_years.start }}-{{ copyright_years.end }}, Yusuke Miyazaki.
