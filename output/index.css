@@ -42,17 +42,21 @@ li {
   margin-bottom: 16px;
 }
 
-.work h3 {
-  overflow: hidden;
-  text-overflow: ellipsis;
+@media (min-width: 768px) {
+  .work h3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 .work img {
   width: 100%;
 }
 
-.work .description {
-  min-height: 120px;
+@media (min-width: 768px) {
+  .work .description {
+    min-height: 120px;
+  }
 }
 
 dd {
