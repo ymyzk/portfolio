@@ -1,0 +1,27 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ymyzk/portfolio.git"
+  },
+  "author": "Yusuke Miyazaki",
+  "private": true,
+  "license": "LicenseRef-LICENSE",
+  "bugs": {
+    "url": "https://github.com/ymyzk/portfolio/issues"
+  },
+  "homepage": "https://github.com/ymyzk/portfolio",
+  "devDependencies": {
+    "gulp": "~3.9.0",
+    "gulp-autoprefixer": "~3.1.0",
+    "gulp-cssnano": "~2.1.0",
+    "gulp-if": "~2.0.0",
+    "gulp-sass": "~2.1.1",
+    "yargs": "~3.32.0"
+  }
+}
