@@ -5,3 +5,7 @@
 ## Requirements
 - Python 3.5
 - `requirements.txt`
+
+## Docker
+- Run `docker run -it --rm -v <output_dir>:/app/output ymyzk/portfolio`
+- Open `<output_dir>/index.html`
