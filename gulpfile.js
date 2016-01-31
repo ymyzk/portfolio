@@ -3,6 +3,7 @@
 var argv = require("yargs").argv;
 var autoprefixer = require("gulp-autoprefixer");
 var cssnano = require("gulp-cssnano");
+var eslint = require("gulp-eslint");
 var gulp = require("gulp");
 var gulpif = require("gulp-if");
 var sass = require("gulp-sass");
@@ -36,8 +37,19 @@ gulp.task("scss", () =>
     .pipe(gulp.dest(`${OUTPUT}stylesheets/`))
 );
 
+gulp.task("eslint", () =>
+  gulp.src(
+    [
+      "gulpfile.js"
+    ])
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError())
+);
+
 gulp.task("stylesheets", ["scss"]);
 
 gulp.task("build", ["stylesheets"]);
+gulp.task("test", ["eslint"]);
 
 gulp.task("default", ["build"]);
