@@ -10,13 +10,20 @@ var sass = require("gulp-sass");
 
 const PRODUCTION = !!argv.production;
 
+const PATHS = {
+  node: "node_modules/"
+};
 const OUTPUT = "output/";
 const STATIC = "static/";
 
 gulp.task("scss", () =>
   gulp.src(`${STATIC}stylesheets/**/*.scss`)
     .pipe(sass({
+      includePaths: [
+        `${PATHS.node}bootstrap-sass/assets/stylesheets`
+      ],
       outputStyle: PRODUCTION ? "compressed" : "expanded",
+      precision: 8,
       sourceComments: !PRODUCTION
     }))
     .pipe(autoprefixer({
