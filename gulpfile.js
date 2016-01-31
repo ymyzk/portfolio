@@ -42,6 +42,11 @@ gulp.task("images", () =>
     .pipe(gulp.dest(`${OUTPUT}images/`))
 );
 
+gulp.task("misc", () =>
+  gulp.src(["robots.txt", "sitemap.xml"].map((path) => STATIC + path))
+    .pipe(gulp.dest(`${OUTPUT}`))
+);
+
 gulp.task("eslint", () =>
   gulp.src(
     [
@@ -54,7 +59,7 @@ gulp.task("eslint", () =>
 
 gulp.task("stylesheets", ["scss"]);
 
-gulp.task("build", ["images", "stylesheets"]);
+gulp.task("build", ["images", "misc", "stylesheets"]);
 gulp.task("test", ["eslint"]);
 
 gulp.task("default", ["build"]);
