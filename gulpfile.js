@@ -37,6 +37,11 @@ gulp.task("scss", () =>
     .pipe(gulp.dest(`${OUTPUT}stylesheets/`))
 );
 
+gulp.task("images", () =>
+  gulp.src(`${STATIC}images/**`)
+    .pipe(gulp.dest(`${OUTPUT}images/`))
+);
+
 gulp.task("eslint", () =>
   gulp.src(
     [
@@ -49,7 +54,7 @@ gulp.task("eslint", () =>
 
 gulp.task("stylesheets", ["scss"]);
 
-gulp.task("build", ["stylesheets"]);
+gulp.task("build", ["images", "stylesheets"]);
 gulp.task("test", ["eslint"]);
 
 gulp.task("default", ["build"]);
