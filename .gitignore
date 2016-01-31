@@ -1,2 +1,3 @@
 *.swp
-outpu- t/index.html
+node_modules/
+output/index.html
