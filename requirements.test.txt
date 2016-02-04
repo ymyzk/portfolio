@@ -1,2 +1,2 @@
 flake8==2.5.2
-git+https://github.com/JukkaL/mypy.git@e054fd082bc385c19052b7ac62f465df691060b7
+git+https://github.com/JukkaL/mypy.git@a103f259008b94da6913a4eec82b039010eb00c9
