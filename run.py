@@ -103,7 +103,8 @@ def index(debug: bool=False):
 
 
 def main() -> int:
-    debug = "--debug" in sys.argv
+    production = "--production" in sys.argv
+    debug = not production
     index(debug=debug)
     return 0
 

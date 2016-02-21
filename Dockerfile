@@ -39,6 +39,6 @@ RUN pip install -r requirements.txt \
 RUN npm install
 
 RUN ./node_modules/gulp/bin/gulp.js build --production
-RUN python ./run.py
+RUN python ./run.py --production
 
 ENTRYPOINT ["./docker-entrypoint.sh"]
