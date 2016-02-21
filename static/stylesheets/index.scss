@@ -3,7 +3,7 @@
 html, body {
   background-color: #222;
   color: white;
-  font-family: Lato, "Yu Gothic", YuGothic, "游ゴシック体", "游ゴシック", "Hiragino Kaku Gothic ProN", Meiryo, "メイリオ", "MS PGothic", sans-serif;
+  font-family: "a-otf-ud-shin-go-pr6n", "Yu Gothic", YuGothic, "游ゴシック体", "游ゴシック", "Hiragino Kaku Gothic ProN", Meiryo, "メイリオ", "MS PGothic", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -32,7 +32,7 @@ li {
 }
 
 .skills {
-  line-height: 1.75;
+  line-height: 2.2;
 
   .label {
     margin-right: 3px;
@@ -42,23 +42,31 @@ li {
 
 .work {
   margin-bottom: 16px;
-}
 
-@media (min-width: 768px) {
-  .work h3 {
-    overflow: hidden;
-    text-overflow: ellipsis;
+  img {
+    width: 100%;
+  }
+
+  .tags {
+    line-height: 2.0;
+  }
+
+  @media (min-width: 768px) {
+    h3 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      line-height: 1.4;
+    }
+
+    .description {
+      min-height: 130px;
+    }
   }
 }
 
-.work img {
-  width: 100%;
-}
-
-@media (min-width: 768px) {
-  .work .description {
-    min-height: 120px;
-  }
+#contributions li {
+  line-height: 1.75;
 }
 
 dd {

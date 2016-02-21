@@ -18,7 +18,6 @@
     <meta property="profile:last_name" content="Miyazaki">
     <meta property="profile:username" content="ymyzk">
     <meta name="theme-color" content="#222">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="stylesheets/index.css">
   </head>
   <body>
@@ -72,7 +71,7 @@
             <p>
               {{ work.description }}
             </p>
-            <p>
+            <p class="tags">
               <span class="label label-success">{{ work.duration }}</span>
               {% for tag in work.tags %}
                 <span class="label label-default">{{ tag }}</span>
@@ -136,6 +135,8 @@
     <script type="application/ld+json">
       {% include "index.json" %}
     </script>
+    <script src="https://use.typekit.net/eas5muj.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
     {% if not debug %}
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
