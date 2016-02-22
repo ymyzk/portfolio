@@ -4,8 +4,12 @@ $text-color: white;
 $link-color: white;
 // Typography
 $font-family-sans-serif: "a-otf-ud-shin-go-pr6n", "Yu Gothic", YuGothic, "游ゴシック体", "游ゴシック", "Hiragino Kaku Gothic ProN", Meiryo, "メイリオ", "MS PGothic", sans-serif;
+// Type
+$text-muted: #aaa;
 
 @import "bootstrap-custom";
+
+// General
 
 footer {
   margin: 20px 0;
@@ -19,10 +23,17 @@ li {
   margin-bottom: 2px;
 }
 
+dd {
+  margin-bottom: 6px;
+}
+
+// Index
+
 .skills {
   line-height: 2.2;
 
   .label {
+    background-color: #555;
     margin-right: 3px;
     font-size: 80%;
   }
@@ -37,6 +48,14 @@ li {
 
   .tags {
     line-height: 2.0;
+
+    .label-duration {
+      background-color: #55ab55;
+    }
+
+    .label-tag {
+      background-color: #555;
+    }
   }
 
   @media (min-width: 768px) {
@@ -53,30 +72,10 @@ li {
   }
 }
 
-#contributions li {
+.contribution {
   line-height: 1.75;
-}
 
-dd {
-  margin-bottom: 6px;
-}
-
-.text-muted {
-  color: #888;
-}
-
-.label-default {
-  background-color: #555;
-}
-
-.label-primary {
-  background-color: #777;
-}
-
-.label-success {
-  background-color: #62c462;
-}
-
-.label-info {
-  background-color: #5bc0de;
+  .label {
+    background-color: #555;
+  }
 }

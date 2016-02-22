@@ -55,7 +55,7 @@
           <h3>Skills</h3>
           <div class="skills">
             {% for skill in skills %}
-            <span class="label label-primary">{{ skill }}</span>
+            <span class="label">{{ skill }}</span>
             {% endfor %}
           </div>
         </section>
@@ -72,9 +72,9 @@
               {{ work.description }}
             </p>
             <p class="tags">
-              <span class="label label-success">{{ work.duration }}</span>
+              <span class="label label-duration">{{ work.duration }}</span>
               {% for tag in work.tags %}
-                <span class="label label-default">{{ tag }}</span>
+                <span class="label label-tag">{{ tag }}</span>
               {% endfor %}
             </p>
           </div>
@@ -98,10 +98,10 @@
           <h2>Contributions</h2>
           <ul>
             {% for contrib in contributions %}
-            <li>
+            <li class="contribution">
               <a href="{{ contrib.link }}">{{ contrib.name }}</a>
               {% for role in contrib.roles %}
-              <span class="label label-default">{{ role }}</span>
+              <span class="label">{{ role }}</span>
               {% endfor %}
             </li>
             {% endfor %}
