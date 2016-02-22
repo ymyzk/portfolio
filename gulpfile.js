@@ -67,6 +67,9 @@ gulp.task("eslint", () =>
 gulp.task("stylesheets", ["scss"]);
 
 gulp.task("build", ["images", "misc", "stylesheets"]);
+gulp.task("watch", ["stylesheets"], () => {
+  gulp.watch(`${STATIC}stylesheets/**/*.scss`, ["scss"]);
+});
 gulp.task("test", ["eslint"]);
 
 gulp.task("default", ["build"]);
