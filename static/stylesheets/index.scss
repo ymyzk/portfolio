@@ -1,23 +1,11 @@
+// Scaffolding
+$body-bg: #222;
+$text-color: white;
+$link-color: white;
+// Typography
+$font-family-sans-serif: "a-otf-ud-shin-go-pr6n", "Yu Gothic", YuGothic, "游ゴシック体", "游ゴシック", "Hiragino Kaku Gothic ProN", Meiryo, "メイリオ", "MS PGothic", sans-serif;
+
 @import "bootstrap-custom";
-
-html, body {
-  background-color: #222;
-  color: white;
-  font-family: "a-otf-ud-shin-go-pr6n", "Yu Gothic", YuGothic, "游ゴシック体", "游ゴシック", "Hiragino Kaku Gothic ProN", Meiryo, "メイリオ", "MS PGothic", sans-serif;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 300;
-}
-
-a {
-  color: white;
-}
-
-a:hover,
-a:focus {
-  color: white;
-}
 
 footer {
   margin: 20px 0;
