@@ -135,6 +135,13 @@
     <script type="application/ld+json">
       {% include "index.json" %}
     </script>
+    {% if debug %}
+    <script src="javascripts/jquery.js"></script>
+    <script src="javascripts/bootstrap.js"></script>
+    {% else %}
+    <script src="javascripts/jquery.min.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+    {% endif %}
     <script src="https://use.typekit.net/eas5muj.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
     {% if not debug %}

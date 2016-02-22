@@ -16,6 +16,16 @@ const PATHS = {
 const OUTPUT = "output/";
 const STATIC = "static/";
 
+gulp.task("bootstrap-javascripts", () =>
+  gulp.src(`${PATHS.node}bootstrap-sass/assets/javascripts/**`)
+    .pipe(gulp.dest(`${OUTPUT}javascripts/`))
+);
+
+gulp.task("jquery", () =>
+  gulp.src(`${PATHS.node}jquery/dist/**`)
+    .pipe(gulp.dest(`${OUTPUT}javascripts/`))
+);
+
 gulp.task("scss", () =>
   gulp.src(`${STATIC}stylesheets/**/*.scss`)
     .pipe(sass({
@@ -64,9 +74,10 @@ gulp.task("eslint", () =>
     .pipe(eslint.failAfterError())
 );
 
+gulp.task("javascripts", ["bootstrap-javascripts", "jquery"]);
 gulp.task("stylesheets", ["scss"]);
 
-gulp.task("build", ["images", "misc", "stylesheets"]);
+gulp.task("build", ["images", "javascripts", "misc", "stylesheets"]);
 gulp.task("watch", ["stylesheets"], () => {
   gulp.watch(`${STATIC}stylesheets/**/*.scss`, ["scss"]);
 });
