@@ -5,6 +5,7 @@ $link-color: white;
 // Typography
 $font-family-sans-serif: "a-otf-ud-shin-go-pr6n", "Yu Gothic", YuGothic, "游ゴシック体", "游ゴシック", "Hiragino Kaku Gothic ProN", Meiryo, "メイリオ", "MS PGothic", sans-serif;
 // Navbar
+$navbar-margin-bottom: 0;
 $navbar-inverse-bg: $body-bg;
 $navbar-inverse-border: $navbar-inverse-bg;
 // Type
@@ -50,9 +51,9 @@ dd {
   }
 }
 
-// Works
+// Projects
 
-.work {
+.project {
   margin-bottom: 16px;
 
   h2 {

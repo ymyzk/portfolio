@@ -21,7 +21,7 @@ def load_skills() -> List[str]:
     return skills
 
 
-def load_works() -> List[Dict[str, Any]]:
+def load_projects() -> List[Dict[str, Any]]:
     def format(work: Dict[str, Any]) -> Dict[str, Any]:
         if work["end"] is None:
             # 継続中のプロジェクトなら "YYYY-"
@@ -33,7 +33,7 @@ def load_works() -> List[Dict[str, Any]]:
                 work["duration"] += "-" + work["end"].strftime("%Y")
         return work
 
-    with open(data_dir + "works.yml") as f:
+    with open(data_dir + "projects.yml") as f:
         works = yaml.load(f)
 
     return [format(work) for work in works]
@@ -101,12 +101,12 @@ def index(debug: bool=False):
         f.write(html)
 
 
-def works(debug: bool=False):
-    filename = "works.html"
+def projects(debug: bool=False):
+    filename = "projects.html"
     template = env.get_template(filename)
     context = {
         "debug": debug,
-        "works": load_works(),
+        "projects": load_projects(),
         "copyright_years": calc_copyright_years()
     }
     html = template.render(**context)
@@ -122,7 +122,7 @@ def main() -> int:
     production = "--production" in sys.argv
     debug = not production
     index(debug=debug)
-    works(debug=debug)
+    projects(debug=debug)
     return 0
 
 
