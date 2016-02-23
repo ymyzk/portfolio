@@ -17,6 +17,7 @@ $text-muted: #aaa;
 
 footer {
   margin: 20px 0;
+  font-size: ceil(($font-size-base * 0.85));
 }
 
 ul {
