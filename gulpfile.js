@@ -60,7 +60,7 @@ gulp.task("images", () =>
 );
 
 gulp.task("misc", () =>
-  gulp.src(["robots.txt", "sitemap.xml"].map((path) => STATIC + path))
+  gulp.src(["robots.txt"].map((path) => STATIC + path))
     .pipe(gulp.dest(`${OUTPUT}`))
 );
 

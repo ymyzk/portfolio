@@ -157,6 +157,23 @@ def news(context: Dict[str, Any]):
         f.write(html)
 
 
+def sitemap():
+    filename = "sitemap.xml"
+    template = env.get_template(filename)
+    context = {
+        "paths": [
+            "projects.html",
+            "talks.html",
+            "contributions.html",
+            "news.html"
+        ]
+    }
+    html = template.render(**context)
+
+    with open(output_dir + filename, "w") as f:
+        f.write(html)
+
+
 def main() -> int:
     production = "--production" in sys.argv
     debug = not production
@@ -169,6 +186,7 @@ def main() -> int:
     talks(deepcopy(context))
     contributions(deepcopy(context))
     news(deepcopy(context))
+    sitemap()
     return 0
 
 

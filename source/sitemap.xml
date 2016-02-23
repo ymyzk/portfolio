@@ -4,4 +4,10 @@
     <loc>https://www.ymyzk.com/</loc>
     <priority>1.0</priority>
   </url>
+  {% for path in paths %}
+  <url>
+    <loc>https://www.ymyzk.com/{{ path }}</loc>
+    <priority>0.7</priority>
+  </url>
+  {% endfor %}
 </urlset>
