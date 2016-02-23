@@ -11,8 +11,8 @@ install:
   - pip install -U -r requirements.test.txt
   - npm install
 script:
-  - flake8 run.py
-  - mypy --silent-imports run.py
+  - flake8 run.py portfolio
+  - mypy --silent-imports run.py portfolio
   - python run.py
   - gulp build test
 notifications:
