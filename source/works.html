@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block contents %}
+  <h1>Works</h1>
+  <section class="row">
+    {% for work in works %}
+    <div class="col-sm-6 col-md-4 col-lg-3 work">
+      <h2><a href="{{ work.link }}">{{ work.title }}</a></h2>
+      <div class="description">
+        <p>
+          {{ work.description }}
+        </p>
+        <p class="tags">
+          <span class="label label-duration">{{ work.duration }}</span>
+          {% for tag in work.tags %}
+            <span class="label label-tag">{{ tag }}</span>
+          {% endfor %}
+        </p>
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}

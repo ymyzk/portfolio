@@ -4,6 +4,9 @@ $text-color: white;
 $link-color: white;
 // Typography
 $font-family-sans-serif: "a-otf-ud-shin-go-pr6n", "Yu Gothic", YuGothic, "游ゴシック体", "游ゴシック", "Hiragino Kaku Gothic ProN", Meiryo, "メイリオ", "MS PGothic", sans-serif;
+// Navbar
+$navbar-inverse-bg: $body-bg;
+$navbar-inverse-border: $navbar-inverse-bg;
 // Type
 $text-muted: #aaa;
 
@@ -39,8 +42,22 @@ dd {
   }
 }
 
+.contribution {
+  line-height: 1.75;
+
+  .label {
+    background-color: #555;
+  }
+}
+
+// Works
+
 .work {
   margin-bottom: 16px;
+
+  h2 {
+    font-size: ceil(($font-size-base * 1.7));
+  }
 
   img {
     width: 100%;
@@ -59,7 +76,7 @@ dd {
   }
 
   @media (min-width: 768px) {
-    h3 {
+    h2 {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -69,13 +86,5 @@ dd {
     .description {
       min-height: 130px;
     }
-  }
-}
-
-.contribution {
-  line-height: 1.75;
-
-  .label {
-    background-color: #555;
   }
 }

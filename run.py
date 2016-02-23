@@ -86,7 +86,6 @@ def index(debug: bool=False):
         "debug": debug,
         "age": calc_age(),
         "skills": load_skills(),
-        "works": load_works(),
         "talks": load_talks(),
         "contributions": load_contributions(),
         "links": load_links()[0],
@@ -102,10 +101,28 @@ def index(debug: bool=False):
         f.write(html)
 
 
+def works(debug: bool=False):
+    filename = "works.html"
+    template = env.get_template(filename)
+    context = {
+        "debug": debug,
+        "works": load_works(),
+        "copyright_years": calc_copyright_years()
+    }
+    html = template.render(**context)
+
+    if not debug:
+        html = minify_html(html)
+
+    with open(output_dir + filename, "w") as f:
+        f.write(html)
+
+
 def main() -> int:
     production = "--production" in sys.argv
     debug = not production
     index(debug=debug)
+    works(debug=debug)
     return 0
 
 
