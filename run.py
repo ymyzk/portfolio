@@ -86,8 +86,7 @@ def index(context: Dict[str, Any]):
     context.update({
         "age": calc_age(),
         "skills": load_skills(),
-        "links": load_links()[0],
-        "links2": load_links()[1],
+        "links": load_links()[0]
     })
     html = template.render(**context)
 
@@ -143,6 +142,21 @@ def contributions(context: Dict[str, Any]):
         f.write(html)
 
 
+def news(context: Dict[str, Any]):
+    filename = "news.html"
+    template = env.get_template(filename)
+    context.update({
+        "news": load_links()[1]
+    })
+    html = template.render(**context)
+
+    if not context["debug"]:
+        html = minify_html(html)
+
+    with open(output_dir + filename, "w") as f:
+        f.write(html)
+
+
 def main() -> int:
     production = "--production" in sys.argv
     debug = not production
@@ -154,6 +168,7 @@ def main() -> int:
     projects(deepcopy(context))
     talks(deepcopy(context))
     contributions(deepcopy(context))
+    news(deepcopy(context))
     return 0
 
 
