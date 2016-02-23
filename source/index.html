@@ -1,158 +1,117 @@
-<!DOCTYPE html>
-<html lang="ja" prefix="og: http://ogp.me/ns# profile: http://ogp.me/ns/profile#">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Yusuke Miyazaki</title>
-    <meta name="description" content="Yusuke Miyazaki's portfolio website.">
-    <meta property="og:type" content="profile">
-    <meta property="og:title" content="Yusuke Miyazaki">
-    <meta property="og:url" content="https://www.ymyzk.com/">
-    <meta property="og:image" content="https://www.ymyzk.com/images/ogp.png">
-    <meta property="og:locale" content="ja_JP">
-    <meta property="og:locale:alternate" content="en_US">
-    <meta property="og:site_name" content="Yusuke Miyazaki">
-    <meta property="og:description" content="Yusuke Miyazaki's portfolio website.">
-    <meta property="profile:first_name" content="Yusuke">
-    <meta property="profile:last_name" content="Miyazaki">
-    <meta property="profile:username" content="ymyzk">
-    <meta name="theme-color" content="#222">
-    <link rel="stylesheet" href="stylesheets/index.css">
-  </head>
-  <body>
-    <div class="container">
-      <header>
-        <h1>Yusuke Miyazaki</h1>
-      </header>
-      <section class="row" id="about">
-        <div class="col-xs-12">
-          <h2>About</h2>
-        </div>
-        <section class="col-sm-4">
-          <h3>Profile</h3>
-          <dl>
-            <dt>Name</dt>
-            <dd>Yusuke Miyazaki (宮崎 勇輔) <span class="text-muted">@ymyzk</span></dd>
-            <dt>Location</dt>
-            <dd>Kyoto, Japan</dd>
-            <dt>Age</dt>
-            <dd>{{ age }}</dd>
-          </dl>
-        </section>
-        <section class="col-sm-4">
-          <h3>Affiliation</h3>
-          <dl>
-            <dt>University</dt>
-            <dd><a href="http://www.fos.kuis.kyoto-u.ac.jp/">Faculty of Engineering, Kyoto University</a></dd>
-            <dt>Company</dt>
-            <dd><a href="http://www.unimap.co.jp/">President & Co-founder, Unimap, Inc.</a></dd>
-            <dt>Community</dt>
-            <dd><a href="https://camph.net/">CAMPHOR-</a></dd>
-          </dl>
-        </section>
-        <section class="col-sm-4">
-          <h3>Skills</h3>
-          <div class="skills">
-            {% for skill in skills %}
-            <span class="label">{{ skill }}</span>
-            {% endfor %}
-          </div>
-        </section>
-      </section>
-      <section class="row" id="works">
-        <div class="col-xs-12">
-          <h2>Works</h2>
-        </div>
-        {% for work in works %}
-        <div class="col-sm-6 col-md-4 col-lg-3 work">
-          <h3><a href="{{ work.link }}">{{ work.title }}</a></h3>
-          <div class="description">
-            <p>
-              {{ work.description }}
-            </p>
-            <p class="tags">
-              <span class="label label-duration">{{ work.duration }}</span>
-              {% for tag in work.tags %}
-                <span class="label label-tag">{{ tag }}</span>
-              {% endfor %}
-            </p>
-          </div>
-        </div>
-        {% endfor %}
-      </section>
-      <div class="row">
-        <section class="col-sm-6" id="talks">
-          <h2>Talks</h2>
-          <ul>
-            {% for talk in talks %}
-            <li>
-              <a href="{{ talk.link }}">{{ talk.title }}</a>
-              &mdash; {{ talk.event }}
-              <time class="text-muted" datetime="{{ talk.date }}">{{ talk.date }}</time>
-            </li>
-            {% endfor %}
-          </ul>
-        </section>
-        <section class="col-sm-6" id="contributions">
-          <h2>Contributions</h2>
-          <ul>
-            {% for contrib in contributions %}
-            <li class="contribution">
-              <a href="{{ contrib.link }}">{{ contrib.name }}</a>
-              {% for role in contrib.roles %}
-              <span class="label">{{ role }}</span>
-              {% endfor %}
-            </li>
-            {% endfor %}
-          </ul>
-        </section>
-      </div>
-      <section class="row" id="links">
-        <div class="col-xs-12">
-          <h2>Links</h2>
-        </div>
-        <div class="col-sm-6">
-          <ul>
-            {% for link in links %}
-            <li><a href="{{ link.link }}">{{ link.title }}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
-        <div class="col-sm-6">
-          <ul>
-            {% for link in links2 %}
-            <li><a href="{{ link.link }}">{{ link.title }}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
-      </section>
-      <footer class="text-right">
-        Powered by <a href="https://github.com/ymyzk/portfolio" target="_blank">the static site generator</a> written in Python.<br>
-        Copyright &copy; {{ copyright_years.start }}-{{ copyright_years.end }}, Yusuke Miyazaki.
-      </footer>
+{% extends "base.html" %}
+
+{% block contents %}
+  <h1>Yusuke Miyazaki</h1>
+  <section class="row" id="about">
+    <div class="col-xs-12">
+      <h2>About</h2>
     </div>
-    <script type="application/ld+json">
-      {% include "index.json" %}
-    </script>
-    {% if debug %}
-    <script src="javascripts/jquery.js"></script>
-    <script src="javascripts/bootstrap.js"></script>
-    {% else %}
-    <script src="javascripts/jquery.min.js"></script>
-    <script src="javascripts/bootstrap.min.js"></script>
-    {% endif %}
-    <script src="https://use.typekit.net/eas5muj.js"></script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
-    {% if not debug %}
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-41988513-2', 'auto');
-      ga('send', 'pageview');
-    </script>
-    {% endif %}
-  </body>
-</html>
+    <section class="col-sm-4">
+      <h3>Profile</h3>
+      <dl>
+        <dt>Name</dt>
+        <dd>Yusuke Miyazaki (宮崎 勇輔) <span class="text-muted">@ymyzk</span></dd>
+        <dt>Location</dt>
+        <dd>Kyoto, Japan</dd>
+        <dt>Age</dt>
+        <dd>{{ age }}</dd>
+      </dl>
+    </section>
+    <section class="col-sm-4">
+      <h3>Affiliation</h3>
+      <dl>
+        <dt>University</dt>
+        <dd><a href="http://www.fos.kuis.kyoto-u.ac.jp/">Faculty of Engineering, Kyoto University</a></dd>
+        <dt>Company</dt>
+        <dd><a href="http://www.unimap.co.jp/">President & Co-founder, Unimap, Inc.</a></dd>
+        <dt>Community</dt>
+        <dd><a href="https://camph.net/">CAMPHOR-</a></dd>
+      </dl>
+    </section>
+    <section class="col-sm-4">
+      <h3>Skills</h3>
+      <div class="skills">
+        {% for skill in skills %}
+        <span class="label">{{ skill }}</span>
+        {% endfor %}
+      </div>
+    </section>
+  </section>
+  <section class="row" id="works">
+    <div class="col-xs-12">
+      <h2>Works</h2>
+    </div>
+    {% for work in works %}
+    <div class="col-sm-6 col-md-4 col-lg-3 work">
+      <h3><a href="{{ work.link }}">{{ work.title }}</a></h3>
+      <div class="description">
+        <p>
+          {{ work.description }}
+        </p>
+        <p class="tags">
+          <span class="label label-duration">{{ work.duration }}</span>
+          {% for tag in work.tags %}
+            <span class="label label-tag">{{ tag }}</span>
+          {% endfor %}
+        </p>
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+  <div class="row">
+    <section class="col-sm-6" id="talks">
+      <h2>Talks</h2>
+      <ul>
+        {% for talk in talks %}
+        <li>
+          <a href="{{ talk.link }}">{{ talk.title }}</a>
+          &mdash; {{ talk.event }}
+          <time class="text-muted" datetime="{{ talk.date }}">{{ talk.date }}</time>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+    <section class="col-sm-6" id="contributions">
+      <h2>Contributions</h2>
+      <ul>
+        {% for contrib in contributions %}
+        <li class="contribution">
+          <a href="{{ contrib.link }}">{{ contrib.name }}</a>
+          {% for role in contrib.roles %}
+          <span class="label">{{ role }}</span>
+          {% endfor %}
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+  </div>
+  <section class="row" id="links">
+    <div class="col-xs-12">
+      <h2>Links</h2>
+    </div>
+    <div class="col-sm-6">
+      <ul>
+        {% for link in links %}
+        <li><a href="{{ link.link }}">{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="col-sm-6">
+      <ul>
+        {% for link in links2 %}
+        <li><a href="{{ link.link }}">{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+  <footer class="text-right">
+    Powered by <a href="https://github.com/ymyzk/portfolio" target="_blank">the static site generator</a> written in Python.<br>
+    Copyright &copy; {{ copyright_years.start }}-{{ copyright_years.end }}, Yusuke Miyazaki.
+  </footer>
+{% endblock %}
+
+{% block javascripts %}
+  <script type="application/ld+json">
+    {% include "index.json" %}
+  </script>
+{% endblock %}
