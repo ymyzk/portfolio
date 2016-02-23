@@ -37,21 +37,6 @@
       </div>
     </section>
   </section>
-  <div class="row">
-    <section class="col-sm-6" id="contributions">
-      <h2>Contributions</h2>
-      <ul>
-        {% for contrib in contributions %}
-        <li class="contribution">
-          <a href="{{ contrib.link }}">{{ contrib.name }}</a>
-          {% for role in contrib.roles %}
-          <span class="label">{{ role }}</span>
-          {% endfor %}
-        </li>
-        {% endfor %}
-      </ul>
-    </section>
-  </div>
   <section class="row" id="links">
     <div class="col-xs-12">
       <h2>Links</h2>
