@@ -1,3 +1,4 @@
+from copy import deepcopy
 from datetime import date
 from operator import itemgetter
 from os import path
@@ -79,39 +80,35 @@ def minify_html(html: str) -> str:
     return "\n".join(lines)
 
 
-def index(debug: bool=False):
+def index(context: Dict[str, Any]):
     filename = "index.html"
     template = env.get_template(filename)
-    context = {
-        "debug": debug,
+    context.update({
         "age": calc_age(),
         "skills": load_skills(),
         "talks": load_talks(),
         "contributions": load_contributions(),
         "links": load_links()[0],
         "links2": load_links()[1],
-        "copyright_years": calc_copyright_years()
-    }
+    })
     html = template.render(**context)
 
-    if not debug:
+    if not context["debug"]:
         html = minify_html(html)
 
     with open(output_dir + filename, "w") as f:
         f.write(html)
 
 
-def projects(debug: bool=False):
+def projects(context: Dict[str, Any]):
     filename = "projects.html"
     template = env.get_template(filename)
-    context = {
-        "debug": debug,
-        "projects": load_projects(),
-        "copyright_years": calc_copyright_years()
-    }
+    context.update({
+        "projects": load_projects()
+    })
     html = template.render(**context)
 
-    if not debug:
+    if not context["debug"]:
         html = minify_html(html)
 
     with open(output_dir + filename, "w") as f:
@@ -121,8 +118,12 @@ def projects(debug: bool=False):
 def main() -> int:
     production = "--production" in sys.argv
     debug = not production
-    index(debug=debug)
-    projects(debug=debug)
+    context = {
+        "debug": debug,
+        "copyright_years": calc_copyright_years()
+    }
+    index(deepcopy(context))
+    projects(deepcopy(context))
     return 0
 
 

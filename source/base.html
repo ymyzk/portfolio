@@ -47,6 +47,10 @@
     </header>
     <div class="container">
       {% block contents %}{% endblock %}
+      <footer class="text-right">
+        Powered by <a href="https://github.com/ymyzk/portfolio" target="_blank">the static site generator</a> written in Python.<br>
+        Copyright &copy; {{ copyright_years.start }}-{{ copyright_years.end }}, Yusuke Miyazaki.
+      </footer>
     </div>
     {% block javascripts %}{% endblock %}
     {% if debug %}
