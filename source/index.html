@@ -38,18 +38,6 @@
     </section>
   </section>
   <div class="row">
-    <section class="col-sm-6" id="talks">
-      <h2>Talks</h2>
-      <ul>
-        {% for talk in talks %}
-        <li>
-          <a href="{{ talk.link }}">{{ talk.title }}</a>
-          &mdash; {{ talk.event }}
-          <time class="text-muted" datetime="{{ talk.date }}">{{ talk.date }}</time>
-        </li>
-        {% endfor %}
-      </ul>
-    </section>
     <section class="col-sm-6" id="contributions">
       <h2>Contributions</h2>
       <ul>
