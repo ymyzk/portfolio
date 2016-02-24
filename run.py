@@ -17,7 +17,7 @@ def index() -> Context:
     return {
         "age": calc_age(),
         "skills": data.load_skills(),
-        "links": data.load_links()[0]
+        "links": data.load_links()
     }
 
 
@@ -45,7 +45,7 @@ def contributions() -> Context:
 @html_view("news.html")
 def news() -> Context:
     return {
-        "news": data.load_links()[1]
+        "news": data.load_news()
     }
 
 

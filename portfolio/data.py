@@ -1,6 +1,6 @@
 from operator import itemgetter
 from os import path
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict, List
 
 import yaml
 
@@ -46,7 +46,13 @@ def load_contributions() -> List[Dict[str, Any]]:
     return contributions
 
 
-def load_links() -> Tuple[List[Dict[str, str]], List[Dict[str, str]]]:
+def load_links() -> List[Dict[str, str]]:
     with open(data_dir + "links.yml") as f:
-        links, links2 = yaml.load_all(f)
-    return links, links2
+        links = yaml.load(f)
+    return links
+
+
+def load_news() -> List[Dict[str, str]]:
+    with open(data_dir + "news.yml") as f:
+        links = yaml.load(f)
+    return links
