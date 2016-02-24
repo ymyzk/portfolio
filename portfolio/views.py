@@ -1,4 +1,3 @@
-from copy import deepcopy
 from functools import wraps
 from os import path
 from typing import Any, Callable, Dict
@@ -24,16 +23,15 @@ def minify_html(html: str) -> str:
 
 def html_view(filename: str, debug: bool = True):
     template = env.get_template(filename)
-    base_context = {
+    context = {
         "debug": debug,
         "copyright_years": calc_copyright_years()
     }
 
-    def decorator(view: Callable[[], Context]):
+    def decorator(view: Callable[..., Context]) -> Callable[..., Context]:
         @wraps(view)
-        def wrapper():
-            context = deepcopy(base_context)
-            context.update(view())
+        def wrapper(*args, **kwargs) -> Callable[..., Context]:
+            context.update(view(*args, **kwargs))
             html = template.render(**context)
             if not debug:
                 html = minify_html(html)
