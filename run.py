@@ -1,109 +1,57 @@
-from copy import deepcopy
-from os import path
+from functools import partial
 import sys
-from typing import Any, Dict
 
-from jinja2 import Environment, FileSystemLoader
-
-from portfolio.utils import (calc_age, calc_copyright_years,
-                             load_contributions, load_links, load_projects,
-                             load_skills, load_talks)
+from portfolio.views import Context, html_view as _html_view
+from portfolio.utils import (calc_age, load_contributions, load_links,
+                             load_projects, load_skills, load_talks)
 
 
-root_dir = path.dirname(path.abspath(__file__))
-data_dir = root_dir + "/data/"
-output_dir = root_dir + "/output/"
-loader = FileSystemLoader(root_dir + "/source", encoding="utf-8")
-env = Environment(loader=loader)
+production = "--production" in sys.argv
+debug = not production
+
+html_view = partial(_html_view, debug=debug)
 
 
-def minify_html(html: str) -> str:
-    lines = map(lambda l: l.strip(), html.split("\n"))
-    lines = filter(lambda l: l != "", lines)
-    return "\n".join(lines)
-
-
-def index(context: Dict[str, Any]):
-    filename = "index.html"
-    template = env.get_template(filename)
-    context.update({
+@html_view("index.html")
+def index() -> Context:
+    return {
         "age": calc_age(),
         "skills": load_skills(),
         "links": load_links()[0]
-    })
-    html = template.render(**context)
-
-    if not context["debug"]:
-        html = minify_html(html)
-
-    with open(output_dir + filename, "w") as f:
-        f.write(html)
+    }
 
 
-def projects(context: Dict[str, Any]):
-    filename = "projects.html"
-    template = env.get_template(filename)
-    context.update({
+@html_view("projects.html")
+def projects() -> Context:
+    return {
         "projects": load_projects()
-    })
-    html = template.render(**context)
-
-    if not context["debug"]:
-        html = minify_html(html)
-
-    with open(output_dir + filename, "w") as f:
-        f.write(html)
+    }
 
 
-def talks(context: Dict[str, Any]):
-    filename = "talks.html"
-    template = env.get_template(filename)
-    context.update({
+@html_view("talks.html")
+def talks() -> Context:
+    return {
         "talks": load_talks()
-    })
-    html = template.render(**context)
-
-    if not context["debug"]:
-        html = minify_html(html)
-
-    with open(output_dir + filename, "w") as f:
-        f.write(html)
+    }
 
 
-def contributions(context: Dict[str, Any]):
-    filename = "contributions.html"
-    template = env.get_template(filename)
-    context.update({
+@html_view("contributions.html")
+def contributions() -> Context:
+    return {
         "contributions": load_contributions()
-    })
-    html = template.render(**context)
-
-    if not context["debug"]:
-        html = minify_html(html)
-
-    with open(output_dir + filename, "w") as f:
-        f.write(html)
+    }
 
 
-def news(context: Dict[str, Any]):
-    filename = "news.html"
-    template = env.get_template(filename)
-    context.update({
+@html_view("news.html")
+def news() -> Context:
+    return {
         "news": load_links()[1]
-    })
-    html = template.render(**context)
-
-    if not context["debug"]:
-        html = minify_html(html)
-
-    with open(output_dir + filename, "w") as f:
-        f.write(html)
+    }
 
 
-def sitemap():
-    filename = "sitemap.xml"
-    template = env.get_template(filename)
-    context = {
+@html_view("sitemap.xml")
+def sitemap() -> Context:
+    return {
         "paths": [
             "projects.html",
             "talks.html",
@@ -111,25 +59,18 @@ def sitemap():
             "news.html"
         ]
     }
-    html = template.render(**context)
-
-    with open(output_dir + filename, "w") as f:
-        f.write(html)
 
 
 def main() -> int:
-    production = "--production" in sys.argv
-    debug = not production
-    context = {
-        "debug": debug,
-        "copyright_years": calc_copyright_years()
-    }
-    index(deepcopy(context))
-    projects(deepcopy(context))
-    talks(deepcopy(context))
-    contributions(deepcopy(context))
-    news(deepcopy(context))
-    sitemap()
+    views = [
+        index,
+        projects,
+        talks,
+        contributions,
+        news,
+        sitemap
+    ]
+    [view() for view in views]
     return 0
 
 
