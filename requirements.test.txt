@@ -4,11 +4,15 @@
 #
 #    pip-compile requirements.test.in
 #
+click==6.3                # via pip-tools
+first==2.0.1              # via pip-tools
 flake8==2.5.4
 Jinja2==2.8
 MarkupSafe==0.23          # via jinja2
 mccabe==0.4.0             # via flake8
 mypy-lang==0.3.1
 pep8==1.7.0               # via flake8
+pip-tools==1.6
 pyflakes==1.0.0           # via flake8
 PyYAML==3.11
+six==1.10.0               # via pip-tools
