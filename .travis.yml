@@ -4,7 +4,7 @@ python:
   - 3.5-dev
   - nightly
 env:
-  - TRAVIS_NODE_VERSION="v5.6.0"
+  - TRAVIS_NODE_VERSION="v5.7.1"
 before_install:
   - nvm install $TRAVIS_NODE_VERSION
 install:
