@@ -1,12 +1,12 @@
 "use strict";
 
-var argv = require("yargs").argv;
-var autoprefixer = require("gulp-autoprefixer");
-var cssnano = require("gulp-cssnano");
-var eslint = require("gulp-eslint");
-var gulp = require("gulp");
-var gulpif = require("gulp-if");
-var sass = require("gulp-sass");
+const argv = require("yargs").argv;
+const autoprefixer = require("gulp-autoprefixer");
+const cssnano = require("gulp-cssnano");
+const eslint = require("gulp-eslint");
+const gulp = require("gulp");
+const gulpif = require("gulp-if");
+const sass = require("gulp-sass");
 
 const PRODUCTION = !!argv.production;
 
