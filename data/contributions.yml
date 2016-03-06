@@ -34,3 +34,4 @@
   link: https://www.python.org/
   roles:
     - Translation
+    - typeshed
