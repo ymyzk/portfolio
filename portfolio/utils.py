@@ -1,5 +1,5 @@
 from datetime import date
-from typing import Dict
+from typing import Tuple
 
 
 def calc_age() -> int:
@@ -10,8 +10,5 @@ def calc_age() -> int:
             int((today.month, today.day) < (born.month, born.day)))
 
 
-def calc_copyright_years() -> Dict[str, int]:
-    return {
-        "start": 2013,
-        "end": date.today().year
-    }
+def calc_copyright_years() -> Tuple[int, int]:
+    return (2013, date.today().year)
