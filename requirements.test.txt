@@ -13,6 +13,10 @@ mccabe==0.4.0             # via flake8
 mypy-lang==0.3.1
 pep8==1.7.0               # via flake8
 pip-tools==1.6
+pluggy==0.3.1             # via tox
+py==1.4.31                # via tox
 pyflakes==1.0.0           # via flake8
 PyYAML==3.11
 six==1.10.0               # via pip-tools
+tox==2.3.1
+virtualenv==15.0.0        # via tox
