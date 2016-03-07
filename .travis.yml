@@ -11,9 +11,7 @@ install:
   - pip install -U -r requirements.test.txt
   - npm install
 script:
-  - flake8 run.py portfolio
-  - mypy --silent-imports run.py portfolio
-  - python run.py
+  - tox
   - gulp build test
 notifications:
   slack:
