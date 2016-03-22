@@ -1,3 +1,13 @@
+- title: Python の型ヒントの FAQ
+  event: 漸進的型付けについて語る会
+  date: 2016-03-20
+  link: https://speakerdeck.com/ymyzk/faq-about-python-type-hints
+
+- title: Gradual Typing のいろいろな実装
+  event: 漸進的型付けについて語る会
+  date: 2016-03-20
+  link: https://speakerdeck.com/ymyzk/various-implementations-of-gradual-typing
+
 - title: Python チュートリアル
   event: "PyLadies Kyoto Meetup #2"
   date: 2016-02-27
