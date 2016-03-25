@@ -33,6 +33,16 @@ dd {
   margin-bottom: 6px;
 }
 
+// Typekit (FOIT 方式での表示)
+
+.wf-loading {
+  visibility: hidden;
+}
+
+.wf-active, .wf-inactive {
+  visibility: visible;
+}
+
 // Index
 
 .skills {
