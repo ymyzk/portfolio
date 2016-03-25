@@ -4,7 +4,7 @@
 #
 #    pip-compile requirements.test.in
 #
-click==6.3                # via pip-tools
+click==6.4                # via pip-tools
 first==2.0.1              # via pip-tools
 flake8==2.5.4
 Jinja2==2.8
@@ -19,4 +19,4 @@ pyflakes==1.0.0           # via flake8
 PyYAML==3.11
 six==1.10.0               # via pip-tools
 tox==2.3.1
-virtualenv==15.0.0        # via tox
+virtualenv==15.0.1        # via tox
