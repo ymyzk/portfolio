@@ -10,9 +10,8 @@
         <li>
           <a href="{{ link.link }}">
             {{ link.title }} &mdash; {{ link.media }}
-            <time class="text-muted" datetime="{{ link.date }}">{{ link.date }}</time>
           </a>
-        </li>
+          <time class="text-muted" datetime="{{ link.date }}">{{ link.date }}</time>
         {% endfor %}
       </ul>
     </div>
