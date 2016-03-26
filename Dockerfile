@@ -19,7 +19,7 @@ RUN set -ex \
 ENV NPM_CONFIG_LOGLEVEL info
 ENV NODE_VERSION 5.9.1
 
-RUN buildDeps='xz-utils' \
+RUN buildDeps='curl xz-utils' \
     && set -x \
     && apt-get update && apt-get install -y $buildDeps --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* \
