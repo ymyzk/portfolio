@@ -37,24 +37,15 @@
       </div>
     </section>
   </section>
-  <section class="row" id="links">
-    <div class="col-xs-12">
+  <section class="row">
+    <section class="col-sm-4" id="links">
       <h2>Links</h2>
-    </div>
-    <div class="col-sm-6">
       <ul>
         {% for link in links %}
         <li><a href="{{ link.link }}">{{ link.title }}</a></li>
         {% endfor %}
       </ul>
-    </div>
-    <div class="col-sm-6">
-      <ul>
-        {% for link in links2 %}
-        <li><a href="{{ link.link }}">{{ link.title }}</a></li>
-        {% endfor %}
-      </ul>
-    </div>
+    </section>
   </section>
 {% endblock %}
 
