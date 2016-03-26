@@ -11,4 +11,4 @@ def calc_age() -> int:
 
 
 def calc_copyright_years() -> Tuple[int, int]:
-    return (2013, date.today().year)
+    return 2013, date.today().year
