@@ -1,9 +1,11 @@
 from functools import partial
+from itertools import islice
 import sys
 
 from portfolio import data
 from portfolio.views import html_view as _html_view
 from portfolio.utils import calc_age
+from portfolio.wordpress import load_posts
 
 
 production = "--production" in sys.argv
@@ -17,7 +19,8 @@ def main() -> int:
         html_view("index.html")(lambda: {
             "age": calc_age(),
             "skills": data.load_skills(),
-            "links": data.load_links()
+            "links": data.load_links(),
+            "posts": islice(load_posts("https://blog.ymyzk.com/wp-json/"), 5)
         }),
         html_view("projects.html")(lambda: {"projects": data.load_projects()}),
         html_view("talks.html")(lambda: {"talks": data.load_talks()}),

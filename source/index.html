@@ -38,6 +38,19 @@
     </section>
   </section>
   <section class="row">
+    <section class="col-sm-4">
+      <h2>Recent Posts</h2>
+      <ul>
+        {% for post in posts %}
+        <li>
+          <a href="{{ post.link }}">
+            {{ post.title.rendered }}
+          </a>
+          {# TODO: <time class="text-muted" datetime=""></time> #}
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
     <section class="col-sm-4" id="links">
       <h2>Links</h2>
       <ul>
