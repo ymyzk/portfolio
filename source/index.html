@@ -21,7 +21,7 @@
       <h3>Affiliation</h3>
       <dl>
         <dt>University</dt>
-        <dd><a href="http://www.fos.kuis.kyoto-u.ac.jp/">Faculty of Engineering, Kyoto University</a></dd>
+        <dd><a href="http://www.fos.kuis.kyoto-u.ac.jp/">Graduate School of Informatics, Kyoto University</a></dd>
         <dt>Company</dt>
         <dd><a href="http://www.unimap.co.jp/">President & Co-founder, Unimap, Inc.</a></dd>
         <dt>Community</dt>
@@ -50,6 +50,25 @@
         </li>
         {% endfor %}
       </ul>
+      <p class="text-right">
+        <a href="https://blog.ymyzk.com">More Posts</a>
+      </p>
+    </section>
+    <section class="col-sm-4">
+      <h2>Recent Talks</h2>
+      <ul>
+
+        {% for talk in talks %}
+        <li class="talk">
+          <a href="{{ talk.link }}">{{ talk.title }}</a>
+          &mdash; {{ talk.event }}
+          <time class="text-muted" datetime="{{ talk.date }}">{{ talk.date }}</time>
+        </li>
+        {% endfor %}
+      </ul>
+      <p class="text-right">
+        <a href="/talks.html">More Talks</a>
+      </p>
     </section>
     <section class="col-sm-4" id="links">
       <h2>Links</h2>
