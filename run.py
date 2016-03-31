@@ -20,7 +20,8 @@ def main() -> int:
             "age": calc_age(),
             "skills": data.load_skills(),
             "links": data.load_links(),
-            "posts": islice(load_posts("https://blog.ymyzk.com/wp-json/"), 5)
+            "posts": islice(load_posts("https://blog.ymyzk.com/wp-json/"), 5),
+            "talks": data.load_talks()[:3]
         }),
         html_view("projects.html")(lambda: {"projects": data.load_projects()}),
         html_view("talks.html")(lambda: {"talks": data.load_talks()}),
