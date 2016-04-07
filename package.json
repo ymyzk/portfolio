@@ -18,7 +18,7 @@
   "homepage": "https://github.com/ymyzk/portfolio",
   "dependencies": {
     "bootstrap-sass": "3.3.6",
-    "jquery": "~2.2.2"
+    "jquery": "~2.2.3"
   },
   "devDependencies": {
     "gulp": "~3.9.0",
@@ -27,6 +27,6 @@
     "gulp-eslint": "~2.0.0",
     "gulp-if": "~2.0.0",
     "gulp-sass": "~2.2.0",
-    "yargs": "~4.3.1"
+    "yargs": "~4.4.0"
   }
 }
