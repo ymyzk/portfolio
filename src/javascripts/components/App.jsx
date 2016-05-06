@@ -1,7 +1,7 @@
-import AppBar from "../../../node_modules/material-ui/lib/app-bar";
-import LeftNav from "../../../node_modules/material-ui/lib/left-nav";
-import MenuItem from "../../../node_modules/material-ui/lib/menus/menu-item";
-import ThemeManager from "../../../node_modules/material-ui/lib/styles/theme-manager";
+import AppBar from "material-ui/AppBar";
+import Drawer from "material-ui/Drawer";
+import MenuItem from "material-ui/MenuItem";
+import getMuiTheme from "material-ui/styles/getMuiTheme";
 import React from "react";
 import { Link } from "react-router";
 
@@ -24,7 +24,7 @@ class App extends React.Component {
   }
 
   getChildContext(){
-    return { muiTheme: ThemeManager.getMuiTheme(Theme) };
+    return { muiTheme: getMuiTheme(Theme) };
   }
 
   static get propTypes() {
@@ -38,14 +38,14 @@ class App extends React.Component {
       <div>
         <AppBar title="Yusuke Miyazaki"
                 onLeftIconButtonTouchTap={this.handleToggle} />
-        <LeftNav open={this.state.open}
+        <Drawer open={this.state.open}
                  docked={false}
                  onRequestChange={open => this.setState({open})}>
           <MenuItem onTouchTap={this.handleClose} containerElement={<Link to="/" />}>Home</MenuItem>
           <MenuItem onTouchTap={this.handleClose} containerElement={<Link to="/projects" />}>Projects</MenuItem>
           <MenuItem onTouchTap={this.handleClose} containerElement={<Link to="/talks" />}>Talks</MenuItem>
           <MenuItem onTouchTap={this.handleClose} containerElement={<Link to="/contributions" />}>Contributions</MenuItem>
-        </LeftNav>
+        </Drawer>
         {this.props.children}
       </div>
     );

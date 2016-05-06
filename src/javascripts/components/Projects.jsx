@@ -1,8 +1,5 @@
-import Card from "../../../node_modules/material-ui/lib/card/card";
-import CardActions from "../../../node_modules/material-ui/lib/card/card-actions";
-import CardText from "../../../node_modules/material-ui/lib/card/card-text";
-import CardTitle from "../../../node_modules/material-ui/lib/card/card-title";
-import FlatButton from "../../../node_modules/material-ui/lib/flat-button";
+import { Card, CardActions, CardText, CardTitle } from "material-ui/Card";
+import FlatButton from "material-ui/FlatButton";
 import React from "react";
 
 import { loadProjects } from "./../data";

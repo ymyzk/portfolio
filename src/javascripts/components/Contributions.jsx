@@ -1,5 +1,4 @@
-import List from "material-ui/lib/lists/list";
-import ListItem from "material-ui/lib/lists/list-item";
+import { List, ListItem } from "material-ui/List";
 import React from "react";
 
 import { loadContributions } from "../data";

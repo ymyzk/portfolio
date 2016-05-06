@@ -1,9 +1,6 @@
-import Card from "../../../node_modules/material-ui/lib/card/card";
-import CardActions from "../../../node_modules/material-ui/lib/card/card-actions";
-import CardTitle from "../../../node_modules/material-ui/lib/card/card-title";
-import List from "../../../node_modules/material-ui/lib/lists/list";
-import ListItem from "../../../node_modules/material-ui/lib/lists/list-item";
-import FlatButton from "../../../node_modules/material-ui/lib/flat-button";
+import { Card, CardActions, CardTitle } from "material-ui/Card";
+import { List, ListItem } from "material-ui/List";
+import FlatButton from "material-ui/FlatButton";
 import React from "react";
 
 import Links from "../../data/links";
