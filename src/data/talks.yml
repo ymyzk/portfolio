@@ -1,0 +1,79 @@
+- title: Python の型ヒントの FAQ
+  event: 漸進的型付けについて語る会
+  date: 2016-03-20
+  link: https://speakerdeck.com/ymyzk/faq-about-python-type-hints
+
+- title: Gradual Typing のいろいろな実装
+  event: 漸進的型付けについて語る会
+  date: 2016-03-20
+  link: https://speakerdeck.com/ymyzk/various-implementations-of-gradual-typing
+
+- title: Python チュートリアル
+  event: "PyLadies Kyoto Meetup #2"
+  date: 2016-02-27
+  link: http://pyladies-kyoto.connpass.com/event/26993/
+
+- title: iot.ymyzk.com の紹介
+  event: 第2回 CAMPHOR- x KMC 合同LT会
+  date: 2016-01-11
+  link: http://www.slideshare.net/yusukemiy/iotymyzkcom
+
+- title: Django から各種チャットツールに通知するライブラリを作った話
+  event: PyCon JP 2015
+  date: 2015-10-10
+  link: http://www.slideshare.net/yusukemiy/django-53764947
+
+- title: CAMPHOR- のご紹介
+  event: 町家交流会「町家BAR vol.26」
+  date: 2015-05-15
+  link: https://www.facebook.com/events/864525543585858/
+
+- title: iOS 開発のいま
+  event: ADF2015 LT会
+  date: 2015-03-28
+  link: http://www.slideshare.net/yusukemiy/ios-adf2015
+
+- title: iOS 開発のいま
+  event: CAMPHOR- x KMC 合同LT会
+  date: 2015-03-24
+  link: http://www.slideshare.net/yusukemiy/20150324-camphor-ltios
+
+- title: 京大マップのご紹介
+  event: 町家交流会「町家BAR vol.24」
+  date: 2015-01-16
+  link: https://www.facebook.com/events/455714917935343/
+
+- title: Swift の問題点
+  event: CAMPHOR- x KMC 合同LT会
+  date: 2014-10-25
+  link: http://www.slideshare.net/yusukemiy/20141025-camphor-ltswift
+
+- title: 最新の iOS に対応したアプリの開発
+  event: CAMPHOR- x KMC 合同LT会
+  date: 2014-10-25
+  link: http://www.slideshare.net/yusukemiy/20141025-camphor-ios
+
+- title: コンピューターネットワーク入門
+  event: CAMPHOR- 土曜講座
+  date: 2014-10-11
+  link: http://www.slideshare.net/yusukemiy/ss-40165347
+
+- title: WWDC14 レポート + α
+  event: CAMPHOR- 土曜講座
+  date: 2014-06-28
+  link: https://atnd.org/events/52473
+
+- title: Python プログラミング入門
+  event: CAMPHOR-
+  date: 2014-04-20
+  link: https://atnd.org/events/49435
+
+- title: サーバー構築入門
+  event: CAMPHOR- 土曜講座
+  date: 2014-03-22
+  link: https://atnd.org/events/48404
+
+- title: HTML初心者講座
+  event: CAMPHOR- 土曜講座
+  date: 2013-11-15
+  link: http://www.slideshare.net/yusukemiy/html4beginners

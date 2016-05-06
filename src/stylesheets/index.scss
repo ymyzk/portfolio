@@ -1,0 +1,95 @@
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+
+$container-sm: 750px;
+$container-md: 970px;
+$container-lg: 1170px;
+
+$gutter: 30px;
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight:300;
+}
+
+.container {
+  margin: 20px auto;
+  padding-left: $gutter / 2;;
+  padding-right: $gutter / 2;;
+}
+
+@media (min-width: $screen-sm-min) {
+  .container {
+    width: $container-sm;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .container {
+    width: $container-md;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .container {
+    width: $container-lg;
+  }
+}
+
+.grid {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+
+  // gutter
+  box-sizing: border-box;
+  margin-left: -$gutter / 2;
+  margin-right: -$gutter / 2;
+}
+
+.project {
+  margin-bottom: 20px;
+}
+
+.cell {
+  box-sizing: border-box;
+  padding-bottom: 20px;
+  padding-left: $gutter / 2;
+  padding-right: $gutter / 2;
+  width: 100%;
+}
+
+@media (min-width: $screen-sm-min) {
+  @for $i from 1 through 12 {
+	.cell-sm-#{$i} {
+      width: $i / 12 * 100%;
+	}
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  @for $i from 1 through 12 {
+	.cell-md-#{$i} {
+      width: $i / 12 * 100%;
+	}
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  @for $i from 1 through 12 {
+	.cell-lg-#{$i} {
+      width: $i / 12 * 100%;
+	}
+  }
+}

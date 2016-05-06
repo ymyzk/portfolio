@@ -1,0 +1,118 @@
+- title: 京大マップ
+  link: http://www.kyodaimap.net/
+  start: 2012-10-01
+  end: null
+  tags: [Django, iOS, Python, Web]
+  description: 京都大学内の情報共有地図アプリ。大学内の地図情報・イベント情報共有機能など。
+
+- title: 鶉野マップ
+  link: https://geo.itunes.apple.com/jp/app/chun-yemappu/id655525538?mt=8
+  start: 2013-06-04
+  end: null
+  tags: [iOS]
+  description: 全国でも珍しい戦争遺跡群が残る、兵庫県加西市鶉野(うずらの)飛行場跡の地図・ナビアプリ。
+
+- title: django-channels
+  link: https://github.com/ymyzk/django-channels
+  start: 2015-05-03
+  end: null
+  tags: [Library, Python]
+  description: Django アプリケーションから簡単に Slack や HipChat に通知を送ることができるライブラリ。
+
+- title: python-gyazo
+  link: https://github.com/ymyzk/python-gyazo
+  start: 2014-07-25
+  end: null
+  tags: [Library, Python]
+  description: Python から Gyazo API を利用するためのラッパーとユーティリティー。
+
+- title: CAMPHOR- Website
+  link: https://camph.net
+  start: 2014-10-16
+  end: null
+  tags: [Django, Python, HTML, CSS, JavaScript, Web]
+  description: CAMPHOR- の Web サイト。デザイン以外の実装や運用全般を担当。
+
+- title: IPSJ77Now⤴︎⤴︎
+  link: http://ipsj.camph.net
+  start: 2015-01-18
+  end: 2015-03-20
+  tags: [Node.js, HTML, CSS, JavaScript, Web]
+  description: 情報処理学会第77回全国大会のために作成したサービス。主にフロントエンドとインフラ周りを担当。
+
+- title: bottle-yotoslack
+  link: https://github.com/ymyzk/bottle-yotoslack
+  start: 2015-05-04
+  end: null
+  tags: [Bottle, Python, Web]
+  description: Yo を受け取った際に、Slack に通知を送信するシンプルな Web アプリケーション。
+
+- title: schedule_command
+  link: https://camph.net/schedule/
+  start: 2015-04-03
+  end: null
+  tags: [Ruby]
+  description: CAMPHOR- のスケジュール管理を行う Ruby スクリプト。iCal・JSON 形式で API を提供し様々な場所で運用中。
+
+- title: YMNetworkActivityManager
+  link: https://github.com/ymyzk/YMNetworkActivityManager
+  start: 2013-09-20
+  end: null
+  tags: [iOS, Library]
+  description: YMNetworkActivityManager。iOS のステータスバーの network activity indicator を管理するためのシンプルなライブラリ。
+
+- title: itcdownloader
+  link: https://github.com/ymyzk/itcdownloader
+  start: 2013-07-21
+  end: null
+  tags: [Bash, Utility]
+  description: iTunes Connect からレポートファイルを自動的にダウンロードするためのユーティリテイー。
+
+- title: fj
+  link: https://github.com/ymyzk/fj
+  start: 2015-06-29
+  end: null
+  tags: [Java, OCaml]
+  description: OCaml で実装された Featherweight Java の型検査器。
+
+- title: sasm
+  link: https://github.com/ymyzk/sasm
+  start: 2014-05-02
+  end: 2014-05-26
+  tags: [Python]
+  description: Python で実装されたシンプルで拡張しやすいアセンブラー。
+
+- title: sasmweb
+  link: https://sasm.herokuapp.com/
+  start: 2014-05-23
+  end: null
+  tags: [Python, Web]
+  description: sasm をブラウザから簡単に利用できるようにした Web アプリケーション。
+
+- title: YMCalendarActivity
+  link: http://ymyzk.github.io/YMCalendarActivity/
+  start: 2013-07-04
+  end: null
+  tags: [iOS, Library]
+  description: カレンダーにイベントを追加する機能を追加する UIActivity。
+
+- title: iOS Compatibility Chart
+  link: http://ioschart.herokuapp.com/
+  start: 2013-06-30
+  end: 2013-12-31
+  tags: [Python, Web]
+  description: iOS の各バージョンとそのバージョンに対応した iOS デバイスが簡単に分かるサービス。
+
+- title: RTConnect
+  link: http://cran.r-project.org/web/packages/RTConnect/index.html
+  start: 2013-06-11
+  end: 2014-09-20
+  tags: [Library, R]
+  description: iTunes Connect のレポートファイルを R で解析するためのライブラリ。
+
+- title: yo.zsh
+  link: https://github.com/ymyzk/yo.zsh
+  start: 2015-01-31
+  end: null
+  tags: [Zsh]
+  description: コマンドラインから Yo を送るためのシェルスクリプト。補完機能も実装。
