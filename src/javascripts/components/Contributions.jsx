@@ -1,8 +1,8 @@
-import List from 'material-ui/lib/lists/list';
-import ListItem from 'material-ui/lib/lists/list-item';
-import React from 'react';
+import List from "material-ui/lib/lists/list";
+import ListItem from "material-ui/lib/lists/list-item";
+import React from "react";
 
-import { loadContributions } from '../data';
+import { loadContributions } from "../data";
 
 class Contributions extends React.Component {
   render() {
@@ -25,6 +25,12 @@ class Contributions extends React.Component {
 }
 
 class ContributionListItem extends React.Component {
+  static get propTypes() {
+    return {
+      contribution: React.PropTypes.string.isRequired
+    };
+  }
+
   render() {
     const contribution = this.props.contribution;
     const roles = contribution.roles.reduce((pre, cur) => `${pre}・${cur}`);

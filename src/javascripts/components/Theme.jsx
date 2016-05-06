@@ -1,6 +1,6 @@
-import Colors from '../../../node_modules/material-ui/lib/styles/colors';
-import Spacing from '../../../node_modules/material-ui/lib/styles/spacing';
-import zIndex from '../../../node_modules/material-ui/lib/styles/zIndex';
+import Colors from "../../../node_modules/material-ui/lib/styles/colors";
+import Spacing from "../../../node_modules/material-ui/lib/styles/spacing";
+import zIndex from "../../../node_modules/material-ui/lib/styles/zIndex";
 
 export default {
   spacing: Spacing,
@@ -17,7 +17,7 @@ export default {
     textColor: Colors.gray900,
     alternateTextColor: Colors.gray600,
     // canvasColor: "#303030",
-    borderColor: Colors.grey500,
+    borderColor: Colors.grey500
     // disabledColor: ColorManipulator.fade(Colors.darkBlack, 0.3),
     // pickerHeaderColor: Colors.cyan500
   }

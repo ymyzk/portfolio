@@ -1,12 +1,11 @@
-import Card from '../../../node_modules/material-ui/lib/card/card';
-import CardActions from '../../../node_modules/material-ui/lib/card/card-actions';
-import CardText from '../../../node_modules/material-ui/lib/card/card-text';
-import CardTitle from '../../../node_modules/material-ui/lib/card/card-title';
-import FlatButton from '../../../node_modules/material-ui/lib/flat-button';
-import React from 'react';
-import { Link } from 'react-router';
+import Card from "../../../node_modules/material-ui/lib/card/card";
+import CardActions from "../../../node_modules/material-ui/lib/card/card-actions";
+import CardText from "../../../node_modules/material-ui/lib/card/card-text";
+import CardTitle from "../../../node_modules/material-ui/lib/card/card-title";
+import FlatButton from "../../../node_modules/material-ui/lib/flat-button";
+import React from "react";
 
-import { loadProjects } from './../data';
+import { loadProjects } from "./../data";
 
 class Projects extends React.Component {
   render() {
@@ -29,6 +28,12 @@ class Projects extends React.Component {
 }
 
 class ProjectCard extends React.Component {
+  static get propTypes() {
+    return {
+      project: React.PropTypes.object.isRequired
+    };
+  }
+
   render() {
     const project = this.props.project;
     const tags = [project.duration].concat(project.tags).reduce((l, r) => `${l}・${r}`);

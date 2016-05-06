@@ -1,14 +1,13 @@
-import Card from '../../../node_modules/material-ui/lib/card/card';
-import CardActions from '../../../node_modules/material-ui/lib/card/card-actions';
-import CardTitle from '../../../node_modules/material-ui/lib/card/card-title';
-import List from '../../../node_modules/material-ui/lib/lists/list';
-import ListItem from '../../../node_modules/material-ui/lib/lists/list-item';
-import FlatButton from '../../../node_modules/material-ui/lib/flat-button';
-import React from 'react';
-import { Link } from 'react-router';
+import Card from "../../../node_modules/material-ui/lib/card/card";
+import CardActions from "../../../node_modules/material-ui/lib/card/card-actions";
+import CardTitle from "../../../node_modules/material-ui/lib/card/card-title";
+import List from "../../../node_modules/material-ui/lib/lists/list";
+import ListItem from "../../../node_modules/material-ui/lib/lists/list-item";
+import FlatButton from "../../../node_modules/material-ui/lib/flat-button";
+import React from "react";
 
-import Links from '../../data/links';
-import Skills from '../../data/skills';
+import Links from "../../data/links";
+import Skills from "../../data/skills";
 
 class Home extends React.Component {
   render() {
@@ -36,7 +35,7 @@ class Home extends React.Component {
 class AboutCard extends React.Component {
   render() {
     return (
-      <Card className="">
+      <Card>
         <CardTitle title="Profile"/>
         <List>
           <ListItem primaryText={"Name"}
@@ -76,6 +75,12 @@ class AffiliationCard extends React.Component {
 }
 
 class SkillsCard extends React.Component {
+  static get propTypes() {
+    return {
+      skills: React.PropTypes.arrayOf(React.PropTypes.object.isRequired).isRequired
+    };
+  }
+
   render() {
     return (
       <Card>
@@ -89,6 +94,12 @@ class SkillsCard extends React.Component {
 }
 
 class LinksCard extends React.Component {
+  static get propTypes() {
+    return {
+      links: React.PropTypes.arrayOf(React.PropTypes.object.isRequired).isRequired
+    };
+  }
+
   render() {
     return (
       <Card>

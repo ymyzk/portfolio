@@ -1,11 +1,11 @@
-import AppBar from '../../../node_modules/material-ui/lib/app-bar';
-import LeftNav from '../../../node_modules/material-ui/lib/left-nav';
-import MenuItem from '../../../node_modules/material-ui/lib/menus/menu-item';
-import ThemeManager from '../../../node_modules/material-ui/lib/styles/theme-manager';
-import React from 'react';
-import { Link } from 'react-router';
+import AppBar from "../../../node_modules/material-ui/lib/app-bar";
+import LeftNav from "../../../node_modules/material-ui/lib/left-nav";
+import MenuItem from "../../../node_modules/material-ui/lib/menus/menu-item";
+import ThemeManager from "../../../node_modules/material-ui/lib/styles/theme-manager";
+import React from "react";
+import { Link } from "react-router";
 
-import Theme from './Theme';
+import Theme from "./Theme";
 
 require("../../stylesheets/index");
 
@@ -20,11 +20,17 @@ class App extends React.Component {
   }
 
   static get childContextTypes() {
-      return { muiTheme: React.PropTypes.object };
+    return { muiTheme: React.PropTypes.object };
   }
 
   getChildContext(){
     return { muiTheme: ThemeManager.getMuiTheme(Theme) };
+  }
+
+  static get propTypes() {
+    return {
+      children: React.PropTypes.node.isRequired
+    };
   }
 
   render() {

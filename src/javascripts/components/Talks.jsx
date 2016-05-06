@@ -1,8 +1,8 @@
-import List from 'material-ui/lib/lists/list';
-import ListItem from 'material-ui/lib/lists/list-item';
-import React from 'react';
+import List from "material-ui/lib/lists/list";
+import ListItem from "material-ui/lib/lists/list-item";
+import React from "react";
 
-import { loadTalks } from '../data';
+import { loadTalks } from "../data";
 
 class Talks extends React.Component {
   render() {
@@ -25,6 +25,12 @@ class Talks extends React.Component {
 }
 
 class TalkListItem extends React.Component {
+  static get propTypes() {
+    return {
+      talk: React.PropTypes.object.isRequired
+    };
+  }
+
   render() {
     const talk = this.props.talk;
     const date = `${talk.date.getFullYear()}-${talk.date.getMonth() + 1}-${talk.date.getDate()}`;

@@ -1,6 +1,6 @@
-import ContributionsList from '../data/contributions';
-import ProjectsList from '../data/projects';
-import TalksList from '../data/talks';
+import ContributionsList from "../data/contributions";
+import ProjectsList from "../data/projects";
+import TalksList from "../data/talks";
 
 const contributions = (() => {
   ContributionsList.sort();
