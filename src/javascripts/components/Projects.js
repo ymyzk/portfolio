@@ -13,7 +13,7 @@ class Projects extends React.Component {
         <div className="grid">
           {
             ProjectsList.map((p) => (
-              <div className="cell cell-sm-6 cell-md-4" key={p.title}>
+              <div className="cell-sm-6 cell-md-4" key={p.title}>
                 <ProjectCard project={p} />
               </div>
             ))

@@ -10,7 +10,7 @@ class Talks extends React.Component {
       <div className="container">
         <h2>Talks</h2>
         <div className="grid">
-          <div className="cell cell-sm-12">
+          <div className="cell-xs-without-gutter cell-sm-12">
             <List>
               {
                 talks.map((t) => (<TalkListItem talk={t} key={t.title + t.event} />))

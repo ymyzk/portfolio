@@ -11,16 +11,16 @@ class Home extends React.Component {
     return (
       <div className="container">
         <div className="grid">
-          <div className="cell cell-sm-6 cell-md-4">
+          <div className="cell-sm-6 cell-md-4">
             <AboutCard />
           </div>
-          <div className="cell cell-sm-6 cell-md-4">
+          <div className="cell-sm-6 cell-md-4">
             <AffiliationCard />
           </div>
-          <div className="cell cell-sm-6 cell-md-4">
+          <div className="cell-sm-6 cell-md-4">
             <SkillsCard skills={Skills} />
           </div>
-          <div className="cell cell-sm-6 cell-md-4">
+          <div className="cell-sm-6 cell-md-4">
             <LinksCard links={Links} />
           </div>
         </div>
@@ -81,9 +81,13 @@ class SkillsCard extends React.Component {
   render() {
     return (
       <Card>
-        <CardTitle title="Skills"/>
+        <CardTitle title="Skills" />
         <CardActions>
-          {this.props.skills.map((s) => (<FlatButton key={s} label={s} style={{textTransform: "none", minWidth: 20}} />))}
+          {
+            this.props.skills.map((s) => (
+              <FlatButton key={s} label={s} style={{textTransform: "lowercase", minWidth: 20}} />
+            ))
+          }
         </CardActions>
       </Card>
     );

@@ -10,7 +10,7 @@ class News extends React.Component {
       <div className="container">
         <h2>News</h2>
         <div className="grid">
-          <div className="cell cell-sm-12">
+          <div className="cell-xs-without-gutter cell-sm-12">
             <List>
               {
                 news.map((n) => (<NewsListItem news={n} key={n.title} />))

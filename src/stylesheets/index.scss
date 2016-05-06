@@ -52,22 +52,23 @@ h2 {
   flex-flow: row;
   flex-wrap: wrap;
 
-  // gutter
   box-sizing: border-box;
   margin-left: -$gutter / 2;
   margin-right: -$gutter / 2;
 }
 
-.project {
-  margin-bottom: 20px;
-}
-
-.cell {
+[class^="cell-"],
+[class*=" cell-"] {
   box-sizing: border-box;
   padding-bottom: 20px;
   padding-left: $gutter / 2;
   padding-right: $gutter / 2;
   width: 100%;
+
+  &.cell-xs-without-gutter {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 @media (min-width: $screen-sm-min) {

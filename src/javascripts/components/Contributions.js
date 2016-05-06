@@ -10,7 +10,7 @@ class Contributions extends React.Component {
       <div className="container">
         <h2>Contributions</h2>
         <div className="grid">
-          <div className="cell cell-sm-12">
+          <div className="cell-xs-without-gutter cell-sm-12">
             <List>
               {
                 contributions.map((c) => (<ContributionListItem contribution={c} key={c.name} />))
