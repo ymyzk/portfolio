@@ -28,6 +28,14 @@ const config = {
     filename: 'bundle.js'
   },
   module: {
+    preLoaders: [
+      {
+        test: /\.(js|jsx)$/,
+        loader: 'eslint-loader',
+        include: [path.resolve(__dirname, "src/javascripts")],
+        exclude: [nodeModulesPath]
+      }
+    ],
     loaders: [
       {
         test: /\.scss$/,
