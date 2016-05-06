@@ -45,6 +45,7 @@ class App extends React.Component {
           <MenuItem onTouchTap={this.handleClose} containerElement={<Link to="/projects" />}>Projects</MenuItem>
           <MenuItem onTouchTap={this.handleClose} containerElement={<Link to="/talks" />}>Talks</MenuItem>
           <MenuItem onTouchTap={this.handleClose} containerElement={<Link to="/contributions" />}>Contributions</MenuItem>
+          <MenuItem onTouchTap={this.handleClose} containerElement={<Link to="/news" />}>News</MenuItem>
         </Drawer>
         {this.props.children}
       </div>

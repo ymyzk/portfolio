@@ -7,6 +7,7 @@ import { Router, Route, browserHistory, IndexRoute } from "react-router";
 import App from "./components/App";
 import Home from "./components/Home";
 import Contributions from "./components/Contributions";
+import News from "./components/News";
 import Projects from "./components/Projects";
 import Talks from "./components/Talks";
 
@@ -23,6 +24,7 @@ render((
       <Route path="projects" component={Projects} />
       <Route path="talks" component={Talks} />
       <Route path="contributions" component={Contributions} />
+      <Route path="news" component={News} />
     </Route>
   </Router>
 ), document.getElementById("app"));

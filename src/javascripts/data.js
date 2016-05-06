@@ -1,4 +1,5 @@
 import ContributionsList from "../data/contributions";
+import NewsList from "../data/news";
 import ProjectsList from "../data/projects";
 import TalksList from "../data/talks";
 
@@ -6,6 +7,11 @@ const contributions = (() => {
   ContributionsList.sort();
   return ContributionsList;
 })();
+
+const news = NewsList.map((n) => {
+  n.date = new Date(n.date);
+  return n;
+});
 
 const projects = ProjectsList.map((p) => {
   if (p.start !== null) {
@@ -41,6 +47,10 @@ function loadContributions() {
   return contributions;
 }
 
+function loadNews() {
+  return news;
+}
+
 function loadProjects() {
   return projects;
 }
@@ -49,4 +59,4 @@ function loadTalks () {
   return talks;
 }
 
-export { loadContributions, loadProjects, loadTalks };
+export { loadContributions, loadNews, loadProjects, loadTalks };
