@@ -8,7 +8,7 @@ const config = {
   entry: [
     'webpack/hot/dev-server',
     'webpack/hot/only-dev-server',
-    path.join(__dirname, '/src/javascripts/entry.jsx')
+    path.join(__dirname, '/src/javascripts/entry.js')
   ],
   resolve: {
     extensions: ["", ".js", ".jsx", ".scss", ".yml"]
