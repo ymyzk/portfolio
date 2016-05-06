@@ -5,7 +5,7 @@ import ThemeManager from '../../../node_modules/material-ui/lib/styles/theme-man
 import React from 'react';
 import { Link } from 'react-router';
 
-import MyRawTheme from './Theme';
+import Theme from './Theme';
 
 require("../../stylesheets/index");
 
@@ -24,7 +24,7 @@ class App extends React.Component {
   }
 
   getChildContext(){
-    return { muiTheme: ThemeManager.getMuiTheme(MyRawTheme) };
+    return { muiTheme: ThemeManager.getMuiTheme(Theme) };
   }
 
   render() {
