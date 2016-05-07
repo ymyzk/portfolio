@@ -1,5 +1,7 @@
 const webpack = require("webpack");
 const path = require("path");
+const autoprefixer = require("autoprefixer");
+
 const buildPath = path.resolve(__dirname, "build");
 const nodeModulesPath = path.resolve(__dirname, "node_modules");
 const TransferWebpackPlugin = require("transfer-webpack-plugin");
@@ -45,7 +47,7 @@ const config = {
     loaders: [
       {
         test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
+        loaders: ["style", "css", "postcss", "sass"]
       },
       {
         test: /\.(js|jsx)$/,
@@ -93,6 +95,22 @@ const config = {
         { from: "src/www" }
       ])
     ],
+  postcss: function () {
+    return {
+      defaults: [autoprefixer],
+      cleaner:  [autoprefixer({ browsers: [
+        "Last 2 versions",
+        "Android 2.3",
+        "Android >= 4",
+        "Chrome >= 20",
+        "Firefox >= 24",
+        "Explorer >= 8",
+        "iOS >= 6",
+        "Opera >= 12",
+        "Safari >= 6"
+      ] })]
+    };
+  },
   sassLoader: {
     precision: 8
   }
