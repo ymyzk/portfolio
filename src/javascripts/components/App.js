@@ -3,6 +3,7 @@ import Drawer from "material-ui/Drawer";
 import MenuItem from "material-ui/MenuItem";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
 import React from "react";
+import Helmet from "react-helmet";
 import { Link } from "react-router";
 
 import Theme from "./Theme";
@@ -36,6 +37,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <Helmet titleTemplate="%s - Yusuke Miyazaki"
+                defaultTitle="Yusuke Miyazaki" />
         <AppBar title="Yusuke Miyazaki"
                 onLeftIconButtonTouchTap={this.handleToggle} />
         <Drawer open={this.state.open}

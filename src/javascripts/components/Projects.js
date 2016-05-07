@@ -1,15 +1,18 @@
 import { Card, CardActions, CardText, CardTitle } from "material-ui/Card";
 import FlatButton from "material-ui/FlatButton";
 import React from "react";
+import Helmet from "react-helmet";
 
 import { loadProjects } from "./../data";
 
 class Projects extends React.Component {
   render() {
+    const title = "Projects";
     const ProjectsList = loadProjects();
     return (
       <div className="container">
-        <h2>Projects</h2>
+        <Helmet title={title} />
+        <h2>{title}</h2>
         <div className="grid">
           {
             ProjectsList.map((p) => (

@@ -1,14 +1,17 @@
 import { List, ListItem } from "material-ui/List";
 import React from "react";
+import Helmet from "react-helmet";
 
 import { loadNews } from "../data";
 
 class News extends React.Component {
   render() {
+    const title = "News";
     const news = loadNews();
     return (
       <div className="container">
-        <h2>News</h2>
+        <Helmet title={title} />
+        <h2>{title}</h2>
         <div className="grid">
           <div className="cell-xs-without-gutter cell-sm-12">
             <List>
