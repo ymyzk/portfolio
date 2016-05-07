@@ -67,6 +67,9 @@ const config = {
   },
   plugins:
     DEBUG ? [
+      new webpack.DefinePlugin({
+        __DEBUG__: true
+      }),
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NoErrorsPlugin(),
       new TransferWebpackPlugin([
@@ -74,6 +77,7 @@ const config = {
       ])
     ] : [
       new webpack.DefinePlugin({
+        __DEBUG__: false,
         "process.env": {
           "NODE_ENV": JSON.stringify("production")
         }
