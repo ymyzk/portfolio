@@ -8,8 +8,8 @@
   },
   "author": "Yusuke Miyazaki",
   "scripts": {
-    "start": "webpack-dev-server --config webpack-dev-server.config.js --progress --inline --colors",
-    "build": "webpack --config webpack-production.config.js --progress --colors"
+    "start": "webpack-dev-server --progress --inline --colors",
+    "build": "webpack --production --progress --colors"
   },
   "license": "LicenseRef-LICENSE",
   "private": true,

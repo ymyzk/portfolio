@@ -4,12 +4,17 @@ const buildPath = path.resolve(__dirname, "build");
 const nodeModulesPath = path.resolve(__dirname, "node_modules");
 const TransferWebpackPlugin = require("transfer-webpack-plugin");
 
+const DEBUG = !process.argv.includes('--production');
+
 const config = {
-  entry: [
-    "webpack/hot/dev-server",
-    "webpack/hot/only-dev-server",
-    path.join(__dirname, "/src/javascripts/entry.js")
-  ],
+  entry:
+    DEBUG ? [
+      "webpack/hot/dev-server",
+      "webpack/hot/only-dev-server",
+      path.join(__dirname, "/src/javascripts/entry.js")
+    ] : [
+      path.join(__dirname, "/src/javascripts/entry.js")
+    ],
   resolve: {
     extensions: ["", ".js", ".jsx", ".scss", ".yml"]
   },
@@ -19,12 +24,13 @@ const config = {
     hot: true,
     inline: true,
     port: 3000,
-    // router 用
+    // react-router 用
     historyApiFallback: true
   },
-  devtool: "eval",
+  devtool: DEBUG ? "eval" : "source-map",
   output: {
     path: buildPath,
+    publicPath: DEBUG ? "/" : "https://www.ymyzk.com/",
     filename: "bundle.js"
   },
   module: {
@@ -59,13 +65,30 @@ const config = {
       }
     ]
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
-    new TransferWebpackPlugin([
-      { from: "src/www" }
-    ])
-  ],
+  plugins:
+    DEBUG ? [
+      new webpack.HotModuleReplacementPlugin(),
+      new webpack.NoErrorsPlugin(),
+      new TransferWebpackPlugin([
+        { from: "src/www" }
+      ])
+    ] : [
+      new webpack.DefinePlugin({
+        "process.env": {
+          "NODE_ENV": JSON.stringify("production")
+        }
+      }),
+      new webpack.optimize.OccurrenceOrderPlugin(),
+      new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false
+        }
+      }),
+      new webpack.NoErrorsPlugin(),
+      new TransferWebpackPlugin([
+        { from: "src/www" }
+      ])
+    ],
   sassLoader: {
     precision: 8
   }
