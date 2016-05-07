@@ -49,6 +49,13 @@ const config = {
       {
         test: /\.yml$/,
         loaders: ["json", "yaml"]
+      },
+      {
+        test: /\.(png|jpg)$/,
+        loader: "url-loader",
+        query: {
+          limit: 8192
+        }
       }
     ]
   },

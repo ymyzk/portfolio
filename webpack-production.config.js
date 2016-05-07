@@ -14,6 +14,7 @@ const config = {
   devtool: "source-map",
   output: {
     path: buildPath,
+    publicPath: "https://www.ymyzk.com/",
     filename: "bundle.js"
   },
   module: {
@@ -38,6 +39,13 @@ const config = {
       {
         test: /\.yml$/,
         loaders: ["json", "yaml"]
+      },
+      {
+        test: /\.(png|jpg)$/,
+        loader: "url-loader",
+        query: {
+          limit: 8192
+        }
       }
     ]
   },
