@@ -33,7 +33,7 @@ class AboutCard extends React.Component {
   render() {
     return (
       <Card>
-        <CardTitle title="Profile"/>
+        <CardTitle title="Profile" />
         <List>
           <ListItem primaryText={"Name"}
                     secondaryText={"Yusuke Miyazaki (宮崎 勇輔)"}
@@ -52,13 +52,13 @@ class AboutCard extends React.Component {
 class AffiliationCard extends React.Component {
   render() {
     return (
-      <Card className="">
+      <Card>
         <CardTitle title="Affiliation" />
         <List>
           <ListItem primaryText={"University"}
                     secondaryText={"Graduate School of Informatics, Kyoto University"}
                     secondaryTextLines={2}
-                    href={"http://www.fos.kuis.kyoto-u.ac.jp/"} />
+                    href={"http://www.fos.kuis.kyoto-u.ac.jp/~miyazaki/"} />
           <ListItem primaryText={"Company"}
                     secondaryText={"President & Co-founder, Unimap, Inc."}
                     href={"http://www.unimap.co.jp/"} />
@@ -74,7 +74,7 @@ class AffiliationCard extends React.Component {
 class SkillsCard extends React.Component {
   static get propTypes() {
     return {
-      skills: React.PropTypes.arrayOf(React.PropTypes.object.isRequired).isRequired
+      skills: React.PropTypes.arrayOf(React.PropTypes.string.isRequired).isRequired
     };
   }
 
@@ -104,7 +104,7 @@ class LinksCard extends React.Component {
   render() {
     return (
       <Card>
-        <CardTitle title="Links"/>
+        <CardTitle title="Links" />
         <List>
           {
             this.props.links.map((l) => (
