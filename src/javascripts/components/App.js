@@ -7,6 +7,7 @@ import Helmet from "react-helmet";
 import { Link } from "react-router";
 
 import Theme from "./Theme";
+import OgpImage from "../../images/ogp.png";
 
 require("../../stylesheets/index");
 
@@ -35,10 +36,29 @@ class App extends React.Component {
   }
 
   render() {
+    const title = "Yusuke Miyazaki";
+    const description = "Yusuke Miyazaki's portfolio website.";
     return (
       <div>
-        <Helmet titleTemplate="%s - Yusuke Miyazaki"
-                defaultTitle="Yusuke Miyazaki" />
+        <Helmet htmlAttributes={{prefix: "og: http://ogp.me/ns# profile: http://ogp.me/ns/profile#"}}
+                titleTemplate={`%s - ${title}`}
+                defaultTitle={title}
+                meta={[
+                  {name: "description", content: description},
+                  {property: "og:type", content: "profile"},
+                  {property: "og:title", content: title},
+                  {property: "og:url", content: "https://www.ymyzk.com"},
+                  {property: "og:image", content: OgpImage},
+                  {property: "og:locale", content: "ja_JP"},
+                  {property: "og:locale:alternate", content: "en_US"},
+                  {property: "og:site_name", content: title},
+                  {property: "og:description", content: description},
+                  {property: "profile:first_name", content: "Yusuke"},
+                  {property: "profile:last_name", content: "Miyazaki"},
+                  {property: "profile:username", content: "ymyzk"},
+                  // TODO: Update color
+                  {name: "theme-color", content: "#222"}
+                ]} />
         <AppBar title="Yusuke Miyazaki"
                 onLeftIconButtonTouchTap={this.handleToggle} />
         <Drawer open={this.state.open}
