@@ -10,6 +10,7 @@ import Contributions from "./components/Contributions";
 import News from "./components/News";
 import Projects from "./components/Projects";
 import Talks from "./components/Talks";
+import PageNotFound from "./components/PageNotFound";
 
 // Needed for onTouchTap
 // Can go away when react 1.0 release
@@ -41,6 +42,7 @@ render((
       <Route path="talks" component={Talks} />
       <Route path="contributions" component={Contributions} />
       <Route path="news" component={News} />
+      <Route path="*" component={PageNotFound} />
     </Route>
   </Router>
 ), document.getElementById("app"));
