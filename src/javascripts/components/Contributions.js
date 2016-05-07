@@ -29,7 +29,7 @@ class Contributions extends React.Component {
 class ContributionListItem extends React.Component {
   static get propTypes() {
     return {
-      contribution: React.PropTypes.string.isRequired
+      contribution: React.PropTypes.object.isRequired
     };
   }
 
