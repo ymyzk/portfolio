@@ -36,7 +36,7 @@ class AboutCard extends React.Component {
         <CardTitle title="Profile" />
         <List>
           <ListItem primaryText={"Name"}
-                    secondaryText={"Yusuke Miyazaki (宮崎 勇輔)"}
+                    secondaryText={"Yusuke Miyazaki (宮崎 勇輔) @ymyzk"}
                     disabled={true} />
           <ListItem primaryText={"Location"}
                     secondaryText={"Kyoto, Japan"}
@@ -85,7 +85,7 @@ class SkillsCard extends React.Component {
         <CardActions>
           {
             this.props.skills.map((s) => (
-              <FlatButton key={s} label={s} style={{textTransform: "lowercase", minWidth: 20}} />
+              <FlatButton key={s} label={s} style={{minWidth: 0}} />
             ))
           }
         </CardActions>
