@@ -2,17 +2,28 @@ const webpack = require("webpack");
 const path = require("path");
 const autoprefixer = require("autoprefixer");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const StaticSiteGeneratorPlugin = require("static-site-generator-webpack-plugin");
 const TransferWebpackPlugin = require("transfer-webpack-plugin");
 
-const buildPath = path.resolve(__dirname, "build");
+const DEBUG = !process.argv.includes("--production");
+const CLIENT = !process.argv.includes("--server");
+
+const buildPath = path.resolve(__dirname, "build/" + (CLIENT ? "client" : "server"));
 const nodeModulesPath = path.resolve(__dirname, "node_modules");
 
-const DEBUG = !process.argv.includes("--production");
+const paths = [
+  "/",
+  "/projects/",
+  "/talks/",
+  "/contributions/",
+  "/news/"
+  // TODO: 404 support
+];
 
 const config = {
   entry: [
-    ...(DEBUG ? ["webpack/hot/dev-server", "webpack/hot/only-dev-server"] : []),
-    path.join(__dirname, "/src/javascripts/entry.js")
+    ...(DEBUG && CLIENT ? ["webpack/hot/dev-server", "webpack/hot/only-dev-server"] : []),
+    ...(CLIENT ? [path.join(__dirname, "/src/javascripts/entry.js")] : [path.join(__dirname, "/src/javascripts/server.js")])
   ],
   resolve: {
     extensions: ["", ".js", ".jsx", ".scss", ".yml"]
@@ -30,8 +41,10 @@ const config = {
   output: {
     path: buildPath,
     publicPath: DEBUG ? "/" : "https://www.ymyzk.com/",
-    filename: "bundle.js"
+    filename: "bundle.js",
+    libraryTarget: CLIENT ? "var" : "commonjs2"
   },
+  externals: CLIENT ? false : /^[a-z\-0-9]+$/,
   module: {
     preLoaders: [
       {
@@ -66,21 +79,26 @@ const config = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      __DEBUG__: DEBUG
+      __DEBUG__: DEBUG,
+      __CLIENT__: CLIENT,
+      __SERVER__: !CLIENT
     }),
-    ...(DEBUG ? [
-      new webpack.HotModuleReplacementPlugin()
-    ] : [
+    ...(DEBUG && CLIENT ? [new webpack.HotModuleReplacementPlugin()] : []),
+    ...(!DEBUG ? [
       new webpack.optimize.OccurrenceOrderPlugin(),
       new webpack.optimize.UglifyJsPlugin({
         compress: {
           warnings: false
         }
       })
-    ]),
+    ] : []),
     new webpack.NoErrorsPlugin(),
-    new TransferWebpackPlugin([
-      { from: "src/www" }
+    ...(CLIENT ? [
+      new TransferWebpackPlugin([
+        { from: "src/www" }
+      ])
+    ] : [
+      new StaticSiteGeneratorPlugin("bundle.js", paths)
     ]),
     new ExtractTextPlugin("bundle.css")
   ],

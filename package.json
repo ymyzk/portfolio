@@ -9,7 +9,9 @@
   "author": "Yusuke Miyazaki",
   "scripts": {
     "start": "webpack-dev-server --progress --inline --colors",
-    "build": "webpack --production --progress --colors"
+    "build": "npm run build-client && npm run build-server",
+    "build-client": "webpack --production --progress --colors",
+    "build-server": "webpack --production --server --progress --colors && cp build/client/bundle.* build/server/"
   },
   "license": "LicenseRef-LICENSE",
   "private": true,
@@ -31,12 +33,14 @@
     "eslint-plugin-react": "~5.0.1",
     "extract-text-webpack-plugin": "~1.0.1",
     "file-loader": "~0.8.5",
+    "html-autoprefixer": "~0.3.8",
     "html-webpack-plugin": "~2.16.1",
     "json-loader": "^0.5.4",
     "node-sass": "~3.7.0",
     "postcss-loader": "~0.9.1",
     "react-hot-loader": "~1.3.0",
     "sass-loader": "~3.2.0",
+    "static-site-generator-webpack-plugin": "~2.0.1",
     "style-loader": "~0.13.1",
     "transfer-webpack-plugin": "~0.1.4",
     "url-loader": "~0.5.7",
