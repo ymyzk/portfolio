@@ -81,7 +81,10 @@ const config = {
     new webpack.DefinePlugin({
       __DEBUG__: DEBUG,
       __CLIENT__: CLIENT,
-      __SERVER__: !CLIENT
+      __SERVER__: !CLIENT,
+      "process.env": {
+        "NODE_ENV": DEBUG ? "" : "'production'"
+      }
     }),
     ...(DEBUG && CLIENT ? [new webpack.HotModuleReplacementPlugin()] : []),
     ...(!DEBUG ? [
