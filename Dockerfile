@@ -1,4 +1,4 @@
-FROM node:6
+FROM node:6-slim
 MAINTAINER Yusuke Miyazaki <miyazaki.dev@gmail.com>
 
 RUN mkdir -p /app/
