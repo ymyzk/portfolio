@@ -40,7 +40,6 @@ function render(locals, callback) {
   const location = locals.path;
   match({ routes, location }, (error, redirectLocation, renderProps) => {
     const page = renderToString(<RouterContext {...renderProps} />);
-    // TODO use correct autoprefixer options
     callback(null, htmlAutoprefixer.process(renderFullPage(page)));
   });
 }

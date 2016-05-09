@@ -12,10 +12,12 @@ import OgpImage from "../../images/ogp.png";
 
 require("../../stylesheets/index");
 
-const muiTheme = getMuiTheme(Theme, {
-  // TODO: Needs for server-side rendering
-  // userAgent: false
-});
+const muiThemeProductionOption = {
+  // We disable inline-style-prefixer, because it produces wrong styles!
+  // We apply autoprefixer after React rendering
+  userAgent: false
+};
+const muiTheme = getMuiTheme(Theme, __SERVER__ ? muiThemeProductionOption : {}); // eslint-disable-line no-undef
 
 class App extends React.Component {
   constructor(props, context) {

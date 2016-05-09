@@ -108,17 +108,7 @@ const config = {
   postcss: function () {
     return {
       defaults: [autoprefixer],
-      cleaner:  [autoprefixer({ browsers: [
-        "Last 2 versions",
-        "Android 2.3",
-        "Android >= 4",
-        "Chrome >= 20",
-        "Firefox >= 24",
-        "Explorer >= 8",
-        "iOS >= 6",
-        "Opera >= 12",
-        "Safari >= 6"
-      ] })]
+      cleaner:  [autoprefixer()]
     };
   },
   sassLoader: {
