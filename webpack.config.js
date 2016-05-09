@@ -10,14 +10,10 @@ const nodeModulesPath = path.resolve(__dirname, "node_modules");
 const DEBUG = !process.argv.includes("--production");
 
 const config = {
-  entry:
-    DEBUG ? [
-      "webpack/hot/dev-server",
-      "webpack/hot/only-dev-server",
-      path.join(__dirname, "/src/javascripts/entry.js")
-    ] : [
-      path.join(__dirname, "/src/javascripts/entry.js")
-    ],
+  entry: [
+    ...(DEBUG ? ["webpack/hot/dev-server", "webpack/hot/only-dev-server"] : []),
+    path.join(__dirname, "/src/javascripts/entry.js")
+  ],
   resolve: {
     extensions: ["", ".js", ".jsx", ".scss", ".yml"]
   },
@@ -68,36 +64,26 @@ const config = {
       }
     ]
   },
-  plugins:
-    DEBUG ? [
-      new webpack.DefinePlugin({
-        __DEBUG__: true
-      }),
-      new webpack.HotModuleReplacementPlugin(),
-      new webpack.NoErrorsPlugin(),
-      new TransferWebpackPlugin([
-        { from: "src/www" }
-      ]),
-      new ExtractTextPlugin("bundle.css")
+  plugins: [
+    new webpack.DefinePlugin({
+      __DEBUG__: DEBUG
+    }),
+    ...(DEBUG ? [
+      new webpack.HotModuleReplacementPlugin()
     ] : [
-      new webpack.DefinePlugin({
-        __DEBUG__: false,
-        "process.env": {
-          "NODE_ENV": JSON.stringify("production")
-        }
-      }),
       new webpack.optimize.OccurrenceOrderPlugin(),
       new webpack.optimize.UglifyJsPlugin({
         compress: {
           warnings: false
         }
-      }),
-      new webpack.NoErrorsPlugin(),
-      new TransferWebpackPlugin([
-        { from: "src/www" }
-      ]),
-      new ExtractTextPlugin("bundle.css")
-    ],
+      })
+    ]),
+    new webpack.NoErrorsPlugin(),
+    new TransferWebpackPlugin([
+      { from: "src/www" }
+    ]),
+    new ExtractTextPlugin("bundle.css")
+  ],
   postcss: function () {
     return {
       defaults: [autoprefixer],
