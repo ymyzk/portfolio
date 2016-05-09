@@ -64,10 +64,10 @@ class App extends React.Component {
                    docked={false}
                    onRequestChange={open => this.setState({open})}>
             <MenuItem onTouchTap={this.handleClose} containerElement={<Link to="/" />}>Home</MenuItem>
-            <MenuItem onTouchTap={this.handleClose} containerElement={<Link to="/projects" />}>Projects</MenuItem>
-            <MenuItem onTouchTap={this.handleClose} containerElement={<Link to="/talks" />}>Talks</MenuItem>
-            <MenuItem onTouchTap={this.handleClose} containerElement={<Link to="/contributions" />}>Contributions</MenuItem>
-            <MenuItem onTouchTap={this.handleClose} containerElement={<Link to="/news" />}>News</MenuItem>
+            <MenuItem onTouchTap={this.handleClose} containerElement={<Link to="/projects/" />}>Projects</MenuItem>
+            <MenuItem onTouchTap={this.handleClose} containerElement={<Link to="/talks/" />}>Talks</MenuItem>
+            <MenuItem onTouchTap={this.handleClose} containerElement={<Link to="/contributions/" />}>Contributions</MenuItem>
+            <MenuItem onTouchTap={this.handleClose} containerElement={<Link to="/news/" />}>News</MenuItem>
           </Drawer>
           {this.props.children}
         </div>
