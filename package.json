@@ -11,7 +11,7 @@
     "start": "webpack-dev-server --progress --inline --colors",
     "build": "npm run build-client && npm run build-server",
     "build-client": "webpack --production --progress --colors",
-    "build-server": "webpack --production --server --progress --colors && cp build/client/bundle.* build/server/"
+    "build-server": "webpack --production --server --progress --colors && cp build/client/bundle.* build/server/ && cp build/client/index.html build/server/base.html"
   },
   "license": "LicenseRef-LICENSE",
   "private": true,
