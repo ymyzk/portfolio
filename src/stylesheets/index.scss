@@ -73,24 +73,24 @@ h2 {
 
 @media (min-width: $screen-sm-min) {
   @for $i from 1 through 12 {
-	.cell-sm-#{$i} {
+    .cell-sm-#{$i} {
       width: $i / 12 * 100%;
-	}
+    }
   }
 }
 
 @media (min-width: $screen-md-min) {
   @for $i from 1 through 12 {
-	.cell-md-#{$i} {
+    .cell-md-#{$i} {
       width: $i / 12 * 100%;
-	}
+    }
   }
 }
 
 @media (min-width: $screen-lg-min) {
   @for $i from 1 through 12 {
-	.cell-lg-#{$i} {
+    .cell-lg-#{$i} {
       width: $i / 12 * 100%;
-	}
+    }
   }
 }
