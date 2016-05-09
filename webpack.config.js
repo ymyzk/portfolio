@@ -1,12 +1,13 @@
 const webpack = require("webpack");
 const path = require("path");
 const autoprefixer = require("autoprefixer");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const TransferWebpackPlugin = require("transfer-webpack-plugin");
 
 const buildPath = path.resolve(__dirname, "build");
 const nodeModulesPath = path.resolve(__dirname, "node_modules");
-const TransferWebpackPlugin = require("transfer-webpack-plugin");
 
-const DEBUG = !process.argv.includes('--production');
+const DEBUG = !process.argv.includes("--production");
 
 const config = {
   entry:
@@ -47,7 +48,7 @@ const config = {
     loaders: [
       {
         test: /\.scss$/,
-        loaders: ["style", "css", "postcss", "sass"]
+        loader: ExtractTextPlugin.extract("style", ["css", "postcss", "sass"])
       },
       {
         test: /\.(js|jsx)$/,
@@ -76,7 +77,8 @@ const config = {
       new webpack.NoErrorsPlugin(),
       new TransferWebpackPlugin([
         { from: "src/www" }
-      ])
+      ]),
+      new ExtractTextPlugin("bundle.css")
     ] : [
       new webpack.DefinePlugin({
         __DEBUG__: false,
@@ -93,7 +95,8 @@ const config = {
       new webpack.NoErrorsPlugin(),
       new TransferWebpackPlugin([
         { from: "src/www" }
-      ])
+      ]),
+      new ExtractTextPlugin("bundle.css")
     ],
   postcss: function () {
     return {
