@@ -22,7 +22,7 @@ const paths = [
 
 const config = {
   entry: [
-    ...(DEBUG && CLIENT ? ["webpack/hot/dev-server", "webpack/hot/only-dev-server"] : []),
+    ...((DEBUG && CLIENT) ? ["webpack/hot/dev-server", "webpack/hot/only-dev-server"] : []),
     ...(CLIENT ? [path.join(__dirname, "/src/javascripts/entry.js")] : [path.join(__dirname, "/src/javascripts/server.js")])
   ],
   resolve: {
@@ -83,10 +83,10 @@ const config = {
       __CLIENT__: CLIENT,
       __SERVER__: !CLIENT,
       "process.env": {
-        "NODE_ENV": DEBUG ? "" : "'production'"
+        "NODE_ENV": DEBUG ? "'development'" : "'production'"
       }
     }),
-    ...(DEBUG && CLIENT ? [new webpack.HotModuleReplacementPlugin()] : []),
+    ...((DEBUG && CLIENT) ? [new webpack.HotModuleReplacementPlugin()] : []),
     ...(!DEBUG ? [
       new webpack.optimize.OccurrenceOrderPlugin(),
       new webpack.optimize.UglifyJsPlugin({
