@@ -88,12 +88,14 @@ const config = {
     }),
     ...((DEBUG && CLIENT) ? [new webpack.HotModuleReplacementPlugin()] : []),
     ...(!DEBUG ? [
+      new webpack.optimize.DedupePlugin(),
       new webpack.optimize.OccurrenceOrderPlugin(),
       new webpack.optimize.UglifyJsPlugin({
         compress: {
           warnings: false
         }
-      })
+      }),
+      new webpack.optimize.AggressiveMergingPlugin()
     ] : []),
     new webpack.NoErrorsPlugin(),
     ...(CLIENT ? [
