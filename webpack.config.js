@@ -4,6 +4,7 @@ const autoprefixer = require("autoprefixer");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const StaticSiteGeneratorPlugin = require("static-site-generator-webpack-plugin");
 const TransferWebpackPlugin = require("transfer-webpack-plugin");
+const RobotsGeneratorPlugin = require("./plugins/robots");
 const SitemapGeneratorPlugin = require("./plugins/sitemap");
 
 const DEBUG = !process.argv.includes("--production");
@@ -19,7 +20,6 @@ const paths = [
   "/talks/",
   "/contributions/",
   "/news/"
-  // TODO: 404 support
 ];
 
 const config = {
@@ -107,6 +107,7 @@ const config = {
     ] : [
       new StaticSiteGeneratorPlugin("bundle.js", paths)
     ]),
+    new RobotsGeneratorPlugin(base_path, "robots.txt"),
     new SitemapGeneratorPlugin(base_path, paths, "sitemap.xml"),
     new ExtractTextPlugin("bundle.css")
   ],
