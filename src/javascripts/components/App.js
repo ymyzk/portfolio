@@ -9,6 +9,7 @@ import { Link } from "react-router";
 
 import Theme from "./Theme";
 import OgpImage from "../../images/ogp.png";
+import TwitterImage from "../../images/twitter.png";
 
 require("../../stylesheets/index");
 
@@ -58,6 +59,12 @@ class App extends React.Component {
                     {property: "profile:first_name", content: "Yusuke"},
                     {property: "profile:last_name", content: "Miyazaki"},
                     {property: "profile:username", content: "ymyzk"},
+                    // Twitter Cards
+                    {name: "twitter:card", content: "summary_large_image"},
+                    {name: "twitter:site", content: "@ymyzk"},
+                    {name: "twitter:title", content: title},
+                    {name: "twitter:description", content: description},
+                    {name: "twitter:image", content: TwitterImage},
                     // TODO: Update color
                     {name: "theme-color", content: "#222"}
                   ]} />
