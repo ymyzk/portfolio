@@ -60,7 +60,7 @@ class App extends React.Component {
                     {property: "profile:last_name", content: "Miyazaki"},
                     {property: "profile:username", content: "ymyzk"},
                     // Twitter Cards
-                    {name: "twitter:card", content: "summary_large_image"},
+                    {name: "twitter:card", content: "summary"},
                     {name: "twitter:site", content: "@ymyzk"},
                     {name: "twitter:title", content: title},
                     {name: "twitter:description", content: description},
