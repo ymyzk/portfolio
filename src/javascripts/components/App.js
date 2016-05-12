@@ -41,11 +41,12 @@ class App extends React.Component {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <div>
-          <Helmet htmlAttributes={{prefix: "og: http://ogp.me/ns# profile: http://ogp.me/ns/profile#"}}
+          <Helmet htmlAttributes={{prefix: "og: http://ogp.me/ns# profile: http://ogp.me/ns/profile# fb: http://ogp.me/ns/fb#"}}
                   titleTemplate={`%s - ${title}`}
                   defaultTitle={title}
                   meta={[
                     {name: "description", content: description},
+                    {property: "fb:app_id", content: "997147760366147"},
                     {property: "og:type", content: "profile"},
                     {property: "og:title", content: title},
                     {property: "og:url", content: "https://www.ymyzk.com"},
