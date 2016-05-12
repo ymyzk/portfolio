@@ -1,5 +1,5 @@
 function SitemapGeneratorPlugin(base, paths, fileName) {
-  this.base = base;
+  this.base = base.replace(/\/$/, "");
   this.paths = paths;
   this.fileName = fileName || "sitemap.xml";
 }

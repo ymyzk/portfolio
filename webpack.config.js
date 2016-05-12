@@ -13,7 +13,7 @@ const CLIENT = !process.argv.includes("--server");
 const buildPath = path.resolve(__dirname, "build/" + (CLIENT ? "client" : "server"));
 const nodeModulesPath = path.resolve(__dirname, "node_modules");
 
-const base_path = "https://www.ymyzk.com";
+const basePath = "https://www.ymyzk.com/";
 const paths = [
   "/",
   "/projects/",
@@ -42,7 +42,7 @@ const config = {
   devtool: DEBUG ? "eval" : "source-map",
   output: {
     path: buildPath,
-    publicPath: DEBUG ? "/" : base_path,
+    publicPath: DEBUG ? "/" : basePath,
     filename: "bundle.js",
     libraryTarget: CLIENT ? "var" : "commonjs2"
   },
@@ -107,8 +107,8 @@ const config = {
     ] : [
       new StaticSiteGeneratorPlugin("bundle.js", paths)
     ]),
-    new RobotsGeneratorPlugin(base_path, "robots.txt"),
-    new SitemapGeneratorPlugin(base_path, paths, "sitemap.xml"),
+    new RobotsGeneratorPlugin(basePath, "robots.txt"),
+    new SitemapGeneratorPlugin(basePath, paths, "sitemap.xml"),
     new ExtractTextPlugin("bundle.css")
   ],
   postcss: function () {

@@ -1,5 +1,5 @@
 function RobotsGeneratorPlugin(base, fileName) {
-  this.base = base;
+  this.base = base.replace(/\/$/, "");
   this.fileName = fileName || "robots.txt";
 }
 
