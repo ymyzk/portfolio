@@ -5,7 +5,7 @@ import zIndex from "material-ui/styles/zIndex";
 export default {
   spacing: Spacing,
   zIndex: zIndex,
-  fontFamily: "Roboto, sans-serif",
+  fontFamily: "Roboto, \"Noto Sans Japanese\", sans-serif",
   palette: {
     // TODO: define some colors
     primary1Color: colors.indigo500,
