@@ -1,4 +1,5 @@
 import { Card, CardActions, CardText, CardTitle } from "material-ui/Card";
+import Chip from "material-ui/Chip";
 import FlatButton from "material-ui/FlatButton";
 import React from "react";
 import Helmet from "react-helmet";
@@ -36,16 +37,23 @@ class ProjectCard extends React.Component {
 
   render() {
     const project = this.props.project;
-    const tags = [project.duration].concat(project.tags).reduce((l, r) => `${l}・${r}`);
     return (
       <Card className="project">
         <CardTitle title={project.title} />
         <CardText>
           {project.description}
         </CardText>
-        <CardText>
-          {tags}
-        </CardText>
+        <CardActions>
+          <div style={{
+            display: "flex",
+            flexWrap: "wrap"
+          }}>
+            <Chip style={{margin: 4}}>{project.duration}</Chip>
+            {
+              project.tags.map(tag => (<Chip key={tag} style={{margin: 4}}>{tag}</Chip>))
+            }
+          </div>
+        </CardActions>
         <CardActions>
           <FlatButton label="Detail"
                       primary={true}
