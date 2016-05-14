@@ -1,6 +1,6 @@
 import { Card, CardActions, CardTitle } from "material-ui/Card";
+import Chip from "material-ui/Chip";
 import { List, ListItem } from "material-ui/List";
-import FlatButton from "material-ui/FlatButton";
 import React from "react";
 
 import Links from "../../data/links";
@@ -83,11 +83,17 @@ class SkillsCard extends React.Component {
       <Card>
         <CardTitle title="Skills" />
         <CardActions>
-          {
-            this.props.skills.map((s) => (
-              <FlatButton key={s} label={s} style={{minWidth: 0}} />
-            ))
-          }
+          <div style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center"
+          }}>
+            {
+              this.props.skills.map((s) => (
+                <Chip key={s} style={{margin: 4}}>{s}</Chip>
+              ))
+            }
+          </div>
         </CardActions>
       </Card>
     );
