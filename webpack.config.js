@@ -3,7 +3,7 @@ const path = require("path");
 const autoprefixer = require("autoprefixer");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const StaticSiteGeneratorPlugin = require("static-site-generator-webpack-plugin");
-const TransferWebpackPlugin = require("transfer-webpack-plugin");
+const IndexPageGeneratorPlugin = require("./plugins/index");
 const RobotsGeneratorPlugin = require("./plugins/robots");
 const SitemapGeneratorPlugin = require("./plugins/sitemap");
 
@@ -28,7 +28,7 @@ const config = {
     ...(CLIENT ? [path.join(__dirname, "/src/javascripts/entry.js")] : [path.join(__dirname, "/src/javascripts/server.js")])
   ],
   resolve: {
-    extensions: ["", ".js", ".jsx", ".scss", ".yml"]
+    extensions: ["", ".hbs", ".js", ".jsx", ".scss", ".yml"]
   },
   devServer: {
     contentBase: "output",
@@ -57,6 +57,10 @@ const config = {
       }
     ],
     loaders: [
+      {
+        test: /\.hbs$/,
+        loader: "html"
+      },
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract("style", ["css", "postcss", "sass"])
@@ -100,11 +104,11 @@ const config = {
       new webpack.optimize.AggressiveMergingPlugin()
     ] : []),
     new webpack.NoErrorsPlugin(),
-    ...(CLIENT ? [
-      new TransferWebpackPlugin([
-        { from: "src/www" }
-      ])
-    ] : [
+    new IndexPageGeneratorPlugin(
+      basePath,
+      path.join(__dirname, "/src/templates/index.hbs"),
+      CLIENT ? "index.html" : "base.html"),
+    ...(CLIENT ? [] : [
       new StaticSiteGeneratorPlugin("bundle.js", paths)
     ]),
     new RobotsGeneratorPlugin(basePath, "robots.txt"),
