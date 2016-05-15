@@ -1,5 +1,7 @@
+import RaisedButton from "material-ui/RaisedButton";
 import React from "react";
 import Helmet from "react-helmet";
+import { Link } from "react-router";
 
 class PageNotFound extends React.Component {
   render() {
@@ -8,6 +10,9 @@ class PageNotFound extends React.Component {
       <div className="container">
         <Helmet title={title} />
         <h2>{title}</h2>
+        <div style={{textAlign: "center", marginTop: 50, marginBottom: 50, width: "100%"}}>
+          <RaisedButton label="Back to the Home Page" primary={true} containerElement={<Link to="/" />} />
+        </div>
       </div>
     );
   }
