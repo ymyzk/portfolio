@@ -8,6 +8,11 @@ $container-lg: 1170px;
 
 $gutter: 30px;
 
+html {
+  // See also: src/javascripts/components/Theme.js
+  font-family: Roboto, "Noto Sans Japanese", sans-serif;
+}
+
 body {
   margin: 0;
   font-size: 13px;
