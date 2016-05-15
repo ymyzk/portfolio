@@ -1,5 +1,5 @@
 import React from "react";
-import { IndexRoute, Redirect, Route } from "react-router";
+import { IndexRoute, Route } from "react-router";
 
 import App from "./components/App";
 import Home from "./components/Home";
@@ -16,7 +16,6 @@ export default (
     <Route path="talks/" component={Talks} />
     <Route path="contributions/" component={Contributions} />
     <Route path="news/" component={News} />
-    <Redirect from="*" to="*/" />
     <Route path="*" component={PageNotFound} />
   </Route>
 );
