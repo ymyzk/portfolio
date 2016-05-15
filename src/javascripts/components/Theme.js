@@ -6,7 +6,7 @@ export default {
   spacing: Spacing,
   zIndex: zIndex,
   // See also: src/stylesheets/index.scss
-  fontFamily: "Roboto, \"Noto Sans Japanese\", sans-serif",
+  fontFamily: "Roboto, source-han-sans-japanese, \"Noto Sans Japanese\", sans-serif",
   palette: {
     // TODO: define some colors
     primary1Color: colors.indigo500,
