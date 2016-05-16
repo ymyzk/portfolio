@@ -37,9 +37,11 @@ class ContributionListItem extends React.Component {
     const contribution = this.props.contribution;
     const roles = contribution.roles.reduce((pre, cur) => `${pre}・${cur}`);
     return (
-      <ListItem primaryText={contribution.name}
-                secondaryText={roles}
-                href={contribution.link} />
+      <ListItem
+        primaryText={contribution.name}
+        secondaryText={roles}
+        href={contribution.link}
+      />
     );
   }
 }

@@ -29,11 +29,7 @@ const projects = ProjectsList.map((p) => {
     }
     const endYear = p.end.getFullYear();
     // 終了済み
-    if (startYear === endYear) {
-      return `${p.start.getFullYear()}`;
-    } else {
-      return `${startYear}-${endYear}`;
-    }
+    return startYear === endYear ? `${p.start.getFullYear()}` : `${startYear}-${endYear}`;
   })();
   return p;
 });
@@ -55,7 +51,7 @@ function loadProjects() {
   return projects;
 }
 
-function loadTalks () {
+function loadTalks() {
   return talks;
 }
 

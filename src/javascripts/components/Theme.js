@@ -1,10 +1,10 @@
 import { colors } from "material-ui/styles";
-import Spacing from "material-ui/styles/spacing";
+import spacing from "material-ui/styles/spacing";
 import zIndex from "material-ui/styles/zIndex";
 
 export default {
-  spacing: Spacing,
-  zIndex: zIndex,
+  spacing,
+  zIndex,
   // See also: src/stylesheets/index.scss
   fontFamily: "Roboto, source-han-sans-japanese, \"Noto Sans Japanese\", sans-serif",
   palette: {

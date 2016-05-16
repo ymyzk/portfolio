@@ -10,8 +10,8 @@ class PageNotFound extends React.Component {
       <div className="container">
         <Helmet title={title} />
         <h2>{title}</h2>
-        <div style={{textAlign: "center", marginTop: 50, marginBottom: 50, width: "100%"}}>
-          <RaisedButton label="Back to the Home Page" primary={true} containerElement={<Link to="/" />} />
+        <div style={{ textAlign: "center", marginTop: 50, marginBottom: 50, width: "100%" }}>
+          <RaisedButton label="Back to the Home Page" primary containerElement={<Link to="/" />} />
         </div>
       </div>
     );

@@ -44,21 +44,15 @@ class ProjectCard extends React.Component {
           {project.description}
         </CardText>
         <CardActions>
-          <div style={{
-            display: "flex",
-            flexWrap: "wrap"
-          }}>
-            <Chip style={{margin: 4}}>{project.duration}</Chip>
+          <div style={{ display: "flex", flexWrap: "wrap" }}>
+            <Chip style={{ margin: 4 }}>{project.duration}</Chip>
             {
-              project.tags.map(tag => (<Chip key={tag} style={{margin: 4}}>{tag}</Chip>))
+              project.tags.map(tag => (<Chip key={tag} style={{ margin: 4 }}>{tag}</Chip>))
             }
           </div>
         </CardActions>
         <CardActions>
-          <FlatButton label="Detail"
-                      primary={true}
-                      linkButton={true}
-                      href={project.link} />
+          <FlatButton label="Detail" primary linkButton href={project.link} />
         </CardActions>
       </Card>
     );

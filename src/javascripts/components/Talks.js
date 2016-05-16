@@ -37,9 +37,11 @@ class TalkListItem extends React.Component {
     const talk = this.props.talk;
     const date = `${talk.date.getFullYear()}-${talk.date.getMonth() + 1}-${talk.date.getDate()}`;
     return (
-      <ListItem primaryText={talk.title}
-                secondaryText={`${talk.event} — ${date}`}
-                href={talk.link} />
+      <ListItem
+        primaryText={talk.title}
+        secondaryText={`${talk.event} — ${date}`}
+        href={talk.link}
+      />
     );
   }
 }

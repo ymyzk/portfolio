@@ -35,14 +35,21 @@ class AboutCard extends React.Component {
       <Card>
         <CardTitle title="Profile" />
         <List>
-          <ListItem primaryText={"Name"}
-                    secondaryText={"Yusuke Miyazaki (宮崎 勇輔) @ymyzk"}
-                    disabled={true} />
-          <ListItem primaryText={"Location"}
-                    secondaryText={"Kyoto, Japan"}
-                    disabled={true} />
-          <ListItem primaryText={"Age"} secondaryText={"22"}
-                    disabled={true} />
+          <ListItem
+            primaryText={"Name"}
+            secondaryText={"Yusuke Miyazaki (宮崎 勇輔) @ymyzk"}
+            disabled
+          />
+          <ListItem
+            primaryText={"Location"}
+            secondaryText={"Kyoto, Japan"}
+            disabled
+          />
+          <ListItem
+            primaryText={"Age"}
+            secondaryText={"22"}
+            disabled
+          />
         </List>
       </Card>
     );
@@ -55,16 +62,22 @@ class AffiliationCard extends React.Component {
       <Card>
         <CardTitle title="Affiliation" />
         <List>
-          <ListItem primaryText={"University"}
-                    secondaryText={"Graduate School of Informatics, Kyoto University"}
-                    secondaryTextLines={2}
-                    href={"http://www.fos.kuis.kyoto-u.ac.jp/~miyazaki/"} />
-          <ListItem primaryText={"Company"}
-                    secondaryText={"President & Co-founder, Unimap, Inc."}
-                    href={"http://www.unimap.co.jp/"} />
-          <ListItem primaryText={"Community"}
-                    secondaryText={"CAMPHOR-"}
-                    href={"https://camph.net/"} />
+          <ListItem
+            primaryText={"University"}
+            secondaryText={"Graduate School of Informatics, Kyoto University"}
+            secondaryTextLines={2}
+            href={"http://www.fos.kuis.kyoto-u.ac.jp/~miyazaki/"}
+          />
+          <ListItem
+            primaryText={"Company"}
+            secondaryText={"President & Co-founder, Unimap, Inc."}
+            href={"http://www.unimap.co.jp/"}
+          />
+          <ListItem
+            primaryText={"Community"}
+            secondaryText={"CAMPHOR-"}
+            href={"https://camph.net/"}
+          />
         </List>
       </Card>
     );
@@ -83,14 +96,10 @@ class SkillsCard extends React.Component {
       <Card>
         <CardTitle title="Skills" />
         <CardActions>
-          <div style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center"
-          }}>
+          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
             {
               this.props.skills.map((s) => (
-                <Chip key={s} style={{margin: 4}}>{s}</Chip>
+                <Chip key={s} style={{ margin: 4 }}>{s}</Chip>
               ))
             }
           </div>

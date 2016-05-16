@@ -37,9 +37,11 @@ class NewsListItem extends React.Component {
     const news = this.props.news;
     const date = `${news.date.getFullYear()}-${news.date.getMonth() + 1}-${news.date.getDate()}`;
     return (
-      <ListItem primaryText={news.title}
-                secondaryText={`${news.media} — ${date}`}
-                href={news.link} />
+      <ListItem
+        primaryText={news.title}
+        secondaryText={`${news.media} — ${date}`}
+        href={news.link}
+      />
     );
   }
 }

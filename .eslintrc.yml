@@ -1,28 +1,28 @@
 rules:
-  indent:
-    - 2
-    - 2
-  quotes:
-    - 2
-    - double
   linebreak-style:
     - 2
     - unix
-  semi:
+  # Following rules override eslint-config-airbnb
+  quotes:
     - 2
-    - always
-  no-console:
-    - 1
+    - double
+  comma-dangle:
+    - 0
+  # Following rules may be changed in the future
+  max-len:
+    - 0
+  no-param-reassign:
+    - 0
+  react/no-multi-comp:
+    - 0
+  react/prefer-stateless-function:
+    - 0
 env:
   browser: true
   es6: true
-  node: true
-parser: babel-eslint
 plugins:
   - react
-parserOptions:
-  ecmaFeatures:
-    jsx: true
+settings:
+  import/resolver: webpack
 extends:
-  - "eslint:recommended"
-  - "plugin:react/recommended"
+  - "airbnb"

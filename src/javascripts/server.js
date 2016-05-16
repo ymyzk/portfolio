@@ -12,7 +12,7 @@ const template = Handlebars.compile(indexPage);
 
 function renderFullPage(fragment, head) {
   return template({
-    fragment: fragment,
+    fragment,
     head: {
       meta: head.meta.toString(),
       title: head.title.toString()
