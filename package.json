@@ -9,9 +9,13 @@
   "author": "Yusuke Miyazaki",
   "scripts": {
     "start": "webpack-dev-server --progress --inline --colors",
-    "build": "npm run build-client && npm run build-server",
-    "build-client": "webpack --production --progress --colors",
-    "build-server": "webpack --production --server --progress --colors && cp build/client/bundle.* build/server/"
+    "build": "npm run build-debug",
+    "build-debug": "npm run build-debug-client && npm run build-debug-server",
+    "build-debug-client": "webpack --progress",
+    "build-debug-server": "webpack --progress --server && cp build/client/bundle.* build/server/",
+    "build-production": "npm run build-production-client && npm run build-production-server",
+    "build-production-client": "webpack --production --no-color",
+    "build-production-server": "webpack --production --no-color --server && cp build/client/bundle.* build/server/"
   },
   "license": "LicenseRef-LICENSE",
   "private": true,
