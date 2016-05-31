@@ -15,8 +15,6 @@ rules:
     - 0
   react/no-multi-comp:
     - 0
-  react/prefer-stateless-function:
-    - 0
 env:
   browser: true
   es6: true

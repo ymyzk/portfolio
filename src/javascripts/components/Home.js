@@ -6,130 +6,106 @@ import React from "react";
 import Links from "../../data/links";
 import Skills from "../../data/skills";
 
-class Home extends React.Component {
-  render() {
-    return (
-      <div className="container">
-        <div className="grid">
-          <div className="cell-sm-6 cell-md-4">
-            <AboutCard />
-          </div>
-          <div className="cell-sm-6 cell-md-4">
-            <AffiliationCard />
-          </div>
-          <div className="cell-sm-6 cell-md-4">
-            <SkillsCard skills={Skills} />
-          </div>
-          <div className="cell-sm-6 cell-md-4">
-            <LinksCard links={Links} />
-          </div>
-        </div>
+const Home = () => (
+  <div className="container">
+    <div className="grid">
+      <div className="cell-sm-6 cell-md-4">
+        <AboutCard />
       </div>
-    );
-  }
-}
+      <div className="cell-sm-6 cell-md-4">
+        <AffiliationCard />
+      </div>
+      <div className="cell-sm-6 cell-md-4">
+        <SkillsCard skills={Skills} />
+      </div>
+      <div className="cell-sm-6 cell-md-4">
+        <LinksCard links={Links} />
+      </div>
+    </div>
+  </div>
+);
 
-class AboutCard extends React.Component {
-  render() {
-    return (
-      <Card>
-        <CardTitle title="Profile" />
-        <List>
-          <ListItem
-            primaryText={"Name"}
-            secondaryText={"Yusuke Miyazaki (宮崎 勇輔) @ymyzk"}
-            disabled
-          />
-          <ListItem
-            primaryText={"Location"}
-            secondaryText={"Kyoto, Japan"}
-            disabled
-          />
-          <ListItem
-            primaryText={"Age"}
-            secondaryText={"22"}
-            disabled
-          />
-        </List>
-      </Card>
-    );
-  }
-}
+const AboutCard = () => (
+  <Card>
+    <CardTitle title="Profile" />
+    <List>
+      <ListItem
+        primaryText={"Name"}
+        secondaryText={"Yusuke Miyazaki (宮崎 勇輔) @ymyzk"}
+        disabled
+      />
+      <ListItem
+        primaryText={"Location"}
+        secondaryText={"Kyoto, Japan"}
+        disabled
+      />
+      <ListItem
+        primaryText={"Age"}
+        secondaryText={"22"}
+        disabled
+      />
+    </List>
+  </Card>
+);
 
-class AffiliationCard extends React.Component {
-  render() {
-    return (
-      <Card>
-        <CardTitle title="Affiliation" />
-        <List>
-          <ListItem
-            primaryText={"University"}
-            secondaryText={"Graduate School of Informatics, Kyoto University"}
-            secondaryTextLines={2}
-            href={"http://www.fos.kuis.kyoto-u.ac.jp/~miyazaki/"}
-          />
-          <ListItem
-            primaryText={"Company"}
-            secondaryText={"President & Co-founder, Unimap, Inc."}
-            href={"http://www.unimap.co.jp/"}
-          />
-          <ListItem
-            primaryText={"Community"}
-            secondaryText={"CAMPHOR-"}
-            href={"https://camph.net/"}
-          />
-        </List>
-      </Card>
-    );
-  }
-}
+const AffiliationCard = () => (
+  <Card>
+    <CardTitle title="Affiliation" />
+    <List>
+      <ListItem
+        primaryText={"University"}
+        secondaryText={"Graduate School of Informatics, Kyoto University"}
+        secondaryTextLines={2}
+        href={"http://www.fos.kuis.kyoto-u.ac.jp/~miyazaki/"}
+      />
+      <ListItem
+        primaryText={"Company"}
+        secondaryText={"President & Co-founder, Unimap, Inc."}
+        href={"http://www.unimap.co.jp/"}
+      />
+      <ListItem
+        primaryText={"Community"}
+        secondaryText={"CAMPHOR-"}
+        href={"https://camph.net/"}
+      />
+    </List>
+  </Card>
+);
 
-class SkillsCard extends React.Component {
-  static get propTypes() {
-    return {
-      skills: React.PropTypes.arrayOf(React.PropTypes.string.isRequired).isRequired
-    };
-  }
+const SkillsCard = ({ skills }) => (
+  <Card>
+    <CardTitle title="Skills" />
+    <CardActions>
+      <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
+        {
+          skills.map((s) => (
+            <Chip key={s} style={{ margin: 4 }}>{s}</Chip>
+          ))
+        }
+      </div>
+    </CardActions>
+  </Card>
+);
 
-  render() {
-    return (
-      <Card>
-        <CardTitle title="Skills" />
-        <CardActions>
-          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
-            {
-              this.props.skills.map((s) => (
-                <Chip key={s} style={{ margin: 4 }}>{s}</Chip>
-              ))
-            }
-          </div>
-        </CardActions>
-      </Card>
-    );
-  }
-}
+SkillsCard.propTypes = {
+  skills: React.PropTypes.arrayOf(React.PropTypes.string.isRequired).isRequired
+};
 
-class LinksCard extends React.Component {
-  static get propTypes() {
-    return {
-      links: React.PropTypes.arrayOf(React.PropTypes.object.isRequired).isRequired
-    };
-  }
+const LinksCard = ({ links }) => (
+  <Card>
+    <CardTitle title="Links" />
+    <List>
+      {
+        links.map((l) => (
+          <ListItem primaryText={l.title} href={l.link} target="_blank" key={l.link} />
+        ))
+      }
+    </List>
+  </Card>
+);
 
-  render() {
-    return (
-      <Card>
-        <CardTitle title="Links" />
-        <List>
-          {
-            this.props.links.map((l) => (
-              <ListItem primaryText={l.title} href={l.link} target="_blank" key={l.link} />
-            ))
-          }
-        </List>
-      </Card>
-    );
-  }
-}
+LinksCard.propTypes = {
+  links: React.PropTypes.arrayOf(React.PropTypes.object.isRequired).isRequired
+};
 
 export default Home;
