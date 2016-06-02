@@ -2,6 +2,7 @@ import AppBar from "material-ui/AppBar";
 import Drawer from "material-ui/Drawer";
 import MenuItem from "material-ui/MenuItem";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import Subheader from "material-ui/Subheader";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
 import React from "react";
 import Helmet from "react-helmet";
@@ -78,6 +79,7 @@ class App extends React.Component {
             docked={false}
             onRequestChange={open => this.setState({ open })}
           >
+            <Subheader>Menu</Subheader>
             <MenuItem onTouchTap={this.handleClose} containerElement={<Link to="/" />}>Home</MenuItem>
             <MenuItem onTouchTap={this.handleClose} containerElement={<Link to="/projects/" />}>Projects</MenuItem>
             <MenuItem onTouchTap={this.handleClose} containerElement={<Link to="/talks/" />}>Talks</MenuItem>
