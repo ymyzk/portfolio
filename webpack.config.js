@@ -89,7 +89,7 @@ const config = {
       __CLIENT__: CLIENT,
       __SERVER__: !CLIENT,
       "process.env": {
-        "NODE_ENV": DEBUG ? "'development'" : "'production'"
+        NODE_ENV: DEBUG ? "'development'" : "'production'"
       }
     }),
     ...((DEBUG && CLIENT) ? [new webpack.HotModuleReplacementPlugin()] : []),
