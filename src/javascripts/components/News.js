@@ -24,8 +24,7 @@ const News = () => {
   );
 };
 
-const NewsListItem = () => {
-  const news = this.props.news;
+const NewsListItem = ({ news }) => {
   const date = `${news.date.getFullYear()}-${news.date.getMonth() + 1}-${news.date.getDate()}`;
   return (
     <ListItem
