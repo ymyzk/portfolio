@@ -4,7 +4,6 @@ import FontIcon from "material-ui/FontIcon";
 import { List, ListItem } from "material-ui/List";
 import React from "react";
 
-import Links from "../../data/links";
 import Skills from "../../data/skills";
 
 const Home = () => (
@@ -20,7 +19,7 @@ const Home = () => (
         <SkillsCard skills={Skills} />
       </div>
       <div className="cell-sm-6 cell-md-4">
-        <LinksCard links={Links} />
+        <LinksCard />
       </div>
     </div>
   </div>
@@ -102,15 +101,70 @@ SkillsCard.propTypes = {
   skills: React.PropTypes.arrayOf(React.PropTypes.string.isRequired).isRequired
 };
 
-const LinksCard = ({ links }) => (
+const LinksCard = () => (
   <Card>
     <CardTitle title="Links" />
     <List>
-      {
-        links.map((l) => (
-          <ListItem primaryText={l.title} href={l.link} target="_blank" key={l.link} />
-        ))
-      }
+      <ListItem
+        primaryText="Bitcoin"
+        href="https://blockchain.info/address/12PPiEo7nK67694wZnS7Mw8X6XCzHmWTP9"
+        target="_blank"
+        leftIcon={<FontIcon className="fa fa-btc" style={iconStyle} />}
+      />
+      <ListItem
+        primaryText="Blog"
+        href="https://blog.ymyzk.com/"
+        target="_blank"
+        leftIcon={<FontIcon className="fa fa-rss" style={iconStyle} />}
+      />
+      <ListItem
+        primaryText="E-mail"
+        href="mailto:miyazaki.dev@gmail.com"
+        target="_blank"
+        leftIcon={<FontIcon className="fa fa-envelope-o" style={iconStyle} />}
+      />
+      <ListItem
+        primaryText="Facebook"
+        href="https://www.facebook.com/yusuke.miy"
+        target="_blank"
+        leftIcon={<FontIcon className="fa fa-facebook-official" style={iconStyle} />}
+      />
+      <ListItem
+        primaryText="GitHub"
+        href="https://github.com/ymyzk"
+        target="_blank"
+        leftIcon={<FontIcon className="fa fa-github" style={iconStyle} />}
+      />
+      <ListItem
+        primaryText="LinkedIn"
+        href="https://www.linkedin.com/in/yusuke-miyazaki-4b197774"
+        target="_blank"
+        leftIcon={<FontIcon className="fa fa-linkedin-square" style={iconStyle} />}
+      />
+      <ListItem
+        primaryText="Slideshare"
+        href="http://www.slideshare.net/yusukemiy/"
+        target="_blank"
+        leftIcon={<FontIcon className="fa fa-slideshare" style={iconStyle} />}
+      />
+      <ListItem
+        primaryText="Speaker Deck"
+        href="https://speakerdeck.com/ymyzk"
+        target="_blank"
+        leftIcon={<FontIcon className="fa fa-globe" style={iconStyle} />}
+      />
+      <ListItem
+        primaryText="Twitter"
+        href="https://twitter.com/ymyzk"
+        target="_blank"
+        leftIcon={<FontIcon className="fa fa-twitter" style={iconStyle} />}
+      />
+      <ListItem
+        primaryText="Wantedly"
+        href="https://www.wantedly.com/users/2289515"
+        target="_blank"
+        leftIcon={<FontIcon className="fa fa-globe" style={iconStyle} />}
+      />
     </List>
   </Card>
 );
