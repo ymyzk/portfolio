@@ -75,6 +75,13 @@
   tags: [Java, OCaml]
   description: OCaml で実装された Featherweight Java の型検査器。
 
+- title: spim-for-kuis
+  link: https://github.com/ymyzk/spim-for-kuis
+  start: 2016-04-21
+  end: null
+  tags: [C]
+  description: MIPS シミュレータの spim をフォークし、機能を追加。
+
 - title: sasm
   link: https://github.com/ymyzk/sasm
   start: 2014-05-02
