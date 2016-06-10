@@ -25,11 +25,12 @@ const Talks = () => {
 };
 
 const TalkListItem = ({ talk }) => {
-  const date = `${talk.date.getFullYear()}-${talk.date.getMonth() + 1}-${talk.date.getDate()}`;
+  const dateString = talk.date.format("YYYY-M-D");
+  const dateIso = talk.date.format("YYYY-MM-DD");
   return (
     <ListItem
       primaryText={talk.title}
-      secondaryText={`${talk.event} — ${date}`}
+      secondaryText={<span>{talk.event} - <time dateTime={dateIso}>{dateString}</time></span>}
       href={talk.link}
     />
   );

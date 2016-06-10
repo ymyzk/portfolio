@@ -1,3 +1,5 @@
+import moment from "moment";
+
 import ContributionsList from "../data/contributions";
 import NewsList from "../data/news";
 import ProjectsList from "../data/projects";
@@ -35,7 +37,7 @@ const projects = ProjectsList.map((p) => {
 });
 
 const talks = TalksList.map((t) => {
-  t.date = new Date(t.date);
+  t.date = moment(t.date);
   return t;
 });
 
