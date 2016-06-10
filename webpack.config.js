@@ -24,6 +24,7 @@ const paths = [
 
 const config = {
   entry: [
+    "whatwg-fetch",
     ...((DEBUG && CLIENT) ? ["webpack/hot/dev-server", "webpack/hot/only-dev-server"] : []),
     ...(CLIENT ? [path.join(__dirname, "/src/javascripts/entry.js")] : [path.join(__dirname, "/src/javascripts/server.js")])
   ],

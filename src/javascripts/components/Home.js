@@ -1,8 +1,11 @@
 import { Card, CardActions, CardTitle } from "material-ui/Card";
 import Chip from "material-ui/Chip";
 import FontIcon from "material-ui/FontIcon";
+import LinearProgress from "material-ui/LinearProgress";
 import { List, ListItem } from "material-ui/List";
 import React from "react";
+import moment from "moment";
+import "whatwg-fetch";
 
 import Skills from "../../data/skills";
 
@@ -17,6 +20,9 @@ const Home = () => (
       </div>
       <div className="cell-sm-6 cell-md-4">
         <SkillsCard skills={Skills} />
+      </div>
+      <div className="cell-sm-6 cell-md-4">
+        <RecentEntriesCard />
       </div>
       <div className="cell-sm-6 cell-md-4">
         <LinksCard />
@@ -168,5 +174,57 @@ const LinksCard = () => (
     </List>
   </Card>
 );
+
+class RecentEntriesCard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      entries: null
+    };
+  }
+
+  componentDidMount() {
+    fetch("https://blog.ymyzk.com/wp-json/wp/v2/posts")
+      .then((response) => response.json())
+      .then((json) => this.setState({ entries: json.slice(0, 3) }));
+  }
+
+  render() {
+    return (
+      <Card>
+        <CardTitle title="Recent Entries" />
+        <RecentEntriesList entries={this.state.entries} />
+      </Card>
+    );
+  }
+}
+
+const RecentEntriesList = ({ entries }) => (
+  <div>
+    {entries === null ? <LinearProgress mode="indeterminate" /> : null}
+    <List>
+      {
+        (entries !== null ? entries : []).map((e) => (
+          <ListItem
+            primaryText={e.title.rendered}
+            secondaryText={moment.utc(e.date).format("YYYY-M-D H:mm")}
+            href={e.link}
+            target="_blank"
+            key={e.id}
+          />)
+        )
+      }
+      <ListItem
+        primaryText="More Entries..."
+        href="https://blog.ymyzk.com/"
+        target="_blank"
+      />
+    </List>
+  </div>
+);
+
+RecentEntriesList.propTypes = {
+  entries: React.PropTypes.arrayOf(React.PropTypes.object.isRequired)
+};
 
 export default Home;
