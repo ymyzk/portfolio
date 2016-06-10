@@ -169,8 +169,4 @@ const LinksCard = () => (
   </Card>
 );
 
-LinksCard.propTypes = {
-  links: React.PropTypes.arrayOf(React.PropTypes.object.isRequired).isRequired
-};
-
 export default Home;
