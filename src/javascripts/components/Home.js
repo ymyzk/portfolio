@@ -199,29 +199,38 @@ class RecentEntriesCard extends React.Component {
   }
 }
 
-const RecentEntriesList = ({ entries }) => (
-  <div>
-    {entries === null ? <LinearProgress mode="indeterminate" /> : null}
-    <List>
-      {
-        (entries !== null ? entries : []).map((e) => (
-          <ListItem
-            primaryText={e.title.rendered}
-            secondaryText={moment.utc(e.date).format("YYYY-M-D H:mm")}
-            href={e.link}
-            target="_blank"
-            key={e.id}
-          />)
-        )
-      }
-      <ListItem
-        primaryText="More Entries..."
-        href="https://blog.ymyzk.com/"
-        target="_blank"
-      />
-    </List>
-  </div>
-);
+const RecentEntriesList = ({ entries }) => {
+  const hasEntries = entries !== null;
+  const progress = hasEntries ? null : (<LinearProgress mode="indeterminate" />);
+  const entriesForList = hasEntries ? entries : [];
+  return (
+    <div>
+      {progress}
+      <List>
+        {
+          entriesForList.map((e) => {
+            const time = moment.utc(e.date);
+            const timeIso = time.toISOString();
+            const timeString = time.format("YYYY-M-D H:mm");
+            return (
+              <ListItem
+                primaryText={e.title.rendered}
+                secondaryText={<time dateTime={timeIso}>{timeString}</time>}
+                href={e.link}
+                target="_blank"
+                key={e.id}
+              />);
+          })
+        }
+        <ListItem
+          primaryText="More Entries..."
+          href="https://blog.ymyzk.com/"
+          target="_blank"
+        />
+      </List>
+    </div>
+  );
+};
 
 RecentEntriesList.propTypes = {
   entries: React.PropTypes.arrayOf(React.PropTypes.object.isRequired)
