@@ -1,4 +1,5 @@
 import { List, ListItem } from "material-ui/List";
+import Subheader from "material-ui/Subheader";
 import React from "react";
 import Helmet from "react-helmet";
 
@@ -7,6 +8,16 @@ import { loadTalks } from "../data";
 const Talks = () => {
   const title = "Talks";
   const talks = loadTalks();
+  const talksByYear = {};
+  talks.forEach((t) => {
+    const year = t.date.year();
+    if (year in talksByYear) {
+      talksByYear[year].push(t);
+    } else {
+      talksByYear[year] = [t];
+    }
+  });
+  const years = Object.keys(talksByYear).sort().reverse();
   return (
     <div className="container">
       <Helmet title={title} />
@@ -15,7 +26,16 @@ const Talks = () => {
         <div className="cell-xs-without-gutter cell-sm-12">
           <List>
             {
-              talks.map((t) => (<TalkListItem talk={t} key={t.title + t.event} />))
+              years.map((year) => (
+                <div>
+                  <Subheader>{year}</Subheader>
+                  {
+                    talksByYear[year].map((t) => (
+                      <TalkListItem talk={t} key={t.title + t.event} />
+                    ))
+                  }
+                </div>
+              ))
             }
           </List>
         </div>
