@@ -4,6 +4,7 @@ import FontIcon from "material-ui/FontIcon";
 import LinearProgress from "material-ui/LinearProgress";
 import { List, ListItem } from "material-ui/List";
 import React from "react";
+import Helmet from "react-helmet";
 import moment from "moment";
 import "whatwg-fetch";
 
@@ -11,6 +12,10 @@ import Skills from "../../data/skills";
 
 const Home = () => (
   <div className="container">
+    <Helmet
+      script={[
+      ]}
+    />
     <div className="grid">
       <div className="cell-sm-6 cell-md-4">
         <AboutCard />

@@ -40,6 +40,7 @@ class App extends React.Component {
   render() {
     const title = "Yusuke Miyazaki";
     const description = "Yusuke Miyazaki's portfolio website.";
+    const url = "https://www.ymyzk.com";
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <div>
@@ -54,7 +55,7 @@ class App extends React.Component {
               { property: "fb:app_id", content: "997147760366147" },
               { property: "og:type", content: "profile" },
               { property: "og:title", content: title },
-              { property: "og:url", content: "https://www.ymyzk.com" },
+              { property: "og:url", content: url },
               { property: "og:image", content: OgpImage },
               { property: "og:locale", content: "ja_JP" },
               { property: "og:locale:alternate", content: "en_US" },
@@ -71,6 +72,29 @@ class App extends React.Component {
               { name: "twitter:image", content: TwitterImage },
               // TODO: Update color
               { name: "theme-color", content: "#222" }
+            ]}
+            script={[
+              {
+                type: "application/ld+json",
+                innerHTML: JSON.stringify({
+                  "@context": "http://schema.org",
+                  "@type": "WebSite",
+                  name: title,
+                  url
+                })
+              },
+              {
+                type: "application/ld+json",
+                innerHTML: JSON.stringify({
+                  "@context": "http://schema.org",
+                  "@type": "Person",
+                  name: "Yusuke Miyazaki",
+                  url,
+                  sameAs: [
+                    "https://www.twitter.com/ymyzk"
+                  ]
+                })
+              }
             ]}
           />
           <AppBar title="Yusuke Miyazaki" onLeftIconButtonTouchTap={this.handleToggle} />
