@@ -1,7 +1,7 @@
 import moment from "moment";
 
 import ContributionsList from "../data/contributions";
-import NewsList from "../data/news";
+import MiscList from "../data/misc";
 import ProjectsList from "../data/projects";
 import TalksList from "../data/talks";
 
@@ -10,7 +10,7 @@ const contributions = (() => {
   return ContributionsList;
 })();
 
-const news = NewsList.map((n) => {
+const misc = MiscList.map((n) => {
   n.date = new Date(n.date);
   return n;
 });
@@ -45,8 +45,8 @@ function loadContributions() {
   return contributions;
 }
 
-function loadNews() {
-  return news;
+function loadMisc() {
+  return misc;
 }
 
 function loadProjects() {
@@ -57,4 +57,4 @@ function loadTalks() {
   return talks;
 }
 
-export { loadContributions, loadNews, loadProjects, loadTalks };
+export { loadContributions, loadMisc, loadProjects, loadTalks };

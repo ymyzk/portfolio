@@ -19,7 +19,7 @@ const paths = [
   "/projects/",
   "/talks/",
   "/contributions/",
-  "/news/"
+  "/misc/"
 ];
 
 const config = {
