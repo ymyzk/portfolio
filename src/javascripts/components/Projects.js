@@ -1,6 +1,7 @@
 import { Card, CardActions, CardText, CardTitle } from "material-ui/Card";
 import Chip from "material-ui/Chip";
-import FlatButton from "material-ui/FlatButton";
+import FloatingActionButton from "material-ui/FloatingActionButton";
+import ActionExitToTop from "material-ui/svg-icons/action/exit-to-app";
 import React from "react";
 import Helmet from "react-helmet";
 
@@ -26,9 +27,20 @@ const Projects = () => {
   );
 };
 
+const floatingButtonWrapperStyle = {
+  position: "relative",
+  height: 64
+};
+
+const floatingButtonStyle = {
+  position: "absolute",
+  bottom: 12,
+  right: 12
+};
+
 const ProjectCard = ({ project }) => (
   <Card className="project">
-    <CardTitle title={project.title} />
+    <CardTitle title={project.title} href={project.link} />
     <CardText>
       {project.description}
     </CardText>
@@ -40,9 +52,11 @@ const ProjectCard = ({ project }) => (
         }
       </div>
     </CardActions>
-    <CardActions>
-      <FlatButton label="Detail" primary linkButton href={project.link} />
-    </CardActions>
+    <div style={floatingButtonWrapperStyle}>
+      <FloatingActionButton linkButton href={project.link} target="_blank" style={floatingButtonStyle}>
+        <ActionExitToTop />
+      </FloatingActionButton>
+    </div>
   </Card>
 );
 
