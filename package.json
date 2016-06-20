@@ -58,7 +58,7 @@
     "yaml-loader": "~0.2.0"
   },
   "dependencies": {
-    "material-ui": "http://pub.ymyzk.com/material-ui-0.15.0.tgz",
+    "material-ui": "~0.15.1",
     "moment": "~2.13.0",
     "react": "~15.1.0",
     "react-dom": "~15.1.0",
