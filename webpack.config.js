@@ -119,7 +119,7 @@ const config = {
   postcss: function () {
     return {
       defaults: [autoprefixer],
-      cleaner:  [autoprefixer()]
+      cleaner: [autoprefixer()]
     };
   },
   sassLoader: {
