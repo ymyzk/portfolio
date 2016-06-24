@@ -42,7 +42,9 @@ class Projects extends React.Component {
   render() {
     const filterTagsStyle = {
       display: "flex",
-      maxHeight: this.state.selectedTags.length === 0 ? 0 : 100,
+      flexWrap: "wrap",
+      // Followings are workaround for animating 'height' property
+      maxHeight: this.state.selectedTags.length === 0 ? 0 : 300,
       transition: "max-height 1s"
     };
     const isActive = (project) =>
