@@ -103,6 +103,13 @@
   tags: [iOS, Library]
   description: カレンダーにイベントを追加する機能を追加する UIActivity。
 
+- title: yo.zsh
+  link: https://github.com/ymyzk/yo.zsh
+  start: 2015-01-31
+  end: null
+  tags: [Zsh]
+  description: コマンドラインから Yo を送るためのシェルスクリプト。補完機能も実装。
+
 - title: iOS Compatibility Chart
   link: http://ioschart.herokuapp.com/
   start: 2013-06-30
@@ -116,10 +123,3 @@
   end: 2014-09-20
   tags: [Library, R]
   description: iTunes Connect のレポートファイルを R で解析するためのライブラリ。
-
-- title: yo.zsh
-  link: https://github.com/ymyzk/yo.zsh
-  start: 2015-01-31
-  end: null
-  tags: [Zsh]
-  description: コマンドラインから Yo を送るためのシェルスクリプト。補完機能も実装。
