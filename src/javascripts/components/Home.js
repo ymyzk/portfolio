@@ -37,7 +37,7 @@ const AboutCard = () => (
     <List>
       <ListItem
         primaryText={"Name"}
-        secondaryText={"Yusuke Miyazaki (宮崎 勇輔) @ymyzk"}
+        secondaryText={"Yusuke Miyazaki (宮崎 勇輔) (a.k.a. ymyzk)"}
         disabled
       />
       <ListItem
