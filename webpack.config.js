@@ -79,7 +79,7 @@ const config = {
         test: /\.(png|jpg)$/,
         loader: "url-loader",
         query: {
-          limit: 8192
+          limit: 1024
         }
       }
     ]
