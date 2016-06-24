@@ -16,6 +16,7 @@ function renderFullPage(fragment, head) {
     head: {
       meta: head.meta.toString(),
       title: head.title.toString(),
+      link: head.link.toString(),
       script: head.script.toString()
     }
   });

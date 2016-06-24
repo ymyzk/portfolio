@@ -9,6 +9,7 @@ import Helmet from "react-helmet";
 import { Link } from "react-router";
 
 import Theme from "./Theme";
+import AppleTouchIcon from "../../images/apple-touch-icon.png";
 import OgpImage from "../../images/ogp.png";
 import TwitterImage from "../../images/twitter.png";
 
@@ -71,6 +72,9 @@ class App extends React.Component {
               { name: "twitter:image", content: TwitterImage },
               // TODO: Update color
               { name: "theme-color", content: "#222" }
+            ]}
+            link={[
+              { rel: "apple-touch-icon", href: AppleTouchIcon }
             ]}
             script={[
               {
