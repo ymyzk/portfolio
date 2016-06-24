@@ -5,6 +5,7 @@ import LinearProgress from "material-ui/LinearProgress";
 import { List, ListItem } from "material-ui/List";
 import React from "react";
 import moment from "moment";
+import { grey700 } from "material-ui/styles/colors";
 import "whatwg-fetch";
 
 import Skills from "../../data/skills";
@@ -26,6 +27,9 @@ const Home = () => (
       </div>
       <div className="cell-sm-6 cell-md-4">
         <LinksCard />
+      </div>
+      <div className="cell-sm-12">
+        <Footer start={2013} end={2016} />
       </div>
     </div>
   </div>
@@ -231,6 +235,17 @@ const RecentEntriesList = ({ entries }) => {
 
 RecentEntriesList.propTypes = {
   entries: React.PropTypes.arrayOf(React.PropTypes.object.isRequired)
+};
+
+const Footer = ({ start, end }) => (
+  <p style={{ textAlign: "right", color: grey700 }}>
+    Copyright &copy; {start}-{end}, Yusuke Miyazaki.
+  </p>
+);
+
+Footer.propTypes = {
+  start: React.PropTypes.number.isRequired,
+  end: React.PropTypes.number.isRequired
 };
 
 export default Home;
