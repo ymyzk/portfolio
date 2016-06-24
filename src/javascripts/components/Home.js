@@ -176,12 +176,9 @@ const LinksCard = () => (
 );
 
 class RecentEntriesCard extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      entries: null
-    };
-  }
+  state = {
+    entries: null
+  };
 
   componentDidMount() {
     fetch("https://blog.ymyzk.com/wp-json/wp/v2/posts")

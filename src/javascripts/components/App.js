@@ -22,20 +22,19 @@ const muiThemeProductionOption = {
 const muiTheme = getMuiTheme(Theme, __SERVER__ ? muiThemeProductionOption : {}); // eslint-disable-line no-undef
 
 class App extends React.Component {
-  static get propTypes() {
-    return {
-      children: React.PropTypes.node.isRequired
-    };
-  }
+  static propTypes = {
+    children: React.PropTypes.node.isRequired
+  };
 
   constructor(props, context) {
     super(props, context);
-    this.state = {
-      open: false
-    };
     this.handleToggle = () => this.setState({ open: !this.state.open });
     this.handleClose = () => this.setState({ open: false });
   }
+
+  state = {
+    open: false
+  };
 
   render() {
     const title = "Yusuke Miyazaki";
