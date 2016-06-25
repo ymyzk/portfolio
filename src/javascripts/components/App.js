@@ -11,6 +11,7 @@ import { Link } from "react-router";
 import Theme from "./Theme";
 import AppleTouchIcon from "../../images/apple-touch-icon.png";
 import Favicon from "../../images/favicon.png";
+import Favicon256 from "../../images/favicon256.png";
 import OgpImage from "../../images/ogp.png";
 import TwitterImage from "../../images/twitter.png";
 
@@ -75,8 +76,11 @@ class App extends React.Component {
               { name: "theme-color", content: Theme.palette.primary2Color }
             ]}
             link={[
-              { rel: "apple-touch-icon", href: AppleTouchIcon },
-              { rel: "icon", type: "image/png", href: Favicon }
+              // Favicon
+              { rel: "icon", type: "image/png", href: Favicon, sizes: "64x64" },
+              { rel: "icon", type: "image/png", href: Favicon256, sizes: "256x256" },
+              // iOS
+              { rel: "apple-touch-icon", href: AppleTouchIcon }
             ]}
             script={[
               {
