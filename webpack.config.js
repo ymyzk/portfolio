@@ -76,7 +76,7 @@ const config = {
         loaders: ["json", "yaml"]
       },
       {
-        test: /\.(png|jpg)$/,
+        test: /\.(ico|jpg|png)$/,
         loader: "url-loader",
         query: {
           limit: 1024

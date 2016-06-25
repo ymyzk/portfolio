@@ -10,8 +10,8 @@ import { Link } from "react-router";
 
 import Theme from "./Theme";
 import AppleTouchIcon from "../../images/apple-touch-icon.png";
-import Favicon from "../../images/favicon.png";
-import Favicon256 from "../../images/favicon256.png";
+import FaviconIco from "../../images/favicon.ico";
+import FaviconPng from "../../images/favicon.png";
 import OgpImage from "../../images/ogp.png";
 import TwitterImage from "../../images/twitter.png";
 
@@ -77,8 +77,8 @@ class App extends React.Component {
             ]}
             link={[
               // Favicon
-              { rel: "icon", type: "image/png", href: Favicon, sizes: "64x64" },
-              { rel: "icon", type: "image/png", href: Favicon256, sizes: "256x256" },
+              { rel: "shortcut icon", type: "image/x-icon", href: FaviconIco, sizes: "16x16 32x32 48x48" },
+              { rel: "icon", type: "image/png", href: FaviconPng, sizes: "256x256" },
               // iOS
               { rel: "apple-touch-icon", href: AppleTouchIcon }
             ]}
