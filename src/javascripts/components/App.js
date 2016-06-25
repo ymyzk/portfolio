@@ -71,8 +71,8 @@ class App extends React.Component {
               { name: "twitter:title", content: title },
               { name: "twitter:description", content: description },
               { name: "twitter:image", content: TwitterImage },
-              // TODO: Update color
-              { name: "theme-color", content: "#222" }
+              // Chrome / Android
+              { name: "theme-color", content: Theme.palette.primary2Color }
             ]}
             link={[
               { rel: "apple-touch-icon", href: AppleTouchIcon },
