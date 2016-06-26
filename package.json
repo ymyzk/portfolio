@@ -15,7 +15,8 @@
     "build-debug-server": "webpack --progress --server && cp build/client/bundle.* build/server/",
     "build-production": "npm run build-production-client && npm run build-production-server",
     "build-production-client": "webpack --production --no-color",
-    "build-production-server": "webpack --production --no-color --server && cp build/client/bundle.* build/server/"
+    "build-production-server": "webpack --production --no-color --server && cp build/client/bundle.* build/server/",
+    "supported-browsers": "browserslist \"$(cat browserslist | tr '\n' ',')\""
   },
   "license": "LicenseRef-LICENSE",
   "private": true,
