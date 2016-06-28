@@ -47,12 +47,12 @@
   tags: [Bottle, Python, Web]
   description: Yo を受け取った際に、Slack に通知を送信するシンプルな Web アプリケーション。
 
-- title: schedule_command
-  link: https://camph.net/schedule/
+- title: hanreki
+  link: https://github.com/camphor-/hanreki
   start: 2015-04-03
   end: null
   tags: [Ruby]
-  description: CAMPHOR- のスケジュール管理を行う Ruby スクリプト。iCal・JSON 形式で API を提供し様々な場所で運用中。
+  description: CAMPHOR- のスケジュール管理を行う CLI ツール。iCal・JSON 形式で API を提供し様々な場所で運用中。
 
 - title: YMNetworkActivityManager
   link: https://github.com/ymyzk/YMNetworkActivityManager
