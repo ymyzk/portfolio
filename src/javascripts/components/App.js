@@ -55,6 +55,7 @@ class App extends React.Component {
             defaultTitle={title}
             meta={[
               { name: "description", content: description },
+              // Facebook / OGP
               { property: "fb:app_id", content: "997147760366147" },
               { property: "og:type", content: "profile" },
               { property: "og:title", content: title },
@@ -74,7 +75,7 @@ class App extends React.Component {
               { name: "twitter:description", content: description },
               { name: "twitter:image", content: TwitterImage },
               // Chrome / Android
-              { name: "theme-color", content: Theme.palette.primary2Color },
+              { name: "theme-color", content: Theme.palette.primary1Color },
               // Windows / IE / Edge
               { name: "msapplication-TileImage", content: MsTileImage },
               { name: "msapplication-TileColor", content: Theme.palette.primary1Color }
