@@ -12,6 +12,7 @@ import Theme from "./Theme";
 import AppleTouchIcon from "../../images/apple-touch-icon.png";
 import FaviconIco from "../../images/favicon.ico";
 import FaviconPng from "../../images/favicon.png";
+import MsTileImage from "../../images/ms-tile-image.png";
 import OgpImage from "../../images/ogp.png";
 import TwitterImage from "../../images/twitter.png";
 
@@ -73,7 +74,10 @@ class App extends React.Component {
               { name: "twitter:description", content: description },
               { name: "twitter:image", content: TwitterImage },
               // Chrome / Android
-              { name: "theme-color", content: Theme.palette.primary2Color }
+              { name: "theme-color", content: Theme.palette.primary2Color },
+              // Windows / IE / Edge
+              { name: "msapplication-TileImage", content: MsTileImage },
+              { name: "msapplication-TileColor", content: Theme.palette.primary1Color }
             ]}
             link={[
               // Favicon
