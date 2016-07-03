@@ -117,6 +117,13 @@
   tags: [Zsh]
   description: コマンドラインから Yo を送るためのシェルスクリプト。補完機能も実装。
 
+- title: homebrew-ymyzk
+  link: https://github.com/ymyzk/homebrew-ymyzk
+  start: 2015-01-26
+  end: null
+  tags: [Ruby]
+  description: Some useful formulae for Homebrew.
+
 - title: iOS Compatibility Chart
   link: http://ioschart.herokuapp.com/
   start: 2013-06-30
