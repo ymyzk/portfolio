@@ -11,6 +11,7 @@ import RobotsGeneratorPlugin from "./plugins/robots";
 import SitemapGeneratorPlugin from "./plugins/sitemap";
 
 const DEBUG = !process.argv.includes("--production");
+const PRODUCTION = !DEBUG;
 const CLIENT = !process.argv.includes("--server");
 
 const buildPath = path.resolve(__dirname, "build/" + (CLIENT ? "client" : "server"));
@@ -90,6 +91,7 @@ const config = {
   plugins: [
     new webpack.DefinePlugin({
       __DEBUG__: DEBUG,
+      __PRODUCTION__: PRODUCTION,
       __CLIENT__: CLIENT,
       __SERVER__: !CLIENT,
       "process.env": {

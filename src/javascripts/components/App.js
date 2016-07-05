@@ -23,7 +23,7 @@ const muiThemeProductionOption = {
   // We apply autoprefixer after React rendering
   userAgent: false
 };
-const muiTheme = getMuiTheme(Theme, __SERVER__ ? muiThemeProductionOption : {}); // eslint-disable-line no-undef
+const muiTheme = getMuiTheme(Theme, __SERVER__ ? muiThemeProductionOption : {});
 
 class App extends React.Component {
   static propTypes = {

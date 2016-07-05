@@ -18,6 +18,12 @@ rules:
 env:
   browser: true
   es6: true
+globals:
+  # See webpack.DefinePlugin settings in the webpack configuration
+  __DEBUG__: true
+  __PRODUCTION__: true
+  __CLIENT__: true
+  __SERVER__: true
 plugins:
   - react
 settings:

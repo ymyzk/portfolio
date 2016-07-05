@@ -12,7 +12,7 @@ import routes from "./routes";
 injectTapEventPlugin();
 
 // Google Analytics
-if (__DEBUG__) { // eslint-disable-line no-undef
+if (__DEBUG__) {
   window.ga = (...args) => console.log("window.ga", ...args); // eslint-disable-line no-console
 } else {
   /* eslint-disable */
@@ -20,13 +20,13 @@ if (__DEBUG__) { // eslint-disable-line no-undef
     (i[r].q=i[r].q||[]).push(arguments);},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m);
   })(window,document,"script","//www.google-analytics.com/analytics.js","ga");
-  ga("create", "UA-41988513-2", "auto"); // eslint-disable-line no-undef
+  ga("create", "UA-41988513-2", "auto");
   /* eslint-enable */
 }
 
 browserHistory.listen(location => {
-  window.ga("set", "page", location.pathname); // eslint-disable-line no-undef
-  window.ga("send", "pageview"); // eslint-disable-line no-undef
+  window.ga("set", "page", location.pathname);
+  window.ga("send", "pageview");
 });
 
 render((
