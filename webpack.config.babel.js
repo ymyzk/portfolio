@@ -1,11 +1,14 @@
-const webpack = require("webpack");
-const path = require("path");
-const autoprefixer = require("autoprefixer");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const StaticSiteGeneratorPlugin = require("static-site-generator-webpack-plugin");
-const IndexPageGeneratorPlugin = require("./plugins/index");
-const RobotsGeneratorPlugin = require("./plugins/robots");
-const SitemapGeneratorPlugin = require("./plugins/sitemap");
+// Node.js
+import path from "path";
+// webpack
+import webpack from "webpack";
+import autoprefixer from "autoprefixer";
+import ExtractTextPlugin from "extract-text-webpack-plugin";
+import StaticSiteGeneratorPlugin from "static-site-generator-webpack-plugin";
+// Original Plugins
+import IndexPageGeneratorPlugin from "./plugins/index";
+import RobotsGeneratorPlugin from "./plugins/robots";
+import SitemapGeneratorPlugin from "./plugins/sitemap";
 
 const DEBUG = !process.argv.includes("--production");
 const CLIENT = !process.argv.includes("--server");
