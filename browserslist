@@ -4,6 +4,7 @@ chrome >= 29
 edge >= 12
 firefox >= 45
 ie >= 10
+ie_mob >= 10
 ios_saf >= 7
 opera >= 17
 safari >= 6
