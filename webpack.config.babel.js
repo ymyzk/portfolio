@@ -14,7 +14,7 @@ const DEBUG = !process.argv.includes("--production");
 const PRODUCTION = !DEBUG;
 const CLIENT = !process.argv.includes("--server");
 
-const buildPath = path.resolve(__dirname, "build/" + (CLIENT ? "client" : "server"));
+const buildPath = path.resolve(__dirname, `build/${CLIENT ? "client" : "server"}`);
 const nodeModulesPath = path.resolve(__dirname, "node_modules");
 
 const basePath = "https://www.ymyzk.com/";
@@ -30,7 +30,7 @@ const config = {
   entry: [
     "whatwg-fetch",
     ...((DEBUG && CLIENT) ? ["webpack/hot/dev-server", "webpack/hot/only-dev-server"] : []),
-    ...(CLIENT ? [path.join(__dirname, "/src/javascripts/entry.js")] : [path.join(__dirname, "/src/javascripts/server.js")])
+    path.join(__dirname, "/src/javascripts/", CLIENT ? "entry.js" : "server.js")
   ],
   resolve: {
     extensions: ["", ".hbs", ".js", ".jsx", ".scss", ".yml"]
@@ -99,7 +99,7 @@ const config = {
       }
     }),
     ...((DEBUG && CLIENT) ? [new webpack.HotModuleReplacementPlugin()] : []),
-    ...(!DEBUG ? [
+    ...(PRODUCTION ? [
       new webpack.optimize.DedupePlugin(),
       new webpack.optimize.OccurrenceOrderPlugin(),
       new webpack.optimize.UglifyJsPlugin({
@@ -114,19 +114,15 @@ const config = {
       basePath,
       path.join(__dirname, "/src/templates/index.hbs"),
       CLIENT ? "index.html" : "base.html"),
-    ...(CLIENT ? [] : [
-      new StaticSiteGeneratorPlugin("bundle.js", paths)
-    ]),
+    ...(CLIENT ? [] : [new StaticSiteGeneratorPlugin("bundle.js", paths)]),
     new RobotsGeneratorPlugin(basePath, "robots.txt"),
     new SitemapGeneratorPlugin(basePath, paths, "sitemap.xml"),
     new ExtractTextPlugin("bundle.css")
   ],
-  postcss: function () {
-    return {
-      defaults: [autoprefixer],
-      cleaner: [autoprefixer()]
-    };
-  },
+  postcss: () => ({
+    defaults: [autoprefixer],
+    cleaner: [autoprefixer()]
+  }),
   sassLoader: {
     precision: 8
   }
