@@ -8,13 +8,14 @@ $container-lg: 1170px;
 
 $gutter: 30px;
 
+@import "reset";
+
 html {
   // See also: src/javascripts/components/Theme.js
   font-family: Roboto, source-han-sans-japanese, "Noto Sans Japanese", sans-serif;
 }
 
 body {
-  margin: 0;
   font-size: 13px;
   line-height: 20px;
 }
@@ -53,14 +54,12 @@ h2 {
   flex-flow: row;
   flex-wrap: wrap;
 
-  box-sizing: border-box;
   margin-left: -$gutter / 2;
   margin-right: -$gutter / 2;
 }
 
 [class^="cell-"],
 [class*=" cell-"] {
-  box-sizing: border-box;
   padding-bottom: 20px;
   padding-left: $gutter / 2;
   padding-right: $gutter / 2;
