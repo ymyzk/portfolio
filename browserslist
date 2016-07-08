@@ -1,10 +1,10 @@
-last 2 versions
 android >= 4
-chrome >= 29
+last 5 chrome versions
 edge >= 12
-firefox >= 45
+last 5 firefox versions
+firefox esr
 ie >= 10
 ie_mob >= 10
 ios_saf >= 7
-opera >= 17
+last 5 opera versions
 safari >= 6
