@@ -46,7 +46,7 @@ class ProjectCard extends React.Component {
     };
     return (
       <Card className="project" style={style}>
-        <CardTitle title={project.title} href={project.link} style={{ wordWrap: "break-word" }} />
+        <CardTitle title={project.title} href={project.link} target="_blank" style={{ wordWrap: "break-word" }} />
         <CardText>
           {project.description}
         </CardText>

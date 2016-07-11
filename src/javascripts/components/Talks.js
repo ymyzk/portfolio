@@ -52,6 +52,7 @@ const TalkListItem = ({ talk }) => {
       primaryText={talk.title}
       secondaryText={<span>{talk.event} - <time dateTime={dateIso}>{dateString}</time></span>}
       href={talk.link}
+      target="_blank"
     />
   );
 };
