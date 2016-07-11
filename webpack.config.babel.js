@@ -98,6 +98,7 @@ const config = {
         NODE_ENV: JSON.stringify(DEBUG ? "development" : "production")
       }
     }),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     ...((DEBUG && CLIENT) ? [new webpack.HotModuleReplacementPlugin()] : []),
     ...(PRODUCTION ? [
       new webpack.optimize.DedupePlugin(),
