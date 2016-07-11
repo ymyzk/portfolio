@@ -44,6 +44,63 @@ class App extends React.Component {
     const title = "Yusuke Miyazaki";
     const description = "Yusuke Miyazaki's portfolio website.";
     const url = "https://www.ymyzk.com";
+    const meta = [
+      { name: "description", content: description },
+      // Facebook / OGP
+      { property: "fb:app_id", content: "997147760366147" },
+      { property: "og:type", content: "profile" },
+      { property: "og:title", content: title },
+      { property: "og:url", content: url },
+      { property: "og:image", content: OgpImage },
+      { property: "og:locale", content: "ja_JP" },
+      { property: "og:locale:alternate", content: "en_US" },
+      { property: "og:site_name", content: title },
+      { property: "og:description", content: description },
+      { property: "profile:first_name", content: "Yusuke" },
+      { property: "profile:last_name", content: "Miyazaki" },
+      { property: "profile:username", content: "ymyzk" },
+      // Twitter Cards
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:site", content: "@ymyzk" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
+      { name: "twitter:image", content: TwitterImage },
+      // Chrome / Android
+      { name: "theme-color", content: Theme.palette.primary1Color },
+      // Windows / IE / Edge
+      { name: "msapplication-TileImage", content: MsTileImage },
+      { name: "msapplication-TileColor", content: Theme.palette.primary1Color }
+    ];
+    const link = [
+      // Favicon
+      { rel: "shortcut icon", type: "image/x-icon", href: FaviconIco, sizes: "16x16 32x32 48x48" },
+      { rel: "icon", type: "image/png", href: FaviconPng, sizes: "256x256" },
+      // iOS
+      { rel: "apple-touch-icon", href: AppleTouchIcon }
+    ];
+    const script = [
+      {
+        type: "application/ld+json",
+        innerHTML: JSON.stringify({
+          "@context": "http://schema.org",
+          "@type": "WebSite",
+          name: title,
+          url
+        })
+      },
+      {
+        type: "application/ld+json",
+        innerHTML: JSON.stringify({
+          "@context": "http://schema.org",
+          "@type": "Person",
+          name: "Yusuke Miyazaki",
+          url,
+          sameAs: [
+            "https://www.twitter.com/ymyzk"
+          ]
+        })
+      }
+    ];
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <div>
@@ -53,65 +110,11 @@ class App extends React.Component {
             }}
             titleTemplate={`%s - ${title}`}
             defaultTitle={title}
-            meta={[
-              { name: "description", content: description },
-              // Facebook / OGP
-              { property: "fb:app_id", content: "997147760366147" },
-              { property: "og:type", content: "profile" },
-              { property: "og:title", content: title },
-              { property: "og:url", content: url },
-              { property: "og:image", content: OgpImage },
-              { property: "og:locale", content: "ja_JP" },
-              { property: "og:locale:alternate", content: "en_US" },
-              { property: "og:site_name", content: title },
-              { property: "og:description", content: description },
-              { property: "profile:first_name", content: "Yusuke" },
-              { property: "profile:last_name", content: "Miyazaki" },
-              { property: "profile:username", content: "ymyzk" },
-              // Twitter Cards
-              { name: "twitter:card", content: "summary" },
-              { name: "twitter:site", content: "@ymyzk" },
-              { name: "twitter:title", content: title },
-              { name: "twitter:description", content: description },
-              { name: "twitter:image", content: TwitterImage },
-              // Chrome / Android
-              { name: "theme-color", content: Theme.palette.primary1Color },
-              // Windows / IE / Edge
-              { name: "msapplication-TileImage", content: MsTileImage },
-              { name: "msapplication-TileColor", content: Theme.palette.primary1Color }
-            ]}
-            link={[
-              // Favicon
-              { rel: "shortcut icon", type: "image/x-icon", href: FaviconIco, sizes: "16x16 32x32 48x48" },
-              { rel: "icon", type: "image/png", href: FaviconPng, sizes: "256x256" },
-              // iOS
-              { rel: "apple-touch-icon", href: AppleTouchIcon }
-            ]}
-            script={[
-              {
-                type: "application/ld+json",
-                innerHTML: JSON.stringify({
-                  "@context": "http://schema.org",
-                  "@type": "WebSite",
-                  name: title,
-                  url
-                })
-              },
-              {
-                type: "application/ld+json",
-                innerHTML: JSON.stringify({
-                  "@context": "http://schema.org",
-                  "@type": "Person",
-                  name: "Yusuke Miyazaki",
-                  url,
-                  sameAs: [
-                    "https://www.twitter.com/ymyzk"
-                  ]
-                })
-              }
-            ]}
+            meta={meta}
+            link={link}
+            script={script}
           />
-          <AppBar title="Yusuke Miyazaki" onLeftIconButtonTouchTap={this.handleToggle} />
+          <AppBar title={title} onLeftIconButtonTouchTap={this.handleToggle} />
           <Drawer
             open={this.state.open}
             docked={false}
