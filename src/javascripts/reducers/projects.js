@@ -30,6 +30,10 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case ADD_PROJECT_TAG: {
+      if (state.selectedTags.includes(action.tag)) {
+        // Duplicate tag
+        return state;
+      }
       const selectedTags = state.selectedTags.concat(action.tag);
       return Object.assign({}, state, {
         selectedTags
