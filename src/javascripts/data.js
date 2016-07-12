@@ -1,14 +1,8 @@
 import moment from "moment";
 
-import ContributionsList from "../data/contributions";
 import MiscList from "../data/misc";
 import ProjectsList from "../data/projects";
 import TalksList from "../data/talks";
-
-const contributions = (() => {
-  ContributionsList.sort();
-  return ContributionsList;
-})();
 
 const misc = MiscList.map((n) => {
   n.date = new Date(n.date);
@@ -41,10 +35,6 @@ const talks = TalksList.map((t) => {
   return t;
 });
 
-function loadContributions() {
-  return contributions;
-}
-
 function loadMisc() {
   return misc;
 }
@@ -57,4 +47,4 @@ function loadTalks() {
   return talks;
 }
 
-export { loadContributions, loadMisc, loadProjects, loadTalks };
+export { loadMisc, loadProjects, loadTalks };
