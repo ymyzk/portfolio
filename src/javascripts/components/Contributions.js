@@ -2,11 +2,8 @@ import { List, ListItem } from "material-ui/List";
 import React from "react";
 import Helmet from "react-helmet";
 
-import { loadContributions } from "../data";
-
-const Contributions = () => {
+const Contributions = ({ contributions }) => {
   const title = "Contributions";
-  const contributions = loadContributions();
   return (
     <div className="container">
       <Helmet title={title} />
@@ -26,6 +23,10 @@ const Contributions = () => {
       </div>
     </div>
   );
+};
+
+Contributions.propTypes = {
+  contributions: React.PropTypes.arrayOf(React.PropTypes.object.isRequired).isRequired
 };
 
 const ContributionListItem = ({ contribution }) => {

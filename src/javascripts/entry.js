@@ -1,8 +1,11 @@
 import React from "react";
 import injectTapEventPlugin from "react-tap-event-plugin";
 import { render } from "react-dom";
+import { Provider } from "react-redux";
 import { Router, browserHistory } from "react-router";
+import { createStore } from "redux";
 
+import reducer from "./reducers";
 import routes from "./routes";
 
 // Needed for onTouchTap
@@ -29,6 +32,9 @@ browserHistory.listen(location => {
   window.ga("send", "pageview");
 });
 
+const store = createStore(reducer, window.__INITIAL_STATE__);
 render((
-  <Router history={browserHistory} routes={routes} />
+  <Provider store={store}>
+    <Router history={browserHistory} routes={routes} />
+  </Provider>
 ), document.getElementById("app"));

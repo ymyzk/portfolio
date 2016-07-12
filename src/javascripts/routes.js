@@ -3,7 +3,7 @@ import { IndexRoute, Redirect, Route } from "react-router";
 
 import App from "./components/App";
 import Home from "./components/Home";
-import Contributions from "./components/Contributions";
+import Contributions from "./containers/Contributions";
 import News from "./components/Misc";
 import Projects from "./components/Projects";
 import Talks from "./components/Talks";
