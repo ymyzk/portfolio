@@ -1,13 +1,7 @@
 import moment from "moment";
 
-import MiscList from "../data/misc";
 import ProjectsList from "../data/projects";
 import TalksList from "../data/talks";
-
-const misc = MiscList.map((n) => {
-  n.date = new Date(n.date);
-  return n;
-});
 
 const projects = ProjectsList.map((p) => {
   if (p.start !== null) {
@@ -35,10 +29,6 @@ const talks = TalksList.map((t) => {
   return t;
 });
 
-function loadMisc() {
-  return misc;
-}
-
 function loadProjects() {
   return projects;
 }
@@ -47,4 +37,4 @@ function loadTalks() {
   return talks;
 }
 
-export { loadMisc, loadProjects, loadTalks };
+export { loadProjects, loadTalks };

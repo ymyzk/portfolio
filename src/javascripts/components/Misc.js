@@ -2,9 +2,7 @@ import { List, ListItem } from "material-ui/List";
 import React from "react";
 import Helmet from "react-helmet";
 
-import { loadMisc } from "../data";
-
-const Misc = () => {
+const Misc = ({ misc }) => {
   const title = "Misc";
   return (
     <div className="container">
@@ -14,7 +12,7 @@ const Misc = () => {
         <div className="cell-xs-without-gutter cell-sm-12">
           <List>
             {
-              loadMisc().map((i) => (<MiscListItem item={i} key={i.title} />))
+              misc.map((i) => (<MiscListItem item={i} key={i.title} />))
             }
           </List>
         </div>
@@ -23,16 +21,17 @@ const Misc = () => {
   );
 };
 
-const MiscListItem = ({ item }) => {
-  const date = `${item.date.getFullYear()}-${item.date.getMonth() + 1}-${item.date.getDate()}`;
-  return (
-    <ListItem
-      primaryText={item.title}
-      secondaryText={`${item.subtitle} — ${date}`}
-      href={item.link}
-    />
-  );
+Misc.propTypes = {
+  misc: React.PropTypes.arrayOf(React.PropTypes.object.isRequired).isRequired
 };
+
+const MiscListItem = ({ item }) => (
+  <ListItem
+    primaryText={item.title}
+    secondaryText={`${item.subtitle} — ${item.date.format("YYYY-M-D")}`}
+    href={item.link}
+  />
+);
 
 MiscListItem.propTypes = {
   item: React.PropTypes.object.isRequired
