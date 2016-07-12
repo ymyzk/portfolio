@@ -10,7 +10,9 @@ function IndexPageGeneratorPlugin(base, templateFileName, outputFileName) {
 IndexPageGeneratorPlugin.prototype.apply = function(compiler) {
   const self = this;
   const template = Handlebars.compile(fs.readFileSync(this.templateFileName).toString());
+  // Corresponds to server.js
   const out = template({
+    initialState: JSON.stringify({}),
     head: {
       title: "<title>Yusuke Miyazaki</title>"
     }

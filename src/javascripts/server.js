@@ -14,6 +14,7 @@ import indexPage from "../templates/index";
 const template = Handlebars.compile(indexPage);
 
 function renderFullPage(fragment, state, head) {
+  // Corresponds to plugins/index.js
   return template({
     fragment,
     initialState: JSON.stringify(state),
