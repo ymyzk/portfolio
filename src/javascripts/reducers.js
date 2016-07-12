@@ -2,13 +2,22 @@ import moment from "moment";
 
 import ContributionsList from "../data/contributions";
 import MiscList from "../data/misc";
+import TalksList from "../data/talks";
+
+const misc = MiscList.map((n) => {
+  n.date = moment(n.date);
+  return n;
+});
+
+const talks = TalksList.map((t) => {
+  t.date = moment(t.date);
+  return t;
+});
 
 const initialState = {
   contributions: ContributionsList.sort(),
-  misc: MiscList.map((n) => {
-    n.date = moment(n.date);
-    return n;
-  })
+  misc,
+  talks
 };
 
 export default (state = initialState) => state;

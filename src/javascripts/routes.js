@@ -6,7 +6,7 @@ import Home from "./components/Home";
 import Contributions from "./containers/Contributions";
 import Misc from "./containers/Misc";
 import Projects from "./components/Projects";
-import Talks from "./components/Talks";
+import Talks from "./containers/Talks";
 import PageNotFound from "./components/PageNotFound";
 
 export default (

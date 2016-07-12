@@ -3,11 +3,8 @@ import Subheader from "material-ui/Subheader";
 import React from "react";
 import Helmet from "react-helmet";
 
-import { loadTalks } from "../data";
-
-const Talks = () => {
+const Talks = ({ talks }) => {
   const title = "Talks";
-  const talks = loadTalks();
   const talksByYear = {};
   talks.forEach((t) => {
     const year = t.date.year();
@@ -27,7 +24,7 @@ const Talks = () => {
           <List>
             {
               years.map((year) => (
-                <div>
+                <div key={year}>
                   <Subheader>{year}</Subheader>
                   {
                     talksByYear[year].map((t) => (
@@ -42,6 +39,10 @@ const Talks = () => {
       </div>
     </div>
   );
+};
+
+Talks.propTypes = {
+  talks: React.PropTypes.arrayOf(React.PropTypes.object.isRequired).isRequired
 };
 
 const TalkListItem = ({ talk }) => {
