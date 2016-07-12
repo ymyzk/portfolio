@@ -4,8 +4,8 @@ import { addProjectTag, removeProjectTag } from "../actions/projects";
 import Projects from "../components/Projects";
 
 const mapStateToProps = (state) => ({
-  projects: state.projects,
-  selectedTags: state.selectedProjectTags
+  projects: state.projects.projects,
+  selectedTags: state.projects.selectedTags
 });
 
 const mapDispatchToProps = (dispatch) => ({
