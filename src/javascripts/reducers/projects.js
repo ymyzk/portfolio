@@ -1,3 +1,4 @@
+import { ADD_PROJECT_TAG, REMOVE_PROJECT_TAG } from "../actions/projects";
 import ProjectsList from "../../data/projects";
 
 const projects = ProjectsList.map((p) => {
@@ -28,13 +29,13 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case "ADD_PROJECT_TAG": {
+    case ADD_PROJECT_TAG: {
       const selectedTags = state.selectedTags.concat(action.tag);
       return Object.assign({}, state, {
         selectedTags
       });
     }
-    case "REMOVE_PROJECT_TAG": {
+    case REMOVE_PROJECT_TAG: {
       const selectedTags = state.selectedTags.filter((t) => t !== action.tag);
       return Object.assign({}, state, {
         selectedTags
