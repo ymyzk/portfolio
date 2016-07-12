@@ -16,58 +16,44 @@ const floatingButtonStyle = {
   right: 12
 };
 
-class ProjectCard extends React.Component {
-  static propTypes = {
-    project: React.PropTypes.object.isRequired,
-    isActive: React.PropTypes.bool,
-    onTagSelected: React.PropTypes.func
+const ProjectCard = ({ project, isActive, onTagSelected }) => {
+  const style = {
+    opacity: isActive ? 1.0 : 0.35,
+    transition: "opacity 1s"
   };
-
-  static defaultProps = {
-    isActive: true
-  };
-
-  constructor(props) {
-    super(props);
-    this.handleTagTouchTap = this.handleTagTouchTap.bind(this);
-  }
-
-  handleTagTouchTap(tag) {
-    if (this.props.onTagSelected !== undefined) {
-      this.props.onTagSelected(tag);
-    }
-  }
-
-  render() {
-    const project = this.props.project;
-    const style = {
-      opacity: this.props.isActive ? 1.0 : 0.35,
-      transition: "opacity 1s"
-    };
-    return (
-      <Card className="project" style={style}>
-        <CardTitle title={project.title} href={project.link} target="_blank" style={{ wordWrap: "break-word" }} />
-        <CardText>
-          {project.description}
-        </CardText>
-        <CardActions>
-          <div style={{ display: "flex", flexWrap: "wrap" }}>
-            <ProjectTag tag={project.duration} />
-            {
-              project.tags.map(tag => (
-                <ProjectTag key={tag} tag={tag} onTouchTap={this.handleTagTouchTap} />
-              ))
-            }
-          </div>
-        </CardActions>
-        <div style={floatingButtonWrapperStyle}>
-          <FloatingActionButton linkButton href={project.link} target="_blank" style={floatingButtonStyle}>
-            <ActionExitToTop />
-          </FloatingActionButton>
+  return (
+    <Card className="project" style={style}>
+      <CardTitle title={project.title} href={project.link} target="_blank" style={{ wordWrap: "break-word" }} />
+      <CardText>
+        {project.description}
+      </CardText>
+      <CardActions>
+        <div style={{ display: "flex", flexWrap: "wrap" }}>
+          <ProjectTag tag={project.duration} />
+          {
+            project.tags.map(tag => (
+              <ProjectTag key={tag} tag={tag} onTouchTap={() => onTagSelected(tag)} />
+            ))
+          }
         </div>
-      </Card>
-    );
-  }
-}
+      </CardActions>
+      <div style={floatingButtonWrapperStyle}>
+        <FloatingActionButton linkButton href={project.link} target="_blank" style={floatingButtonStyle}>
+          <ActionExitToTop />
+        </FloatingActionButton>
+      </div>
+    </Card>
+  );
+};
+
+ProjectCard.propTypes = {
+  project: React.PropTypes.object.isRequired,
+  isActive: React.PropTypes.bool,
+  onTagSelected: React.PropTypes.func
+};
+
+ProjectCard.defaultProps = {
+  isActive: true
+};
 
 export default ProjectCard;
