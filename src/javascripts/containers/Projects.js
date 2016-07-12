@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import { addProjectTag, removeProjectTag } from "../actions";
+import { addProjectTag, removeProjectTag } from "../actions/projects";
 import Projects from "../components/Projects";
 
 const mapStateToProps = (state) => ({
