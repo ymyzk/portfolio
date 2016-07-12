@@ -22,8 +22,7 @@ const initialState = {
   misc,
   projects,
   skills,
-  talks,
-  selectedProjectTags: []
+  talks
 };
 
 const defaultReducer = (state = initialState) => state;

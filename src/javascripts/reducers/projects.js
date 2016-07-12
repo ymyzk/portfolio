@@ -29,13 +29,13 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case "ADD_PROJECT_TAG": {
-      const selectedTags = state.selectedProjectTags.concat(action.tag);
+      const selectedTags = state.selectedTags.concat(action.tag);
       return Object.assign({}, state, {
         selectedTags
       });
     }
     case "REMOVE_PROJECT_TAG": {
-      const selectedTags = state.selectedProjectTags.filter((t) => t !== action.tag);
+      const selectedTags = state.selectedTags.filter((t) => t !== action.tag);
       return Object.assign({}, state, {
         selectedTags
       });
