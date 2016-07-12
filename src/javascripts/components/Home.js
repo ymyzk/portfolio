@@ -1,5 +1,4 @@
-import { Card, CardActions, CardTitle } from "material-ui/Card";
-import Chip from "material-ui/Chip";
+import { Card, CardTitle } from "material-ui/Card";
 import FontIcon from "material-ui/FontIcon";
 import LinearProgress from "material-ui/LinearProgress";
 import { List, ListItem } from "material-ui/List";
@@ -8,8 +7,8 @@ import moment from "moment";
 import { grey700 } from "material-ui/styles/colors";
 import "whatwg-fetch";
 
-import Skills from "../../data/skills";
 import RecentTalksCard from "../containers/Home/RecentTalksCard";
+import SkillsCard from "../containers/Home/SkillsCard";
 
 const Home = () => (
   <div className="container">
@@ -21,7 +20,7 @@ const Home = () => (
         <AffiliationCard />
       </div>
       <div className="cell-sm-6 cell-md-4">
-        <SkillsCard skills={Skills} />
+        <SkillsCard />
       </div>
       <div className="cell-sm-6 cell-md-4">
         <RecentEntriesCard />
@@ -95,25 +94,6 @@ const AffiliationCard = () => (
     </List>
   </Card>
 );
-
-const SkillsCard = ({ skills }) => (
-  <Card>
-    <CardTitle title="Skills" />
-    <CardActions>
-      <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
-        {
-          skills.map((s) => (
-            <Chip key={s} style={{ margin: 4 }}>{s}</Chip>
-          ))
-        }
-      </div>
-    </CardActions>
-  </Card>
-);
-
-SkillsCard.propTypes = {
-  skills: React.PropTypes.arrayOf(React.PropTypes.string.isRequired).isRequired
-};
 
 const LinksCard = () => (
   <Card>

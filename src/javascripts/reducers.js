@@ -2,6 +2,7 @@ import moment from "moment";
 
 import ContributionsList from "../data/contributions";
 import MiscList from "../data/misc";
+import skills from "../data/skills";
 import TalksList from "../data/talks";
 
 const misc = MiscList.map((n) => {
@@ -17,6 +18,7 @@ const talks = TalksList.map((t) => {
 const initialState = {
   contributions: ContributionsList.sort(),
   misc,
+  skills,
   talks
 };
 
