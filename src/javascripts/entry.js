@@ -32,7 +32,10 @@ browserHistory.listen(location => {
   window.ga("send", "pageview");
 });
 
-const store = createStore(reducer, window.__INITIAL_STATE__);
+const store = createStore(reducer);
+// FIXME: JSON に moment.js のオブジェクトをエンコードできないための対処
+// Server-side rendering でも client 側で書き直す
+// const store = createStore(reducer, window.__INITIAL_STATE__);
 render((
   <Provider store={store}>
     <Router history={browserHistory} routes={routes} />
