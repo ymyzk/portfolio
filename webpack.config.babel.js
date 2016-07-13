@@ -98,7 +98,10 @@ const config = {
       // Fonts (Font Awesome)
       {
         test: /\.(eot|svg|ttf|woff(2)?)(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "url-loader"
+        loader: "url-loader",
+        query: {
+          limit: 1024
+        }
       }
     ]
   },
