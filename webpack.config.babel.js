@@ -98,10 +98,35 @@ const config = {
       },
       // Fonts (Font Awesome)
       {
-        test: /\.(eot|svg|ttf|woff(2)?)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
         loader: "url-loader",
         query: {
-          limit: 1024
+          limit: 1024,
+          mimetype: "application/vnd.ms-fontobject"
+        }
+      },
+      {
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        loader: "url-loader",
+        query: {
+          limit: 1024,
+          mimetype: "image/svg+xml"
+        }
+      },
+      {
+        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+        loader: "url-loader",
+        query: {
+          limit: 1024,
+          mimetype: "application/octet-stream"
+        }
+      },
+      {
+        test: /\.woff(2)?(\?v=\d+\.\d+\.\d+)?$/,
+        loader: "url-loader",
+        query: {
+          limit: 1024,
+          mimetype: "application/font-woff"
         }
       }
     ]
