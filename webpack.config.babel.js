@@ -3,6 +3,7 @@ import path from "path";
 // webpack
 import webpack from "webpack";
 import autoprefixer from "autoprefixer";
+import CompressionPlugin from "compression-webpack-plugin";
 import ExtractTextPlugin from "extract-text-webpack-plugin";
 import StaticSiteGeneratorPlugin from "static-site-generator-webpack-plugin";
 // Original Plugins
@@ -125,7 +126,15 @@ const config = {
           warnings: false
         }
       }),
-      new webpack.optimize.AggressiveMergingPlugin()
+      new webpack.optimize.AggressiveMergingPlugin(),
+      new CompressionPlugin({
+        algorithm: "gzip",
+        // TODO: requires node-zopfli
+        // algorithm: "zopfli",
+        test: /\.(css|eot|js|svg|ttf|txt|xml)$/,
+        threshold: 1024,
+        minRatio: 0.8
+      })
     ] : []),
     new webpack.NoErrorsPlugin(),
     new IndexPageGeneratorPlugin(
