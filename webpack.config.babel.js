@@ -33,7 +33,7 @@ const config = {
     path.join(__dirname, "/src/javascripts/", CLIENT ? "entry.js" : "server.js")
   ],
   resolve: {
-    extensions: ["", ".css", ".hbs", ".js", ".jsx", ".scss", ".yml"]
+    extensions: ["", ".css", ".hbs", ".js", ".scss", ".yml"]
   },
   devServer: {
     contentBase: "output",
@@ -55,7 +55,7 @@ const config = {
   module: {
     preLoaders: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js)$/,
         loader: "eslint-loader",
         include: [path.resolve(__dirname, "src/javascripts")],
         exclude: [nodeModulesPath]
@@ -78,7 +78,7 @@ const config = {
       },
       // JavaScript
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js)$/,
         loaders: ["react-hot", "babel"],
         exclude: [nodeModulesPath]
       },
