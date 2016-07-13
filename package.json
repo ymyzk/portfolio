@@ -61,6 +61,7 @@
     "yaml-loader": "~0.2.0"
   },
   "dependencies": {
+    "font-awesome": "~4.6.3",
     "material-ui": "0.15.2",
     "moment": "~2.14.0",
     "react": "~15.2.0",

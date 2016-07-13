@@ -33,7 +33,7 @@ const config = {
     path.join(__dirname, "/src/javascripts/", CLIENT ? "entry.js" : "server.js")
   ],
   resolve: {
-    extensions: ["", ".hbs", ".js", ".jsx", ".scss", ".yml"]
+    extensions: ["", ".css", ".hbs", ".js", ".jsx", ".scss", ".yml"]
   },
   devServer: {
     contentBase: "output",
@@ -62,29 +62,43 @@ const config = {
       }
     ],
     loaders: [
+      // Template
       {
         test: /\.hbs$/,
         loader: "html"
+      },
+      // Stylesheet
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract("style", ["css"])
       },
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract("style", ["css", "postcss", "sass"])
       },
+      // JavaScript
       {
         test: /\.(js|jsx)$/,
         loaders: ["react-hot", "babel"],
         exclude: [nodeModulesPath]
       },
+      // Data
       {
         test: /\.yml$/,
         loaders: ["json", "yaml"]
       },
+      // Images
       {
         test: /\.(ico|jpg|png)$/,
         loader: "url-loader",
         query: {
           limit: 1024
         }
+      },
+      // Fonts (Font Awesome)
+      {
+        test: /\.(eot|svg|ttf|woff(2)?)(\?v=\d+\.\d+\.\d+)?$/,
+        loader: "url-loader"
       }
     ]
   },

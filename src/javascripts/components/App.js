@@ -16,6 +16,7 @@ import MsTileImage from "../../images/ms-tile-image.png";
 import OgpImage from "../../images/ogp.png";
 import TwitterImage from "../../images/twitter.png";
 
+require("font-awesome/css/font-awesome");
 require("../../stylesheets/index");
 
 const muiThemeProductionOption = {
