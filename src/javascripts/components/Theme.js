@@ -6,7 +6,15 @@ export default {
   spacing,
   zIndex,
   // See also: src/stylesheets/index.scss
-  fontFamily: "Roboto, source-han-sans-japanese, \"Noto Sans Japanese\", sans-serif",
+  fontFamily: [
+    "Roboto",
+    "Noto Sans Japanese", "Noto Sans CJK JP",
+    "源ノ角ゴシック", "Source Han Sans",
+    "Hiragino Sans",
+    "游ゴシック", "YuGothic",
+    "Hiragino Kaku Gothic ProN",
+    "メイリオ", "Meiryo", "sans-serif"
+  ].map(f => `"${f}"`).join(", "),
   palette: {
     // TODO: define some colors
     primary1Color: colors.indigo500,
