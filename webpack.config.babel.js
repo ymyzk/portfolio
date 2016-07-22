@@ -86,7 +86,7 @@ const config = {
       // Data
       {
         test: /\.yml$/,
-        loaders: ["yaml"]
+        loaders: ["json", "yaml"]
       },
       // Images
       {
