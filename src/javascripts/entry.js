@@ -6,7 +6,7 @@ import { Router, browserHistory } from "react-router";
 import { applyMiddleware, createStore } from "redux";
 
 import reducer from "./reducers";
-import routes from "./routes";
+import getRoutes from "./routes";
 
 // Needed for onTouchTap
 // Can go away when react 1.0 release
@@ -44,6 +44,7 @@ if (__DEBUG__) {
 // Server-side rendering でも client 側で書き直す
 // const store = createStore(reducer, window.__INITIAL_STATE__);
 const store = createStore(reducer, {}, applyMiddleware(...middleware));
+const routes = getRoutes({});
 render((
   <Provider store={store}>
     <Router history={browserHistory} routes={routes} />

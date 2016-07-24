@@ -19,16 +19,10 @@ import TwitterImage from "../../images/twitter.png";
 require("font-awesome/css/font-awesome");
 require("../../stylesheets/index");
 
-const muiThemeProductionOption = {
-  // We disable inline-style-prefixer, because it produces wrong styles!
-  // We apply autoprefixer after React rendering
-  userAgent: false
-};
-const muiTheme = getMuiTheme(Theme, __SERVER__ ? muiThemeProductionOption : {});
-
 class App extends React.Component {
   static propTypes = {
-    children: React.PropTypes.node.isRequired
+    children: React.PropTypes.node.isRequired,
+    themeOptions: React.PropTypes.any.isRequired
   };
 
   constructor(props, context) {
@@ -102,6 +96,7 @@ class App extends React.Component {
         })
       }
     ];
+    const muiTheme = getMuiTheme(Theme, this.props.themeOptions);
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <div>

@@ -1,14 +1,15 @@
+import express from "express";
 import Handlebars from "handlebars";
-import htmlAutoprefixer from "html-autoprefixer";
 import React from "react";
 import { renderToString } from "react-dom/server";
 import Helmet from "react-helmet";
 import { Provider } from "react-redux";
 import { RouterContext, match } from "react-router";
 import { createStore } from "redux";
+import vary from "vary";
 
 import reducer from "./reducers";
-import routes from "./routes";
+import getRoutes from "./routes";
 import indexPage from "../templates/index";
 
 const template = Handlebars.compile(indexPage);
@@ -27,19 +28,55 @@ function renderFullPage(fragment, state, head) {
   });
 }
 
-function render(locals, callback) {
-  const location = locals.path;
-  match({ routes, location }, (error, redirectLocation, renderProps) => {
-    const store = createStore(reducer);
-    const html = renderToString(
-      <Provider store={store}>
-        <RouterContext {...renderProps} />
-      </Provider>
-    );
-    const initialState = store.getState();
-    const head = Helmet.rewind();
-    callback(null, htmlAutoprefixer.process(renderFullPage(html, initialState, head)));
-  });
-}
+const app = express();
+app.use(express.static(`build/${__DEBUG__ ? "debug" : "production"}/server/public`));
 
-export default render;
+app.get("*", (req, res) => {
+  match(
+    {
+      routes: getRoutes({ userAgent: req.headers["user-agent"] }),
+      location: req.url
+    },
+    (err, redirect, props) => {
+      if (err) {
+        res.status(500).send(err.message);
+      } else if (redirect) {
+        res.redirect(redirect.pathname + redirect.search);
+      } else if (props) {
+        const store = createStore(reducer);
+        const html = renderToString(
+          <Provider store={store}>
+            <RouterContext {...props} />
+          </Provider>
+        );
+        const initialState = store.getState();
+        const head = Helmet.rewind();
+        vary(res, "User-Agent");
+        res.send(renderFullPage(html, initialState, head));
+      } else {
+        res.status(404).send("Not Found");
+      }
+    }
+  );
+});
+
+const normalizePort = (val) => {
+  const port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+};
+
+const port = normalizePort(process.env.PORT || "8000");
+app.listen(port, () => {
+  console.log(`Listening on ${port}`);  // eslint-disable-line
+});

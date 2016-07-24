@@ -9,5 +9,4 @@
 - Node.js v6
 
 ## Docker
-- Run `docker run -it --rm -v <output_dir>:/app/build ymyzk/portfolio`
-- Open `<output_dir>/index.html`
+TODO

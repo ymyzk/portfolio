@@ -5,7 +5,6 @@ import webpack from "webpack";
 import autoprefixer from "autoprefixer";
 import CompressionPlugin from "compression-webpack-plugin";
 import ExtractTextPlugin from "extract-text-webpack-plugin";
-import StaticSiteGeneratorPlugin from "static-site-generator-webpack-plugin";
 // Original Plugins
 import IndexPageGeneratorPlugin from "./plugins/index";
 import RobotsGeneratorPlugin from "./plugins/robots";
@@ -15,7 +14,7 @@ const DEBUG = !process.argv.includes("--production");
 const PRODUCTION = !DEBUG;
 const CLIENT = !process.argv.includes("--server");
 
-const buildPath = path.resolve(__dirname, `build/${CLIENT ? "client" : "server"}`);
+const buildPath = path.resolve(__dirname, `build/${DEBUG ? "debug" : "production"}/${CLIENT ? "client" : "server/public"}`);
 const nodeModulesPath = path.resolve(__dirname, "node_modules");
 
 const basePath = "https://www.ymyzk.com/";
@@ -49,7 +48,7 @@ const config = {
   output: {
     path: buildPath,
     publicPath: DEBUG ? "/" : basePath,
-    filename: "bundle.js",
+    filename: CLIENT ? "bundle.js" : "server.js",
     libraryTarget: CLIENT ? "var" : "commonjs2"
   },
   externals: CLIENT ? false : /^[a-z\-0-9]+$/,
@@ -161,14 +160,15 @@ const config = {
       })
     ] : []),
     new webpack.NoErrorsPlugin(),
-    new IndexPageGeneratorPlugin(
-      basePath,
-      path.join(__dirname, "/src/templates/index.hbs"),
-      CLIENT ? "index.html" : "base.html"),
-    ...(CLIENT ? [] : [new StaticSiteGeneratorPlugin("bundle.js", paths)]),
-    new RobotsGeneratorPlugin(basePath, "robots.txt"),
-    new SitemapGeneratorPlugin(basePath, paths, "sitemap.xml"),
-    new ExtractTextPlugin("bundle.css")
+    new ExtractTextPlugin("bundle.css"),
+    ...(CLIENT ? [
+      new IndexPageGeneratorPlugin(
+        basePath,
+        path.join(__dirname, "/src/templates/index.hbs"),
+        "index.html"),
+      new RobotsGeneratorPlugin(basePath, "robots.txt"),
+      new SitemapGeneratorPlugin(basePath, paths, "sitemap.xml")
+    ] : []),
   ],
   postcss: () => ({
     defaults: [autoprefixer],

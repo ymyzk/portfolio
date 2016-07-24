@@ -6,12 +6,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         python \
     && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir -p /app/
+COPY package.json /app/
 WORKDIR /app
-
-COPY package.json ./
 RUN npm install
 
 COPY . /app/
 
-CMD ["npm", "run", "build-production"]
+RUN ["npm", "run", "build-all"]
+
+VOLUME ["/app/build"]
+EXPOSE 8000
+
+CMD ["npm", "run", "start-production-server"]

@@ -9,15 +9,25 @@ import Projects from "./containers/Projects";
 import Talks from "./containers/Talks";
 import PageNotFound from "./components/PageNotFound";
 
-export default (
-  <Route path="/" component={App}>
-    <IndexRoute component={Home} />
-    <Route path="projects/" component={Projects} />
-    <Route path="talks/" component={Talks} />
-    <Route path="contributions/" component={Contributions} />
-    <Route path="misc/" component={Misc} />
-    <Redirect from="news" to="misc/" />
-    <Redirect from="news/" to="misc/" />
-    <Route path="*" component={PageNotFound} />
-  </Route>
-);
+export default (themeOptions) => {  // eslint-disable-line
+  const AppWrapper = ({ children }) => (
+    <App children={children} themeOptions={themeOptions} />
+  );
+
+  AppWrapper.propTypes = {
+    children: React.PropTypes.node.isRequired
+  };
+
+  return (
+    <Route path="/" component={AppWrapper}>
+      <IndexRoute component={Home} />
+      <Route path="projects/" component={Projects} />
+      <Route path="talks/" component={Talks} />
+      <Route path="contributions/" component={Contributions} />
+      <Route path="misc/" component={Misc} />
+      <Redirect from="news" to="misc/" />
+      <Redirect from="news/" to="misc/" />
+      <Route path="*" component={PageNotFound} />
+    </Route>
+  );
+};
