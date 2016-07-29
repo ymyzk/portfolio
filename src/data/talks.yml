@@ -1,3 +1,13 @@
+- title: 型ヒントについて考えよう! (To Appear)
+  event: PyCon JP 2016
+  date: 2016-09-22
+  link: https://pycon.jp/2016/ja/schedule/presentation/52/
+
+- title: Gradual Typing for Delimited Continuations
+  event: STOP 2016
+  date: 2016-07-17
+  link: null
+
 - title: Proper Tail Calls - New Feature in ECMAScript 2015
   event: Gee-Fes Kyoto
   date: 2016-07-03
