@@ -6,7 +6,7 @@ env:
 install:
   - npm install
 script:
-  - npm run build-production
+  - npm run build-all
 sudo: false
 addons:
   apt:
