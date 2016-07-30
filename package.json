@@ -63,6 +63,7 @@
     "yaml-loader": "~0.4.0"
   },
   "dependencies": {
+    "babel-polyfill": "~6.9.1",
     "express": "~4.14.0",
     "font-awesome": "~4.6.3",
     "material-ui": "0.15.2",

@@ -28,6 +28,7 @@ const paths = [
 
 const config = {
   entry: [
+    "babel-polyfill",
     "whatwg-fetch",
     ...((DEBUG && CLIENT) ? ["webpack/hot/dev-server", "webpack/hot/only-dev-server"] : []),
     path.join(__dirname, "/src/javascripts/", CLIENT ? "entry.js" : "server.js")
