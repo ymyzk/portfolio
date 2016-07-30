@@ -16,8 +16,8 @@
     "build-production": "npm run build-production-client && npm run build-production-server",
     "build-production-client": "webpack --production --no-color",
     "build-production-server": "webpack --production --no-color --server && mv build/production/server/public/server.js* build/production/server/ && cp build/production/client/bundle.js* build/production/server/public/",
-    "start-debug-server": "node build/debug/server/server.js",
-    "start-production-server": "node build/production/server/server.js",
+    "start-debug-server": "cp -r build/debug/server/public/ public && node build/debug/server/server.js",
+    "start-production-server": "cp -r build/production/server/public/ public && node build/production/server/server.js",
     "supported-browsers": "browserslist \"$(cat browserslist | tr '\n' ',')\""
   },
   "license": "LicenseRef-LICENSE",
