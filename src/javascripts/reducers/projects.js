@@ -5,14 +5,14 @@ const projects = ProjectsList.map((p) => {
   const start = (p.start !== null) ? new Date(p.start) : null;  // TODO: Error
   const end = (p.end !== null) ? new Date(p.end) : null;
   const duration = (() => {
-    const startYear = p.start.getFullYear();
+    const startYear = start.getFullYear();
     if (p.end === null) {
       // 継続中
       return `${startYear}-`;
     }
-    const endYear = p.end.getFullYear();
+    const endYear = end.getFullYear();
     // 終了済み
-    return startYear === endYear ? `${p.start.getFullYear()}` : `${startYear}-${endYear}`;
+    return startYear === endYear ? `${start.getFullYear()}` : `${startYear}-${endYear}`;
   })();
   return Object.assign(p, {
     start,
