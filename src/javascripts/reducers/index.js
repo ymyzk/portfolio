@@ -20,7 +20,6 @@ const talks = TalksList.map((t) => {
 const initialState = {
   contributions: ContributionsList.sort(),
   misc,
-  projects,
   skills,
   talks
 };
