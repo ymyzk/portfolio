@@ -2,14 +2,9 @@ import { ADD_PROJECT_TAG, REMOVE_PROJECT_TAG } from "../actions/projects";
 import ProjectsList from "../../data/projects";
 
 const projects = ProjectsList.map((p) => {
-  if (p.start !== null) {
-    // TODO: Error
-    p.start = new Date(p.start);
-  }
-  if (p.end !== null) {
-    p.end = new Date(p.end);
-  }
-  p.duration = (() => {
+  const start = (p.start !== null) ? new Date(p.start) : null;  // TODO: Error
+  const end = (p.end !== null) ? new Date(p.end) : null;
+  const duration = (() => {
     const startYear = p.start.getFullYear();
     if (p.end === null) {
       // 継続中
@@ -19,7 +14,11 @@ const projects = ProjectsList.map((p) => {
     // 終了済み
     return startYear === endYear ? `${p.start.getFullYear()}` : `${startYear}-${endYear}`;
   })();
-  return p;
+  return Object.assign(p, {
+    start,
+    end,
+    duration
+  });
 });
 
 const initialState = {

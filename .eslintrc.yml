@@ -11,8 +11,6 @@ rules:
   # Following rules may be changed in the future
   max-len:
     - 0
-  no-param-reassign:
-    - 0
   no-underscore-dangle:
     - 0
 env:

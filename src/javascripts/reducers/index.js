@@ -7,18 +7,12 @@ import MiscList from "../../data/misc";
 import skills from "../../data/skills";
 import TalksList from "../../data/talks";
 
-const misc = MiscList.map((n) => {
-  n.date = moment(n.date);
-  return n;
-});
-
-const talks = TalksList.map((t) => {
-  t.date = moment(t.date);
-  return t;
-});
+const contributions = ContributionsList.sort();
+const misc = MiscList.map((n) => Object.assign(n, { date: moment(n.date) }));
+const talks = TalksList.map((t) => Object.assign(t, { date: moment(t.date) }));
 
 const initialState = {
-  contributions: ContributionsList.sort(),
+  contributions,
   misc,
   skills,
   talks
