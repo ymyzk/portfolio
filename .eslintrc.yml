@@ -3,8 +3,6 @@ rules:
     - 2
     - unix
   # Migrating
-  import/no-named-as-default:
-    - warn
   react/jsx-filename-extension:
     - warn
   react/jsx-no-target-blank:
