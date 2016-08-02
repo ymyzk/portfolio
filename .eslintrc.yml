@@ -3,8 +3,6 @@ rules:
     - 2
     - unix
   # Migrating
-  import/no-extraneous-dependencies:
-    - warn
   import/no-named-as-default:
     - warn
   react/jsx-filename-extension:
