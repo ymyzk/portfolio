@@ -1,23 +1,22 @@
 rules:
   linebreak-style:
-    - 2
+    - error
     - unix
-  # Migrating
-  react/jsx-filename-extension:
-    - warn
-  react/jsx-no-target-blank:
-    - warn
   # Following rules override eslint-config-airbnb
   quotes:
-    - 2
+    - error
     - double
   comma-dangle:
-    - 0
+    - off
   # Following rules may be changed in the future
+  react/jsx-filename-extension:
+    - off
+  react/jsx-no-target-blank:
+    - warn
   max-len:
-    - 0
+    - off
   no-underscore-dangle:
-    - 0
+    - off
 env:
   browser: true
   es6: true
