@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     {{{ head.title }}}
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1, minimum-scale=1">
-    <link rel="stylesheet" href="/bundle.css">
+    <link rel="stylesheet" href="/{{ files.bundleCss }}">
     {{{ head.meta }}}
     {{{ head.link }}}
     {{{ head.script }}}
@@ -15,6 +15,6 @@
     <script>
       window.__INITIAL_STATE__ = {{{ initialState }}};
     </script>
-    <script src="/bundle.js"></script>
+    <script src="/{{ files.bundleJs }}"></script>
   </body>
 </html>

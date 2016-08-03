@@ -1,3 +1,5 @@
+import fs from "fs";
+
 import express from "express";
 import Handlebars from "handlebars";
 import React from "react";
@@ -12,6 +14,15 @@ import reducer from "./reducers";
 import getRoutes from "./routes";
 import indexPage from "../templates/index";
 
+const loadStatsFile = (fragment) => {
+  const mode = __DEBUG__ ? "debug" : "production";
+  const file = `build/${mode}/server/stats.${fragment}.json`;
+  return JSON.parse(fs.readFileSync(file).toString());
+};
+
+const clientStats = loadStatsFile("client");
+const serverStats = loadStatsFile("server");
+
 const template = Handlebars.compile(indexPage);
 
 function renderFullPage(fragment, state, head) {
@@ -24,6 +35,10 @@ function renderFullPage(fragment, state, head) {
       title: head.title.toString(),
       link: head.link.toString(),
       script: head.script.toString()
+    },
+    files: {
+      bundleCss: serverStats.files.bundleCss,
+      bundleJs: clientStats.files.bundleJs
     }
   });
 }

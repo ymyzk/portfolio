@@ -10,15 +10,21 @@ function IndexPageGeneratorPlugin(base, templateFileName, outputFileName) {
 IndexPageGeneratorPlugin.prototype.apply = function(compiler) {
   const self = this;
   const template = Handlebars.compile(fs.readFileSync(this.templateFileName).toString());
-  // Corresponds to server.js
-  const out = template({
-    initialState: "undefined",
-    head: {
-      title: "<title>Yusuke Miyazaki</title>"
-    }
-  });
-
   compiler.plugin("emit", function(compilation, callback) {
+    const hash = compilation.hash;
+
+    // Corresponds to server.js
+    const out = template({
+      initialState: "undefined",
+      head: {
+        title: "<title>Yusuke Miyazaki</title>"
+      },
+      files: {
+        bundleCss: `bundle.${hash}.css`,
+        bundleJs: `bundle.${hash}.js`
+      }
+    });
+
     compilation.fileDependencies.push(self.fileName);
     compilation.assets[self.outputFileName] = {
       source: function () {

@@ -9,6 +9,7 @@ import ExtractTextPlugin from "extract-text-webpack-plugin";
 import IndexPageGeneratorPlugin from "./plugins/index";
 import RobotsGeneratorPlugin from "./plugins/robots";
 import SitemapGeneratorPlugin from "./plugins/sitemap";
+import StatsPlugin from "./plugins/stats";
 
 const DEBUG = !process.argv.includes("--production");
 const PRODUCTION = !DEBUG;
@@ -49,7 +50,7 @@ const config = {
   output: {
     path: buildPath,
     publicPath: DEBUG ? "/" : basePath,
-    filename: CLIENT ? "bundle.js" : "server.js",
+    filename: CLIENT ? "bundle.[hash].js" : "server.js",
     libraryTarget: CLIENT ? "var" : "commonjs2"
   },
   externals: CLIENT ? false : /^[a-z\-0-9]+$/,
@@ -161,7 +162,7 @@ const config = {
       })
     ] : []),
     new webpack.NoErrorsPlugin(),
-    new ExtractTextPlugin("bundle.css"),
+    new ExtractTextPlugin("bundle.[hash].css"),
     ...(CLIENT ? [
       new IndexPageGeneratorPlugin(
         basePath,
@@ -170,6 +171,7 @@ const config = {
       new RobotsGeneratorPlugin(basePath, "robots.txt"),
       new SitemapGeneratorPlugin(basePath, paths, "sitemap.xml")
     ] : []),
+    new StatsPlugin()
   ],
   postcss: () => ({
     defaults: [autoprefixer],
