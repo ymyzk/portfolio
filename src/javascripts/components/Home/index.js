@@ -7,8 +7,8 @@ import moment from "moment";
 import { grey700 } from "material-ui/styles/colors";
 import "whatwg-fetch";
 
-import RecentTalksCard from "../containers/Home/RecentTalksCard";
-import SkillsCard from "../containers/Home/SkillsCard";
+import RecentTalksCard from "../../containers/Home/RecentTalksCard";
+import SkillsCard from "../../containers/Home/SkillsCard";
 
 const Home = () => (
   <div className="container">
