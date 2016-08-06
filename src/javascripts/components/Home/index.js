@@ -5,7 +5,7 @@ import React from "react";
 import { grey700 } from "material-ui/styles/colors";
 import "whatwg-fetch";
 
-import RecentEntriesCard from "./RecentEntriesCard";
+import RecentEntriesCard from "../../containers/Home/RecentEntriesCard";
 import RecentTalksCard from "../../containers/Home/RecentTalksCard";
 import SkillsCard from "../../containers/Home/SkillsCard";
 

@@ -1,6 +1,7 @@
 import moment from "moment";
 import { combineReducers } from "redux";
 
+import entries from "./entries";
 import projects from "./projects";
 import ContributionsList from "../../data/contributions";
 import MiscList from "../../data/misc";
@@ -22,5 +23,6 @@ const defaultReducer = (state = initialState) => state;
 
 export default combineReducers({
   default: defaultReducer,
+  entries,
   projects
 });
