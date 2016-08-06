@@ -1,8 +1,8 @@
 import React from "react";
-import injectTapEventPlugin from "react-tap-event-plugin";
 import { render } from "react-dom";
 import { Provider } from "react-redux";
 import { Router, browserHistory } from "react-router";
+import injectTapEventPlugin from "react-tap-event-plugin";
 import { applyMiddleware, createStore } from "redux";
 
 import reducer from "./reducers";
