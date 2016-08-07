@@ -53,6 +53,7 @@ const config = {
     filename: CLIENT ? "bundle.[hash].js" : "server.js",
     libraryTarget: CLIENT ? "var" : "commonjs2"
   },
+  target: CLIENT ? "web" : "node",
   externals: CLIENT ? false : /^[a-z\-0-9]+$/,
   module: {
     preLoaders: [
