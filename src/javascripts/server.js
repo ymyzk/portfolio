@@ -6,8 +6,9 @@ import React from "react";
 import { renderToString } from "react-dom/server";
 import Helmet from "react-helmet";
 import { Provider } from "react-redux";
-import { RouterContext, match } from "react-router";
-import { createStore } from "redux";
+import match from "react-router/lib/match";
+import RouterContext from "react-router/lib/RouterContext";
+import createStore from "redux/lib/createStore";
 import vary from "vary";
 
 import reducer from "./reducers";

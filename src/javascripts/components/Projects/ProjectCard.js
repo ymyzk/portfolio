@@ -1,4 +1,7 @@
-import { Card, CardActions, CardText, CardTitle } from "material-ui/Card";
+import Card from "material-ui/Card/Card";
+import CardActions from "material-ui/Card/CardActions";
+import CardText from "material-ui/Card/CardText";
+import CardTitle from "material-ui/Card/CardTitle";
 import FloatingActionButton from "material-ui/FloatingActionButton";
 import ActionExitToTop from "material-ui/svg-icons/action/exit-to-app";
 import React from "react";

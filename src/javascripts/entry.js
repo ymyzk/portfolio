@@ -1,9 +1,11 @@
 import React from "react";
 import { render } from "react-dom";
 import { Provider } from "react-redux";
-import { Router, browserHistory } from "react-router";
+import browserHistory from "react-router/lib/browserHistory";
+import Router from "react-router/lib/Router";
 import injectTapEventPlugin from "react-tap-event-plugin";
-import { applyMiddleware, createStore } from "redux";
+import applyMiddleware from "redux/lib/applyMiddleware";
+import createStore from "redux/lib/createStore";
 
 import reducer from "./reducers";
 import getRoutes from "./routes";

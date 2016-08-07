@@ -1,5 +1,5 @@
 import moment from "moment";
-import { combineReducers } from "redux";
+import combineReducers from "redux/lib/combineReducers";
 
 import entries from "./entries";
 import projects from "./projects";

@@ -1,5 +1,7 @@
 import React from "react";
-import { IndexRoute, Redirect, Route } from "react-router";
+import IndexRoute from "react-router/lib/IndexRoute";
+import Redirect from "react-router/lib/Redirect";
+import Route from "react-router/lib/Route";
 
 import App from "./components/App";
 import Home from "./components/Home";

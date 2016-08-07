@@ -1,4 +1,6 @@
-import { Card, CardActions, CardTitle } from "material-ui/Card";
+import Card from "material-ui/Card/Card";
+import CardActions from "material-ui/Card/CardActions";
+import CardTitle from "material-ui/Card/CardTitle";
 import Chip from "material-ui/Chip";
 import React from "react";
 
