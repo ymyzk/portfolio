@@ -3,20 +3,18 @@ import combineReducers from "redux/lib/combineReducers";
 
 import entries from "./entries";
 import projects from "./projects";
+import talks from "./talks";
 import ContributionsList from "../../data/contributions";
 import MiscList from "../../data/misc";
 import skills from "../../data/skills";
-import TalksList from "../../data/talks";
 
 const contributions = ContributionsList.sort();
 const misc = MiscList.map((n) => Object.assign(n, { date: moment(n.date) }));
-const talks = TalksList.map((t) => Object.assign(t, { date: moment(t.date) }));
 
 const initialState = {
   contributions,
   misc,
-  skills,
-  talks
+  skills
 };
 
 const defaultReducer = (state = initialState) => state;
@@ -24,5 +22,6 @@ const defaultReducer = (state = initialState) => state;
 export default combineReducers({
   default: defaultReducer,
   entries,
-  projects
+  projects,
+  talks
 });

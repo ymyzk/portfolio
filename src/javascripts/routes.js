@@ -8,7 +8,7 @@ import Home from "./components/Home";
 import Contributions from "./containers/Contributions";
 import Misc from "./containers/Misc";
 import Projects from "./containers/Projects";
-import Talks from "./containers/Talks";
+import Talks from "./containers/Talks/Talks";
 import PageNotFound from "./components/PageNotFound";
 
 export default (themeOptions) => {  // eslint-disable-line

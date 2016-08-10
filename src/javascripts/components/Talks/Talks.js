@@ -1,9 +1,12 @@
-import { List, ListItem } from "material-ui/List";
+import List from "material-ui/List/List";
 import Subheader from "material-ui/Subheader";
 import React from "react";
 import Helmet from "react-helmet";
 
-const Talks = ({ talks }) => {
+import TalkDialog from "./TalkDialog";
+import TalkListItem from "./TalkListItem";
+
+const Talks = ({ talks, selectedTalk, onTalkSelected, onTalkDeselected }) => {
   const title = "Talks";
   const talksByYear = {};
   talks.forEach((t) => {
@@ -28,13 +31,14 @@ const Talks = ({ talks }) => {
                   <Subheader>{year}</Subheader>
                   {
                     talksByYear[year].map((t) => (
-                      <TalkListItem talk={t} key={t.title + t.event} />
+                      <TalkListItem talk={t} key={t.title + t.event} onTalkSelected={onTalkSelected} />
                     ))
                   }
                 </div>
               ))
             }
           </List>
+          <TalkDialog talk={selectedTalk} onClose={onTalkDeselected} />
         </div>
       </div>
     </div>
@@ -42,24 +46,10 @@ const Talks = ({ talks }) => {
 };
 
 Talks.propTypes = {
-  talks: React.PropTypes.arrayOf(React.PropTypes.object.isRequired).isRequired
-};
-
-const TalkListItem = ({ talk }) => {
-  const dateString = talk.date.format("YYYY-M-D");
-  const dateIso = talk.date.format("YYYY-MM-DD");
-  return (
-    <ListItem
-      primaryText={talk.title}
-      secondaryText={<span>{talk.event} - <time dateTime={dateIso}>{dateString}</time></span>}
-      href={talk.link}
-      target="_blank"
-    />
-  );
-};
-
-TalkListItem.propTypes = {
-  talk: React.PropTypes.object.isRequired
+  talks: React.PropTypes.arrayOf(React.PropTypes.object.isRequired).isRequired,
+  selectedTalk: React.PropTypes.object,
+  onTalkSelected: React.PropTypes.func.isRequired,
+  onTalkDeselected: React.PropTypes.func.isRequired
 };
 
 export default Talks;
