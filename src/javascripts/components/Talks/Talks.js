@@ -3,6 +3,7 @@ import Subheader from "material-ui/Subheader";
 import React from "react";
 import Helmet from "react-helmet";
 
+import PropTypes from "../../utils/PropTypes";
 import TalkDialog from "./TalkDialog";
 import TalkListItem from "./TalkListItem";
 
@@ -46,8 +47,8 @@ const Talks = ({ talks, selectedTalk, onTalkSelected, onTalkDeselected }) => {
 };
 
 Talks.propTypes = {
-  talks: React.PropTypes.arrayOf(React.PropTypes.object.isRequired).isRequired,
-  selectedTalk: React.PropTypes.object,
+  talks: React.PropTypes.arrayOf(PropTypes.Talk.isRequired).isRequired,
+  selectedTalk: PropTypes.Talk,
   onTalkSelected: React.PropTypes.func.isRequired,
   onTalkDeselected: React.PropTypes.func.isRequired
 };

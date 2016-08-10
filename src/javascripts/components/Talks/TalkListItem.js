@@ -1,6 +1,8 @@
 import ListItem from "material-ui/List/ListItem";
 import React from "react";
 
+import PropTypes from "../../utils/PropTypes";
+
 const TalkListItem = ({ talk, onTalkSelected }) => {
   const dateString = talk.date.format("YYYY-M-D");
   const dateIso = talk.date.format("YYYY-MM-DD");
@@ -14,7 +16,7 @@ const TalkListItem = ({ talk, onTalkSelected }) => {
 };
 
 TalkListItem.propTypes = {
-  talk: React.PropTypes.object.isRequired,
+  talk: PropTypes.Talk.isRequired,
   onTalkSelected: React.PropTypes.func
 };
 

@@ -3,6 +3,8 @@ import CardTitle from "material-ui/Card/CardTitle";
 import React from "react";
 import { List, ListItem } from "material-ui/List";
 
+import PropTypes from "../../utils/PropTypes";
+
 const RecentTalksCard = ({ talks }) => (
   <Card>
     <CardTitle title="Recent Talks" />
@@ -28,7 +30,7 @@ const RecentTalksCard = ({ talks }) => (
 );
 
 RecentTalksCard.propTypes = {
-  talks: React.PropTypes.arrayOf(React.PropTypes.object.isRequired).isRequired
+  talks: React.PropTypes.arrayOf(PropTypes.Talk.isRequired).isRequired
 };
 
 export default RecentTalksCard;
