@@ -5,7 +5,8 @@ const Talk = PropTypes.shape({
   title: PropTypes.string.isRequired,
   event: PropTypes.string.isRequired,
   date: PropTypes.instanceOf(moment).isRequired,
-  link: PropTypes.string
+  link: PropTypes.string,
+  slide: PropTypes.string
 });
 
 export default {

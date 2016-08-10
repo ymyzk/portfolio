@@ -17,7 +17,7 @@ const RecentTalksCard = ({ talks }) => (
             <ListItem
               primaryText={talk.title}
               secondaryText={<span>{talk.event} - <time dateTime={dateIso}>{dateString}</time></span>}
-              href={talk.link}
+              href={talk.slide || talk.link}
               target="_blank"
               key={talk.title + talk.event}
             />

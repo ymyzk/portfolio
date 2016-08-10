@@ -11,12 +11,18 @@ const TalkDialog = ({ talk, onClose }) => {
 
   const actions = [
     <FlatButton
-      label="Open"
+      label="Event Page"
       primary
       href={talk.link}
       target="_blank"
       disabled={talk.link === null}
-      keyboardFocused
+    />,
+    <FlatButton
+      label="Show Slide"
+      primary
+      href={talk.slide}
+      target="_blank"
+      disabled={talk.slide === null}
     />,
     <FlatButton
       label="Close"
