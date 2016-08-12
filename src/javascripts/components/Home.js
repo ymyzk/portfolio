@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ratioForCanvas } from "../utils/canvas";
+import { ratioForCanvas, requestAnimationFrame } from "../utils/canvas";
 
 let WIDTH;
 let HEIGHT;
@@ -234,7 +234,7 @@ class HomeCanvas extends React.Component {
       background.draw(ctx);
       ball.draw(ctx);
       title.draw(ctx);
-      window.requestAnimationFrame(draw);
+      requestAnimationFrame(draw);
     };
     draw();
   }

@@ -1,4 +1,4 @@
-export const ratioForCanvas = (ctx) => {  // eslint-disable-line
+export const ratioForCanvas = (ctx) => {
   const devicePixelRatio = window.devicePixelRatio || 1;
   const backingStoreRatio = ctx.webkitBackingStorePixelRatio ||
     ctx.mozBackingStorePixelRatio ||
@@ -7,3 +7,8 @@ export const ratioForCanvas = (ctx) => {  // eslint-disable-line
     ctx.backingStorePixelRatio || 1;
   return devicePixelRatio / backingStoreRatio;
 };
+
+export const requestAnimationFrame = window.requestAnimationFrame ||
+  window.mozRequestAnimationFrame ||
+  window.webkitRequestAnimationFrame ||
+  window.msRequestAnimationFrame;
