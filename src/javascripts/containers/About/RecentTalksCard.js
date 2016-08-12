@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import RecentTalksCard from "../../components/Home/RecentTalksCard";
+import RecentTalksCard from "../../components/About/RecentTalksCard";
 
 const NUMBER_OF_RECENT_TALKS = 3;
 

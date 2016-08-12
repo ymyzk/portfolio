@@ -21,6 +21,7 @@ const nodeModulesPath = path.resolve(__dirname, "node_modules");
 const basePath = "https://www.ymyzk.com/";
 const paths = [
   "/",
+  "/about/",
   "/projects/",
   "/talks/",
   "/contributions/",

@@ -6,9 +6,9 @@ import React from "react";
 import { grey700 } from "material-ui/styles/colors";
 import "whatwg-fetch";
 
-import RecentEntriesCard from "../../containers/Home/RecentEntriesCard";
-import RecentTalksCard from "../../containers/Home/RecentTalksCard";
-import SkillsCard from "../../containers/Home/SkillsCard";
+import RecentEntriesCard from "../../containers/About/RecentEntriesCard";
+import RecentTalksCard from "../../containers/About/RecentTalksCard";
+import SkillsCard from "../../containers/About/SkillsCard";
 
 const Home = () => (
   <div className="container">

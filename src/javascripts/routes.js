@@ -5,6 +5,7 @@ import Route from "react-router/lib/Route";
 
 import App from "./components/App";
 import Home from "./components/Home";
+import About from "./components/About/About";
 import Contributions from "./containers/Contributions";
 import Misc from "./containers/Misc";
 import Projects from "./containers/Projects";
@@ -23,6 +24,7 @@ export default (themeOptions) => {  // eslint-disable-line
   return (
     <Route path="/" component={AppWrapper}>
       <IndexRoute component={Home} />
+      <Route path="about/" component={About} />
       <Route path="projects/" component={Projects} />
       <Route path="talks/" component={Talks} />
       <Route path="contributions/" component={Contributions} />
