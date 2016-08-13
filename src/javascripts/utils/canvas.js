@@ -8,7 +8,10 @@ export const ratioForCanvas = (ctx) => {
   return devicePixelRatio / backingStoreRatio;
 };
 
-export const requestAnimationFrame = window.requestAnimationFrame ||
+export const requestAnimationFrame = (callback) => {
+  const _requestAnimationFrame = window.requestAnimationFrame ||
   window.mozRequestAnimationFrame ||
   window.webkitRequestAnimationFrame ||
   window.msRequestAnimationFrame;
+  return _requestAnimationFrame(callback);
+};
