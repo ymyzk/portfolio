@@ -4,7 +4,7 @@ import React from "react";
 
 import PropTypes from "../../utils/PropTypes";
 
-const TalkDialog = ({ talk, onClose }) => {
+const TalkDialog = ({ open, talk, onClose }) => {
   if (talk === null) {
     return (<div />);
   }
@@ -39,7 +39,7 @@ const TalkDialog = ({ talk, onClose }) => {
       title={talk.title}
       actions={actions}
       modal={false}
-      open
+      open={open}
     >
       {talk.event} - <time dateTime={dateIso}>{dateString}</time>
     </Dialog>
@@ -47,6 +47,7 @@ const TalkDialog = ({ talk, onClose }) => {
 };
 
 TalkDialog.propTypes = {
+  open: React.PropTypes.bool.isRequired,
   talk: PropTypes.Talk,
   onClose: React.PropTypes.func
 };

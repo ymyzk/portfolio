@@ -4,6 +4,7 @@ import { selectTalk, deselectTalk } from "../../actions/talks";
 import Talks from "../../components/Talks/Talks";
 
 const mapStateToProps = (state) => ({
+  isDialogOpen: state.talks.isDialogOpen,
   talks: state.talks.talks,
   selectedTalk: state.talks.selectedTalk
 });
