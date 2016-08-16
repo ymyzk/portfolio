@@ -1,4 +1,4 @@
-FROM node:6-slim
+FROM node:6.4.0-slim
 MAINTAINER Yusuke Miyazaki <miyazaki.dev@gmail.com>
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
