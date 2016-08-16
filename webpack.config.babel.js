@@ -167,7 +167,6 @@ const config = {
     new ExtractTextPlugin("bundle.[hash].css"),
     ...(CLIENT ? [
       new IndexPageGeneratorPlugin(
-        basePath,
         path.join(__dirname, "/src/templates/index.hbs"),
         "index.html"),
       new RobotsGeneratorPlugin(basePath, "robots.txt"),

@@ -1,8 +1,7 @@
 const fs = require("fs");
 const Handlebars = require("handlebars");
 
-function IndexPageGeneratorPlugin(base, templateFileName, outputFileName) {
-  this.base = base.replace(/\/$/, "");
+function IndexPageGeneratorPlugin(templateFileName, outputFileName) {
   this.templateFileName = templateFileName;
   this.outputFileName = outputFileName || "index.html";
 }
@@ -25,7 +24,7 @@ IndexPageGeneratorPlugin.prototype.apply = function(compiler) {
       }
     });
 
-    compilation.fileDependencies.push(self.fileName);
+    compilation.fileDependencies.push(self.outputFileName);
     compilation.assets[self.outputFileName] = {
       source: function () {
         return out;
