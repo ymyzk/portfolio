@@ -131,11 +131,8 @@ class BallWithLines extends Ball {
     let changeVelocity = false;
     const margin = 70;
 
-    if (counter % this._ballInterval === 0) {
-      this.r += 0.6 * Math.PI * Math.random();
-      drawBall = true;
-      changeVelocity = true;
-    }
+    this.x += this.vx;
+    this.y += this.vy;
 
     if (this.y + this.vy > screenHeight + margin || this.y + this.vy < -margin) {
       this.vy = -this.vy;
@@ -146,8 +143,11 @@ class BallWithLines extends Ball {
       changeVelocity = true;
     }
 
-    this.x += this.vx;
-    this.y += this.vy;
+    if (counter % this._ballInterval === 0) {
+      this.r += 0.6 * Math.PI * Math.random();
+      drawBall = true;
+      changeVelocity = true;
+    }
 
     // Add to history
     this._history.push([this.x, this.y, drawBall, changeVelocity]);
