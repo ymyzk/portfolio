@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ratioForCanvas, requestAnimationFrame } from "../utils/canvas";
+import { calculateParallax, ratioForCanvas, requestAnimationFrame } from "../utils/canvas";
 
 class GradientBackground {
   constructor() {
@@ -92,13 +92,12 @@ class BallWithLines extends Ball {
 
   draw(_ctx, { counter, parallaxX, parallaxY, screenWidth, screenHeight }) {
     const ctx = _ctx;
-    const [x, y] = [this.x, this.y];
-    const [backgroundParallaxX, backgroundParallaxY] = [-parallaxX * 50, -parallaxY * 50];
+    const z = -1;
 
     // Draw balls
-    for (const [_x, _y, draw] of this._history) {
+    for (const [x, y, draw] of this._history) {
       if (draw) {
-        const ball = new Ball(_x + backgroundParallaxX, _y + backgroundParallaxY, 3, "rgba(255, 255, 255, 0.3)");
+        const ball = new Ball(...calculateParallax(x, y, parallaxX, parallaxY, z), 3, "rgba(255, 255, 255, 0.3)");
         ball.draw(ctx);
       }
     }
@@ -106,15 +105,15 @@ class BallWithLines extends Ball {
     // Draw lines
     ctx.beginPath();
     if (this._history.length > 1) {
-      ctx.moveTo(this._history[0][0] + backgroundParallaxX, this._history[0][1] + backgroundParallaxY);
-      for (const history of this._history) {
-        if (history[3]) {
-          ctx.lineTo(history[0] + backgroundParallaxX, history[1] + backgroundParallaxY);
+      const [firstX, firstY] = this._history[0];
+      ctx.moveTo(...calculateParallax(firstX, firstY, parallaxX, parallaxY, z));
+      for (const [x, y, _, changeVelocity] of this._history) {  // eslint-disable-line no-unused-vars
+        if (changeVelocity) {
+          ctx.lineTo(...calculateParallax(x, y, parallaxX, parallaxY, z));
         }
       }
-      ctx.lineTo(
-        this._history[this._history.length - 1][0] + backgroundParallaxX,
-        this._history[this._history.length - 1][1] + backgroundParallaxY);
+      const [lastX, lastY] = this._history[this._history.length - 1];
+      ctx.lineTo(...calculateParallax(lastX, lastY, parallaxX, parallaxY, z));
       ctx.lineWidth = 1.0;
       ctx.strokeStyle = "rgba(255, 255, 255, 0.3)";
       ctx.stroke();
@@ -122,7 +121,7 @@ class BallWithLines extends Ball {
 
     // Draw moving ball
     ctx.beginPath();
-    ctx.arc(this.x + backgroundParallaxX, this.y + backgroundParallaxY, this.radius, 0, Math.PI * 2, true);
+    ctx.arc(...calculateParallax(this.x, this.y, parallaxX, parallaxY, z), this.radius, 0, Math.PI * 2);
     ctx.closePath();
     ctx.fillStyle = this.fillStyle;
     ctx.fill();
@@ -138,11 +137,11 @@ class BallWithLines extends Ball {
       changeVelocity = true;
     }
 
-    if (y + this.vy > screenHeight + margin || y + this.vy < -margin) {
+    if (this.y + this.vy > screenHeight + margin || this.y + this.vy < -margin) {
       this.vy = -this.vy;
       changeVelocity = true;
     }
-    if (x + this._vx > screenWidth + margin || x + this.vx < -margin) {
+    if (this.x + this.vx > screenWidth + margin || this.x + this.vx < -margin) {
       this.vx = -this.vx;
       changeVelocity = true;
     }
@@ -151,7 +150,7 @@ class BallWithLines extends Ball {
     this.y += this.vy;
 
     // Add to history
-    this._history.push([x, y, drawBall, changeVelocity]);
+    this._history.push([this.x, this.y, drawBall, changeVelocity]);
     this._history = this._history.slice(Math.max(0, this._history.length - this._maxHistory));
   }
 }
@@ -160,13 +159,13 @@ class Title {
   draw(_ctx, { parallaxX, parallaxY, screenWidth, screenHeight }) {
     const ctx = _ctx;
     const fontSize = Math.min(screenWidth * 0.1, 60);
-    const [_parallaxX, _parallaxY] = [parallaxX * 10, parallaxY * 10];
+    const [x, y] = calculateParallax(screenWidth / 2, screenHeight / 2, parallaxX, parallaxY, 0.2);
     ctx.font = `normal normal 300 ${fontSize}px Roboto`;
     ctx.strokeStyle = "rgb(255, 255, 255)";
     ctx.fillStyle = "rgb(255, 255, 255)";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    ctx.fillText("Yusuke Miyazaki", (screenWidth / 2) + _parallaxX, (screenHeight / 2) + _parallaxY);
+    ctx.fillText("Yusuke Miyazaki", x, y);
   }
 }
 
