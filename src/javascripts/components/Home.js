@@ -2,31 +2,20 @@ import React from "react";
 
 import { ratioForCanvas, requestAnimationFrame } from "../utils/canvas";
 
-class State {
-  constructor() {
-    this.screenWidth = 0;
-    this.screenHeight = 0;
-    this.parallaxX = 0;
-    this.parallaxY = 0;
-  }
-}
-
-const STATE = new State();
-
 class GradientBackground {
   constructor() {
     this._period = 300;
   }
 
-  draw(_ctx, { counter }) {
+  draw(_ctx, { counter, screenWidth, screenHeight }) {
     const ctx = _ctx;
-    const grad = ctx.createLinearGradient(0, 0, 0, STATE.screenHeight);
+    const grad = ctx.createLinearGradient(0, 0, 0, screenHeight);
     const ratio = 0.5 + (Math.sin(2 * Math.PI * (counter / this._period)) * 0.5);
     const calc = (one, other) => Math.round((ratio * (other - one)) + one);
     grad.addColorStop(0, "rgb(63, 81, 181)");
     grad.addColorStop(1, `rgb(${calc(57, 40)}, ${calc(73, 53)}, ${calc(171, 147)})`);
     ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, STATE.screenWidth, STATE.screenHeight);
+    ctx.fillRect(0, 0, screenWidth, screenHeight);
   }
 }
 
@@ -101,16 +90,10 @@ class BallWithLines extends Ball {
     this._r = this._v === 0 ? 0 : Math.atan2(this._vy, this._vx);
   }
 
-  reset() {
-    this._history = [];
-    this.x = STATE.screenWidth * Math.random();
-    this.y = STATE.screenHeight * Math.random();
-  }
-
-  draw(_ctx, { counter }) {
+  draw(_ctx, { counter, parallaxX, parallaxY, screenWidth, screenHeight }) {
     const ctx = _ctx;
     const [x, y] = [this.x, this.y];
-    const [backgroundParallaxX, backgroundParallaxY] = [-STATE.parallaxX * 50, -STATE.parallaxY * 50];
+    const [backgroundParallaxX, backgroundParallaxY] = [-parallaxX * 50, -parallaxY * 50];
 
     // Draw balls
     for (const [_x, _y, draw] of this._history) {
@@ -155,11 +138,11 @@ class BallWithLines extends Ball {
       changeVelocity = true;
     }
 
-    if (y + this.vy > STATE.screenHeight + margin || y + this.vy < -margin) {
+    if (y + this.vy > screenHeight + margin || y + this.vy < -margin) {
       this.vy = -this.vy;
       changeVelocity = true;
     }
-    if (x + this._vx > STATE.screenWidth + margin || x + this.vx < -margin) {
+    if (x + this._vx > screenWidth + margin || x + this.vx < -margin) {
       this.vx = -this.vx;
       changeVelocity = true;
     }
@@ -174,20 +157,28 @@ class BallWithLines extends Ball {
 }
 
 class Title {
-  draw(_ctx) {
+  draw(_ctx, { parallaxX, parallaxY, screenWidth, screenHeight }) {
     const ctx = _ctx;
-    const fontSize = Math.min(STATE.screenWidth * 0.1, 60);
-    const [parallaxX, parallaxY] = [STATE.parallaxX * 10, STATE.parallaxY * 10];
+    const fontSize = Math.min(screenWidth * 0.1, 60);
+    const [_parallaxX, _parallaxY] = [parallaxX * 10, parallaxY * 10];
     ctx.font = `normal normal 300 ${fontSize}px Roboto`;
     ctx.strokeStyle = "rgb(255, 255, 255)";
     ctx.fillStyle = "rgb(255, 255, 255)";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    ctx.fillText("Yusuke Miyazaki", (STATE.screenWidth / 2) + parallaxX, (STATE.screenHeight / 2) + parallaxY);
+    ctx.fillText("Yusuke Miyazaki", (screenWidth / 2) + _parallaxX, (screenHeight / 2) + _parallaxY);
   }
 }
 
 class HomeCanvas extends React.Component {
+  state = {
+    counter: 0,
+    parallaxX: 0,
+    parallaxY: 0,
+    screenWidth: 0,
+    screenHeight: 0
+  };
+
   componentDidMount() {
     this.initCanvas();
   }
@@ -198,15 +189,15 @@ class HomeCanvas extends React.Component {
     const background = new GradientBackground();
     const ball = new BallWithLines(0, 0, 5, "rgba(255, 255, 255, 0.8)");
     const title = new Title();
-    let counter = 0;
 
     const resizeCanvas = () => {
       const ratio = ratioForCanvas(ctx);
-      [STATE.screenWidth, STATE.screenHeight] = [window.innerWidth, window.innerHeight - 64];
-      canvas.width = ratio * STATE.screenWidth;
-      canvas.height = ratio * STATE.screenHeight;
-      canvas.style.width = `${STATE.screenWidth}px`;
-      canvas.style.height = `${STATE.screenHeight}px`;
+      const [screenWidth, screenHeight] = [window.innerWidth, window.innerHeight - 64];
+      this.setState({ screenWidth, screenHeight });
+      canvas.width = ratio * screenWidth;
+      canvas.height = ratio * screenHeight;
+      canvas.style.width = `${screenWidth}px`;
+      canvas.style.height = `${screenHeight}px`;
       ctx.scale(ratio, ratio);
     };
     resizeCanvas();
@@ -214,21 +205,24 @@ class HomeCanvas extends React.Component {
 
     const parallaxCanvas = (e) => {
       // normalize: -1 <= parallax <= 1
-      STATE.parallaxX = (e.clientX - (STATE.screenWidth / 2)) / (STATE.screenWidth / 2);
-      STATE.parallaxY = (e.clientY - (STATE.screenHeight / 2)) / (STATE.screenHeight / 2);
+      this.setState({
+        parallaxX: (e.clientX - (this.state.screenWidth / 2)) / (this.state.screenWidth / 2),
+        parallaxY: (e.clientY - (this.state.screenHeight / 2)) / (this.state.screenHeight / 2)
+      });
     };
     canvas.addEventListener("mousemove", parallaxCanvas);
 
     ball.v = 10;
     ball.r = 2 * Math.PI * Math.random();
     const draw = () => {
-      const context = {
-        counter: counter++
-      };
+      const context = Object.assign({}, this.state);
       background.draw(ctx, context);
       ball.draw(ctx, context);
       title.draw(ctx, context);
       requestAnimationFrame(draw);
+      this.setState({
+        counter: this.state.counter + 1
+      });
     };
     draw();
   }
