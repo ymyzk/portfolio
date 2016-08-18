@@ -15,22 +15,18 @@ const STATE = new State();
 
 class GradientBackground {
   constructor() {
-    this._counter = 0;
     this._period = 300;
   }
 
-  draw(_ctx) {
+  draw(_ctx, { counter }) {
     const ctx = _ctx;
     const grad = ctx.createLinearGradient(0, 0, 0, STATE.screenHeight);
-    const ratio = 0.5 + (Math.sin(2 * Math.PI * (this._counter / this._period)) * 0.5);
+    const ratio = 0.5 + (Math.sin(2 * Math.PI * (counter / this._period)) * 0.5);
     const calc = (one, other) => Math.round((ratio * (other - one)) + one);
     grad.addColorStop(0, "rgb(63, 81, 181)");
     grad.addColorStop(1, `rgb(${calc(57, 40)}, ${calc(73, 53)}, ${calc(171, 147)})`);
     ctx.fillStyle = grad;
     ctx.fillRect(0, 0, STATE.screenWidth, STATE.screenHeight);
-
-    this._counter++;
-    this._counter = this._counter % this._period;
   }
 }
 
@@ -59,7 +55,6 @@ class BallWithLines extends Ball {
     this._r = 0;
     this._vx = 0;
     this._vy = 0;
-    this._counter = 0;
 
     this._ballInterval = 50;
     this._maxHistory = 50 * 50;
@@ -107,13 +102,12 @@ class BallWithLines extends Ball {
   }
 
   reset() {
-    this._counter = 0;
     this._history = [];
     this.x = STATE.screenWidth * Math.random();
     this.y = STATE.screenHeight * Math.random();
   }
 
-  draw(_ctx) {
+  draw(_ctx, { counter }) {
     const ctx = _ctx;
     const [x, y] = [this.x, this.y];
     const [backgroundParallaxX, backgroundParallaxY] = [-STATE.parallaxX * 50, -STATE.parallaxY * 50];
@@ -155,8 +149,7 @@ class BallWithLines extends Ball {
     let changeVelocity = false;
     const margin = 70;
 
-    this._counter++;
-    if (this._counter % this._ballInterval === 0) {
+    if (counter % this._ballInterval === 0) {
       this.r += 0.6 * Math.PI * Math.random();
       drawBall = true;
       changeVelocity = true;
@@ -205,6 +198,7 @@ class HomeCanvas extends React.Component {
     const background = new GradientBackground();
     const ball = new BallWithLines(0, 0, 5, "rgba(255, 255, 255, 0.8)");
     const title = new Title();
+    let counter = 0;
 
     const resizeCanvas = () => {
       const ratio = ratioForCanvas(ctx);
@@ -228,9 +222,12 @@ class HomeCanvas extends React.Component {
     ball.v = 10;
     ball.r = 2 * Math.PI * Math.random();
     const draw = () => {
-      background.draw(ctx);
-      ball.draw(ctx);
-      title.draw(ctx);
+      const context = {
+        counter: counter++
+      };
+      background.draw(ctx, context);
+      ball.draw(ctx, context);
+      title.draw(ctx, context);
       requestAnimationFrame(draw);
     };
     draw();
