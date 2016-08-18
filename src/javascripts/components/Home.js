@@ -6,6 +6,8 @@ class State {
   constructor() {
     this.screenWidth = 0;
     this.screenHeight = 0;
+    this.parallaxX = 0;
+    this.parallaxY = 0;
   }
 }
 
@@ -58,9 +60,6 @@ class BallWithLines extends Ball {
     this._vx = 0;
     this._vy = 0;
     this._counter = 0;
-
-    this.parallaxX = 0;
-    this.parallaxY = 0;
 
     this._ballInterval = 50;
     this._maxHistory = 50 * 50;
@@ -117,7 +116,7 @@ class BallWithLines extends Ball {
   draw(_ctx) {
     const ctx = _ctx;
     const [x, y] = [this.x, this.y];
-    const [backgroundParallaxX, backgroundParallaxY] = [-this.parallaxX * 50, -this.parallaxY * 50];
+    const [backgroundParallaxX, backgroundParallaxY] = [-STATE.parallaxX * 50, -STATE.parallaxY * 50];
 
     // Draw balls
     for (const [_x, _y, draw] of this._history) {
@@ -182,15 +181,10 @@ class BallWithLines extends Ball {
 }
 
 class Title {
-  constructor() {
-    this.parallaxX = 0;
-    this.parallaxY = 0;
-  }
-
   draw(_ctx) {
     const ctx = _ctx;
     const fontSize = Math.min(STATE.screenWidth * 0.1, 60);
-    const [parallaxX, parallaxY] = [this.parallaxX * 10, this.parallaxY * 10];
+    const [parallaxX, parallaxY] = [STATE.parallaxX * 10, STATE.parallaxY * 10];
     ctx.font = `normal normal 300 ${fontSize}px Roboto`;
     ctx.strokeStyle = "rgb(255, 255, 255)";
     ctx.fillStyle = "rgb(255, 255, 255)";
@@ -225,12 +219,9 @@ class HomeCanvas extends React.Component {
     window.addEventListener("resize", resizeCanvas);
 
     const parallaxCanvas = (e) => {
-      const parallaxX = (e.clientX - (STATE.screenWidth / 2)) / (STATE.screenWidth / 2);
-      const parallaxY = (e.clientY - (STATE.screenHeight / 2)) / (STATE.screenHeight / 2);
-      ball.parallaxX = parallaxX;
-      ball.parallaxY = parallaxY;
-      title.parallaxX = parallaxX;
-      title.parallaxY = parallaxY;
+      // normalize: -1 <= parallax <= 1
+      STATE.parallaxX = (e.clientX - (STATE.screenWidth / 2)) / (STATE.screenWidth / 2);
+      STATE.parallaxY = (e.clientY - (STATE.screenHeight / 2)) / (STATE.screenHeight / 2);
     };
     canvas.addEventListener("mousemove", parallaxCanvas);
 
