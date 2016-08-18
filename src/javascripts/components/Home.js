@@ -181,6 +181,7 @@ class HomeCanvas extends React.Component {
     super();
 
     this.parallaxCanvasOnMouseMove = this.parallaxCanvasOnMouseMove.bind(this);
+    this.parallaxCanvasOnDeviceOrientation = this.parallaxCanvasOnDeviceOrientation.bind(this);
     this.resizeCanvas = this.resizeCanvas.bind(this);
 
     this.ball = new BallWithLines(0, 0, 5, "rgba(255, 255, 255, 0.8)");
@@ -197,11 +198,13 @@ class HomeCanvas extends React.Component {
   componentDidMount() {
     this.initCanvas();
     this.canvas.addEventListener("mousemove", this.parallaxCanvasOnMouseMove);
+    window.addEventListener("deviceorientation", this.parallaxCanvasOnDeviceOrientation, true);
     window.addEventListener("resize", this.resizeCanvas);
   }
 
   componentWillUnmount() {
     this.canvas.removeEventListener("mousemove", this.parallaxCanvasOnMouseMove);
+    window.removeEventListener("deviceorientation", this.parallaxCanvasOnDeviceOrientation, true);
     window.removeEventListener("resize", this.resizeCanvas);
   }
 
@@ -230,6 +233,23 @@ class HomeCanvas extends React.Component {
     this.setState({
       parallaxX: (e.clientX - (this.state.screenWidth / 2)) / (this.state.screenWidth / 2),
       parallaxY: (e.clientY - (this.state.screenHeight / 2)) / (this.state.screenHeight / 2)
+    });
+  }
+
+  parallaxCanvasOnDeviceOrientation(e) {
+    let x = Math.max(Math.min(e.gamma, 90), -90);  // -90 <= x <= 90
+    let y = Math.max(Math.min(e.beta, 180), -180);  // -180 <= y <= 180
+    if (y > 90) {
+      x = -x;
+      y = 180 - y;
+    } else if (y < -90) {
+      x = -x;
+      y = -180 - y;
+    }
+    // -90 <= x <= 90 && -90 <= y <= 90
+    this.setState({
+      parallaxX: x / 90,
+      parallaxY: y / 90
     });
   }
 
