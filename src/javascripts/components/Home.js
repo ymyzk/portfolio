@@ -1,6 +1,6 @@
 import React from "react";
 
-import { calculateParallax, ratioForCanvas, requestAnimationFrame } from "../utils/canvas";
+import { calculateParallax, ratioForCanvas, cancelAnimationFrame, requestAnimationFrame } from "../utils/canvas";
 
 class GradientBackground {
   constructor() {
@@ -197,6 +197,7 @@ class HomeCanvas extends React.Component {
     this.resizeCanvas = this.resizeCanvas.bind(this);
 
     this.ball = new BallWithLines(0, 0, 5, "rgba(255, 255, 255, 0.8)");
+    this.requestId = null;
   }
 
   state = {
@@ -208,19 +209,20 @@ class HomeCanvas extends React.Component {
   };
 
   componentDidMount() {
-    this.initCanvas();
+    this.startCanvas();
     this.canvas.addEventListener("mousemove", this.parallaxCanvasOnMouseMove);
     window.addEventListener("deviceorientation", this.parallaxCanvasOnDeviceOrientation, true);
     window.addEventListener("resize", this.resizeCanvas);
   }
 
   componentWillUnmount() {
+    this.stopCanvas();
     this.canvas.removeEventListener("mousemove", this.parallaxCanvasOnMouseMove);
     window.removeEventListener("deviceorientation", this.parallaxCanvasOnDeviceOrientation, true);
     window.removeEventListener("resize", this.resizeCanvas);
   }
 
-  initCanvas() {
+  startCanvas() {
     const ctx = this.canvas.getContext("2d");
     const background = new GradientBackground();
     const title = new Title();
@@ -236,10 +238,16 @@ class HomeCanvas extends React.Component {
       this.ball.draw(ctx, context);
       title.draw(ctx, context);
       footer.draw(ctx, context);
-      requestAnimationFrame(draw);
+      this.requestId = requestAnimationFrame(draw);
       this.setState({ counter: this.state.counter + 1 });
     };
     draw();
+  }
+
+  stopCanvas() {
+    if (this.requestId !== null) {
+      cancelAnimationFrame(this.requestId);
+    }
   }
 
   parallaxCanvasOnMouseMove(e) {

@@ -12,9 +12,19 @@ export const ratioForCanvas = (ctx) => {
 };
 
 export const requestAnimationFrame = (callback) => {
-  const _requestAnimationFrame = window.requestAnimationFrame ||
-  window.mozRequestAnimationFrame ||
-  window.webkitRequestAnimationFrame ||
-  window.msRequestAnimationFrame;
+  const _requestAnimationFrame =
+    window.requestAnimationFrame ||
+    window.mozRequestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    window.msRequestAnimationFrame;
   return _requestAnimationFrame(callback);
+};
+
+export const cancelAnimationFrame = (callback) => {
+  const _cancelAnimationFrame =
+    window.cancelAnimationFrame ||
+    window.mozCancelAnimationFrame ||
+    window.webkitCancelAnimationFrame ||
+    window.msCancelAnimationFrame;
+  return _cancelAnimationFrame(callback);
 };
