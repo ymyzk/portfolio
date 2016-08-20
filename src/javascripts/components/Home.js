@@ -175,6 +175,19 @@ class Title {
   }
 }
 
+class Footer {
+  draw(_ctx, { parallaxX, parallaxY, screenWidth, screenHeight }) {
+    const ctx = _ctx;
+    const margin = 12;
+    const [x, y] = calculateParallax(screenWidth - margin, screenHeight - margin, parallaxX, parallaxY, 0.1);
+    ctx.font = "normal normal 400 12px Roboto";
+    ctx.strokeStyle = ctx.fillStyle = "rgb(255, 255, 255)";
+    ctx.textAlign = "right";
+    ctx.textBaseline = "bottom";
+    ctx.fillText("Copyright © 2013-2016, Yusuke Miyazaki.", x, y);
+  }
+}
+
 class HomeCanvas extends React.Component {
   constructor() {
     super();
@@ -211,6 +224,7 @@ class HomeCanvas extends React.Component {
     const ctx = this.canvas.getContext("2d");
     const background = new GradientBackground();
     const title = new Title();
+    const footer = new Footer();
 
     this.resizeCanvas();
     this.ball.v = 10;
@@ -221,6 +235,7 @@ class HomeCanvas extends React.Component {
       background.draw(ctx, context);
       this.ball.draw(ctx, context);
       title.draw(ctx, context);
+      footer.draw(ctx, context);
       requestAnimationFrame(draw);
       this.setState({ counter: this.state.counter + 1 });
     };
