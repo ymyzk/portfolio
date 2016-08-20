@@ -166,10 +166,9 @@ class Title {
   draw(_ctx, { parallaxX, parallaxY, screenWidth, screenHeight }) {
     const ctx = _ctx;
     const fontSize = Math.min(screenWidth * 0.1, 60);
-    const [x, y] = calculateParallax(screenWidth / 2, screenHeight / 2, parallaxX, parallaxY, 0.2);
+    const [x, y] = calculateParallax(screenWidth / 2, (screenHeight / 2) - 10, parallaxX, parallaxY, 0.2);
     ctx.font = `normal normal 300 ${fontSize}px Roboto`;
-    ctx.strokeStyle = "rgb(255, 255, 255)";
-    ctx.fillStyle = "rgb(255, 255, 255)";
+    ctx.strokeStyle = ctx.fillStyle = "rgb(255, 255, 255)";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.fillText("Yusuke Miyazaki", x, y);
