@@ -18,6 +18,7 @@ import TwitterImage from "../../images/twitter.png";
 
 require("font-awesome/css/font-awesome.css");
 require("ress/ress.css");
+require("../../stylesheets/roboto.css");
 require("../../stylesheets/index.scss");
 
 class App extends React.Component {
