@@ -8,6 +8,11 @@ import React from "react";
 import Helmet from "react-helmet";
 import Link from "react-router/lib/Link";
 
+import "font-awesome/css/font-awesome.css";
+import "ress/ress.css";
+import "../../stylesheets/roboto.css";
+import "../../stylesheets/index.scss";
+
 import Theme from "./Theme";
 import AppleTouchIcon from "../../images/apple-touch-icon.png";
 import FaviconIco from "../../images/favicon.ico";
@@ -15,11 +20,6 @@ import FaviconPng from "../../images/favicon.png";
 import MsTileImage from "../../images/ms-tile-image.png";
 import OgpImage from "../../images/ogp.png";
 import TwitterImage from "../../images/twitter.png";
-
-require("font-awesome/css/font-awesome.css");
-require("ress/ress.css");
-require("../../stylesheets/roboto.css");
-require("../../stylesheets/index.scss");
 
 class App extends React.Component {
   static propTypes = {
