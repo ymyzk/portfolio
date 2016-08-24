@@ -16,8 +16,8 @@ import MsTileImage from "../../images/ms-tile-image.png";
 import OgpImage from "../../images/ogp.png";
 import TwitterImage from "../../images/twitter.png";
 
-require("font-awesome/css/font-awesome");
-require("../../stylesheets/index");
+require("font-awesome/css/font-awesome.css");
+require("../../stylesheets/index.scss");
 
 class App extends React.Component {
   static propTypes = {
