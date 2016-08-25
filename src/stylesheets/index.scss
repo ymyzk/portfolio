@@ -8,6 +8,15 @@ $container-lg: 1170px;
 
 $gutter: 30px;
 
+// Override ress.css, because this configuration breaks our design
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: none;
+}
+
 html {
   // See also: src/javascripts/components/Theme.js
   font-family: "Roboto",
