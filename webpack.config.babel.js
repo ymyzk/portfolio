@@ -4,6 +4,7 @@ import path from "path";
 import webpack from "webpack";
 import autoprefixer from "autoprefixer";
 import CompressionPlugin from "compression-webpack-plugin";
+import CopyWebpackPlugin from "copy-webpack-plugin";
 import ExtractTextPlugin from "extract-text-webpack-plugin";
 // Original Plugins
 import IndexPageGeneratorPlugin from "./plugins/index";
@@ -169,6 +170,9 @@ const config = {
     ] : []),
     new webpack.NoErrorsPlugin(),
     new ExtractTextPlugin("bundle.[hash].css"),
+    new CopyWebpackPlugin([
+      { from: "src/media", to: "media" }
+    ]),
     ...(CLIENT ? [
       new IndexPageGeneratorPlugin(
         path.join(__dirname, "/src/templates/index.hbs"),

@@ -1,5 +1,6 @@
 - title: 京大マップ
   link: http://www.kyodaimap.net/
+  image: kyodaimap.png
   start: 2012-10-01
   end: null
   tags: [Django, iOS, Python, Web]
