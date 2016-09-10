@@ -29,6 +29,7 @@
 
 - title: CAMPHOR- Website
   link: https://camph.net
+  image: camphor-website.jpg
   start: 2014-10-16
   end: null
   tags: [Django, Python, HTML, CSS, JavaScript, Web]
@@ -36,6 +37,7 @@
 
 - title: IPSJ77Now⤴︎⤴︎
   link: http://ipsj.camph.net
+  image: ipsj77now.jpg
   start: 2015-01-18
   end: 2015-03-20
   tags: [Node.js, HTML, CSS, JavaScript, Web]
