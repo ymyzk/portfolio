@@ -18,7 +18,8 @@
     "build-production-server": "bin/build.sh --production --server",
     "start-debug-server": "cp -r build/debug/server/public/ public && node build/debug/server/server.js",
     "start-production-server": "cp -r build/production/server/public/ public && node build/production/server/server.js",
-    "supported-browsers": "browserslist \"$(cat browserslist | tr '\n' ',')\""
+    "supported-browsers": "browserslist \"$(cat browserslist | tr '\n' ',')\"",
+    "update-oembed": "bin/oembed.js"
   },
   "license": "LicenseRef-LICENSE",
   "private": true,
@@ -35,6 +36,7 @@
     "babel-preset-react": "~6.11.0",
     "babel-preset-stage-0": "~6.5.0",
     "babel-runtime": "~6.11.6",
+    "co": "~4.6.0",
     "compression-webpack-plugin": "~0.3.1",
     "css-loader": "~0.25.0",
     "eslint": "~3.4.0",
@@ -48,6 +50,7 @@
     "file-loader": "~0.9.0",
     "html-loader": "~0.4.3",
     "json-loader": "~0.5.4",
+    "node-fetch": "~1.6.0",
     "node-sass": "~3.9.0",
     "postcss-loader": "~0.11.0",
     "react-hot-loader": "~1.3.0",

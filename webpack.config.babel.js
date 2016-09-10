@@ -88,6 +88,10 @@ const config = {
       },
       // Data
       {
+        test: /\.json/,
+        loader: "json"
+      },
+      {
         test: /\.yml$/,
         loaders: ["json", "yaml"]
       },
