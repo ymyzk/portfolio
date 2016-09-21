@@ -1,3 +1,4 @@
+import RaisedButton from "material-ui/RaisedButton";
 import React from "react";
 
 import { calculateParallax, ratioForCanvas, cancelAnimationFrame, requestAnimationFrame } from "../utils/canvas";
@@ -166,7 +167,7 @@ class Title {
   draw(_ctx, { parallaxX, parallaxY, screenWidth, screenHeight }) {
     const ctx = _ctx;
     const fontSize = Math.min(screenWidth * 0.1, 60);
-    const [x, y] = calculateParallax(screenWidth / 2, (screenHeight / 2) - 10, parallaxX, parallaxY, 0.2);
+    const [x, y] = calculateParallax(screenWidth / 2, screenHeight * (4 / 10), parallaxX, parallaxY, 0.2);
     ctx.font = `normal normal 300 ${fontSize}px Roboto`;
     ctx.strokeStyle = ctx.fillStyle = "rgb(255, 255, 255)";
     ctx.textAlign = "center";
@@ -174,6 +175,25 @@ class Title {
     ctx.fillText("Yusuke Miyazaki", x, y);
   }
 }
+
+const AboutMe = ({ parallaxX, parallaxY, screenWidth, screenHeight }) => {
+  const [x, y] = calculateParallax(0, screenHeight * (3 / 4), parallaxX, parallaxY, 0.1);
+  const style = {
+    position: "absolute",
+    textAlign: "center",
+    width: screenWidth,
+    left: x,
+    top: y
+  };
+  return (<div style={style}><RaisedButton href="/about/" label="About Me" /></div>);
+};
+
+AboutMe.propTypes = {
+  parallaxX: React.PropTypes.number.isRequired,
+  parallaxY: React.PropTypes.number.isRequired,
+  screenWidth: React.PropTypes.number.isRequired,
+  screenHeight: React.PropTypes.number.isRequired
+};
 
 const Footer = ({ parallaxX, parallaxY, screenWidth, screenHeight }) => {
   const margin = 12;
@@ -298,6 +318,7 @@ class HomeCanvas extends React.Component {
       <div style={{ position: "relative" }}>
         <canvas ref={(c) => { this.canvas = c; }} style={{ display: "block" }} />
         <div>
+          <AboutMe {...this.state} />
           <Footer {...this.state} />
         </div>
       </div>
