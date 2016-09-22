@@ -1,8 +1,8 @@
-- title: 型ヒントについて考えよう! (To Appear)
+- title: 型ヒントについて考えよう!
   event: PyCon JP 2016
   date: 2016-09-22
   link: https://pycon.jp/2016/ja/schedule/presentation/52/
-  slide: null
+  slide: http://www.slideshare.net/yusukemiy/ss-66288339
 
 - title: Gradual Typing for Delimited Continuations
   event: STOP 2016
