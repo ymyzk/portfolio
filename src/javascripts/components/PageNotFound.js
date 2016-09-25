@@ -1,7 +1,6 @@
 import RaisedButton from "material-ui/RaisedButton";
 import React from "react";
 import Helmet from "react-helmet";
-import Link from "react-router/lib/Link";
 
 const PageNotFound = () => {
   const title = "404 - Page not found";
@@ -10,7 +9,7 @@ const PageNotFound = () => {
       <Helmet title={title} />
       <h2>{title}</h2>
       <div style={{ textAlign: "center", marginTop: 50, marginBottom: 50, width: "100%" }}>
-        <RaisedButton label="Back to the Home Page" primary containerElement={<Link to="/" />} />
+        <RaisedButton label="Back to the Home Page" href="/" primary />
       </div>
     </div>
   );

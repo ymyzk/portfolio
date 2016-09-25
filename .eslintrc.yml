@@ -17,6 +17,8 @@ rules:
     - off
   no-underscore-dangle:
     - off
+  jsx-a11y/anchor-has-content:
+    - off
 env:
   browser: true
   es6: true
