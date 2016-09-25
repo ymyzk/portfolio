@@ -11,7 +11,7 @@ const Contributions = ({ contributions }) => {
       <Helmet title={title} />
       <h2>{title}</h2>
       <p>
-        I'm interested in the open source community and software.
+        I&apos;m interested in the open source community and software.
         The following are some of the open source communities and software which I contributed to.
       </p>
       <div className="grid">
