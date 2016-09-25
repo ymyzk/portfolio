@@ -163,18 +163,16 @@ class BallWithLines extends Ball {
   }
 }
 
-class Title {
-  draw(_ctx, { parallaxX, parallaxY, screenWidth, screenHeight }) {
-    const ctx = _ctx;
-    const fontSize = Math.min(screenWidth * 0.1, 60);
-    const [x, y] = calculateParallax(screenWidth / 2, screenHeight * (4 / 10), parallaxX, parallaxY, 0.2);
-    ctx.font = `normal normal 300 ${fontSize}px Roboto`;
-    ctx.strokeStyle = ctx.fillStyle = "rgb(255, 255, 255)";
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    ctx.fillText("Yusuke Miyazaki", x, y);
-  }
-}
+const drawTitle = (_ctx, { parallaxX, parallaxY, screenWidth, screenHeight }) => {
+  const ctx = _ctx;
+  const fontSize = Math.min(screenWidth * 0.1, 60);
+  const [x, y] = calculateParallax(screenWidth / 2, screenHeight * (4 / 10), parallaxX, parallaxY, 0.2);
+  ctx.font = `normal normal 300 ${fontSize}px Roboto`;
+  ctx.strokeStyle = ctx.fillStyle = "rgb(255, 255, 255)";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.fillText("Yusuke Miyazaki", x, y);
+};
 
 const AboutMe = ({ parallaxX, parallaxY, screenWidth, screenHeight }) => {
   const [x, y] = calculateParallax(0, screenHeight * (3 / 4), parallaxX, parallaxY, 0.1);
@@ -252,7 +250,6 @@ class HomeCanvas extends React.Component {
   startCanvas() {
     const ctx = this.canvas.getContext("2d");
     const background = new GradientBackground();
-    const title = new Title();
 
     this.resizeCanvas();
     this.ball.v = 10;
@@ -262,7 +259,7 @@ class HomeCanvas extends React.Component {
       const context = Object.assign({}, this.state);
       background.draw(ctx, context);
       this.ball.draw(ctx, context);
-      title.draw(ctx, context);
+      drawTitle(ctx, context);
       this.requestId = requestAnimationFrame(draw);
       this.setState({ counter: this.state.counter + 1 });
     };
