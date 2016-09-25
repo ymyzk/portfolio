@@ -27,11 +27,11 @@ const Talks = ({ talks, isDialogOpen, selectedTalk, onTalkSelected, onTalkDesele
         <div className="cell-xs-without-gutter cell-sm-12">
           <List>
             {
-              years.map((year) => (
+              years.map(year => (
                 <div key={year}>
                   <Subheader>{year}</Subheader>
                   {
-                    talksByYear[year].map((t) => (
+                    talksByYear[year].map(t => (
                       <TalkListItem talk={t} key={t.title + t.event} onTalkSelected={onTalkSelected} />
                     ))
                   }

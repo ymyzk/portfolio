@@ -16,7 +16,7 @@ const Contributions = ({ contributions }) => {
         <div className="cell-xs-without-gutter cell-sm-12">
           <List>
             {
-              contributions.map((c) => (<ContributionListItem contribution={c} key={c.name} />))
+              contributions.map(c => (<ContributionListItem contribution={c} key={c.name} />))
             }
           </List>
         </div>

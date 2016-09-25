@@ -39,7 +39,7 @@ export default (state = initialState, action) => {
       });
     }
     case REMOVE_PROJECT_TAG: {
-      const selectedTags = state.selectedTags.filter((t) => t !== action.tag);
+      const selectedTags = state.selectedTags.filter(t => t !== action.tag);
       return Object.assign({}, state, {
         selectedTags
       });

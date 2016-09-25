@@ -6,12 +6,12 @@ export const requestRecentEntries = () => ({
   type: REQUEST_RECENT_ENTRIES
 });
 
-export const requestRecentEntriesSuccess = (json) => ({
+export const requestRecentEntriesSuccess = json => ({
   type: REQUEST_RECENT_ENTRIES_SUCCESS,
   entries: json
 });
 
-export const requestRecentEntriesFailure = (error) => ({
+export const requestRecentEntriesFailure = error => ({
   type: REQUEST_RECENT_ENTRIES_FAILURE,
   error
 });

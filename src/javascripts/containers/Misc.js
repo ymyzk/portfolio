@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 
 import Misc from "../components/Misc";
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   misc: state.default.misc
 });
 

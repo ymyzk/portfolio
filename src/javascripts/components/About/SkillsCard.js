@@ -10,7 +10,7 @@ const SkillsCard = ({ skills }) => (
     <CardActions>
       <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
         {
-          skills.map((s) => (
+          skills.map(s => (
             <Chip key={s} style={{ margin: 4 }}>{s}</Chip>
           ))
         }

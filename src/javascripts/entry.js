@@ -29,7 +29,7 @@ if (__DEBUG__) {
   /* eslint-enable */
 }
 
-browserHistory.listen(location => {
+browserHistory.listen((location) => {
   window.ga("set", "page", location.pathname);
   window.ga("send", "pageview");
 });

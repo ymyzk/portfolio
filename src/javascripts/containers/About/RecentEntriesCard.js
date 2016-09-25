@@ -27,9 +27,9 @@ class RecentEntriesCard extends React.Component {
         }
         return response;
       })
-      .then((response) => response.json())
-      .then((json) => dispatch(requestRecentEntriesSuccess(json)))
-      .catch((error) => dispatch(requestRecentEntriesFailure(error)));
+      .then(response => response.json())
+      .then(json => dispatch(requestRecentEntriesSuccess(json)))
+      .catch(error => dispatch(requestRecentEntriesFailure(error)));
   }
 
   render() {
@@ -66,7 +66,7 @@ class RecentEntriesCard extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   entries: state.entries.recentEntries.slice(0, 3),
   isFetching: state.entries.isRecentEntriesFetching
 });

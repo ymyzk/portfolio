@@ -9,7 +9,7 @@ import MiscList from "../../data/misc.yml";
 import skills from "../../data/skills.yml";
 
 const contributions = ContributionsList.sort();
-const misc = MiscList.map((n) => Object.assign(n, { date: moment(n.date) }));
+const misc = MiscList.map(n => Object.assign(n, { date: moment(n.date) }));
 
 const initialState = {
   contributions,

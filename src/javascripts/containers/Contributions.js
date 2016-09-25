@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 
 import Contributions from "../components/Contributions";
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   contributions: state.default.contributions
 });
 

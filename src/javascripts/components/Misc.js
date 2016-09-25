@@ -12,7 +12,7 @@ const Misc = ({ misc }) => {
         <div className="cell-xs-without-gutter cell-sm-12">
           <List>
             {
-              misc.map((i) => (<MiscListItem item={i} key={i.title} />))
+              misc.map(i => (<MiscListItem item={i} key={i.title} />))
             }
           </List>
         </div>
