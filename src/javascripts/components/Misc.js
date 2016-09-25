@@ -2,6 +2,8 @@ import { List, ListItem } from "material-ui/List";
 import React from "react";
 import Helmet from "react-helmet";
 
+import PropTypes from "../utils/PropTypes";
+
 const Misc = ({ misc }) => {
   const title = "Misc";
   return (
@@ -34,7 +36,7 @@ const MiscListItem = ({ item }) => (
 );
 
 MiscListItem.propTypes = {
-  item: React.PropTypes.object.isRequired
+  item: PropTypes.Misc.isRequired
 };
 
 export default Misc;

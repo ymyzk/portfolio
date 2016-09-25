@@ -8,6 +8,7 @@ import ActionExitToTop from "material-ui/svg-icons/action/exit-to-app";
 import React from "react";
 
 import ProjectPlaceholder from "../../../images/project-placeholder.svg";
+import PropTypes from "../../utils/PropTypes";
 import ProjectTag from "./ProjectTag";
 
 const floatingButtonWrapperStyle = {
@@ -64,7 +65,7 @@ const ProjectCard = ({ project, isActive, onTagSelected }) => {
 };
 
 ProjectCard.propTypes = {
-  project: React.PropTypes.object.isRequired,
+  project: PropTypes.Project.isRequired,
   isActive: React.PropTypes.bool,
   onTagSelected: React.PropTypes.func
 };

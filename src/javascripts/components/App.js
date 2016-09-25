@@ -24,7 +24,7 @@ import TwitterImage from "../../images/twitter.png";
 class App extends React.Component {
   static propTypes = {
     children: React.PropTypes.node.isRequired,
-    themeOptions: React.PropTypes.any.isRequired
+    themeOptions: React.PropTypes.object.isRequired // eslint-disable-line react/forbid-prop-types
   };
 
   constructor(props, context) {
