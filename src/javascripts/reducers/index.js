@@ -4,9 +4,9 @@ import combineReducers from "redux/lib/combineReducers";
 import entries from "./entries";
 import projects from "./projects";
 import talks from "./talks";
-import ContributionsList from "../../data/contributions";
-import MiscList from "../../data/misc";
-import skills from "../../data/skills";
+import ContributionsList from "../../data/contributions.yml";
+import MiscList from "../../data/misc.yml";
+import skills from "../../data/skills.yml";
 
 const contributions = ContributionsList.sort();
 const misc = MiscList.map((n) => Object.assign(n, { date: moment(n.date) }));

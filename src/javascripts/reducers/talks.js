@@ -1,7 +1,7 @@
 import moment from "moment";
 
 import { SELECT_TALK, DESELECT_TALK } from "../actions/talks";
-import TalksList from "../../data/talks";
+import TalksList from "../../data/talks.yml";
 
 const talks = TalksList.map((t) => Object.assign(t, { date: moment(t.date) }));
 

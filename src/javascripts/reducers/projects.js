@@ -1,5 +1,5 @@
 import { ADD_PROJECT_TAG, REMOVE_PROJECT_TAG } from "../actions/projects";
-import ProjectsList from "../../data/projects";
+import ProjectsList from "../../data/projects.yml";
 
 const projects = ProjectsList.map((p) => {
   const start = (p.start !== null) ? new Date(p.start) : null;  // TODO: Error

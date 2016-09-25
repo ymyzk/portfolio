@@ -37,7 +37,7 @@ const config = {
     path.join(__dirname, "/src/javascripts/", CLIENT ? "entry.js" : "server.js")
   ],
   resolve: {
-    extensions: ["", ".hbs", ".js", ".yml"]
+    extensions: ["", ".hbs", ".js"]
   },
   devServer: {
     contentBase: "output",
