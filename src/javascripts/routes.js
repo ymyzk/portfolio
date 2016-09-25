@@ -14,7 +14,9 @@ import PageNotFound from "./components/PageNotFound";
 
 export default (themeOptions) => {  // eslint-disable-line
   const AppWrapper = ({ children }) => (
-    <App children={children} themeOptions={themeOptions} />
+    <App themeOptions={themeOptions}>
+      {children}
+    </App>
   );
 
   AppWrapper.propTypes = {
