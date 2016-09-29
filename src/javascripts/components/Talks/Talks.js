@@ -51,7 +51,7 @@ Talks.propTypes = {
   isDialogOpen: React.PropTypes.bool.isRequired,
   selectedTalk: PropTypes.Talk,
   onTalkSelected: React.PropTypes.func.isRequired,
-  onTalkDeselected: React.PropTypes.func.isRequired
+  onTalkDeselected: React.PropTypes.func.isRequired,
 };
 
 export default Talks;

@@ -20,7 +20,7 @@ export default (themeOptions) => {  // eslint-disable-line
   );
 
   AppWrapper.propTypes = {
-    children: React.PropTypes.node.isRequired
+    children: React.PropTypes.node.isRequired,
   };
 
   return (

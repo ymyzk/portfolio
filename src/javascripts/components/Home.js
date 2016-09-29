@@ -181,7 +181,7 @@ const AboutMe = ({ parallaxX, parallaxY, screenWidth, screenHeight }) => {
     textAlign: "center",
     width: screenWidth,
     left: x,
-    top: y
+    top: y,
   };
   return (<div style={style}><RaisedButton href="/about/" label="About Me" /></div>);
 };
@@ -190,7 +190,7 @@ AboutMe.propTypes = {
   parallaxX: React.PropTypes.number.isRequired,
   parallaxY: React.PropTypes.number.isRequired,
   screenWidth: React.PropTypes.number.isRequired,
-  screenHeight: React.PropTypes.number.isRequired
+  screenHeight: React.PropTypes.number.isRequired,
 };
 
 const Footer = ({ parallaxX, parallaxY, screenWidth, screenHeight }) => {
@@ -201,7 +201,7 @@ const Footer = ({ parallaxX, parallaxY, screenWidth, screenHeight }) => {
     font: "normal normal 400 12px Roboto",
     color: "white",
     right: screenWidth - x,
-    bottom: screenHeight - y
+    bottom: screenHeight - y,
   };
   return (<div style={style}>Copyright &copy; 2013-2016, Yusuke Miyazaki.</div>);
 };
@@ -210,7 +210,7 @@ Footer.propTypes = {
   parallaxX: React.PropTypes.number.isRequired,
   parallaxY: React.PropTypes.number.isRequired,
   screenWidth: React.PropTypes.number.isRequired,
-  screenHeight: React.PropTypes.number.isRequired
+  screenHeight: React.PropTypes.number.isRequired,
 };
 
 class HomeCanvas extends React.Component {
@@ -230,7 +230,7 @@ class HomeCanvas extends React.Component {
     parallaxX: 0,
     parallaxY: 0,
     screenWidth: 0,
-    screenHeight: 0
+    screenHeight: 0,
   };
 
   componentDidMount() {
@@ -276,7 +276,7 @@ class HomeCanvas extends React.Component {
     // normalize: -1 <= parallax <= 1
     this.setState({
       parallaxX: (e.clientX - (this.state.screenWidth / 2)) / (this.state.screenWidth / 2),
-      parallaxY: (e.clientY - (this.state.screenHeight / 2)) / (this.state.screenHeight / 2)
+      parallaxY: (e.clientY - (this.state.screenHeight / 2)) / (this.state.screenHeight / 2),
     });
   }
 
@@ -293,7 +293,7 @@ class HomeCanvas extends React.Component {
     // -90 <= x <= 90 && -90 <= y <= 90
     this.setState({
       parallaxX: x / 90,
-      parallaxY: y / 90
+      parallaxY: y / 90,
     });
   }
 

@@ -4,7 +4,7 @@ import { PropTypes } from "react";
 const Contribution = PropTypes.shape({
   name: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
-  roles: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired
+  roles: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
 });
 
 const Misc = PropTypes.shape({
@@ -29,12 +29,12 @@ const Talk = PropTypes.shape({
   event: PropTypes.string.isRequired,
   date: PropTypes.instanceOf(moment).isRequired,
   link: PropTypes.string,
-  slide: PropTypes.string
+  slide: PropTypes.string,
 });
 
 export default {
   Contribution,
   Misc,
   Project,
-  Talk
+  Talk,
 };

@@ -8,7 +8,7 @@ const talks = TalksList.map(t => Object.assign(t, { date: moment(t.date) }));
 const initialState = {
   isDialogOpen: false,
   talks,
-  selectedTalk: null
+  selectedTalk: null,
 };
 
 export default (state = initialState, action) => {
@@ -16,13 +16,13 @@ export default (state = initialState, action) => {
     case SELECT_TALK: {
       return Object.assign({}, state, {
         isDialogOpen: true,
-        selectedTalk: action.talk
+        selectedTalk: action.talk,
       });
     }
     case DESELECT_TALK: {
       return Object.assign({}, state, {
         isDialogOpen: false,
-        selectedTalk: null
+        selectedTalk: null,
       });
     }
     default:

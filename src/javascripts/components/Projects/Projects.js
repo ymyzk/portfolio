@@ -11,7 +11,7 @@ const Projects = ({ title, projects, selectedTags, onTagSelected, onTagDeleted }
     flexWrap: "wrap",
     // Followings are workaround for animating 'height' property
     maxHeight: selectedTags.length === 0 ? 0 : 300,
-    transition: "max-height 1s"
+    transition: "max-height 1s",
   };
   const isActive = project =>
     selectedTags
@@ -48,11 +48,11 @@ Projects.propTypes = {
   projects: React.PropTypes.arrayOf(PropTypes.Project.isRequired).isRequired,
   onTagSelected: React.PropTypes.func,
   onTagDeleted: React.PropTypes.func,
-  selectedTags: React.PropTypes.arrayOf(React.PropTypes.string.isRequired).isRequired
+  selectedTags: React.PropTypes.arrayOf(React.PropTypes.string.isRequired).isRequired,
 };
 
 Projects.defaultProps = {
-  title: "Projects"
+  title: "Projects",
 };
 
 export default Projects;

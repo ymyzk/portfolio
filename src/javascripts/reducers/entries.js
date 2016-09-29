@@ -2,25 +2,25 @@ import { REQUEST_RECENT_ENTRIES, REQUEST_RECENT_ENTRIES_FAILURE, REQUEST_RECENT_
 
 const initialState = {
   recentEntries: [],
-  isRecentEntriesFetching: false
+  isRecentEntriesFetching: false,
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case REQUEST_RECENT_ENTRIES: {
       return Object.assign({}, state, {
-        isRecentEntriesFetching: true
+        isRecentEntriesFetching: true,
       });
     }
     case REQUEST_RECENT_ENTRIES_SUCCESS: {
       return Object.assign({}, state, {
         recentEntries: action.entries,
-        isRecentEntriesFetching: false
+        isRecentEntriesFetching: false,
       });
     }
     case REQUEST_RECENT_ENTRIES_FAILURE: {
       return Object.assign({}, state, {
-        isRecentEntriesFetching: false
+        isRecentEntriesFetching: false,
       });
     }
     default:

@@ -14,7 +14,7 @@ const misc = MiscList.map(n => Object.assign(n, { date: moment(n.date) }));
 const initialState = {
   contributions,
   misc,
-  skills
+  skills,
 };
 
 const defaultReducer = (state = initialState) => state;
@@ -23,5 +23,5 @@ export default combineReducers({
   default: defaultReducer,
   entries,
   projects,
-  talks
+  talks,
 });

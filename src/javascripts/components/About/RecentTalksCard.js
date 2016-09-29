@@ -30,7 +30,7 @@ const RecentTalksCard = ({ talks }) => (
 );
 
 RecentTalksCard.propTypes = {
-  talks: React.PropTypes.arrayOf(PropTypes.Talk.isRequired).isRequired
+  talks: React.PropTypes.arrayOf(PropTypes.Talk.isRequired).isRequired,
 };
 
 export default RecentTalksCard;

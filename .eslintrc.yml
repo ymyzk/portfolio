@@ -6,8 +6,6 @@ rules:
   quotes:
     - error
     - double
-  comma-dangle:
-    - off
   # Following rules may be changed in the future
   import/extensions:  # Bug??
     - off

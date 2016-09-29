@@ -28,7 +28,7 @@ const TalkDialog = ({ open, talk, onClose }) => {
       label="Close"
       primary
       onTouchTap={onClose}
-    />
+    />,
   ];
 
   const dateString = talk.date.format("YYYY-M-D");
@@ -49,7 +49,7 @@ const TalkDialog = ({ open, talk, onClose }) => {
 TalkDialog.propTypes = {
   open: React.PropTypes.bool.isRequired,
   talk: PropTypes.Talk,
-  onClose: React.PropTypes.func
+  onClose: React.PropTypes.func,
 };
 
 export default TalkDialog;

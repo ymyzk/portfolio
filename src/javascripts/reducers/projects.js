@@ -17,13 +17,13 @@ const projects = ProjectsList.map((p) => {
   return Object.assign(p, {
     start,
     end,
-    duration
+    duration,
   });
 });
 
 const initialState = {
   projects,
-  selectedTags: []
+  selectedTags: [],
 };
 
 export default (state = initialState, action) => {
@@ -35,13 +35,13 @@ export default (state = initialState, action) => {
       }
       const selectedTags = state.selectedTags.concat(action.tag);
       return Object.assign({}, state, {
-        selectedTags
+        selectedTags,
       });
     }
     case REMOVE_PROJECT_TAG: {
       const selectedTags = state.selectedTags.filter(t => t !== action.tag);
       return Object.assign({}, state, {
-        selectedTags
+        selectedTags,
       });
     }
     default:

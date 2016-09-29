@@ -3,9 +3,9 @@ export const DESELECT_TALK = "DESELECT_TALK";
 
 export const selectTalk = talk => ({
   type: SELECT_TALK,
-  talk
+  talk,
 });
 
 export const deselectTalk = () => ({
-  type: DESELECT_TALK
+  type: DESELECT_TALK,
 });

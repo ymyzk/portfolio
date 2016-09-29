@@ -35,12 +35,12 @@ function renderFullPage(fragment, state, head) {
       meta: head.meta.toString(),
       title: head.title.toString(),
       link: head.link.toString(),
-      script: head.script.toString()
+      script: head.script.toString(),
     },
     files: {
       bundleCss: serverStats.files.bundleCss,
-      bundleJs: clientStats.files.bundleJs
-    }
+      bundleJs: clientStats.files.bundleJs,
+    },
   });
 }
 
@@ -51,7 +51,7 @@ app.get("*", (req, res) => {
   match(
     {
       routes: getRoutes({ userAgent: req.headers["user-agent"] }),
-      location: req.url
+      location: req.url,
     },
     (err, redirect, props) => {
       if (err) {

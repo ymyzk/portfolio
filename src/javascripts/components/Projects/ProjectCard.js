@@ -13,19 +13,19 @@ import ProjectTag from "./ProjectTag";
 
 const floatingButtonWrapperStyle = {
   position: "relative",
-  height: 64
+  height: 64,
 };
 
 const floatingButtonStyle = {
   position: "absolute",
   bottom: 12,
-  right: 12
+  right: 12,
 };
 
 const ProjectCard = ({ project, isActive, onTagSelected }) => {
   const style = {
     opacity: isActive ? 1.0 : 0.35,
-    transition: "opacity 1s"
+    transition: "opacity 1s",
   };
   const image = (() => {
     if (project.image === undefined || project.image === null) {
@@ -67,11 +67,11 @@ const ProjectCard = ({ project, isActive, onTagSelected }) => {
 ProjectCard.propTypes = {
   project: PropTypes.Project.isRequired,
   isActive: React.PropTypes.bool,
-  onTagSelected: React.PropTypes.func
+  onTagSelected: React.PropTypes.func,
 };
 
 ProjectCard.defaultProps = {
-  isActive: true
+  isActive: true,
 };
 
 export default ProjectCard;

@@ -28,7 +28,7 @@ const Contributions = ({ contributions }) => {
 };
 
 Contributions.propTypes = {
-  contributions: React.PropTypes.arrayOf(React.PropTypes.object.isRequired).isRequired
+  contributions: React.PropTypes.arrayOf(React.PropTypes.object.isRequired).isRequired,
 };
 
 const ContributionListItem = ({ contribution }) => {
@@ -43,7 +43,7 @@ const ContributionListItem = ({ contribution }) => {
 };
 
 ContributionListItem.propTypes = {
-  contribution: PropTypes.Contribution.isRequired
+  contribution: PropTypes.Contribution.isRequired,
 };
 
 export default Contributions;

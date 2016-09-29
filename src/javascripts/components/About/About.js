@@ -65,7 +65,7 @@ const iconStyle = {
   top: 0,
   bottom: 0,
   margin: "auto 12px",
-  textAlign: "center"
+  textAlign: "center",
 };
 
 const AffiliationCard = () => (
@@ -171,7 +171,7 @@ const Footer = ({ start, end }) => (
 
 Footer.propTypes = {
   start: React.PropTypes.number.isRequired,
-  end: React.PropTypes.number.isRequired
+  end: React.PropTypes.number.isRequired,
 };
 
 export default Home;

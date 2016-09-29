@@ -13,7 +13,7 @@ export default {
     "Hiragino Sans",
     "游ゴシック", "YuGothic",
     "Hiragino Kaku Gothic ProN",
-    "メイリオ", "Meiryo", "sans-serif"
+    "メイリオ", "Meiryo", "sans-serif",
   ].map(f => `"${f}"`).join(", "),
   palette: {
     // TODO: define some colors
@@ -26,10 +26,10 @@ export default {
     textColor: colors.darkBlack,
     alternateTextColor: colors.white,
     canvasColor: colors.white,
-    borderColor: colors.grey500
+    borderColor: colors.grey500,
     // disabledColor: ColorManipulator.fade(colors.darkBlack, 0.3),
     // pickerHeaderColor: colors.cyan500
     // clockCircleColor
     // shadowColor
-  }
+  },
 };

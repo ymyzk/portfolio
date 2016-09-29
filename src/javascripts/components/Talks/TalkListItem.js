@@ -25,7 +25,7 @@ const TalkListItem = ({ talk, onTalkSelected }) => {
 
 TalkListItem.propTypes = {
   talk: PropTypes.Talk.isRequired,
-  onTalkSelected: React.PropTypes.func
+  onTalkSelected: React.PropTypes.func,
 };
 
 export default TalkListItem;

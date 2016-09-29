@@ -24,7 +24,7 @@ const Misc = ({ misc }) => {
 };
 
 Misc.propTypes = {
-  misc: React.PropTypes.arrayOf(React.PropTypes.object.isRequired).isRequired
+  misc: React.PropTypes.arrayOf(React.PropTypes.object.isRequired).isRequired,
 };
 
 const MiscListItem = ({ item }) => (
@@ -36,7 +36,7 @@ const MiscListItem = ({ item }) => (
 );
 
 MiscListItem.propTypes = {
-  item: PropTypes.Misc.isRequired
+  item: PropTypes.Misc.isRequired,
 };
 
 export default Misc;

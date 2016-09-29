@@ -2,7 +2,7 @@ import Chip from "material-ui/Chip";
 import React from "react";
 
 const projectTagStyle = {
-  margin: 4
+  margin: 4,
 };
 
 const ProjectTag = (props) => {
@@ -20,7 +20,7 @@ const ProjectTag = (props) => {
 ProjectTag.propTypes = {
   tag: React.PropTypes.string.isRequired,
   onTouchTap: React.PropTypes.func,
-  onRequestDelete: React.PropTypes.func
+  onRequestDelete: React.PropTypes.func,
 };
 
 export default ProjectTag;

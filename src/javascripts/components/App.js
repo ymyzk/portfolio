@@ -24,7 +24,7 @@ import TwitterImage from "../../images/twitter.png";
 class App extends React.Component {
   static propTypes = {
     children: React.PropTypes.node.isRequired,
-    themeOptions: React.PropTypes.object.isRequired // eslint-disable-line react/forbid-prop-types
+    themeOptions: React.PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   };
 
   constructor(props, context) {
@@ -34,7 +34,7 @@ class App extends React.Component {
   }
 
   state = {
-    open: false
+    open: false,
   };
 
   render() {
@@ -66,14 +66,14 @@ class App extends React.Component {
       { name: "theme-color", content: Theme.palette.primary1Color },
       // Windows / IE / Edge
       { name: "msapplication-TileImage", content: MsTileImage },
-      { name: "msapplication-TileColor", content: Theme.palette.primary1Color }
+      { name: "msapplication-TileColor", content: Theme.palette.primary1Color },
     ];
     const link = [
       // Favicon
       { rel: "shortcut icon", type: "image/x-icon", href: FaviconIco, sizes: "16x16 32x32 48x48" },
       { rel: "icon", type: "image/png", href: FaviconPng, sizes: "256x256" },
       // iOS
-      { rel: "apple-touch-icon", href: AppleTouchIcon }
+      { rel: "apple-touch-icon", href: AppleTouchIcon },
     ];
     const script = [
       {
@@ -82,8 +82,8 @@ class App extends React.Component {
           "@context": "http://schema.org",
           "@type": "WebSite",
           name: title,
-          url
-        })
+          url,
+        }),
       },
       {
         type: "application/ld+json",
@@ -93,10 +93,10 @@ class App extends React.Component {
           name: "Yusuke Miyazaki",
           url,
           sameAs: [
-            "https://www.twitter.com/ymyzk"
-          ]
-        })
-      }
+            "https://www.twitter.com/ymyzk",
+          ],
+        }),
+      },
     ];
     const muiTheme = getMuiTheme(Theme, this.props.themeOptions);
     return (
@@ -104,7 +104,7 @@ class App extends React.Component {
         <div>
           <Helmet
             htmlAttributes={{
-              prefix: "og: http://ogp.me/ns# profile: http://ogp.me/ns/profile# fb: http://ogp.me/ns/fb#"
+              prefix: "og: http://ogp.me/ns# profile: http://ogp.me/ns/profile# fb: http://ogp.me/ns/fb#",
             }}
             titleTemplate={`%s - ${title}`}
             defaultTitle={title}

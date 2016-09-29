@@ -5,7 +5,7 @@ import RecentTalksCard from "../../components/About/RecentTalksCard";
 const NUMBER_OF_RECENT_TALKS = 3;
 
 const mapStateToProps = state => ({
-  talks: state.talks.talks.slice(0, NUMBER_OF_RECENT_TALKS)
+  talks: state.talks.talks.slice(0, NUMBER_OF_RECENT_TALKS),
 });
 
 export default connect(mapStateToProps)(RecentTalksCard);

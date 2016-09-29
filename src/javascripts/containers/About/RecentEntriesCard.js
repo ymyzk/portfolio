@@ -12,7 +12,7 @@ class RecentEntriesCard extends React.Component {
   static propTypes = {
     entries: React.PropTypes.arrayOf(React.PropTypes.object.isRequired),
     isFetching: React.PropTypes.bool.isRequired,
-    dispatch: React.PropTypes.func.isRequired
+    dispatch: React.PropTypes.func.isRequired,
   };
 
   componentDidMount() {
@@ -68,7 +68,7 @@ class RecentEntriesCard extends React.Component {
 
 const mapStateToProps = state => ({
   entries: state.entries.recentEntries.slice(0, 3),
-  isFetching: state.entries.isRecentEntriesFetching
+  isFetching: state.entries.isRecentEntriesFetching,
 });
 
 export default connect(mapStateToProps)(RecentEntriesCard);

@@ -5,12 +5,12 @@ import Projects from "../components/Projects";
 
 const mapStateToProps = state => ({
   projects: state.projects.projects,
-  selectedTags: state.projects.selectedTags
+  selectedTags: state.projects.selectedTags,
 });
 
 const mapDispatchToProps = dispatch => ({
   onTagSelected: tag => dispatch(addProjectTag(tag)),
-  onTagDeleted: tag => dispatch(removeProjectTag(tag))
+  onTagDeleted: tag => dispatch(removeProjectTag(tag)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Projects);

@@ -20,7 +20,7 @@ const SkillsCard = ({ skills }) => (
 );
 
 SkillsCard.propTypes = {
-  skills: React.PropTypes.arrayOf(React.PropTypes.string.isRequired).isRequired
+  skills: React.PropTypes.arrayOf(React.PropTypes.string.isRequired).isRequired,
 };
 
 export default SkillsCard;
