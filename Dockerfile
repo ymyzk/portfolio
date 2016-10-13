@@ -7,8 +7,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 COPY package.json /app/
+COPY yarn.lock /app/
+
 WORKDIR /app
-RUN npm install && rm -rf /root/.npm
+
+RUN npm install -g yarn \
+    && yarn install \
+    && rm -rf /root/.npm
 
 COPY . /app/
 
