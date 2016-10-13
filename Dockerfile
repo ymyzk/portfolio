@@ -12,7 +12,7 @@ WORKDIR /app
 
 RUN npm install -g yarn \
     && yarn install \
-    && rm -rf /root/.npm
+    && rm -rf /root/.npm /root/.yarn-cache
 
 COPY . /app/
 
