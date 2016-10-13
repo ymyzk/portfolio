@@ -3138,9 +3138,17 @@ lodash.keys@^3.1.2:
     lodash.isarguments "^3.0.0"
     lodash.isarray "^3.0.0"
 
+lodash.merge@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.0.tgz#69884ba144ac33fe699737a6086deffadd0f89c5"
+
 lodash.pickby@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.pickby/-/lodash.pickby-4.6.0.tgz#7dea21d8c18d7703a27c704c15d3b84a67e33aff"
+
+lodash.throttle@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
 
 lodash.words@^3.0.0:
   version "3.2.0"
@@ -3148,7 +3156,7 @@ lodash.words@^3.0.0:
   dependencies:
     lodash._root "^3.0.0"
 
-lodash@^4.0.0, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.16.2, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0:
+lodash@^4.0.0, lodash@^4.14.0, lodash@^4.16.2, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0:
   version "4.16.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.16.4.tgz#01ce306b9bad1319f2a5528674f88297aeb70127"
 
@@ -3198,14 +3206,15 @@ map-obj@^1.0.0, map-obj@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d"
 
-material-ui@v0.16.0-rc2:
-  version "0.16.0-rc2"
-  resolved "https://registry.yarnpkg.com/material-ui/-/material-ui-0.16.0-rc2.tgz#788da0577d17c806187f30e763e9cb558071688c"
+material-ui@~0.16.0:
+  version "0.16.0"
+  resolved "https://registry.yarnpkg.com/material-ui/-/material-ui-0.16.0.tgz#58ef44eddfb3143bb4feade341928516dc8df34a"
   dependencies:
     babel-runtime "^6.11.6"
     inline-style-prefixer "^2.0.1"
     keycode "^2.1.1"
-    lodash "^4.13.1"
+    lodash.merge "^4.6.0"
+    lodash.throttle "^4.1.1"
     react-addons-create-fragment "^15.0.0"
     react-addons-transition-group "^15.0.0"
     react-event-listener "^0.3.0"
