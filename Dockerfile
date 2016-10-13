@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 COPY package.json /app/
 WORKDIR /app
-RUN npm install
+RUN npm install && rm -rf /root/.npm
 
 COPY . /app/
 
