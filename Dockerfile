@@ -3,6 +3,7 @@ MAINTAINER Yusuke Miyazaki <miyazaki.dev@gmail.com>
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
         build-essential \
+        python \
     && rm -rf /var/lib/apt/lists/*
 
 COPY package.json /app/
