@@ -1885,9 +1885,9 @@ eslint-import-resolver-webpack@~0.6.0:
     resolve "^1.1.7"
     semver "^5.3.0"
 
-eslint-loader@~1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/eslint-loader/-/eslint-loader-1.5.0.tgz#824b7c9911a633fc1260f863c6ea571224d10412"
+eslint-loader@~1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/eslint-loader/-/eslint-loader-1.6.0.tgz#38f9a1e6c602a4f1f3f3516289726e5d26e6e165"
   dependencies:
     find-cache-dir "^0.1.1"
     loader-utils "^0.2.7"
