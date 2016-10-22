@@ -236,14 +236,14 @@ class HomeCanvas extends React.Component {
   componentDidMount() {
     this.startCanvas();
     this.canvas.addEventListener("mousemove", this.parallaxCanvasOnMouseMove);
-    window.addEventListener("deviceorientation", this.parallaxCanvasOnDeviceOrientation, true);
+    // window.addEventListener("deviceorientation", this.parallaxCanvasOnDeviceOrientation, true);
     window.addEventListener("resize", this.resizeCanvas);
   }
 
   componentWillUnmount() {
     this.stopCanvas();
     this.canvas.removeEventListener("mousemove", this.parallaxCanvasOnMouseMove);
-    window.removeEventListener("deviceorientation", this.parallaxCanvasOnDeviceOrientation, true);
+    // window.removeEventListener("deviceorientation", this.parallaxCanvasOnDeviceOrientation, true);
     window.removeEventListener("resize", this.resizeCanvas);
   }
 
