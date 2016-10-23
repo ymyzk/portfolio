@@ -12,7 +12,7 @@ COPY yarn.lock /app/
 WORKDIR /app
 
 RUN npm install -g yarn \
-    && yarn install \
+    && yarn \
     && rm -rf /root/.npm /root/.yarn-cache
 
 COPY . /app/
