@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         python \
     && npm install -g yarn \
     && yarn \
-    && rm -rf /root/.npm /root/.yarn-cache \
+    && rm -rf /root/.node-gyp /root/.npm /root/.yarn-cache \
     && apt-get purge -y \
         build-essential \
         python \
