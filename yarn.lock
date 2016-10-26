@@ -1128,8 +1128,8 @@ camelcase@^3.0.0:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-3.0.0.tgz#32fc4b9fcdaf845fcdf7e73bb97cac2261f0ab0a"
 
 caniuse-db@^1.0.30000539, caniuse-db@^1.0.30000554:
-  version "1.0.30000566"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000566.tgz#9463db955f509136fd35b385903bb61b07150f27"
+  version "1.0.30000568"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000568.tgz#f4e67925e254afc950d7130102f28b8726037492"
 
 caseless@~0.11.0:
   version "0.11.0"
