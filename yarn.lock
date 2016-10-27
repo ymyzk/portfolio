@@ -399,8 +399,8 @@ babel-helpers@^6.16.0:
     babel-template "^6.16.0"
 
 babel-loader@~6.2.0:
-  version "6.2.6"
-  resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-6.2.6.tgz#4b405436a0df41945e8ebb25eaaec5f29e9850f3"
+  version "6.2.7"
+  resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-6.2.7.tgz#16fdbf64328030dc5a606827d389c8b92a2a8032"
   dependencies:
     find-cache-dir "^0.1.1"
     loader-utils "^0.2.11"
@@ -3846,13 +3846,13 @@ postcss-filter-plugins@^2.0.0:
     uniqid "^4.0.0"
 
 postcss-load-config@^1.0.0-rc:
-  version "1.0.0-rc"
-  resolved "https://registry.yarnpkg.com/postcss-load-config/-/postcss-load-config-1.0.0-rc.tgz#8aed0d0fb94afe2c1ab0ba2ca69da3af5079e2cc"
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-load-config/-/postcss-load-config-1.0.0.tgz#1399f60dcd6bd9c3124b2eb22960f77f9dc08b3d"
   dependencies:
     cosmiconfig "^2.1.0"
     object-assign "^4.1.0"
     postcss-load-options "^1.0.2"
-    postcss-load-plugins "^2.0.0-rc"
+    postcss-load-plugins "^2.0.0"
 
 postcss-load-options@^1.0.2:
   version "1.0.2"
@@ -3861,9 +3861,9 @@ postcss-load-options@^1.0.2:
     cosmiconfig "^2.1.0"
     object-assign "^4.1.0"
 
-postcss-load-plugins@^2.0.0-rc:
-  version "2.0.0-rc"
-  resolved "https://registry.yarnpkg.com/postcss-load-plugins/-/postcss-load-plugins-2.0.0-rc.tgz#21242fb78de4d3d8eac9d1fef3863b8b794aa522"
+postcss-load-plugins@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-load-plugins/-/postcss-load-plugins-2.0.0.tgz#2840d8df1d1c57ebcb1d41b5f60d45796504b43f"
   dependencies:
     cosmiconfig "^2.1.0"
     object-assign "^4.1.0"
