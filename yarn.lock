@@ -250,9 +250,9 @@ babel-core@^6.18.0, babel-core@~6.18.0:
     slash "^1.0.0"
     source-map "^0.5.0"
 
-babel-eslint@~7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-7.0.0.tgz#54e51b4033f54ac81326ecea4c646a779935196d"
+babel-eslint@~7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-7.1.0.tgz#d506a5174ba224e25a2d17e128e2ba8987139ddc"
   dependencies:
     babel-traverse "^6.15.0"
     babel-types "^6.15.0"
