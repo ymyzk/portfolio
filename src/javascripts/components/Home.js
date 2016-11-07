@@ -103,23 +103,23 @@ class BallWithLines extends Ball {
     const z = -1;
 
     // Draw balls
-    for (const [x, y, draw] of this._history) {
+    this._history.forEach(([x, y, draw]) => {
       if (draw) {
         const ball = new Ball(...calculateParallax(x, y, parallaxX, parallaxY, z), 3, "rgba(255, 255, 255, 0.3)");
         ball.draw(ctx);
       }
-    }
+    });
 
     // Draw lines
     ctx.beginPath();
     if (this._history.length > 1) {
       const [firstX, firstY] = this._history[0];
       ctx.moveTo(...calculateParallax(firstX, firstY, parallaxX, parallaxY, z));
-      for (const [x, y, _, changeVelocity] of this._history) {  // eslint-disable-line no-unused-vars
+      this._history.forEach(([x, y, _, changeVelocity]) => {  // eslint-disable-line no-unused-vars
         if (changeVelocity) {
           ctx.lineTo(...calculateParallax(x, y, parallaxX, parallaxY, z));
         }
-      }
+      });
       const [lastX, lastY] = this._history[this._history.length - 1];
       ctx.lineTo(...calculateParallax(lastX, lastY, parallaxX, parallaxY, z));
       ctx.lineWidth = 1.0;

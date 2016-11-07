@@ -63,8 +63,7 @@ app.get("*", (req, res) => {
         const html = renderToString(
           <Provider store={store}>
             <RouterContext {...props} />
-          </Provider>
-        );
+          </Provider>);
         const initialState = store.getState();
         const head = Helmet.rewind();
         if (props.routes.length > 0 && props.routes[props.routes.length - 1].path === "*") {
@@ -76,7 +75,7 @@ app.get("*", (req, res) => {
       } else {
         res.status(404).send("Not Found");
       }
-    }
+    },
   );
 });
 
