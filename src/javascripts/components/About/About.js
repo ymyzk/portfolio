@@ -119,7 +119,7 @@ const LinksCard = () => (
       />
       <ListItem
         primaryText="Facebook"
-        href="https://www.facebook.com/yusuke.miy"
+        href="https://www.facebook.com/ymyzk"
         target="_blank"
         leftIcon={<FontIcon className="fa fa-facebook-official" style={iconStyle} />}
       />
