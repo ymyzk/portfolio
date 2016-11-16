@@ -54,7 +54,7 @@ const AboutCard = () => (
       />
       <ListItem
         primaryText={"Age"}
-        secondaryText={"22"}
+        secondaryText={"23"}
         disabled
       />
     </List>
