@@ -2123,6 +2123,18 @@ fbjs@0.1.0-alpha.10:
     promise "^7.0.3"
     whatwg-fetch "^0.9.0"
 
+fbjs@0.8.4:
+  version "0.8.4"
+  resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.4.tgz#875ce3582af9525520bdb9dc5f61e951fa4046f1"
+  dependencies:
+    core-js "^1.0.0"
+    immutable "^3.7.6"
+    isomorphic-fetch "^2.1.1"
+    loose-envify "^1.0.0"
+    object-assign "^4.1.0"
+    promise "^7.1.1"
+    ua-parser-js "^0.7.9"
+
 fbjs@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.2.1.tgz#622061630a43e11f845017b9044aaa648ed3f731"
@@ -2592,6 +2604,10 @@ ieee754@^1.1.4:
 ignore@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.2.0.tgz#8d88f03c3002a0ac52114db25d2c673b0bf1e435"
+
+immutable@^3.7.6:
+  version "3.8.1"
+  resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.1.tgz#200807f11ab0f72710ea485542de088075f68cd2"
 
 imurmurhash@^0.1.4:
   version "0.1.4"
@@ -4239,6 +4255,12 @@ react-tap-event-plugin@~1.0.0:
   dependencies:
     fbjs "^0.2.1"
 
+react-three-renderer@~2.3.3:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/react-three-renderer/-/react-three-renderer-2.3.3.tgz#becde541387b3de345476695b3e0aa80f57e6b8f"
+  dependencies:
+    fbjs "0.8.4"
+
 react@~15.3.0:
   version "15.3.2"
   resolved "https://registry.yarnpkg.com/react/-/react-15.3.2.tgz#a7bccd2fee8af126b0317e222c28d1d54528d09e"
@@ -4895,6 +4917,10 @@ tar@^2.0.0, tar@~2.2.1:
 text-table@~0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
+
+three@~0.79.0:
+  version "0.79.0"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.79.0.tgz#3af96fda47f68b7ab093c298dfa335fa45da0cf4"
 
 through@^2.3.6, through@~2.3.6:
   version "2.3.8"

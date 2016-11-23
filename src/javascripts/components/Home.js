@@ -1,7 +1,10 @@
 import RaisedButton from "material-ui/RaisedButton";
 import React from "react";
+import React3 from "react-three-renderer";
+import THREE from "three";
 
-import { calculateParallax, ratioForCanvas } from "../utils/canvas";
+const calculateParallax = (x, y, pX, pY, z = 0, depth = 50) =>
+  [x + (pX * z * depth), y + (pY * z * depth)];
 
 const Title = ({ parallaxX, parallaxY, screenWidth, screenHeight }) => {
   const [x, y] = calculateParallax(0, screenHeight * 0.35, parallaxX, parallaxY, 0.2);
@@ -72,6 +75,7 @@ class HomeCanvas extends React.Component {
 
     this.parallaxCanvasOnMouseMove = this.parallaxCanvasOnMouseMove.bind(this);
     this.resizeCanvas = this.resizeCanvas.bind(this);
+    this._onAnimate = this._onAnimate.bind(this);
 
     this.requestId = null;
   }
@@ -81,11 +85,12 @@ class HomeCanvas extends React.Component {
     parallaxY: 0,
     screenWidth: 0,
     screenHeight: 0,
+    cubeRotation: new THREE.Euler(),
   };
 
   componentDidMount() {
     this.resizeCanvas();
-    this.canvas.addEventListener("mousemove", this.parallaxCanvasOnMouseMove);
+    this.wrapper.addEventListener("mousemove", this.parallaxCanvasOnMouseMove);
     window.addEventListener("resize", this.resizeCanvas);
   }
 
@@ -103,25 +108,55 @@ class HomeCanvas extends React.Component {
   }
 
   resizeCanvas() {
-    const ctx = this.canvas.getContext("2d");
-    const ratio = ratioForCanvas(ctx);
     const [screenWidth, screenHeight] = [window.innerWidth, window.innerHeight - 64];
     this.setState({ screenWidth, screenHeight });
-    this.canvas.width = ratio * screenWidth;
-    this.canvas.height = ratio * screenHeight;
-    this.canvas.style.width = `${screenWidth}px`;
-    this.canvas.style.height = `${screenHeight}px`;
-    ctx.scale(ratio, ratio);
+  }
+
+  _onAnimate() {
+    this.setState({
+      cubeRotation: new THREE.Euler(
+        this.state.cubeRotation.x + 0.005,
+        this.state.cubeRotation.y + 0.005,
+        0,
+      ),
+    });
   }
 
   render() {
+    const [width, height] = [this.state.screenWidth, this.state.screenHeight];
     const backgroundStyle = {
       position: "relative",
       background: "linear-gradient(rgb(63, 81, 181), rgb(57, 73, 171))",
+      height,
     };
+    const z = 5;
     return (
-      <div style={backgroundStyle}>
-        <canvas ref={(c) => { this.canvas = c; }} style={{ display: "block" }} />
+      <div style={backgroundStyle} ref={(e) => { this.wrapper = e; }} >
+        <React3
+          mainCamera="camera" // this points to the perspectiveCamera which has the name set to "camera" below
+          width={width}
+          height={height}
+          canvasStyle={{ display: "block" }}
+          onAnimate={this._onAnimate}
+          pixelRatio={window.devicePixelRatio || 1.0}
+          antialias
+          alpha
+        >
+          <scene>
+            <perspectiveCamera
+              name="camera"
+              fov={90}
+              aspect={width / height}
+              near={0.1}
+              far={1000}
+              position={new THREE.Vector3(-this.state.parallaxX / 2, this.state.parallaxY / 2, z)}
+            />
+            <points position={new THREE.Vector3(0, 0, -6)} rotation={this.state.cubeRotation}>
+              <sphereGeometry radius={7} widthSegments={10} heightSegments={10} />
+              <pointsMaterial color={0xffffff} size={0.1} opacity={0.1} transparent />
+            </points>
+          </scene>
+        </React3>
         <div>
           <Title {...this.state} />
           <AboutMe {...this.state} />
