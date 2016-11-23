@@ -76,9 +76,11 @@
     "react-redux": "~4.4.5",
     "react-router": "~3.0.0",
     "react-tap-event-plugin": "~1.0.0",
+    "react-three-renderer": "~2.3.3",
     "redux": "~3.6.0",
     "redux-logger": "~2.7.0",
     "ress": "~1.1.1",
+    "three": "~0.79.0",
     "vary": "~1.1.0",
     "whatwg-fetch": "~1.0.0"
   }
