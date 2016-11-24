@@ -6,6 +6,11 @@ import THREE from "three";
 const calculateParallax = (x, y, pX, pY, z = 0, depth = 50) =>
   [x + (pX * z * depth), y + (pY * z * depth)];
 
+const getDevicePixelRatio = () => {
+  if (typeof window === "undefined") return 1.0;
+  return window.devicePixelRatio || 1.0;
+};
+
 const Title = ({ parallaxX, parallaxY, screenWidth, screenHeight }) => {
   const [x, y] = calculateParallax(0, screenHeight * 0.35, parallaxX, parallaxY, 0.2);
   const fontSize = Math.min(screenWidth * 0.1, 60);
@@ -138,7 +143,7 @@ class HomeCanvas extends React.Component {
           height={height}
           canvasStyle={{ display: "block" }}
           onAnimate={this._onAnimate}
-          pixelRatio={window.devicePixelRatio || 1.0}
+          pixelRatio={getDevicePixelRatio()}
           antialias
           alpha
         >
