@@ -26,7 +26,7 @@ const paths = [
   "/projects/",
   "/talks/",
   "/contributions/",
-  "/misc/"
+  "/misc/",
 ];
 
 const config = {
@@ -34,10 +34,10 @@ const config = {
     "babel-polyfill",
     "whatwg-fetch",
     ...((DEBUG && CLIENT) ? ["webpack/hot/dev-server", "webpack/hot/only-dev-server"] : []),
-    path.join(__dirname, "/src/javascripts/", CLIENT ? "entry.js" : "server.js")
+    path.join(__dirname, "/src/javascripts/", CLIENT ? "entry.js" : "server.js"),
   ],
   resolve: {
-    extensions: ["", ".hbs", ".js"]
+    extensions: ["", ".hbs", ".js"],
   },
   devServer: {
     contentBase: "output",
@@ -46,14 +46,14 @@ const config = {
     inline: true,
     port: 3000,
     // react-router 用
-    historyApiFallback: true
+    historyApiFallback: true,
   },
   devtool: DEBUG ? "eval" : "source-map",
   output: {
     path: buildPath,
     publicPath: DEBUG ? "/" : basePath,
     filename: CLIENT ? "bundle.[hash].js" : "server.js",
-    libraryTarget: CLIENT ? "var" : "commonjs2"
+    libraryTarget: CLIENT ? "var" : "commonjs2",
   },
   target: CLIENT ? "web" : "node",
   externals: CLIENT ? false : /^[a-z\-0-9]+$/,
@@ -63,46 +63,46 @@ const config = {
         test: /\.(js)$/,
         loader: "eslint-loader",
         include: [path.resolve(__dirname, "src/javascripts")],
-        exclude: [nodeModulesPath]
-      }
+        exclude: [nodeModulesPath],
+      },
     ],
     loaders: [
       // Template
       {
         test: /\.hbs$/,
-        loader: "html"
+        loader: "html",
       },
       // Stylesheet
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract("style", ["css"])
+        loader: ExtractTextPlugin.extract("style", ["css"]),
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract("style", ["css", "postcss", "sass"])
+        loader: ExtractTextPlugin.extract("style", ["css", "postcss", "sass"]),
       },
       // JavaScript
       {
         test: /\.(js)$/,
         loaders: ["react-hot", "babel"],
-        exclude: [nodeModulesPath]
+        exclude: [nodeModulesPath],
       },
       // Data
       {
         test: /\.json/,
-        loader: "json"
+        loader: "json",
       },
       {
         test: /\.yml$/,
-        loaders: ["json", "yaml"]
+        loaders: ["json", "yaml"],
       },
       // Images
       {
         test: /\.(ico|jpg|png)$/,
         loader: "url-loader",
         query: {
-          limit: 1024
-        }
+          limit: 1024,
+        },
       },
       // Fonts (Font Awesome)
       {
@@ -110,34 +110,34 @@ const config = {
         loader: "url-loader",
         query: {
           limit: 1024,
-          mimetype: "application/vnd.ms-fontobject"
-        }
+          mimetype: "application/vnd.ms-fontobject",
+        },
       },
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
         loader: "url-loader",
         query: {
           limit: 1024,
-          mimetype: "image/svg+xml"
-        }
+          mimetype: "image/svg+xml",
+        },
       },
       {
         test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
         loader: "url-loader",
         query: {
           limit: 1024,
-          mimetype: "application/octet-stream"
-        }
+          mimetype: "application/octet-stream",
+        },
       },
       {
         test: /\.woff(2)?(\?v=\d+\.\d+\.\d+)?$/,
         loader: "url-loader",
         query: {
           limit: 1024,
-          mimetype: "application/font-woff"
-        }
-      }
-    ]
+          mimetype: "application/font-woff",
+        },
+      },
+    ],
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -146,8 +146,8 @@ const config = {
       __CLIENT__: CLIENT,
       __SERVER__: !CLIENT,
       "process.env": {
-        NODE_ENV: JSON.stringify(DEBUG ? "development" : "production")
-      }
+        NODE_ENV: JSON.stringify(DEBUG ? "development" : "production"),
+      },
     }),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     ...((DEBUG && CLIENT) ? [new webpack.HotModuleReplacementPlugin()] : []),
@@ -156,8 +156,8 @@ const config = {
       new webpack.optimize.OccurrenceOrderPlugin(),
       new webpack.optimize.UglifyJsPlugin({
         compress: {
-          warnings: false
-        }
+          warnings: false,
+        },
       }),
       new webpack.optimize.AggressiveMergingPlugin(),
       new CompressionPlugin({
@@ -165,30 +165,30 @@ const config = {
         algorithm: "zopfli",
         test: /\.(css|eot|js|svg|ttf|txt|xml)$/,
         threshold: 1024,
-        minRatio: 0.8
-      })
+        minRatio: 0.8,
+      }),
     ] : []),
     new webpack.NoErrorsPlugin(),
     new ExtractTextPlugin("bundle.[hash].css"),
     new CopyWebpackPlugin([
-      { from: "src/media", to: "media" }
+      { from: "src/media", to: "media" },
     ]),
     ...(CLIENT ? [
       new IndexPageGeneratorPlugin(
         path.join(__dirname, "/src/templates/index.hbs"),
         "index.html"),
       new RobotsGeneratorPlugin(basePath, "robots.txt"),
-      new SitemapGeneratorPlugin(basePath, paths, "sitemap.xml")
+      new SitemapGeneratorPlugin(basePath, paths, "sitemap.xml"),
     ] : []),
-    new StatsPlugin()
+    new StatsPlugin(),
   ],
   postcss: () => ({
     defaults: [autoprefixer],
-    cleaner: [autoprefixer()]
+    cleaner: [autoprefixer()],
   }),
   sassLoader: {
-    precision: 8
-  }
+    precision: 8,
+  },
 };
 
 module.exports = config;
