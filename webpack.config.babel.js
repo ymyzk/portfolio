@@ -2,7 +2,7 @@
 import path from "path";
 // webpack
 import webpack from "webpack";
-import autoprefixer from "autoprefixer";
+import cssnext from "postcss-cssnext";
 import CompressionPlugin from "compression-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
 import ExtractTextPlugin from "extract-text-webpack-plugin";
@@ -75,11 +75,7 @@ const config = {
       // Stylesheet
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract("style", ["css"]),
-      },
-      {
-        test: /\.scss$/,
-        loader: ExtractTextPlugin.extract("style", ["css", "postcss", "sass"]),
+        loader: ExtractTextPlugin.extract("style", ["css", "postcss"]),
       },
       // JavaScript
       {
@@ -182,13 +178,9 @@ const config = {
     ] : []),
     new StatsPlugin(),
   ],
-  postcss: () => ({
-    defaults: [autoprefixer],
-    cleaner: [autoprefixer()],
-  }),
-  sassLoader: {
-    precision: 8,
-  },
+  postcss: () => [
+    cssnext(),
+  ],
 };
 
 module.exports = config;

@@ -11,7 +11,7 @@ import Link from "react-router/lib/Link";
 import "font-awesome/css/font-awesome.css";
 import "ress/ress.css";
 import "../../stylesheets/roboto.css";
-import "../../stylesheets/index.scss";
+import "../../stylesheets/index.css";
 
 import Theme from "./Theme";
 import AppleTouchIcon from "../../images/apple-touch-icon.png";
