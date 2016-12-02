@@ -179,7 +179,13 @@ const config = {
     new StatsPlugin(),
   ],
   postcss: () => [
-    cssnext(),
+    cssnext({
+      features: {
+        calc: {
+          precision: 8,
+        },
+      },
+    }),
   ],
 };
 
