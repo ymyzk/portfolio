@@ -2,10 +2,12 @@
 import path from "path";
 // webpack
 import webpack from "webpack";
-import cssnext from "postcss-cssnext";
 import CompressionPlugin from "compression-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
 import ExtractTextPlugin from "extract-text-webpack-plugin";
+// PostCSS
+import cssnext from "postcss-cssnext";
+import reporter from "postcss-reporter";
 // Original Plugins
 import IndexPageGeneratorPlugin from "./plugins/index";
 import RobotsGeneratorPlugin from "./plugins/robots";
@@ -186,6 +188,7 @@ const config = {
         },
       },
     }),
+    reporter(),
   ],
 };
 
