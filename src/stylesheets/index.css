@@ -24,6 +24,7 @@ html {
                "游ゴシック", "YuGothic",
                "Hiragino Kaku Gothic ProN",
                "メイリオ", "Meiryo", sans-serif;
+  font-feature-settings: "palt";
 }
 
 body {
