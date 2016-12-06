@@ -20,6 +20,13 @@
   tags: [Library, Python]
   description: Django アプリケーションから簡単に Slack や HipChat に通知を送ることができるライブラリ。
 
+- title: wsgi_lineprof
+  link: https://github.com/ymyzk/wsgi_lineprof
+  start: 2016-10-02
+  end: null
+  tags: [Library, Python]
+  description: WSGI ミドルウェアとして使えるラインプロファイラ。
+
 - title: python-gyazo
   link: https://github.com/ymyzk/python-gyazo
   start: 2014-07-25
