@@ -1,7 +1,7 @@
 import RaisedButton from "material-ui/RaisedButton";
 import React from "react";
 import React3 from "react-three-renderer";
-import THREE from "three";
+import { Euler, Vector3 } from "three";
 
 const calculateParallax = (x, y, pX, pY, z = 0, depth = 50) =>
   [x + (pX * z * depth), y + (pY * z * depth)];
@@ -90,7 +90,7 @@ class HomeCanvas extends React.Component {
     parallaxY: 0,
     screenWidth: 0,
     screenHeight: 0,
-    cubeRotation: new THREE.Euler(),
+    cubeRotation: new Euler(0, 0, 0),
   };
 
   componentDidMount() {
@@ -119,7 +119,7 @@ class HomeCanvas extends React.Component {
 
   _onAnimate() {
     this.setState({
-      cubeRotation: new THREE.Euler(
+      cubeRotation: new Euler(
         this.state.cubeRotation.x + 0.005,
         this.state.cubeRotation.y + 0.005,
         0,
@@ -154,9 +154,9 @@ class HomeCanvas extends React.Component {
               aspect={width / height}
               near={0.1}
               far={1000}
-              position={new THREE.Vector3(-this.state.parallaxX / 2, this.state.parallaxY / 2, z)}
+              position={new Vector3(-this.state.parallaxX / 2, this.state.parallaxY / 2, z)}
             />
-            <points position={new THREE.Vector3(0, 0, -6)} rotation={this.state.cubeRotation}>
+            <points position={new Vector3(0, 0, -6)} rotation={this.state.cubeRotation}>
               <sphereGeometry radius={7} widthSegments={10} heightSegments={10} />
               <pointsMaterial color={0xffffff} size={0.1} opacity={0.1} transparent />
             </points>
