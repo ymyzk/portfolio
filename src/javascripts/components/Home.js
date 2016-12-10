@@ -1,15 +1,8 @@
 import RaisedButton from "material-ui/RaisedButton";
 import React from "react";
-import React3 from "react-three-renderer";
-import { Euler, Vector3 } from "three";
 
 const calculateParallax = (x, y, pX, pY, z = 0, depth = 50) =>
   [x + (pX * z * depth), y + (pY * z * depth)];
-
-const getDevicePixelRatio = () => {
-  if (typeof window === "undefined") return 1.0;
-  return window.devicePixelRatio || 1.0;
-};
 
 const Title = ({ parallaxX, parallaxY, screenWidth, screenHeight }) => {
   const [x, y] = calculateParallax(0, screenHeight * 0.35, parallaxX, parallaxY, 0.2);
@@ -80,7 +73,6 @@ class HomeCanvas extends React.Component {
 
     this.parallaxCanvasOnMouseMove = this.parallaxCanvasOnMouseMove.bind(this);
     this.resizeCanvas = this.resizeCanvas.bind(this);
-    this._onAnimate = this._onAnimate.bind(this);
 
     this.requestId = null;
   }
@@ -90,7 +82,6 @@ class HomeCanvas extends React.Component {
     parallaxY: 0,
     screenWidth: 0,
     screenHeight: 0,
-    cubeRotation: new Euler(0, 0, 0),
   };
 
   componentDidMount() {
@@ -100,7 +91,7 @@ class HomeCanvas extends React.Component {
   }
 
   componentWillUnmount() {
-    this.canvas.removeEventListener("mousemove", this.parallaxCanvasOnMouseMove);
+    this.wrapper.removeEventListener("mousemove", this.parallaxCanvasOnMouseMove);
     window.removeEventListener("resize", this.resizeCanvas);
   }
 
@@ -117,51 +108,14 @@ class HomeCanvas extends React.Component {
     this.setState({ screenWidth, screenHeight });
   }
 
-  _onAnimate() {
-    this.setState({
-      cubeRotation: new Euler(
-        this.state.cubeRotation.x + 0.005,
-        this.state.cubeRotation.y + 0.005,
-        0,
-      ),
-    });
-  }
-
   render() {
-    const [width, height] = [this.state.screenWidth, this.state.screenHeight];
     const backgroundStyle = {
       position: "relative",
       background: "linear-gradient(rgb(63, 81, 181), rgb(57, 73, 171))",
-      height,
+      height: this.state.screenHeight,
     };
-    const z = 5;
     return (
       <div style={backgroundStyle} ref={(e) => { this.wrapper = e; }} >
-        <React3
-          mainCamera="camera" // this points to the perspectiveCamera which has the name set to "camera" below
-          width={width}
-          height={height}
-          canvasStyle={{ display: "block" }}
-          onAnimate={this._onAnimate}
-          pixelRatio={getDevicePixelRatio()}
-          antialias
-          alpha
-        >
-          <scene>
-            <perspectiveCamera
-              name="camera"
-              fov={90}
-              aspect={width / height}
-              near={0.1}
-              far={1000}
-              position={new Vector3(-this.state.parallaxX / 2, this.state.parallaxY / 2, z)}
-            />
-            <points position={new Vector3(0, 0, -6)} rotation={this.state.cubeRotation}>
-              <sphereGeometry radius={7} widthSegments={10} heightSegments={10} />
-              <pointsMaterial color={0xffffff} size={0.1} opacity={0.1} transparent />
-            </points>
-          </scene>
-        </React3>
         <div>
           <Title {...this.state} />
           <AboutMe {...this.state} />
