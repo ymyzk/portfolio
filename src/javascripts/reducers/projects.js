@@ -1,3 +1,5 @@
+import { List } from "immutable";
+
 import { SET_SELECTED_TAGS } from "../actions/projects";
 import ProjectsList from "../../data/projects.yml";
 
@@ -23,7 +25,7 @@ const projects = ProjectsList.map((p) => {
 
 const initialState = {
   projects,
-  selectedTags: [],
+  selectedTags: List(),
 };
 
 export default (state = initialState, action) => {
