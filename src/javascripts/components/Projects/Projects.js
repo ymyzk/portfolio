@@ -13,6 +13,8 @@ const Projects = ({ title, projects, selectedTags, onTagSelected, onTagDeleted }
     maxHeight: selectedTags.length === 0 ? 0 : 300,
     transition: "max-height 1s",
   };
+  const _onTagSelected = tag => onTagSelected(selectedTags, tag);
+  const _onTagDeleted = tag => onTagDeleted(selectedTags, tag);
   const isActive = project =>
     selectedTags
       .map(t => project.tags.includes(t))
@@ -26,7 +28,7 @@ const Projects = ({ title, projects, selectedTags, onTagSelected, onTagDeleted }
           <div style={filterTagsStyle}>
             {
               selectedTags.map(tag => (
-                <ProjectTag key={tag} tag={tag} onRequestDelete={onTagDeleted} />
+                <ProjectTag key={tag} tag={tag} onRequestDelete={_onTagDeleted} />
               ))
             }
           </div>
@@ -34,7 +36,7 @@ const Projects = ({ title, projects, selectedTags, onTagSelected, onTagDeleted }
         {
           projects.map(p => (
             <div className="cell-sm-6 cell-md-4" key={p.title}>
-              <ProjectCard project={p} isActive={isActive(p)} onTagSelected={onTagSelected} />
+              <ProjectCard project={p} isActive={isActive(p)} onTagSelected={_onTagSelected} />
             </div>
           ))
         }

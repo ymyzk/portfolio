@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import { addProjectTag, removeProjectTag } from "../actions/projects";
+import { selectTag, deselectTag } from "../actions/projects";
 import Projects from "../components/Projects";
 
 const mapStateToProps = state => ({
@@ -9,8 +9,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onTagSelected: tag => dispatch(addProjectTag(tag)),
-  onTagDeleted: tag => dispatch(removeProjectTag(tag)),
+  onTagSelected: (selectedTags, tag) => dispatch(selectTag(selectedTags, tag)),
+  onTagDeleted: (selectedTags, tag) => dispatch(deselectTag(selectedTags, tag)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Projects);
