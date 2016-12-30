@@ -153,6 +153,28 @@
     "version_no": "1452576467",
     "width": 425
   },
+  "http://www.slideshare.net/yusukemiy/javascript-70245661": {
+    "author_name": "Yusuke Miyazaki",
+    "author_url": "http://www.slideshare.net/yusukemiy",
+    "conversion_version": 2,
+    "height": 355,
+    "html": "<iframe src=\"https://www.slideshare.net/slideshow/embed_code/key/c6K6aBTDUSJqpp\" width=\"427\" height=\"356\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" style=\"border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;\" allowfullscreen> </iframe> <div style=\"margin-bottom:5px\"> <strong> <a href=\"https://www.slideshare.net/yusukemiy/javascript-70245661\" title=\"プログラミング言語入門大会 — JavaScript 入門\" target=\"_blank\">プログラミング言語入門大会 — JavaScript 入門</a> </strong> from <strong><a target=\"_blank\" href=\"http://www.slideshare.net/yusukemiy\">Yusuke Miyazaki</a></strong> </div>\n\n",
+    "provider_name": "SlideShare",
+    "provider_url": "http://www.slideshare.net",
+    "slide_image_baseurl": "//image.slidesharecdn.com/javascript-161218154905/95/slide-",
+    "slide_image_baseurl_suffix": "-1024.jpg",
+    "slideshow_id": 70245661,
+    "thumbnail": "//cdn.slidesharecdn.com/ss_thumbnails/javascript-161218154905-thumbnail.jpg?cb=1482076206",
+    "thumbnail_height": 128,
+    "thumbnail_url": "https://cdn.slidesharecdn.com/ss_thumbnails/javascript-161218154905-thumbnail.jpg?cb=1482076206",
+    "thumbnail_width": 170,
+    "title": "プログラミング言語入門大会 — JavaScript 入門",
+    "total_slides": 18,
+    "type": "rich",
+    "version": "1.0",
+    "version_no": "1482076206",
+    "width": 425
+  },
   "http://www.slideshare.net/yusukemiy/ss-40165347": {
     "author_name": "Yusuke Miyazaki",
     "author_url": "http://www.slideshare.net/yusukemiy",
