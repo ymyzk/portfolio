@@ -55,6 +55,8 @@ Projects.propTypes = {
 
 Projects.defaultProps = {
   title: "Projects",
+  onTagSelected: () => {},
+  onTagDeleted: () => {},
 };
 
 export default Projects;

@@ -23,4 +23,9 @@ ProjectTag.propTypes = {
   onRequestDelete: React.PropTypes.func,
 };
 
+ProjectTag.defaultProps = {
+  onTouchTap: () => {},
+  onRequestDelete: () => {},
+};
+
 export default ProjectTag;

@@ -52,4 +52,9 @@ TalkDialog.propTypes = {
   onClose: React.PropTypes.func,
 };
 
+TalkDialog.defaultProps = {
+  talk: null,
+  onClose: () => {},
+};
+
 export default TalkDialog;

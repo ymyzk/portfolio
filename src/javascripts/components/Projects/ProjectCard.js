@@ -29,7 +29,7 @@ const ProjectCard = ({ project, isActive, onTagSelected }) => {
   };
   const image = (() => {
     if (project.image === undefined || project.image === null) {
-      return (<img src={ProjectPlaceholder} role="presentation" />);
+      return (<img src={ProjectPlaceholder} alt="" role="presentation" />);
     }
     const imageSrc = `/media/projects/${project.image}`;
     const imageSrc2 = imageSrc.replace(".png", "@2x.png").replace(".jpg", "@2x.jpg");
@@ -72,6 +72,7 @@ ProjectCard.propTypes = {
 
 ProjectCard.defaultProps = {
   isActive: true,
+  onTagSelected: () => {},
 };
 
 export default ProjectCard;

@@ -54,4 +54,8 @@ Talks.propTypes = {
   onTalkDeselected: React.PropTypes.func.isRequired,
 };
 
+Talks.defaultProps = {
+  selectedTalk: null,
+};
+
 export default Talks;

@@ -28,4 +28,8 @@ TalkListItem.propTypes = {
   onTalkSelected: React.PropTypes.func,
 };
 
+TalkListItem.defaultProps = {
+  onTalkSelected: () => {},
+};
+
 export default TalkListItem;

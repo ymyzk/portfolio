@@ -15,6 +15,10 @@ class RecentEntriesCard extends React.Component {
     dispatch: React.PropTypes.func.isRequired,
   };
 
+  static defaultProps = {
+    entries: [],
+  };
+
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch(requestRecentEntries());
