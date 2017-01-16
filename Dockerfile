@@ -7,7 +7,7 @@ COPY yarn.lock /app/
 WORKDIR /app
 
 RUN apt-get update \
-        && apt-get upgrade \
+        && apt-get upgrade -y \
         && apt-get install -y --no-install-recommends \
             apt-transport-https \
             build-essential \
