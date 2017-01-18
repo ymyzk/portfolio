@@ -8,10 +8,10 @@ const projectTagStyle = {
 const ProjectTag = (props) => {
   const { tag, onTouchTap, onRequestDelete, ...otherProps } = props;
   const additionalProps = {};
-  if (onTouchTap !== undefined) {
+  if (onTouchTap !== null) {
     additionalProps.onTouchTap = () => onTouchTap(tag);
   }
-  if (onRequestDelete !== undefined) {
+  if (onRequestDelete !== null) {
     additionalProps.onRequestDelete = () => onRequestDelete(tag);
   }
   return (<Chip {...otherProps} {...additionalProps} style={projectTagStyle}>{tag}</Chip>);
@@ -24,8 +24,8 @@ ProjectTag.propTypes = {
 };
 
 ProjectTag.defaultProps = {
-  onTouchTap: () => {},
-  onRequestDelete: () => {},
+  onTouchTap: null,
+  onRequestDelete: null,
 };
 
 export default ProjectTag;
