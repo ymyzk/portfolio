@@ -10,11 +10,11 @@ const projects = ProjectsList.map((p) => {
     const startYear = start.getFullYear();
     if (p.end === null) {
       // 継続中
-      return `${startYear}-`;
+      return `${startYear}–`;
     }
     const endYear = end.getFullYear();
     // 終了済み
-    return startYear === endYear ? `${start.getFullYear()}` : `${startYear}-${endYear}`;
+    return startYear === endYear ? `${start.getFullYear()}` : `${startYear}–${endYear}`;
   })();
   return Object.assign(p, {
     start,
