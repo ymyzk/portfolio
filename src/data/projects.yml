@@ -52,6 +52,7 @@
 
 - title: bottle-yotoslack
   link: https://github.com/ymyzk/bottle-yotoslack
+  image: bottle-yotoslack.jpg
   start: 2015-05-04
   end: null
   tags: [Bottle, Python, Web]
