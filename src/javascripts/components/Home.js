@@ -1,11 +1,13 @@
 import RaisedButton from "material-ui/RaisedButton";
 import React from "react";
 
+import BackgroundImage from "../../images/background.jpg";
+
 const calculateParallax = (x, y, pX, pY, z = 0, depth = 50) =>
   [x + (pX * z * depth), y + (pY * z * depth)];
 
 const Title = ({ parallaxX, parallaxY, screenWidth, screenHeight }) => {
-  const [x, y] = calculateParallax(0, screenHeight * 0.35, parallaxX, parallaxY, 0.2);
+  const [x, y] = calculateParallax(0, screenHeight * 0.45, parallaxX, parallaxY, 0.2);
   const fontSize = Math.min(screenWidth * 0.1, 60);
   const style = {
     position: "absolute",
@@ -57,7 +59,7 @@ const Footer = ({ parallaxX, parallaxY, screenWidth, screenHeight }) => {
     right: screenWidth - x,
     bottom: screenHeight - y,
   };
-  return (<div style={style}>Copyright &copy; 2013-2016, Yusuke Miyazaki.</div>);
+  return (<div style={style}>Copyright &copy; 2017, Yusuke Miyazaki.</div>);
 };
 
 Footer.propTypes = {
@@ -111,8 +113,13 @@ class HomeCanvas extends React.Component {
   render() {
     const backgroundStyle = {
       position: "relative",
-      background: "linear-gradient(rgb(63, 81, 181), rgb(57, 73, 171))",
-      height: this.state.screenHeight,
+      background: `rgb(63, 81, 181) url(${BackgroundImage}) center no-repeat`,
+      backgroundSize: "cover",
+      zIndex: 0,
+      overflow: "hidden",
+      marginTop: -64,
+      width: this.state.screenWidth,
+      height: this.state.screenHeight + 64,
     };
     return (
       <div style={backgroundStyle} ref={(e) => { this.wrapper = e; }} >
