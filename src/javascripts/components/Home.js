@@ -1,13 +1,16 @@
+import FloatingActionButton from "material-ui/FloatingActionButton";
 import FontIcon from "material-ui/FontIcon";
 import List from "material-ui/List/List";
 import ListItem from "material-ui/List/ListItem";
-import RaisedButton from "material-ui/RaisedButton";
+import ArrowDownward from "material-ui/svg-icons/navigation/arrow-downward";
 import React from "react";
+import SmoothScroll from "smoothscroll";
 
 import BackgroundImage from "../../images/background.jpg";
 import Activities from "../containers/Home/Activities";
 import Links from "../containers/Home/Links";
 import Skills from "../containers/Home/Skills";
+import Theme from "./Theme";
 
 const calculateParallax = (x, y, pX, pY, z = 0, depth = 50) =>
   [x + (pX * z * depth), y + (pY * z * depth)];
@@ -48,15 +51,26 @@ Title.propTypes = {
 };
 
 const AboutMe = ({ parallaxX, parallaxY, screenWidth, screenHeight }) => {
-  const [x, y] = calculateParallax(0, screenHeight * 0.8, parallaxX, parallaxY, 0.1);
+  const [x, y] = calculateParallax(0, screenHeight * 0.1, parallaxX, parallaxY, 0.1);
   const style = {
     position: "absolute",
     textAlign: "center",
     width: screenWidth,
     left: x,
-    top: y,
+    bottom: y,
   };
-  return (<div style={style}><RaisedButton href="/about/" label="About Me" /></div>);
+  const scrollTargetId = "#about";
+  const onClick = (e) => {
+    e.preventDefault();
+    SmoothScroll(document.querySelector(scrollTargetId), 1500);
+  };
+  return (
+    <div style={style}>
+      <FloatingActionButton secondary href={scrollTargetId} onClick={onClick}>
+        <ArrowDownward color={Theme.palette.textColor} />
+      </FloatingActionButton>
+    </div>
+  );
 };
 
 AboutMe.propTypes = {
@@ -190,7 +204,7 @@ const Affiliation = () => (
 const Home = () => (
   <div className="home">
     <HomeCanvas />
-    <div className="container">
+    <div className="container" id="about">
       <Affiliation />
       <Activities />
       <Skills />
