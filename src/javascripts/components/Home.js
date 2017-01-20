@@ -2,6 +2,7 @@ import RaisedButton from "material-ui/RaisedButton";
 import React from "react";
 
 import BackgroundImage from "../../images/background.jpg";
+import Activities from "../containers/Home/Activities";
 import Links from "../containers/Home/Links";
 
 const calculateParallax = (x, y, pX, pY, z = 0, depth = 50) =>
@@ -140,6 +141,7 @@ const Home = () => (
   <div className="home">
     <HomeCanvas />
     <div className="container">
+      <Activities />
       <Links />
     </div>
   </div>

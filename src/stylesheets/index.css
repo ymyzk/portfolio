@@ -38,6 +38,12 @@ h2 {
   font-weight:300;
 }
 
+h3 {
+  margin: 20px 0 10px;
+  font-size: 24px;
+  font-weight: 300;
+}
+
 .container {
   margin: 20px auto;
   padding-left: calc(var(--gutter) / 2);
@@ -236,6 +242,7 @@ h2 {
   text-align: center;
 }
 
-.home h2 {
+.home h2,
+.home h3 {
   text-align: center;
 }

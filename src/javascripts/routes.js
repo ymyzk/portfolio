@@ -28,7 +28,7 @@ export default (themeOptions) => {  // eslint-disable-line
       <IndexRoute component={Home} />
       <Route path="about/" component={About} />
       <Route path="projects/" component={Projects} />
-      <Route path="talks/" component={Talks} />
+      <Route path="talks/" component={Talks} onEnter={() => window.scroll(0, 0)} />
       <Route path="contributions/" component={Contributions} />
       <Route path="misc/" component={Misc} />
       <Redirect from="news" to="misc/" />

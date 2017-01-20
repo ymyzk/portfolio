@@ -1,4 +1,5 @@
 import moment from "moment";
+import browserHistory from "react-router/lib/browserHistory";
 
 import { SELECT_TALK, DESELECT_TALK } from "../actions/talks";
 import TalksList from "../../data/talks.yml";
@@ -14,6 +15,7 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case SELECT_TALK: {
+      browserHistory.push("/talks/");
       return Object.assign({}, state, {
         isDialogOpen: true,
         selectedTalk: action.talk,
