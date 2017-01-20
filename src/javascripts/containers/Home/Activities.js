@@ -11,6 +11,4 @@ const mapDispatchToProps = dispatch => ({
   onTalkSelected: talk => dispatch(selectTalk(talk)),
 });
 
-// () => browserHistory.push("/talks/")
-
 export default connect(mapStateToProps, mapDispatchToProps)(Activities);
