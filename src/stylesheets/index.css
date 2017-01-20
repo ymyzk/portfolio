@@ -231,3 +231,11 @@ h2 {
     width: calc(12 / 12 * 100%);
   }
 }
+
+.text-center {
+  text-align: center;
+}
+
+.home h2 {
+  text-align: center;
+}

@@ -5,6 +5,7 @@ import entries from "./entries";
 import projects from "./projects";
 import talks from "./talks";
 import ContributionsList from "../../data/contributions.yml";
+import links from "../../data/links.yml";
 import MiscList from "../../data/misc.yml";
 import skills from "../../data/skills.yml";
 
@@ -13,6 +14,7 @@ const misc = MiscList.map(n => Object.assign(n, { date: moment(n.date) }));
 
 const initialState = {
   contributions,
+  links,
   misc,
   skills,
 };

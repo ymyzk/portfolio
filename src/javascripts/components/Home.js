@@ -2,6 +2,7 @@ import RaisedButton from "material-ui/RaisedButton";
 import React from "react";
 
 import BackgroundImage from "../../images/background.jpg";
+import Links from "../containers/Home/Links";
 
 const calculateParallax = (x, y, pX, pY, z = 0, depth = 50) =>
   [x + (pX * z * depth), y + (pY * z * depth)];
@@ -73,7 +74,7 @@ class HomeCanvas extends React.Component {
   constructor() {
     super();
 
-    this.parallaxCanvasOnMouseMove = this.parallaxCanvasOnMouseMove.bind(this);
+    // this.parallaxCanvasOnMouseMove = this.parallaxCanvasOnMouseMove.bind(this);
     this.resizeCanvas = this.resizeCanvas.bind(this);
 
     this.requestId = null;
@@ -97,13 +98,15 @@ class HomeCanvas extends React.Component {
     window.removeEventListener("resize", this.resizeCanvas);
   }
 
-  parallaxCanvasOnMouseMove(e) {
-    // normalize: -1 <= parallax <= 1
-    this.setState({
-      parallaxX: (e.clientX - (this.state.screenWidth / 2)) / (this.state.screenWidth / 2),
-      parallaxY: (e.clientY - (this.state.screenHeight / 2)) / (this.state.screenHeight / 2),
-    });
-  }
+  // parallaxCanvasOnMouseMove(e) {
+  //   // normalize: -1 <= parallax <= 1
+  //   this.setState({
+  //     parallaxX: 0,
+  //     parallaxY: 0,
+  //     parallaxX: (e.clientX - (this.state.screenWidth / 2)) / (this.state.screenWidth / 2),
+  //     parallaxY: (e.clientY - (this.state.screenHeight / 2)) / (this.state.screenHeight / 2),
+  //   });
+  // }
 
   resizeCanvas() {
     const [screenWidth, screenHeight] = [window.innerWidth, window.innerHeight - 64];
@@ -122,8 +125,8 @@ class HomeCanvas extends React.Component {
       height: this.state.screenHeight + 64,
     };
     return (
-      <div style={backgroundStyle} ref={(e) => { this.wrapper = e; }} >
-        <div>
+      <div>
+        <div style={backgroundStyle} ref={(e) => { this.wrapper = e; }}>
           <Title {...this.state} />
           <AboutMe {...this.state} />
           <Footer {...this.state} />
@@ -133,6 +136,13 @@ class HomeCanvas extends React.Component {
   }
 }
 
-const Home = () => (<HomeCanvas />);
+const Home = () => (
+  <div className="home">
+    <HomeCanvas />
+    <div className="container">
+      <Links />
+    </div>
+  </div>
+);
 
 export default Home;
