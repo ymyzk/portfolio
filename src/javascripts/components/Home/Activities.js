@@ -2,6 +2,7 @@ import List from "material-ui/List/List";
 import ListItem from "material-ui/List/ListItem";
 import React from "react";
 
+import RecentEntries from "../../containers/Home/RecentEntries";
 import PropTypes from "../../utils/PropTypes";
 import TalkListItem from "../Talks/TalkListItem";
 
@@ -33,6 +34,7 @@ const Activities = ({ talks, onTalkSelected }) => (
   <section className="grid">
     <div className="cell-xs-without-gutter cell-sm-12">
       <h2>Activities</h2>
+      <RecentEntries />
       <RecentTalks talks={talks} onTalkSelected={onTalkSelected} />
     </div>
   </section>
