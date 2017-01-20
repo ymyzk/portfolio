@@ -7,6 +7,7 @@ import React from "react";
 import BackgroundImage from "../../images/background.jpg";
 import Activities from "../containers/Home/Activities";
 import Links from "../containers/Home/Links";
+import Skills from "../containers/Home/Skills";
 
 const calculateParallax = (x, y, pX, pY, z = 0, depth = 50) =>
   [x + (pX * z * depth), y + (pY * z * depth)];
@@ -192,6 +193,7 @@ const Home = () => (
     <div className="container">
       <Affiliation />
       <Activities />
+      <Skills />
       <Links />
     </div>
   </div>
