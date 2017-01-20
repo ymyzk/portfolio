@@ -14,7 +14,7 @@ const Links = ({ links }) => (
         {
           links.map(l => (
             <FloatingActionButton
-              linkButton
+              key={l.url}
               href={l.url}
               target="_blank"
               style={floatingButtonStyle}
