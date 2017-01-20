@@ -1,4 +1,5 @@
 import List from "material-ui/List/List";
+import ListItem from "material-ui/List/ListItem";
 import React from "react";
 
 import PropTypes from "../../utils/PropTypes";
@@ -13,6 +14,7 @@ const RecentTalks = ({ talks, numberOfTalks, onTalkSelected }) => (
           <TalkListItem talk={t} key={t.title + t.event} onTalkSelected={onTalkSelected} />
         ))
       }
+      <ListItem primaryText="More Talks..." href="/talks/" />
     </List>
   </div>
 );
@@ -29,7 +31,7 @@ RecentTalks.defaultProps = {
 
 const Activities = ({ talks, onTalkSelected }) => (
   <section className="grid">
-    <div className="cell-sm-12">
+    <div className="cell-xs-without-gutter cell-sm-12">
       <h2>Activities</h2>
       <RecentTalks talks={talks} onTalkSelected={onTalkSelected} />
     </div>

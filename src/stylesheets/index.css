@@ -246,3 +246,8 @@ h3 {
 .home h3 {
   text-align: center;
 }
+
+.talk-list-item div > span {
+  display: inline-block;
+  width: 100%;
+}

@@ -13,6 +13,7 @@ const TalkListItem = ({ talk, onTalkSelected }) => {
   const thumbnail = oEmbed ? oEmbed.thumbnail : null;
   return (
     <ListItem
+      className="talk-list-item"
       primaryText={talk.title}
       secondaryText={<span>{talk.event} - <time dateTime={dateIso}>{dateString}</time></span>}
       onTouchTap={() => onTalkSelected(talk)}
