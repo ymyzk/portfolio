@@ -9,8 +9,7 @@ const calculateParallax = (x, y, pX, pY, z = 0, depth = 50) =>
   [x + (pX * z * depth), y + (pY * z * depth)];
 
 const Title = ({ parallaxX, parallaxY, screenWidth, screenHeight }) => {
-  const [x, y] = calculateParallax(0, screenHeight * 0.45, parallaxX, parallaxY, 0.2);
-  const fontSize = Math.min(screenWidth * 0.1, 60);
+  const [x, y] = calculateParallax(0, screenHeight * 0.43, parallaxX, parallaxY, 0.2);
   const style = {
     position: "absolute",
     textAlign: "center",
@@ -18,11 +17,23 @@ const Title = ({ parallaxX, parallaxY, screenWidth, screenHeight }) => {
     left: x,
     top: y,
   };
-  const textStyle = {
-    font: `normal normal 300 ${fontSize}px Roboto`,
+  const headerFontSize = Math.min(screenWidth * 0.1, 60);
+  const headerStyle = {
+    font: `normal normal 300 ${headerFontSize}px Roboto`,
     color: "white",
   };
-  return (<div style={style}><span style={textStyle}>Yusuke Miyazaki</span></div>);
+  const leadStyle = {
+    fontSize: Math.max(headerFontSize * 0.35, 16),
+    minFontSize: 15,
+  };
+  return (
+    <div style={style}>
+      <h1 style={headerStyle}>
+        Yusuke Miyazaki<br />
+        <small style={leadStyle}>Software Engineer in Kyoto, Japan</small>
+      </h1>
+    </div>
+  );
 };
 
 Title.propTypes = {
@@ -33,7 +44,7 @@ Title.propTypes = {
 };
 
 const AboutMe = ({ parallaxX, parallaxY, screenWidth, screenHeight }) => {
-  const [x, y] = calculateParallax(0, screenHeight * (3 / 4), parallaxX, parallaxY, 0.1);
+  const [x, y] = calculateParallax(0, screenHeight * 0.8, parallaxX, parallaxY, 0.1);
   const style = {
     position: "absolute",
     textAlign: "center",
