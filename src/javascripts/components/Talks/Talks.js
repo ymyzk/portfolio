@@ -1,44 +1,19 @@
-import List from "material-ui/List/List";
-import Subheader from "material-ui/Subheader";
 import React from "react";
 import Helmet from "react-helmet";
 
 import PropTypes from "../../utils/PropTypes";
 import TalkDialog from "./TalkDialog";
-import TalkListItem from "./TalkListItem";
+import TalkList from "./TalkList";
 
 const Talks = ({ talks, isDialogOpen, selectedTalk, onTalkSelected, onTalkDeselected }) => {
   const title = "Talks";
-  const talksByYear = {};
-  talks.forEach((t) => {
-    const year = t.date.year();
-    if (year in talksByYear) {
-      talksByYear[year].push(t);
-    } else {
-      talksByYear[year] = [t];
-    }
-  });
-  const years = Object.keys(talksByYear).sort().reverse();
   return (
     <div className="container">
       <Helmet title={title} />
       <h2>{title}</h2>
       <div className="grid">
         <div className="cell-xs-without-gutter cell-sm-12">
-          <List>
-            {
-              years.map(year => (
-                <div key={year}>
-                  <Subheader>{year}</Subheader>
-                  {
-                    talksByYear[year].map(t => (
-                      <TalkListItem talk={t} key={t.title + t.event} onTalkSelected={onTalkSelected} />
-                    ))
-                  }
-                </div>
-              ))
-            }
-          </List>
+          <TalkList talks={talks} onTalkSelected={onTalkSelected} />
           <TalkDialog open={isDialogOpen} talk={selectedTalk} onClose={onTalkDeselected} />
         </div>
       </div>
