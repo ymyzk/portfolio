@@ -5,6 +5,7 @@
 - name: Blog
   url: https://blog.ymyzk.com/
   icon: rss
+  color: "#f26522"
 
 - name: E-mail
   url: mailto:miyazaki.dev@gmail.com
@@ -33,6 +34,7 @@
 - name: Speaker Deck
   url: https://speakerdeck.com/ymyzk
   icon: null
+  color: "#396"
 
 - name: Twitter
   url: https://twitter.com/ymyzk
@@ -42,3 +44,4 @@
 - name: Wantedly
   url: https://www.wantedly.com/users/2289515
   icon: null
+  color: "#00a4bb"
