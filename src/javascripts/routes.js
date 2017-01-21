@@ -22,11 +22,17 @@ export default (themeOptions) => {  // eslint-disable-line
     children: React.PropTypes.node.isRequired,
   };
 
+  const scrollToTop = () => {
+    if (__CLIENT__) {
+      window.scroll(0, 0);
+    }
+  };
+
   return (
     <Route path="/" component={AppWrapper}>
       <IndexRoute component={Home} />
       <Route path="projects/" component={Projects} />
-      <Route path="talks/" component={Talks} onEnter={() => window.scroll(0, 0)} />
+      <Route path="talks/" component={Talks} onEnter={scrollToTop} />
       <Route path="contributions/" component={Contributions} />
       <Route path="misc/" component={Misc} />
       <Redirect from="about/" to="/" />
