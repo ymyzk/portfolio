@@ -126,7 +126,7 @@ class HomeCanvas extends React.Component {
   render() {
     const backgroundStyle = {
       position: "relative",
-      background: `rgb(63, 81, 181) url(${BackgroundImage}) center no-repeat`,
+      background: `rgb(63, 81, 181) url(${BackgroundImage}) center no-repeat fixed`,
       backgroundSize: "cover",
       zIndex: 0,
       overflow: "hidden",
