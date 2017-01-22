@@ -80,26 +80,6 @@ AboutMe.propTypes = {
   screenHeight: React.PropTypes.number.isRequired,
 };
 
-const Footer = ({ parallaxX, parallaxY, screenWidth, screenHeight }) => {
-  const margin = 12;
-  const [x, y] = calculateParallax(screenWidth - margin, screenHeight - margin, parallaxX, parallaxY, 0.1);
-  const style = {
-    position: "absolute",
-    font: "normal normal 400 12px Roboto",
-    color: "white",
-    right: screenWidth - x,
-    bottom: screenHeight - y,
-  };
-  return (<div style={style}>Copyright &copy; 2017, Yusuke Miyazaki.</div>);
-};
-
-Footer.propTypes = {
-  parallaxX: React.PropTypes.number.isRequired,
-  parallaxY: React.PropTypes.number.isRequired,
-  screenWidth: React.PropTypes.number.isRequired,
-  screenHeight: React.PropTypes.number.isRequired,
-};
-
 class HomeCanvas extends React.Component {
   constructor() {
     super();
@@ -159,7 +139,6 @@ class HomeCanvas extends React.Component {
         <div style={backgroundStyle} ref={(e) => { this.wrapper = e; }}>
           <Title {...this.state} />
           <AboutMe {...this.state} />
-          <Footer {...this.state} />
         </div>
       </div>
     );

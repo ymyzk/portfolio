@@ -21,6 +21,20 @@ import MsTileImage from "../../images/ms-tile-image.png";
 import OgpImage from "../../images/ogp.png";
 import TwitterImage from "../../images/twitter.png";
 
+const Footer = () => {
+  const style = {
+    margin: 10,
+    color: Theme.palette.textColor,
+    font: "normal normal 400 12px Roboto",
+    textAlign: "right",
+  };
+  return (
+    <footer style={style}>
+      &copy; 2017 Yusuke Miyazaki.
+    </footer>
+  );
+};
+
 class App extends React.Component {
   static propTypes = {
     children: React.PropTypes.node.isRequired,
@@ -126,6 +140,7 @@ class App extends React.Component {
             <MenuItem onTouchTap={this.handleClose} containerElement={<Link to="/misc/" />}>Misc</MenuItem>
           </Drawer>
           {this.props.children}
+          <Footer />
         </div>
       </MuiThemeProvider>
     );
