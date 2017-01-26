@@ -40,6 +40,12 @@
   link: null
   slide: https://speakerdeck.com/ymyzk/introduction-to-container-based-virtualization
 
+- title: Python プログラミング入門
+  event: Python プログラミング入門
+  date: 2016-04-23
+  link: https://camphor.connpass.com/event/30035/
+  slide: null
+
 - title: 計算機科学実験及び演習のための Git
   event: 計算機科学実験及び演習3
   date: 2016-04-14
