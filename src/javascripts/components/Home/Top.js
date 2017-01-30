@@ -37,7 +37,7 @@ Title.propTypes = {
   screenWidth: React.PropTypes.number.isRequired,
 };
 
-const AboutMe = () => {
+const ScrollButton = () => {
   const style = {
     position: "absolute",
     textAlign: "center",
@@ -63,8 +63,6 @@ class Top extends React.Component {
     super();
 
     this.resizeCanvas = this.resizeCanvas.bind(this);
-
-    this.requestId = null;
   }
 
   state = {
@@ -101,7 +99,7 @@ class Top extends React.Component {
       <div>
         <div style={backgroundStyle} ref={(e) => { this.wrapper = e; }}>
           <Title {...this.state} />
-          <AboutMe {...this.state} />
+          <ScrollButton {...this.state} />
         </div>
       </div>
     );
