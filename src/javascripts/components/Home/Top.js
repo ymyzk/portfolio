@@ -6,17 +6,13 @@ import SmoothScroll from "smoothscroll";
 import BackgroundImage from "../../../images/background.jpg";
 import Theme from "../Theme";
 
-const calculateParallax = (x, y, pX, pY, z = 0, depth = 50) =>
-  [x + (pX * z * depth), y + (pY * z * depth)];
-
-const Title = ({ parallaxX, parallaxY, screenWidth, screenHeight }) => {
-  const [x, y] = calculateParallax(0, screenHeight * 0.43, parallaxX, parallaxY, 0.2);
+const Title = ({ screenWidth }) => {
   const style = {
     position: "absolute",
     textAlign: "center",
-    width: screenWidth,
-    left: x,
-    top: y,
+    top: "40%",
+    left: 0,
+    right: 0,
   };
   const headerFontSize = Math.min(screenWidth * 0.1, 60);
   const headerStyle = {
@@ -38,20 +34,15 @@ const Title = ({ parallaxX, parallaxY, screenWidth, screenHeight }) => {
 };
 
 Title.propTypes = {
-  parallaxX: React.PropTypes.number.isRequired,
-  parallaxY: React.PropTypes.number.isRequired,
   screenWidth: React.PropTypes.number.isRequired,
-  screenHeight: React.PropTypes.number.isRequired,
 };
 
-const AboutMe = ({ parallaxX, parallaxY, screenWidth, screenHeight }) => {
-  const [x, y] = calculateParallax(0, screenHeight * 0.1, parallaxX, parallaxY, 0.1);
+const AboutMe = () => {
   const style = {
     position: "absolute",
     textAlign: "center",
-    width: screenWidth,
-    left: x,
-    bottom: y,
+    width: "100%",
+    bottom: 30,
   };
   const scrollTargetId = "#about";
   const onClick = (e) => {
@@ -67,50 +58,28 @@ const AboutMe = ({ parallaxX, parallaxY, screenWidth, screenHeight }) => {
   );
 };
 
-AboutMe.propTypes = {
-  parallaxX: React.PropTypes.number.isRequired,
-  parallaxY: React.PropTypes.number.isRequired,
-  screenWidth: React.PropTypes.number.isRequired,
-  screenHeight: React.PropTypes.number.isRequired,
-};
-
 class Top extends React.Component {
   constructor() {
     super();
 
-    // this.parallaxCanvasOnMouseMove = this.parallaxCanvasOnMouseMove.bind(this);
     this.resizeCanvas = this.resizeCanvas.bind(this);
 
     this.requestId = null;
   }
 
   state = {
-    parallaxX: 0,
-    parallaxY: 0,
     screenWidth: 0,
     screenHeight: 0,
   };
 
   componentDidMount() {
     this.resizeCanvas();
-    this.wrapper.addEventListener("mousemove", this.parallaxCanvasOnMouseMove);
     window.addEventListener("resize", this.resizeCanvas);
   }
 
   componentWillUnmount() {
-    this.wrapper.removeEventListener("mousemove", this.parallaxCanvasOnMouseMove);
     window.removeEventListener("resize", this.resizeCanvas);
   }
-
-  // parallaxCanvasOnMouseMove(e) {
-  //   // normalize: -1 <= parallax <= 1
-  //   this.setState({
-  //     parallaxX: 0,
-  //     parallaxY: 0,
-  //     parallaxX: (e.clientX - (this.state.screenWidth / 2)) / (this.state.screenWidth / 2),
-  //     parallaxY: (e.clientY - (this.state.screenHeight / 2)) / (this.state.screenHeight / 2),
-  //   });
-  // }
 
   resizeCanvas() {
     const [screenWidth, screenHeight] = [window.innerWidth, window.innerHeight - 64];
@@ -125,8 +94,8 @@ class Top extends React.Component {
       zIndex: 0,
       overflow: "hidden",
       marginTop: -64,
-      width: this.state.screenWidth,
-      height: this.state.screenHeight + 64,
+      width: "100%",
+      height: this.state.screenHeight + 64,  // 100vh
     };
     return (
       <div>
