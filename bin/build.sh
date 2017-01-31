@@ -46,17 +46,17 @@ if $debug && $client; then
   webpack --progress
 elif $debug && $server; then
   # Build server
-  webpack --progress --server
+  webpack --progress --env.server
   mv build/debug/server/public/server.js* build/debug/server/
   mv build/debug/server/public/stats.json build/debug/server/stats.server.json
   # Copy files for clients
   cp build/debug/client/bundle.*.js* build/debug/server/public/
   cp build/debug/client/stats.json build/debug/server/stats.client.json
 elif $production && $client; then
-  webpack --production --no-color
+  webpack --env.production --no-color
 elif $production && $server; then
   # Build server
-  webpack --production --no-color --server
+  webpack --env.production --no-color --env.server
   mv build/production/server/public/server.js* build/production/server/
   mv build/production/server/public/stats.json build/production/server/stats.server.json
   # Copy files for clients
