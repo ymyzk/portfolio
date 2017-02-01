@@ -6,7 +6,7 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/ymyzk/portfolio.svg)](https://hub.docker.com/r/ymyzk/portfolio/)
 
 ## Requirements
-- Node.js v6
+- Node.js v7
 
 ## Docker
 TODO
