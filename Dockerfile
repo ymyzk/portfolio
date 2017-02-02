@@ -1,4 +1,4 @@
-FROM node:7.4-slim
+FROM node:7.5-slim
 MAINTAINER Yusuke Miyazaki <miyazaki.dev@gmail.com>
 
 COPY package.json /app/
