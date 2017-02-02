@@ -44,7 +44,6 @@ const config = (env) => {
     },
     devServer: {
       contentBase: "output",
-      // devtool: "eval",
       hot: true,
       inline: true,
       port: 3000,
@@ -173,7 +172,7 @@ const config = (env) => {
           minRatio: 0.8,
         }),
       ] : []),
-      new webpack.NoErrorsPlugin(),
+      new webpack.NoEmitOnErrorsPlugin(),
       new ExtractTextPlugin("bundle.[hash].css"),
       new CopyWebpackPlugin([
         { from: "src/media", to: "media" },
