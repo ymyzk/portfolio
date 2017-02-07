@@ -1,11 +1,11 @@
 - title: JavaScript 入門
-  event: プログラミング言語入門大会
+  event: プログラミング言語入門大会
   date: 2016-12-17
   link: https://camphor.connpass.com/event/46259/
   slide: http://www.slideshare.net/yusukemiy/javascript-70245661
 
 - title: オープンソースソフトウェア入門
-  event: オープンソースソフトウェア入門
+  event: CAMPHOR-
   date: 2016-10-22
   link: http://camphor.connpass.com/event/42186/
   slide: http://www.slideshare.net/yusukemiy/ss-67742150
@@ -19,8 +19,8 @@
 - title: Gradual Typing for Delimited Continuations
   event: STOP 2016
   date: 2016-07-17
-  link: null
-  slide: null
+  link: http://2016.ecoop.org/event/stop-2016-gradual-typing-for-delimited-continuations
+  slide: http://www.fos.kuis.kyoto-u.ac.jp/~miyazaki/papers/stop2016_slides.pdf
 
 - title: Proper Tail Calls - New Feature in ECMAScript 2015
   event: Gee-Fes Kyoto
@@ -41,7 +41,7 @@
   slide: https://speakerdeck.com/ymyzk/introduction-to-container-based-virtualization
 
 - title: Python プログラミング入門
-  event: Python プログラミング入門
+  event: CAMPHOR-
   date: 2016-04-23
   link: https://camphor.connpass.com/event/30035/
   slide: null
