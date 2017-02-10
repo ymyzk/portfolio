@@ -4589,9 +4589,9 @@ resolve@^1.1.6, resolve@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.2.0.tgz#9589c3f2f6149d1417a40becc1663db6ec6bc26c"
 
-ress@~1.1.1:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/ress/-/ress-1.1.2.tgz#cf520c8be82cca21168f6ad6f8ce43935f26d003"
+ress@~1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/ress/-/ress-1.2.2.tgz#4fd00681c8d3ceaa79f5de1e54aaad15617e9777"
 
 restore-cursor@^1.0.1:
   version "1.0.1"

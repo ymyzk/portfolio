@@ -78,7 +78,7 @@
     "react-tap-event-plugin": "~2.0.1",
     "redux": "~3.6.0",
     "redux-logger": "^2.8.1",
-    "ress": "~1.1.1",
+    "ress": "~1.2.2",
     "smoothscroll": "^0.3.0",
     "vary": "~1.1.0",
     "whatwg-fetch": "~2.0.1"
