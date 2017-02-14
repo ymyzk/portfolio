@@ -79,6 +79,13 @@
   tags: [Bash, Utility]
   description: iTunes Connect からレポートファイルを自動的にダウンロードするためのユーティリテイー。
 
+- title: tex-to-gif
+  link: https://github.com/ymyzk/tex-to-gif
+  start: 2017-01-18
+  end: null
+  tags: [Bash]
+  description: Convert a TeX document into an animation GIF.
+
 - title: itgl
   link: https://github.com/ymyzk/itgl
   start: 2016-06-10
