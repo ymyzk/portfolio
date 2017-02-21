@@ -47,7 +47,10 @@ const config = (env) => {
       hot: true,
       inline: true,
       port: 3000,
-      overlay: true,
+      overlay: {
+        errors: true,
+        warnings: true,
+      },
       // react-router 用
       historyApiFallback: true,
     },
