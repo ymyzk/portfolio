@@ -74,8 +74,8 @@ const config = (env) => {
         {
           test: /\.css$/,
           loader: ExtractTextPlugin.extract({
-            fallbackLoader: "style-loader",
-            loader: ["css-loader", "postcss-loader"]
+            fallback: "style-loader",
+            use: ["css-loader", "postcss-loader"]
           }),
         },
         // JavaScript
