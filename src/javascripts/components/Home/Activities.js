@@ -15,7 +15,7 @@ const RecentTalks = ({ talks, numberOfTalks, onTalkSelected }) => (
           <TalkListItem talk={t} key={t.title + t.event} onTalkSelected={onTalkSelected} />
         ))
       }
-      <ListItem primaryText="More Talks..." href="/talks/" />
+      <ListItem primaryText="More talks..." href="/talks/" />
     </List>
   </div>
 );

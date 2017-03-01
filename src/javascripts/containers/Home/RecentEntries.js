@@ -58,7 +58,7 @@ class RecentEntriesCard extends React.Component {
             })
           }
           <ListItem
-            primaryText="More Entries..."
+            primaryText="More entries..."
             href="https://blog.ymyzk.com/"
             target="_blank"
           />
