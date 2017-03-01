@@ -194,4 +194,4 @@ const config = (env) => {
   return config;
 }
 
-module.exports = config;
+export default config;
