@@ -32,7 +32,7 @@ const config = (env) => {
     "/misc/",
   ];
 
-  const config = {
+  return {
     entry: [
       "babel-polyfill",
       "whatwg-fetch",
@@ -75,7 +75,7 @@ const config = (env) => {
           test: /\.css$/,
           loader: ExtractTextPlugin.extract({
             fallback: "style-loader",
-            use: ["css-loader", "postcss-loader"]
+            use: ["css-loader", "postcss-loader"],
           }),
         },
         // JavaScript
@@ -162,7 +162,7 @@ const config = (env) => {
             }),
             reporter(),
           ],
-        }
+        },
       }),
       ...((DEBUG && CLIENT) ? [new webpack.HotModuleReplacementPlugin()] : []),
       ...(PRODUCTION ? [
@@ -191,7 +191,6 @@ const config = (env) => {
       new StatsPlugin(),
     ],
   };
-  return config;
-}
+};
 
 export default config;
