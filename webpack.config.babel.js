@@ -14,19 +14,6 @@ import RobotsGeneratorPlugin from "./plugins/robots";
 import SitemapGeneratorPlugin from "./plugins/sitemap";
 import StatsPlugin from "./plugins/stats";
 
-const browserslist = [
-  "android >= 4",
-  "last 5 chrome versions",
-  "edge >= 12",
-  "last 5 firefox versions",
-  "firefox esr",
-  "ie >= 10",
-  "ie_mob >= 10",
-  "ios_saf >= 7",
-  "last 5 opera versions",
-  "safari >= 6",
-];
-
 const config = (env) => {
   const PRODUCTION = env ? env.production : false;
   const DEBUG = !PRODUCTION;
@@ -167,7 +154,6 @@ const config = (env) => {
         options: {
           postcss: () => [
             cssnext({
-              browsers: browserslist,
               features: {
                 calc: {
                   precision: 8,
