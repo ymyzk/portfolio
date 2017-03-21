@@ -28,8 +28,8 @@ RUN apt-get update \
 
 COPY . /app/
 
-RUN ["npm", "run", "build-all"]
+RUN ["yarn", "run", "build-all"]
 
 EXPOSE 8000
 
-CMD ["npm", "run", "start-production-server"]
+CMD ["yarn", "run", "start-production-server"]
