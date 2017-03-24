@@ -36,8 +36,7 @@ browserHistory.listen((location) => {
 
 let middleware = [];
 if (__DEBUG__) {
-  const createLogger = require("redux-logger"); // eslint-disable-line
-  const logger = createLogger();
+  const logger = require("redux-logger").logger; // eslint-disable-line
   // Logger MUST BE the last middleware
   middleware = [...middleware, logger];
 }
