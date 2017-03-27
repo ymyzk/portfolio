@@ -65,7 +65,7 @@ app.get("*", (req, res) => {
             <RouterContext {...props} />
           </Provider>);
         const initialState = store.getState();
-        const head = Helmet.rewind();
+        const head = Helmet.renderStatic();
         if (props.routes.length > 0 && props.routes[props.routes.length - 1].path === "*") {
           // react-router で 404 用の route にマッチしていればステータスコードを変更
           res.status(404);
