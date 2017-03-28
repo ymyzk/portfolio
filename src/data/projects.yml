@@ -13,12 +13,12 @@
   tags: [iOS]
   description: 全国でも珍しい戦争遺跡群が残る、兵庫県加西市鶉野(うずらの)飛行場跡の地図・ナビアプリ。
 
-- title: django-channels
-  link: https://github.com/ymyzk/django-channels
+- title: kawasemi
+  link: https://github.com/ymyzk/kawasemi
   start: 2015-05-03
   end: null
   tags: [Library, Python]
-  description: Django アプリケーションから簡単に Slack や HipChat に通知を送ることができるライブラリ。
+  description: Python アプリケーションから簡単に Slack や HipChat に通知を送ることができるライブラリ。
 
 - title: wsgi_lineprof
   link: https://github.com/ymyzk/wsgi_lineprof
