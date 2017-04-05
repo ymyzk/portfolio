@@ -87,8 +87,11 @@ class Top extends React.Component {
   render() {
     const backgroundStyle = {
       position: "relative",
-      background: `rgb(63, 81, 181) url(${BackgroundImage}) center no-repeat fixed`,
+      backgroundColor: "rgb(63, 81, 181)",
+      backgroundImage: `url(${BackgroundImage})`,
+      backgroundPosition: "center",
       backgroundSize: "cover",
+      backgroundRepeat: "no-repeat",
       zIndex: 0,
       overflow: "hidden",
       marginTop: -64,
