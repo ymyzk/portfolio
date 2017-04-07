@@ -6,8 +6,7 @@ import React from "react";
 import { renderToString } from "react-dom/server";
 import Helmet from "react-helmet";
 import { Provider } from "react-redux";
-import match from "react-router/lib/match";
-import RouterContext from "react-router/lib/RouterContext";
+import { StaticRouter } from "react-router-dom";
 import createStore from "redux/lib/createStore";
 import vary from "vary";
 
@@ -48,35 +47,24 @@ const app = express();
 app.use(express.static(`build/${__DEBUG__ ? "debug" : "production"}/server/public`));
 
 app.get("*", (req, res) => {
-  match(
-    {
-      routes: getRoutes({ userAgent: req.headers["user-agent"] }),
-      location: req.url,
-    },
-    (err, redirect, props) => {
-      if (err) {
-        res.status(500).send(err.message);
-      } else if (redirect) {
-        res.redirect(redirect.pathname + redirect.search);
-      } else if (props) {
-        const store = createStore(reducer);
-        const html = renderToString(
-          <Provider store={store}>
-            <RouterContext {...props} />
-          </Provider>);
-        const initialState = store.getState();
-        const head = Helmet.renderStatic();
-        if (props.routes.length > 0 && props.routes[props.routes.length - 1].path === "*") {
-          // react-router で 404 用の route にマッチしていればステータスコードを変更
-          res.status(404);
-        }
-        vary(res, "User-Agent");
-        res.send(renderFullPage(html, initialState, head));
-      } else {
-        res.status(404).send("Not Found");
-      }
-    },
-  );
+  const context = {};
+  const store = createStore(reducer);
+  const routes = getRoutes({ userAgent: req.headers["user-agent"] });
+  const html = renderToString(
+    <Provider store={store}>
+      <StaticRouter location={req.url} context={context}>
+        {routes}
+      </StaticRouter>
+    </Provider>);
+  const initialState = store.getState();
+  const head = Helmet.renderStatic();
+  if (context.url) {
+    res.redirect(context.url);
+    return;
+  }
+  // TODO: 404/500 support
+  vary(res, "User-Agent");
+  res.send(renderFullPage(html, initialState, head));
 });
 
 const normalizePort = (val) => {

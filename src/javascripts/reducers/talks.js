@@ -1,6 +1,6 @@
 import moment from "moment";
-import browserHistory from "react-router/lib/browserHistory";
 
+import history from "../history";
 import { SELECT_TALK, DESELECT_TALK } from "../actions/talks";
 import TalksList from "../../data/talks.yml";
 
@@ -12,10 +12,17 @@ const initialState = {
   selectedTalk: null,
 };
 
+const scrollToTop = () => {
+  if (__CLIENT__) {
+    window.scroll(0, 0);
+  }
+};
+
 export default (state = initialState, action) => {
   switch (action.type) {
     case SELECT_TALK: {
-      browserHistory.push("/talks/");
+      history.push("/talks/");
+      scrollToTop();
       return Object.assign({}, state, {
         isDialogOpen: true,
         selectedTalk: action.talk,

@@ -1,12 +1,12 @@
 import React from "react";
 import { render } from "react-dom";
 import { Provider } from "react-redux";
-import browserHistory from "react-router/lib/browserHistory";
-import Router from "react-router/lib/Router";
+import { Router } from "react-router-dom";
 import injectTapEventPlugin from "react-tap-event-plugin";
 import applyMiddleware from "redux/lib/applyMiddleware";
 import createStore from "redux/lib/createStore";
 
+import history from "./history";
 import reducer from "./reducers";
 import getRoutes from "./routes";
 
@@ -26,10 +26,12 @@ if (__DEBUG__) {
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m);
   })(window,document,"script","//www.google-analytics.com/analytics.js","ga");
   ga("create", "UA-41988513-2", "auto");
+  ga("send", "pageview");
   /* eslint-enable */
 }
+window.ga("send", "pageview");
 
-browserHistory.listen((location) => {
+history.listen((location) => {
   window.ga("set", "page", location.pathname);
   window.ga("send", "pageview");
 });
@@ -48,6 +50,8 @@ const store = createStore(reducer, {}, applyMiddleware(...middleware));
 const routes = getRoutes({});
 render((
   <Provider store={store}>
-    <Router history={browserHistory} routes={routes} />
+    <Router history={history}>
+      {routes}
+    </Router>
   </Provider>
 ), document.getElementById("app"));

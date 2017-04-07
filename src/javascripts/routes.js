@@ -1,7 +1,5 @@
 import React from "react";
-import IndexRoute from "react-router/lib/IndexRoute";
-import Redirect from "react-router/lib/Redirect";
-import Route from "react-router/lib/Route";
+import { Redirect, Route, Switch } from "react-router-dom";
 
 import App from "./components/App";
 import Home from "./components/Home";
@@ -12,33 +10,19 @@ import Talks from "./containers/Talks/Talks";
 import PageNotFound from "./components/PageNotFound";
 
 export default (themeOptions) => {  // eslint-disable-line
-  const AppWrapper = ({ children }) => (
-    <App themeOptions={themeOptions}>
-      {children}
-    </App>
-  );
-
-  AppWrapper.propTypes = {
-    children: React.PropTypes.node.isRequired,
-  };
-
-  const scrollToTop = () => {
-    if (__CLIENT__) {
-      window.scroll(0, 0);
-    }
-  };
-
+  // TODO: Use redirect with status?
   return (
-    <Route path="/" component={AppWrapper}>
-      <IndexRoute component={Home} />
-      <Route path="projects/" component={Projects} />
-      <Route path="talks/" component={Talks} onEnter={scrollToTop} />
-      <Route path="contributions/" component={Contributions} />
-      <Route path="misc/" component={Misc} />
-      <Redirect from="about/" to="/" />
-      <Redirect from="news" to="misc/" />
-      <Redirect from="news/" to="misc/" />
-      <Route path="*" component={PageNotFound} />
-    </Route>
+    <App themeOptions={themeOptions}>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/projects/" component={Projects} />
+        <Route path="/talks/" component={Talks} />
+        <Route path="/contributions/" component={Contributions} />
+        <Route path="/misc/" component={Misc} />
+        <Redirect from="/about/" to="/" />
+        <Redirect from="/news/" to="/misc/" />
+        <Route component={PageNotFound} />
+      </Switch>
+    </App>
   );
 };

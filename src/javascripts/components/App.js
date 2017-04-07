@@ -6,7 +6,7 @@ import Subheader from "material-ui/Subheader";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
 import React from "react";
 import Helmet from "react-helmet";
-import Link from "react-router/lib/Link";
+import { Link } from "react-router-dom";
 
 import "font-awesome/css/font-awesome.css";
 import "ress/ress.css";
