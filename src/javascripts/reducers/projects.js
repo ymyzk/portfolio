@@ -1,20 +1,21 @@
 import { List } from "immutable";
+import moment from "moment";
 
 import { SET_SELECTED_TAGS } from "../actions/projects";
 import ProjectsList from "../../data/projects.yml";
 
 const projects = ProjectsList.map((p) => {
-  const start = (p.start !== null) ? new Date(p.start) : null;  // TODO: Error
-  const end = (p.end !== null) ? new Date(p.end) : null;
+  const start = (p.start !== null) ? moment(p.start) : null;  // TODO: Error
+  const end = (p.end !== null) ? moment(p.end) : null;
   const duration = (() => {
-    const startYear = start.getFullYear();
+    const startYear = start.year();
     if (p.end === null) {
       // 継続中
       return `${startYear}–`;
     }
-    const endYear = end.getFullYear();
+    const endYear = end.year();
     // 終了済み
-    return startYear === endYear ? `${start.getFullYear()}` : `${startYear}–${endYear}`;
+    return startYear === endYear ? `${start.year()}` : `${startYear}–${endYear}`;
   })();
   return Object.assign(p, {
     start,
