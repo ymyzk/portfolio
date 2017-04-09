@@ -13,6 +13,8 @@ const Link = ({ link }) => {
   let icon;
   if (link.icon) {
     icon = <FontIcon className={`fa fa-${link.icon}`} />;
+  } else if (link.text) {
+    icon = <FontIcon>{ link.text }</FontIcon>;
   } else {
     icon = <FontIcon className="fa fa-globe" />;
   }

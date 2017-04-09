@@ -11,6 +11,7 @@ const Link = PropTypes.shape({
   name: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   icon: PropTypes.string,
+  text: PropTypes.string,
   color: PropTypes.string,
 });
 

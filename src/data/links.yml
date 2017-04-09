@@ -33,7 +33,7 @@
 
 - name: Speaker Deck
   url: https://speakerdeck.com/ymyzk
-  icon: null
+  text: SD
   color: "#396"
 
 - name: Twitter
@@ -44,4 +44,5 @@
 - name: Wantedly
   url: https://www.wantedly.com/users/2289515
   icon: null
+  text: W
   color: "#00a4bb"
