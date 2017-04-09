@@ -1,6 +1,7 @@
 import LinearProgress from "material-ui/LinearProgress";
 import { List, ListItem } from "material-ui/List";
 import moment from "moment";
+import PropTypes from "prop-types";
 import React from "react";
 import { connect } from "react-redux";
 
@@ -8,9 +9,9 @@ import { requestRecentEntries, requestRecentEntriesFailure, requestRecentEntries
 
 class RecentEntriesCard extends React.Component {
   static propTypes = {
-    entries: React.PropTypes.arrayOf(React.PropTypes.object.isRequired),
-    isFetching: React.PropTypes.bool.isRequired,
-    dispatch: React.PropTypes.func.isRequired,
+    entries: PropTypes.arrayOf(PropTypes.object.isRequired),
+    isFetching: PropTypes.bool.isRequired,
+    dispatch: PropTypes.func.isRequired,
   };
 
   static defaultProps = {

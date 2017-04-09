@@ -1,9 +1,10 @@
 import Avatar from "material-ui/Avatar";
 import ListItem from "material-ui/List/ListItem";
+import PropTypes from "prop-types";
 import React from "react";
 
 import Theme from "../Theme";
-import PropTypes from "../../utils/PropTypes";
+import CustomPropTypes from "../../utils/PropTypes";
 import oEmbedData from "../../../data/oembed.json";
 
 const TalkListItem = ({ talk, onTalkSelected }) => {
@@ -25,8 +26,8 @@ const TalkListItem = ({ talk, onTalkSelected }) => {
 };
 
 TalkListItem.propTypes = {
-  talk: PropTypes.Talk.isRequired,
-  onTalkSelected: React.PropTypes.func,
+  talk: CustomPropTypes.Talk.isRequired,
+  onTalkSelected: PropTypes.func,
 };
 
 TalkListItem.defaultProps = {

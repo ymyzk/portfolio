@@ -1,9 +1,10 @@
 import List from "material-ui/List/List";
 import ListItem from "material-ui/List/ListItem";
+import PropTypes from "prop-types";
 import React from "react";
 
 import RecentEntries from "../../containers/Home/RecentEntries";
-import PropTypes from "../../utils/PropTypes";
+import CustomPropTypes from "../../utils/PropTypes";
 import TalkListItem from "../Talks/TalkListItem";
 
 const RecentTalks = ({ talks, numberOfTalks, onTalkSelected }) => (
@@ -21,9 +22,9 @@ const RecentTalks = ({ talks, numberOfTalks, onTalkSelected }) => (
 );
 
 RecentTalks.propTypes = {
-  talks: React.PropTypes.arrayOf(PropTypes.Talk.isRequired).isRequired,
-  numberOfTalks: React.PropTypes.number,
-  onTalkSelected: React.PropTypes.func.isRequired,
+  talks: PropTypes.arrayOf(CustomPropTypes.Talk.isRequired).isRequired,
+  numberOfTalks: PropTypes.number,
+  onTalkSelected: PropTypes.func.isRequired,
 };
 
 RecentTalks.defaultProps = {
@@ -41,8 +42,8 @@ const Activities = ({ talks, onTalkSelected }) => (
 );
 
 Activities.propTypes = {
-  talks: React.PropTypes.arrayOf(PropTypes.Talk.isRequired).isRequired,
-  onTalkSelected: React.PropTypes.func.isRequired,
+  talks: PropTypes.arrayOf(CustomPropTypes.Talk.isRequired).isRequired,
+  onTalkSelected: PropTypes.func.isRequired,
 };
 
 export default Activities;

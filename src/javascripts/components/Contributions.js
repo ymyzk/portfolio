@@ -1,8 +1,9 @@
 import { List, ListItem } from "material-ui/List";
+import PropTypes from "prop-types";
 import React from "react";
 import Helmet from "react-helmet";
 
-import PropTypes from "../utils/PropTypes";
+import CustomPropTypes from "../utils/PropTypes";
 
 const Contributions = ({ contributions }) => {
   const title = "Contributions";
@@ -28,7 +29,7 @@ const Contributions = ({ contributions }) => {
 };
 
 Contributions.propTypes = {
-  contributions: React.PropTypes.arrayOf(React.PropTypes.object.isRequired).isRequired,
+  contributions: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
 };
 
 const ContributionListItem = ({ contribution }) => {
@@ -43,7 +44,7 @@ const ContributionListItem = ({ contribution }) => {
 };
 
 ContributionListItem.propTypes = {
-  contribution: PropTypes.Contribution.isRequired,
+  contribution: CustomPropTypes.Contribution.isRequired,
 };
 
 export default Contributions;

@@ -1,4 +1,5 @@
 import Chip from "material-ui/Chip";
+import PropTypes from "prop-types";
 import React from "react";
 
 const SkillsCard = ({ skills }) => (
@@ -17,7 +18,7 @@ const SkillsCard = ({ skills }) => (
 );
 
 SkillsCard.propTypes = {
-  skills: React.PropTypes.arrayOf(React.PropTypes.string.isRequired).isRequired,
+  skills: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
 };
 
 export default SkillsCard;

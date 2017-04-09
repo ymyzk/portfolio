@@ -4,6 +4,7 @@ import MenuItem from "material-ui/MenuItem";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import Subheader from "material-ui/Subheader";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
+import PropTypes from "prop-types";
 import React from "react";
 import Helmet from "react-helmet";
 import { Link } from "react-router-dom";
@@ -37,8 +38,8 @@ const Footer = () => {
 
 class App extends React.Component {
   static propTypes = {
-    children: React.PropTypes.node.isRequired,
-    themeOptions: React.PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+    children: PropTypes.node.isRequired,
+    themeOptions: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   };
 
   constructor(props, context) {

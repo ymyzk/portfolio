@@ -1,5 +1,6 @@
 import FloatingActionButton from "material-ui/FloatingActionButton";
 import ArrowDownward from "material-ui/svg-icons/navigation/arrow-downward";
+import PropTypes from "prop-types";
 import React from "react";
 import SmoothScroll from "smoothscroll";
 
@@ -34,7 +35,7 @@ const Title = ({ screenWidth }) => {
 };
 
 Title.propTypes = {
-  screenWidth: React.PropTypes.number.isRequired,
+  screenWidth: PropTypes.number.isRequired,
 };
 
 const ScrollButton = () => {

@@ -1,8 +1,9 @@
 import Dialog from "material-ui/Dialog";
 import FlatButton from "material-ui/FlatButton";
+import PropTypes from "prop-types";
 import React from "react";
 
-import PropTypes from "../../utils/PropTypes";
+import CustomPropTypes from "../../utils/PropTypes";
 
 const TalkDialog = ({ open, talk, onClose }) => {
   if (talk === null) {
@@ -47,9 +48,9 @@ const TalkDialog = ({ open, talk, onClose }) => {
 };
 
 TalkDialog.propTypes = {
-  open: React.PropTypes.bool.isRequired,
-  talk: PropTypes.Talk,
-  onClose: React.PropTypes.func,
+  open: PropTypes.bool.isRequired,
+  talk: CustomPropTypes.Talk,
+  onClose: PropTypes.func,
 };
 
 TalkDialog.defaultProps = {

@@ -1,8 +1,9 @@
 import List from "material-ui/List/List";
 import Subheader from "material-ui/Subheader";
+import PropTypes from "prop-types";
 import React from "react";
 
-import PropTypes from "../../utils/PropTypes";
+import CustomPropTypes from "../../utils/PropTypes";
 import TalkListItem from "./TalkListItem";
 
 const TalkList = ({ talks, onTalkSelected }) => {
@@ -35,8 +36,8 @@ const TalkList = ({ talks, onTalkSelected }) => {
 };
 
 TalkList.propTypes = {
-  talks: React.PropTypes.arrayOf(PropTypes.Talk.isRequired).isRequired,
-  onTalkSelected: React.PropTypes.func.isRequired,
+  talks: PropTypes.arrayOf(CustomPropTypes.Talk.isRequired).isRequired,
+  onTalkSelected: PropTypes.func.isRequired,
 };
 
 export default TalkList;

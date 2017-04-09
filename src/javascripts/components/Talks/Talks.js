@@ -1,7 +1,8 @@
+import PropTypes from "prop-types";
 import React from "react";
 import Helmet from "react-helmet";
 
-import PropTypes from "../../utils/PropTypes";
+import CustomPropTypes from "../../utils/PropTypes";
 import TalkDialog from "./TalkDialog";
 import TalkList from "./TalkList";
 
@@ -22,11 +23,11 @@ const Talks = ({ talks, isDialogOpen, selectedTalk, onTalkSelected, onTalkDesele
 };
 
 Talks.propTypes = {
-  talks: React.PropTypes.arrayOf(PropTypes.Talk.isRequired).isRequired,
-  isDialogOpen: React.PropTypes.bool.isRequired,
-  selectedTalk: PropTypes.Talk,
-  onTalkSelected: React.PropTypes.func.isRequired,
-  onTalkDeselected: React.PropTypes.func.isRequired,
+  talks: PropTypes.arrayOf(CustomPropTypes.Talk.isRequired).isRequired,
+  isDialogOpen: PropTypes.bool.isRequired,
+  selectedTalk: CustomPropTypes.Talk,
+  onTalkSelected: PropTypes.func.isRequired,
+  onTalkDeselected: PropTypes.func.isRequired,
 };
 
 Talks.defaultProps = {

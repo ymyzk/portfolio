@@ -1,4 +1,5 @@
 import Chip from "material-ui/Chip";
+import PropTypes from "prop-types";
 import React from "react";
 
 const projectTagStyle = {
@@ -18,9 +19,9 @@ const ProjectTag = (props) => {
 };
 
 ProjectTag.propTypes = {
-  tag: React.PropTypes.string.isRequired,
-  onTouchTap: React.PropTypes.func,
-  onRequestDelete: React.PropTypes.func,
+  tag: PropTypes.string.isRequired,
+  onTouchTap: PropTypes.func,
+  onRequestDelete: PropTypes.func,
 };
 
 ProjectTag.defaultProps = {

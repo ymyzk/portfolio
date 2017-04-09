@@ -5,10 +5,11 @@ import CardText from "material-ui/Card/CardText";
 import CardTitle from "material-ui/Card/CardTitle";
 import FloatingActionButton from "material-ui/FloatingActionButton";
 import ActionExitToTop from "material-ui/svg-icons/action/exit-to-app";
+import PropTypes from "prop-types";
 import React from "react";
 
 import ProjectPlaceholder from "../../../images/project-placeholder.svg";
-import PropTypes from "../../utils/PropTypes";
+import CustomPropTypes from "../../utils/PropTypes";
 import ProjectTag from "./ProjectTag";
 
 const floatingButtonWrapperStyle = {
@@ -65,9 +66,9 @@ const ProjectCard = ({ project, isActive, onTagSelected }) => {
 };
 
 ProjectCard.propTypes = {
-  project: PropTypes.Project.isRequired,
-  isActive: React.PropTypes.bool,
-  onTagSelected: React.PropTypes.func,
+  project: CustomPropTypes.Project.isRequired,
+  isActive: PropTypes.bool,
+  onTagSelected: PropTypes.func,
 };
 
 ProjectCard.defaultProps = {

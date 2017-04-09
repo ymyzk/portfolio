@@ -1,8 +1,9 @@
 import { List, ListItem } from "material-ui/List";
+import PropTypes from "prop-types";
 import React from "react";
 import Helmet from "react-helmet";
 
-import PropTypes from "../utils/PropTypes";
+import CustomPropTypes from "../utils/PropTypes";
 
 const Misc = ({ misc }) => {
   const title = "Misc";
@@ -24,7 +25,7 @@ const Misc = ({ misc }) => {
 };
 
 Misc.propTypes = {
-  misc: React.PropTypes.arrayOf(React.PropTypes.object.isRequired).isRequired,
+  misc: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
 };
 
 const MiscListItem = ({ item }) => (
@@ -36,7 +37,7 @@ const MiscListItem = ({ item }) => (
 );
 
 MiscListItem.propTypes = {
-  item: PropTypes.Misc.isRequired,
+  item: CustomPropTypes.Misc.isRequired,
 };
 
 export default Misc;

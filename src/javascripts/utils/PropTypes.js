@@ -1,5 +1,5 @@
 import moment from "moment";
-import { PropTypes } from "react";
+import PropTypes from "prop-types";
 
 const Contribution = PropTypes.shape({
   name: PropTypes.string.isRequired,

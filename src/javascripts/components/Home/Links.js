@@ -1,5 +1,6 @@
 import FloatingActionButton from "material-ui/FloatingActionButton";
 import FontIcon from "material-ui/FontIcon";
+import PropTypes from "prop-types";
 import React from "react";
 
 const floatingButtonStyle = {
@@ -30,7 +31,7 @@ const Links = ({ links }) => (
 );
 
 Links.propTypes = {
-  links: React.PropTypes.arrayOf(React.PropTypes.object.isRequired).isRequired,
+  links: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
 };
 
 export default Links;
