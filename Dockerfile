@@ -1,7 +1,6 @@
 FROM node:7.8-slim
 
-COPY package.json /app/
-COPY yarn.lock /app/
+COPY package.json yarn.lock /app/
 
 WORKDIR /app
 
