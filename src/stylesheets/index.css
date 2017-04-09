@@ -28,6 +28,8 @@ html {
 }
 
 body {
+  /* See also: src/javascripts/components/Theme.js */
+  background: #fbfbfb;
   font-size: 13px;
   line-height: 20px;
 }

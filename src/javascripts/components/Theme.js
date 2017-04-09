@@ -25,7 +25,8 @@ export default {
     accent3Color: colors.grey500,
     textColor: colors.darkBlack,
     alternateTextColor: colors.white,
-    canvasColor: colors.white,
+    /* See also: src/javascripts/components/Theme.js */
+    canvasColor: "#fbfbfb",
     borderColor: colors.grey500,
     // disabledColor: ColorManipulator.fade(colors.darkBlack, 0.3),
     // pickerHeaderColor: colors.cyan500
