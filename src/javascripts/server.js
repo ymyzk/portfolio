@@ -62,9 +62,8 @@ app.get("*", (req, res) => {
     res.redirect(context.url);
     return;
   }
-  // TODO: 404/500 support
   vary(res, "User-Agent");
-  res.send(renderFullPage(html, initialState, head));
+  res.status(context.status ? context.status : 200).send(renderFullPage(html, initialState, head));
 });
 
 const normalizePort = (val) => {
