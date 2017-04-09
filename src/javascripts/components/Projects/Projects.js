@@ -1,3 +1,4 @@
+import { List } from "immutable";
 import PropTypes from "prop-types";
 import React from "react";
 import Helmet from "react-helmet";
@@ -51,7 +52,7 @@ Projects.propTypes = {
   projects: PropTypes.arrayOf(CustomPropTypes.Project.isRequired).isRequired,
   onTagSelected: PropTypes.func,
   onTagDeleted: PropTypes.func,
-  selectedTags: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  selectedTags: PropTypes.instanceOf(List).isRequired,
 };
 
 Projects.defaultProps = {
