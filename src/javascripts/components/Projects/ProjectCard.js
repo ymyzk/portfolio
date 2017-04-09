@@ -57,7 +57,7 @@ const ProjectCard = ({ project, isActive, onTagSelected }) => {
         </div>
       </CardActions>
       <div style={floatingButtonWrapperStyle}>
-        <FloatingActionButton linkButton href={project.link} target="_blank" style={floatingButtonStyle}>
+        <FloatingActionButton href={project.link} target="_blank" style={floatingButtonStyle}>
           <ActionExitToTop />
         </FloatingActionButton>
       </div>
