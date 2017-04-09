@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import Theme from "../Theme";
-import CustomPropTypes from "../../utils/PropTypes";
+import CustomPropTypes from "../../utils/CustomPropTypes";
 import oEmbedData from "../../../data/oembed.json";
 
 const TalkListItem = ({ talk, onTalkSelected }) => {

@@ -9,7 +9,7 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import ProjectPlaceholder from "../../../images/project-placeholder.svg";
-import CustomPropTypes from "../../utils/PropTypes";
+import CustomPropTypes from "../../utils/CustomPropTypes";
 import ProjectTag from "./ProjectTag";
 
 const floatingButtonWrapperStyle = {

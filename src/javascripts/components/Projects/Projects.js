@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import Helmet from "react-helmet";
 
-import CustomPropTypes from "../../utils/PropTypes";
+import CustomPropTypes from "../../utils/CustomPropTypes";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
 

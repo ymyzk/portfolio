@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import RecentEntries from "../../containers/Home/RecentEntries";
-import CustomPropTypes from "../../utils/PropTypes";
+import CustomPropTypes from "../../utils/CustomPropTypes";
 import TalkListItem from "../Talks/TalkListItem";
 
 const RecentTalks = ({ talks, numberOfTalks, onTalkSelected }) => (

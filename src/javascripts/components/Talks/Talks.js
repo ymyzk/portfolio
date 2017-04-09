@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import Helmet from "react-helmet";
 
-import CustomPropTypes from "../../utils/PropTypes";
+import CustomPropTypes from "../../utils/CustomPropTypes";
 import TalkDialog from "./TalkDialog";
 import TalkList from "./TalkList";
 

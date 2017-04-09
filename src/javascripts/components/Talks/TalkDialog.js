@@ -3,7 +3,7 @@ import FlatButton from "material-ui/FlatButton";
 import PropTypes from "prop-types";
 import React from "react";
 
-import CustomPropTypes from "../../utils/PropTypes";
+import CustomPropTypes from "../../utils/CustomPropTypes";
 
 const TalkDialog = ({ open, talk, onClose }) => {
   if (talk === null) {

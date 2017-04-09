@@ -3,7 +3,7 @@ import Subheader from "material-ui/Subheader";
 import PropTypes from "prop-types";
 import React from "react";
 
-import CustomPropTypes from "../../utils/PropTypes";
+import CustomPropTypes from "../../utils/CustomPropTypes";
 import TalkListItem from "./TalkListItem";
 
 const TalkList = ({ talks, onTalkSelected }) => {
