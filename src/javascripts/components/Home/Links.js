@@ -3,6 +3,8 @@ import FontIcon from "material-ui/FontIcon";
 import PropTypes from "prop-types";
 import React from "react";
 
+import CustomPropTypes from "../../utils/CustomPropTypes";
+
 const floatingButtonStyle = {
   margin: "0 6px 6px",
 };
@@ -31,7 +33,7 @@ const Links = ({ links }) => (
 );
 
 Links.propTypes = {
-  links: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
+  links: PropTypes.arrayOf(CustomPropTypes.Link.isRequired).isRequired,
 };
 
 export default Links;

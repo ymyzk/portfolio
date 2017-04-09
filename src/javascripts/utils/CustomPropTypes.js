@@ -7,6 +7,13 @@ const Contribution = PropTypes.shape({
   roles: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
 });
 
+const Link = PropTypes.shape({
+  name: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  icon: PropTypes.string,
+  color: PropTypes.string,
+});
+
 const Misc = PropTypes.shape({
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
@@ -34,6 +41,7 @@ const Talk = PropTypes.shape({
 
 export default {
   Contribution,
+  Link,
   Misc,
   Project,
   Talk,
