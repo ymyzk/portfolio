@@ -1,4 +1,4 @@
-FROM node:7.8-slim
+FROM node:7.9-slim
 
 COPY package.json yarn.lock /app/
 
