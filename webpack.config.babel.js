@@ -24,6 +24,7 @@ const config = (env) => {
   const nodeModulesPath = path.resolve(__dirname, "node_modules");
 
   const basePath = "https://www.ymyzk.com/";
+  const mediaBasePath = "https://www.ymyzk.tokyo/";
   const paths = [
     "/",
     "/projects/",
@@ -57,7 +58,7 @@ const config = (env) => {
     devtool: DEBUG ? "eval" : "source-map",
     output: {
       path: buildPath,
-      publicPath: DEBUG ? "/" : basePath,
+      publicPath: DEBUG ? "/" : mediaBasePath,
       filename: CLIENT ? "bundle.[hash].js" : "server.js",
       libraryTarget: CLIENT ? "var" : "commonjs2",
     },
