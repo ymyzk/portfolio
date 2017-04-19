@@ -10,6 +10,7 @@ IndexPageGeneratorPlugin.prototype.apply = function(compiler) {
   const self = this;
   const template = Handlebars.compile(fs.readFileSync(this.templateFileName).toString());
   compiler.plugin("emit", function(compilation, callback) {
+    const publicPath = compiler.options.output.publicPath;
     const hash = compilation.hash;
 
     // Corresponds to server.js
@@ -19,8 +20,8 @@ IndexPageGeneratorPlugin.prototype.apply = function(compiler) {
         title: "<title>Yusuke Miyazaki</title>"
       },
       files: {
-        bundleCss: `bundle.${hash}.css`,
-        bundleJs: `bundle.${hash}.js`
+        bundleCss: `${publicPath}bundle.${hash}.css`,
+        bundleJs: `${publicPath}bundle.${hash}.js`
       }
     });
 
