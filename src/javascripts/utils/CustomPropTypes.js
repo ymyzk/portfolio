@@ -1,6 +1,12 @@
 import moment from "moment";
 import PropTypes from "prop-types";
 
+const Affiliation = PropTypes.shape({
+  name: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
+});
+
 const Contribution = PropTypes.shape({
   name: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
@@ -41,6 +47,7 @@ const Talk = PropTypes.shape({
 });
 
 export default {
+  Affiliation,
   Contribution,
   Link,
   Misc,
