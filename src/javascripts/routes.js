@@ -3,7 +3,7 @@ import React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 
 import App from "./components/App";
-import Home from "./components/Home";
+import Home from "./containers/Home";
 import Contributions from "./containers/Contributions";
 import Misc from "./containers/Misc";
 import Projects from "./containers/Projects";
