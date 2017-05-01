@@ -69,7 +69,7 @@
     "handlebars": "~4.0.5",
     "history": "^4.6.1",
     "immutable": "~3.8.1",
-    "material-ui": "~0.17.0",
+    "material-ui": "^0.18.0",
     "moment": "^2.18.0",
     "prop-types": "~15.5.0",
     "react": "~15.5.0",
