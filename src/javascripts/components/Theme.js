@@ -11,8 +11,8 @@ export default {
     "Noto Sans Japanese", "Noto Sans CJK JP",
     "源ノ角ゴシック", "Source Han Sans",
     "Hiragino Sans",
-    "游ゴシック", "YuGothic",
     "Hiragino Kaku Gothic ProN",
+    "游ゴシック", "YuGothic",
     "メイリオ", "Meiryo", "sans-serif",
   ].map(f => `"${f}"`).join(", "),
   palette: {
