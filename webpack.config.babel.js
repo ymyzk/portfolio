@@ -80,6 +80,7 @@ const config = (env) => {
               {
                 loader: "css-loader",
                 options: {
+                  importLoaders: 1,
                   minimize: PRODUCTION,
                 },
               },
@@ -159,20 +160,6 @@ const config = (env) => {
         },
       }),
       new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-      new webpack.LoaderOptionsPlugin({
-        options: {
-          postcss: () => [
-            cssnext({
-              features: {
-                calc: {
-                  precision: 8,
-                },
-              },
-            }),
-            reporter(),
-          ],
-        },
-      }),
       ...((DEBUG && CLIENT) ? [new webpack.HotModuleReplacementPlugin()] : []),
       ...(PRODUCTION ? [
         new webpack.optimize.UglifyJsPlugin(),
