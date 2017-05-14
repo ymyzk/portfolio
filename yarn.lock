@@ -1131,8 +1131,8 @@ caniuse-api@^1.5.2, caniuse-api@^1.5.3:
     lodash.uniq "^4.5.0"
 
 caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
-  version "1.0.30000667"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000667.tgz#fb6060dbf349c101df26f421442419802fc6dab1"
+  version "1.0.30000669"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000669.tgz#dbe8f25700ecda631dfb05cb71027762bd4b03e5"
 
 caseless@~0.12.0:
   version "0.12.0"
