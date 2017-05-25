@@ -50,7 +50,7 @@
     "file-loader": "^0.11.0",
     "html-loader": "~0.4.3",
     "json-loader": "~0.5.4",
-    "node-fetch": "~1.6.0",
+    "node-fetch": "^1.7.0",
     "node-zopfli": "~2.0.1",
     "postcss-cssnext": "^2.10.0",
     "postcss-loader": "^2.0.5",
