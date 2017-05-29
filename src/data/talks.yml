@@ -1,3 +1,9 @@
+- title: tmux 入門
+  event: CAMPHOR- CLI について語る会
+  date: 2017-05-28
+  link: https://camphor.connpass.com/event/57358/
+  slide: https://speakerdeck.com/ymyzk/introduction-to-tmux
+
 - title: A Type Reconstruction Algorithm for Gradually Typed Delimited Continuations
   event: PPL 2017
   date: 2017-03-08
