@@ -43,10 +43,10 @@ echo "Debug: $debug / Production: $production"
 set -eux
 
 if $debug && $client; then
-  webpack --progress
+  webpack
 elif $debug && $server; then
   # Build server
-  webpack --progress --env.server
+  webpack --env.server
   mv build/debug/server/public/server.js* build/debug/server/
   mv build/debug/server/public/stats.json build/debug/server/stats.server.json
   # Copy files for clients
