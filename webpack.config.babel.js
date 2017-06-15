@@ -166,7 +166,7 @@ const config = (env) => {
         new webpack.optimize.AggressiveMergingPlugin(),
         new CompressionPlugin({
           // NOTE: requires node-zopfli, you can specify gzip if you don't have it
-          algorithm: "zopfli",
+          // algorithm: "zopfli",
           test: /\.(css|eot|js|svg|ttf|txt|xml)$/,
           threshold: 1024,
           minRatio: 0.8,
