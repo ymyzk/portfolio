@@ -53,10 +53,10 @@ elif $debug && $server; then
   cp build/debug/client/bundle.*.js* build/debug/server/public/
   cp build/debug/client/stats.json build/debug/server/stats.client.json
 elif $production && $client; then
-  webpack --env.production --no-color
+  webpack --env.production
 elif $production && $server; then
   # Build server
-  webpack --env.production --no-color --env.server
+  webpack --env.production --env.server
   mv build/production/server/public/server.js* build/production/server/
   mv build/production/server/public/stats.json build/production/server/stats.server.json
   # Copy files for clients
