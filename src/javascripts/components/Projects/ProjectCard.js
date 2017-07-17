@@ -3,25 +3,13 @@ import CardActions from "material-ui/Card/CardActions";
 import CardMedia from "material-ui/Card/CardMedia";
 import CardText from "material-ui/Card/CardText";
 import CardTitle from "material-ui/Card/CardTitle";
-import FloatingActionButton from "material-ui/FloatingActionButton";
-import ActionExitToTop from "material-ui/svg-icons/action/exit-to-app";
+import FlatButton from "material-ui/FlatButton";
 import PropTypes from "prop-types";
 import React from "react";
 
 import ProjectPlaceholder from "../../../images/project-placeholder.svg";
 import CustomPropTypes from "../../utils/CustomPropTypes";
 import ProjectTag from "./ProjectTag";
-
-const floatingButtonWrapperStyle = {
-  position: "relative",
-  height: 64,
-};
-
-const floatingButtonStyle = {
-  position: "absolute",
-  bottom: 12,
-  right: 12,
-};
 
 const ProjectCard = ({ project, isActive, onTagSelected }) => {
   const style = {
@@ -56,11 +44,9 @@ const ProjectCard = ({ project, isActive, onTagSelected }) => {
           }
         </div>
       </CardActions>
-      <div style={floatingButtonWrapperStyle}>
-        <FloatingActionButton href={project.link} target="_blank" style={floatingButtonStyle}>
-          <ActionExitToTop />
-        </FloatingActionButton>
-      </div>
+      <CardActions>
+        <FlatButton label="Project Page" href={project.link} primary />
+      </CardActions>
     </Card>
   );
 };
