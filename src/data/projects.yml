@@ -8,6 +8,7 @@
 
 - title: 鶉野マップ
   link: https://geo.itunes.apple.com/jp/app/chun-yemappu/id655525538?mt=8
+  image: uzuranomap.png
   start: 2013-06-04
   end: null
   tags: [iOS]
@@ -15,6 +16,7 @@
 
 - title: kawasemi
   link: https://github.com/ymyzk/kawasemi
+  image: kawasemi.png
   start: 2015-05-03
   end: null
   tags: [Library, Python]
@@ -22,6 +24,7 @@
 
 - title: wsgi_lineprof
   link: https://github.com/ymyzk/wsgi_lineprof
+  image: wsgi_lineprof.png
   start: 2016-10-02
   end: null
   tags: [Library, Python]
