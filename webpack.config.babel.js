@@ -162,6 +162,7 @@ const config = (env) => {
       new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
       ...((DEBUG && CLIENT) ? [new webpack.HotModuleReplacementPlugin()] : []),
       ...(PRODUCTION ? [
+        new webpack.optimize.ModuleConcatenationPlugin(),
         new webpack.optimize.UglifyJsPlugin(),
         new webpack.optimize.AggressiveMergingPlugin(),
         new CompressionPlugin({
