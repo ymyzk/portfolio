@@ -9,10 +9,19 @@ import ContributionsList from "../../data/contributions.yml";
 import links from "../../data/links.yml";
 import MiscList from "../../data/misc.yml";
 import skills from "../../data/skills.yml";
+import WorksList from "../../data/works.yml";
 
 const affiliation = AffiliationList;
 const contributions = ContributionsList.sort();
 const misc = MiscList.map(n => Object.assign(n, { date: moment(n.date) }));
+const works = WorksList.map((w) => {
+  const start = moment(w.start);
+  const end = (w.end !== null) ? moment(w.end) : null;
+  return Object.assign(w, {
+    start,
+    end,
+  });
+});
 
 const initialState = {
   affiliation,
@@ -20,6 +29,7 @@ const initialState = {
   links,
   misc,
   skills,
+  works,
 };
 
 const defaultReducer = (state = initialState) => state;

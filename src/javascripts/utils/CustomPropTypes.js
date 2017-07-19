@@ -46,6 +46,14 @@ const Talk = PropTypes.shape({
   slide: PropTypes.string,
 });
 
+const Work = PropTypes.shape({
+  title: PropTypes.string.isRequired,
+  company: PropTypes.string.isRequired,
+  link: PropTypes.string,
+  start: PropTypes.instanceOf(moment).isRequired,
+  end: PropTypes.instanceOf(moment),
+});
+
 export default {
   Affiliation,
   Contribution,
@@ -53,4 +61,5 @@ export default {
   Misc,
   Project,
   Talk,
+  Work,
 };

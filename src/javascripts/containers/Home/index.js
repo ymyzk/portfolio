@@ -4,6 +4,7 @@ import Activities from "./Activities";
 import Affiliation from "./Affiliation";
 import Links from "./Links";
 import Skills from "./Skills";
+import WorkExperience from "./WorkExperience";
 import Top from "../../components/Home/Top";
 
 const Home = () => (
@@ -11,6 +12,7 @@ const Home = () => (
     <Top />
     <div className="container" id="about">
       <Affiliation />
+      <WorkExperience />
       <Activities />
       <Skills />
       <Links />
