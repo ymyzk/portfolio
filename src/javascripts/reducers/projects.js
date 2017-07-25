@@ -5,7 +5,7 @@ import { SET_SELECTED_TAGS } from "../actions/projects";
 import ProjectsList from "../../data/projects.yml";
 
 const projects = ProjectsList.map((p) => {
-  const start = (p.start !== null) ? moment(p.start) : null;  // TODO: Error
+  const start = (p.start !== null) ? moment(p.start) : null; // TODO: Error
   const end = (p.end !== null) ? moment(p.end) : null;
   const duration = (() => {
     const startYear = start.year();

@@ -97,7 +97,7 @@ class Top extends React.Component {
       overflow: "hidden",
       marginTop: -64,
       width: "100%",
-      height: this.state.screenHeight + 64,  // 100vh
+      height: this.state.screenHeight + 64, // 100vh
     };
     return (
       <div>

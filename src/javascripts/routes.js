@@ -13,7 +13,7 @@ import PageNotFound from "./components/PageNotFound";
 const Status = ({ code, children }) => {
   const render = ({ staticContext }) => {
     if (staticContext) {
-      staticContext.status = code;  // eslint-disable-line no-param-reassign
+      staticContext.status = code; // eslint-disable-line no-param-reassign
     }
     return children;
   };
