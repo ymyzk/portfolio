@@ -17,7 +17,7 @@ const TalkListItem = ({ talk, onTalkSelected }) => {
       className="talk-list-item"
       primaryText={talk.title}
       secondaryText={<span>{talk.event} - <time dateTime={dateIso}>{dateString}</time></span>}
-      onTouchTap={() => onTalkSelected(talk)}
+      onClick={() => onTalkSelected(talk)}
       leftAvatar={
         thumbnail ? <Avatar src={thumbnail} /> : <Avatar backgroundColor={Theme.palette.primary1Color}>{talk.title.charAt(0)}</Avatar>
       }

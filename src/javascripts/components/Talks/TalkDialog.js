@@ -28,7 +28,7 @@ const TalkDialog = ({ open, talk, onClose }) => {
     <FlatButton
       label="Close"
       primary
-      onTouchTap={onClose}
+      onClick={onClose}
     />,
   ];
 

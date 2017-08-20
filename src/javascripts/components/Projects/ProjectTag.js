@@ -7,10 +7,10 @@ const projectTagStyle = {
 };
 
 const ProjectTag = (props) => {
-  const { tag, onTouchTap, onRequestDelete, ...otherProps } = props;
+  const { tag, onClick, onRequestDelete, ...otherProps } = props;
   const additionalProps = {};
-  if (onTouchTap !== null) {
-    additionalProps.onTouchTap = () => onTouchTap(tag);
+  if (onClick !== null) {
+    additionalProps.onClick = () => onClick(tag);
   }
   if (onRequestDelete !== null) {
     additionalProps.onRequestDelete = () => onRequestDelete(tag);
@@ -20,12 +20,12 @@ const ProjectTag = (props) => {
 
 ProjectTag.propTypes = {
   tag: PropTypes.string.isRequired,
-  onTouchTap: PropTypes.func,
+  onClick: PropTypes.func,
   onRequestDelete: PropTypes.func,
 };
 
 ProjectTag.defaultProps = {
-  onTouchTap: null,
+  onClick: null,
   onRequestDelete: null,
 };
 

@@ -2,19 +2,12 @@ import React from "react";
 import { render } from "react-dom";
 import { Provider } from "react-redux";
 import { Router } from "react-router-dom";
-import injectTapEventPlugin from "react-tap-event-plugin";
 import applyMiddleware from "redux/lib/applyMiddleware";
 import createStore from "redux/lib/createStore";
 
 import history from "./history";
 import reducer from "./reducers";
 import getRoutes from "./routes";
-
-// Needed for onTouchTap
-// Can go away when react 1.0 release
-// Check this repo:
-// https://github.com/zilverline/react-tap-event-plugin
-injectTapEventPlugin();
 
 // Google Analytics
 if (__DEBUG__) {

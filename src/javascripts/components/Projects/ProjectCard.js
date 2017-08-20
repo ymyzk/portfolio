@@ -39,7 +39,7 @@ const ProjectCard = ({ project, isActive, onTagSelected }) => {
           <ProjectTag tag={project.duration} />
           {
             project.tags.map(tag => (
-              <ProjectTag key={tag} tag={tag} onTouchTap={() => onTagSelected(tag)} />
+              <ProjectTag key={tag} tag={tag} onClick={() => onTagSelected(tag)} />
             ))
           }
         </div>

@@ -134,11 +134,11 @@ class App extends React.Component {
             onRequestChange={open => this.setState({ open })}
           >
             <Subheader>Menu</Subheader>
-            <MenuItem onTouchTap={this.handleClose} containerElement={<Link to="/" />}>Home</MenuItem>
-            <MenuItem onTouchTap={this.handleClose} containerElement={<Link to="/projects/" />}>Projects</MenuItem>
-            <MenuItem onTouchTap={this.handleClose} containerElement={<Link to="/talks/" />}>Talks</MenuItem>
-            <MenuItem onTouchTap={this.handleClose} containerElement={<Link to="/contributions/" />}>Contributions</MenuItem>
-            <MenuItem onTouchTap={this.handleClose} containerElement={<Link to="/misc/" />}>Misc</MenuItem>
+            <MenuItem onClick={this.handleClose} containerElement={<Link to="/" />}>Home</MenuItem>
+            <MenuItem onClick={this.handleClose} containerElement={<Link to="/projects/" />}>Projects</MenuItem>
+            <MenuItem onClick={this.handleClose} containerElement={<Link to="/talks/" />}>Talks</MenuItem>
+            <MenuItem onClick={this.handleClose} containerElement={<Link to="/contributions/" />}>Contributions</MenuItem>
+            <MenuItem onClick={this.handleClose} containerElement={<Link to="/misc/" />}>Misc</MenuItem>
           </Drawer>
           {this.props.children}
           <Footer />
