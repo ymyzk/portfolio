@@ -1,3 +1,9 @@
+- title: Introducing wsgi_lineprof
+  event: PyCon JP 2017
+  date: 2017-09-08
+  link: https://pycon.jp/2017/ja/events/lightning-talks/
+  slide: https://www.slideshare.net/yusukemiy/introducing-wsgilineprof-pycon-jp-2017-lt
+
 - title: tmux 入門
   event: CAMPHOR- CLI について語る会
   date: 2017-05-28
