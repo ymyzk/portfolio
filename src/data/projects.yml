@@ -57,7 +57,7 @@
   link: https://github.com/ymyzk/bottle-yotoslack
   image: bottle-yotoslack.jpg
   start: 2015-05-04
-  end: null
+  end: 2016-07-02
   tags: [Bottle, Python, Web]
   description: Yo を受け取った際に、Slack に通知を送信するシンプルな Web アプリケーション。
 
