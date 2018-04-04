@@ -1,7 +1,7 @@
 import React from "react";
 
 import Activities from "./Activities";
-import Affiliation from "./Affiliation";
+// import Affiliation from "./Affiliation";
 import Links from "./Links";
 import Skills from "./Skills";
 import WorkExperience from "./WorkExperience";
@@ -11,7 +11,7 @@ const Home = () => (
   <div className="home">
     <Top />
     <div className="container" id="about">
-      <Affiliation />
+      {/* <Affiliation /> */}
       <WorkExperience />
       <Activities />
       <Skills />
