@@ -28,7 +28,7 @@ const Title = ({ screenWidth }) => {
     <div style={style}>
       <h1 style={headerStyle}>
         Yusuke Miyazaki<br />
-        <small style={leadStyle}>Software Engineer in Kyoto, Japan</small>
+        <small style={leadStyle}>Software Engineer in Japan</small>
       </h1>
     </div>
   );
