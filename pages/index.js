@@ -1,19 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Button from 'material-ui/Button';
+import React from "react";
+import PropTypes from "prop-types";
+import Button from "material-ui/Button";
 import Dialog, {
   DialogTitle,
   DialogContent,
   DialogContentText,
   DialogActions,
-} from 'material-ui/Dialog';
-import Typography from 'material-ui/Typography';
-import { withStyles } from 'material-ui/styles';
-import withRoot from '../src/withRoot';
+} from "material-ui/Dialog";
+import Typography from "material-ui/Typography";
+import { withStyles } from "material-ui/styles";
+import withRoot from "../src/withRoot";
 
 const styles = theme => ({
   root: {
-    textAlign: 'center',
+    textAlign: "center",
     paddingTop: theme.spacing.unit * 20,
   },
 });
@@ -67,7 +67,7 @@ class Index extends React.Component {
 }
 
 Index.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired,  // eslint-disable-line
 };
 
 export default withRoot(withStyles(styles)(Index));

@@ -1,8 +1,8 @@
-import React from 'react';
-import Document, { Head, Main, NextScript } from 'next/document';
-import JssProvider from 'react-jss/lib/JssProvider';
-import flush from 'styled-jsx/server';
-import getPageContext from '../src/getPageContext';
+import React from "react";
+import Document, { Head, Main, NextScript } from "next/document";
+import JssProvider from "react-jss/lib/JssProvider";
+import flush from "styled-jsx/server";
+import getPageContext from "../src/getPageContext";
 
 class MyDocument extends Document {
   render() {
@@ -17,8 +17,8 @@ class MyDocument extends Document {
           <meta
             name="viewport"
             content={
-              'user-scalable=0, initial-scale=1, ' +
-              'minimum-scale=1, width=device-width, height=device-height'
+              "user-scalable=0, initial-scale=1, " +
+              "minimum-scale=1, width=device-width, height=device-height"
             }
           />
           {/* PWA primary color */}
@@ -37,7 +37,7 @@ class MyDocument extends Document {
   }
 }
 
-MyDocument.getInitialProps = ctx => {
+MyDocument.getInitialProps = (ctx) => {
   // Resolution order
   //
   // On the server:
