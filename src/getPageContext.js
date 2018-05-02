@@ -2,22 +2,22 @@
 
 import { SheetsRegistry } from "jss";
 import { createMuiTheme, createGenerateClassName } from "material-ui/styles";
-import purple from "material-ui/colors/purple";
-import green from "material-ui/colors/green";
+import deepOrange from "material-ui/colors/deepOrange";
+import indigo from "material-ui/colors/indigo";
 
 // A theme with custom primary and secondary color.
 // It's optional.
 const theme = createMuiTheme({
   palette: {
     primary: {
-      light: purple[300],
-      main: purple[500],
-      dark: purple[700],
+      light: indigo[300],
+      main: indigo[500],
+      dark: indigo[700],
     },
     secondary: {
-      light: green[300],
-      main: green[500],
-      dark: green[700],
+      light: deepOrange[300],
+      main: deepOrange[500],
+      dark: deepOrange[700],
     },
   },
 });
