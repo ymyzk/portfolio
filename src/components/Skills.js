@@ -19,7 +19,7 @@ const Skills = ({ classes, skills }) => (
   <div className={classes.root}>
     {
       skills.map(s => (
-        <Chip className={classes.chip} label={s} key={s}>{s}</Chip>
+        <Chip className={classes.chip} label={s} key={s} />
       ))
     }
   </div>
