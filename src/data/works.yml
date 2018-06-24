@@ -1,11 +1,34 @@
 # Day in start & end is not precise!
 
+- title: Software Engineer
+  company: Recruit Co., Ltd. (Indeed)
+  link: https://www.indeed.com/about
+  start: 2018-04-01
+  end: null
+  featured: true
+
 - title: Engineer
   company: HERP, Inc.
   link: https://herp.co.jp/
   start: 2017-04-01
   end: 2018-03-31
   featured: true
+
+# Introduction to Programming / プログラミング入門
+- title: Teaching Assistant
+  company: Graduate School of Informatics, Kyoto University
+  link: null
+  start: 2017-04-01
+  end: 2017-07-31
+  featured: false
+
+# Hardware and Software Laboratory Project 3 (Software) / 計算機科学実験及演習3 (ソフトウェア)
+- title: Teaching Assistant
+  company: Graduate School of Informatics, Kyoto University
+  link: null
+  start: 2016-04-01
+  end: 2016-07-31
+  featured: false
 
 - title: President & Co-founder
   company: Unimap, Inc.
