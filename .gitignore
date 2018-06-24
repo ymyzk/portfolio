@@ -1,7 +1,0 @@
-.DS_Store
-build/
-node_modules
-public/
-.idea/
-.npm
-.node_repl_history
