@@ -1,5 +1,7 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
+import ReactGA from "react-ga";
+
 import AppBar from "@material-ui/core/AppBar";
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -21,6 +23,13 @@ function withRoot(Component) {
       const jssStyles = document.querySelector("#jss-server-side");
       if (jssStyles && jssStyles.parentNode) {
         jssStyles.parentNode.removeChild(jssStyles);
+      }
+
+      // Google Analytics
+      // TODO: Update to initialize only once if we support multiple pages
+      if (process.env.NODE_ENV === "production") {
+        ReactGA.initialize("UA-41988513-2");
+        ReactGA.pageview(window.location.pathname);
       }
     }
 
