@@ -1,3 +1,4 @@
+import format from "date-fns/format";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -12,7 +13,7 @@ const WorkExperienceItem = ({ work }) => (
   <ListItem button component="a" href={work.link}>
     <ListItemText
       primary={`${work.title} of ${work.company}`}
-      secondary={`${work.start.format("MMM Y")}–${work.end ? work.end.format("MMM Y") : "Present"}`}
+      secondary={`${format(work.start, "MMM YYYY")}–${work.end ? format(work.end, "MMM YYYY") : "Present"}`}
     />
   </ListItem>
 );
@@ -44,7 +45,7 @@ class WorkExperience extends React.Component {
         {
           works
             .filter(w => (expanded ? true : w.featured))
-            .map(w => <WorkExperienceItem work={w} key={w.title + w.company + w.start.unix()} />)
+            .map(w => <WorkExperienceItem work={w} key={w.id} />)
         }
         <ListItem button>
           <ListItemIcon>
