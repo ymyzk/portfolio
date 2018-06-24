@@ -1,3 +1,4 @@
+// @flow
 import format from "date-fns/format";
 import PropTypes from "prop-types";
 import React from "react";
@@ -9,7 +10,26 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
-const WorkExperienceItem = ({ work }) => (
+type Work = {
+  id: number,
+  title: string,
+  work: ?string,
+  company: string,
+  start: Date,
+  end: ?Date,
+  featured: boolean,
+  link: ?string,
+};
+
+type Props = {
+  works: Array<Work>,
+};
+
+type State = {
+  expanded: boolean,
+};
+
+const WorkExperienceItem = ({ work } : { work: Work }) => (
   <ListItem button component="a" href={work.link}>
     <ListItemText
       primary={`${work.title} of ${work.company}`}
@@ -22,7 +42,7 @@ WorkExperienceItem.propTypes = {
   work: PropTypes.object.isRequired,
 };
 
-class WorkExperience extends React.Component {
+class WorkExperience extends React.Component<Props, State> {
   static propTypes = {
     works: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
   };
