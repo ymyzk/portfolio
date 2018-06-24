@@ -5,15 +5,18 @@
   link: https://herp.co.jp/
   start: 2017-04-01
   end: 2018-03-31
+  featured: true
 
 - title: President & Co-founder
   company: Unimap, Inc.
   link: http://www.unimap.co.jp/
   start: 2014-02-01
   end: 2017-04-01
+  featured: true
 
 - title: Office Assistant
   company: Graduate School of Pharmaceutical Sciences, Kyoto University
   link: null
   start: 2012-10-01
   end: 2014-09-30
+  featured: false
