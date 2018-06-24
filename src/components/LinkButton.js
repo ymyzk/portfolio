@@ -1,17 +1,17 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-import fontawesome from "@fortawesome/fontawesome";
 import faBrands from "@fortawesome/fontawesome-free-brands";
-import faEnvelope from "@fortawesome/fontawesome-free-solid/faEnvelope";
-import faGlobe from "@fortawesome/fontawesome-free-solid/faGlobe";
-import faRss from "@fortawesome/fontawesome-free-solid/faRss";
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons/faEnvelope";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons/faGlobe";
+import { faRss } from "@fortawesome/free-solid-svg-icons/faRss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
 import Button from "@material-ui/core/Button";
 import { withStyles } from "@material-ui/core/styles";
 
 // Use list of icons instead of faBrands for efficiency
-fontawesome.library.add(faBrands, faEnvelope, faGlobe, faRss);
+library.add(faBrands, faEnvelope, faGlobe, faRss);
 
 const style = theme => ({
   button: {
