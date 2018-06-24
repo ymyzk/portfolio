@@ -1,0 +1,191 @@
+- title: Python と Docker で mypy Playground を開発した話
+  event: PyCon mini Osaka 2018
+  date: 2018-05-19
+  link: http://osaka.pycon.jp/
+  slide: https://www.slideshare.net/yusukemiy/python-docker-mypy-playground-97573662
+
+- title: 学生エンジニアのやっていき方
+  event: CAMPHOR- DAY 2018
+  date: 2018-02-24
+  link: https://camphor.connpass.com/event/78028/
+  slide: null
+
+- title: CAMPHOR- のスケジュール管理を支える技術
+  event: 第3回 CAMPHOR- × KMC 合同LT会
+  date: 2017-10-29
+  link: https://camphor.connpass.com/event/68237/
+  slide: https://speakerdeck.com/ymyzk/schedule-management-in-camphor
+
+- title: Introducing wsgi_lineprof
+  event: PyCon JP 2017
+  date: 2017-09-08
+  link: https://pycon.jp/2017/ja/events/lightning-talks/
+  slide: https://www.slideshare.net/yusukemiy/introducing-wsgilineprof-pycon-jp-2017-lt
+
+- title: tmux 入門
+  event: CAMPHOR- CLI について語る会
+  date: 2017-05-28
+  link: https://camphor.connpass.com/event/57358/
+  slide: https://speakerdeck.com/ymyzk/introduction-to-tmux
+
+- title: A Type Reconstruction Algorithm for Gradually Typed Delimited Continuations
+  event: PPL 2017
+  date: 2017-03-08
+  link: https://ppl2017.ipl-e.ai.kyutech.ac.jp/
+  slide: null
+
+- title: 技術カンファレンスのススメ
+  event: サポーターズ勉強会
+  date: 2017-02-22
+  link: https://supporterz.connpass.com/event/50039/
+  slide: https://speakerdeck.com/ymyzk/tech-conference
+
+- title: JavaScript 入門
+  event: プログラミング言語入門大会
+  date: 2016-12-17
+  link: https://camphor.connpass.com/event/46259/
+  slide: http://www.slideshare.net/yusukemiy/javascript-70245661
+
+- title: オープンソースソフトウェア入門
+  event: CAMPHOR-
+  date: 2016-10-22
+  link: http://camphor.connpass.com/event/42186/
+  slide: http://www.slideshare.net/yusukemiy/ss-67742150
+
+- title: 型ヒントについて考えよう!
+  event: PyCon JP 2016
+  date: 2016-09-22
+  link: https://pycon.jp/2016/ja/schedule/presentation/52/
+  slide: http://www.slideshare.net/yusukemiy/ss-66288339
+
+- title: Gradual Typing for Delimited Continuations
+  event: STOP 2016
+  date: 2016-07-17
+  link: http://2016.ecoop.org/event/stop-2016-gradual-typing-for-delimited-continuations
+  slide: http://www.fos.kuis.kyoto-u.ac.jp/~miyazaki/papers/stop2016_slides.pdf
+
+- title: Proper Tail Calls - New Feature in ECMAScript 2015
+  event: Gee-Fes Kyoto
+  date: 2016-07-03
+  link: http://camphor.connpass.com/event/33988/
+  slide: https://speakerdeck.com/ymyzk/proper-tail-calls-new-feature-in-ecmascript-2015
+
+- title: Modern JavaScript
+  event: 五十嵐・末永研究室 昼食会
+  date: 2016-06-20
+  link: null
+  slide: https://speakerdeck.com/ymyzk/modern-javascript-introduction-to-ecmascript-2015-and-2016
+
+- title: コンテナ型仮想化入門
+  event: 五十嵐・末永研究室 昼食会
+  date: 2016-05-16
+  link: null
+  slide: https://speakerdeck.com/ymyzk/introduction-to-container-based-virtualization
+
+- title: Python プログラミング入門
+  event: CAMPHOR-
+  date: 2016-04-23
+  link: https://camphor.connpass.com/event/30035/
+  slide: null
+
+- title: 計算機科学実験及び演習のための Git
+  event: 計算機科学実験及び演習3
+  date: 2016-04-14
+  link: http://www.fos.kuis.kyoto-u.ac.jp/~umatani/le3b/
+  slide: https://speakerdeck.com/ymyzk/git-for-hardware-and-software-laboratory-project
+
+- title: Python の型ヒントの FAQ
+  event: 漸進的型付けについて語る会
+  date: 2016-03-20
+  link: http://camphor.connpass.com/event/28692/
+  slide: https://speakerdeck.com/ymyzk/faq-about-python-type-hints
+
+- title: Gradual Typing のいろいろな実装
+  event: 漸進的型付けについて語る会
+  date: 2016-03-20
+  link: http://camphor.connpass.com/event/28692/
+  slide: https://speakerdeck.com/ymyzk/various-implementations-of-gradual-typing
+
+- title: Python チュートリアル
+  event: "PyLadies Kyoto Meetup #2"
+  date: 2016-02-27
+  link: http://pyladies-kyoto.connpass.com/event/26993/
+  slide: null
+
+- title: iot.ymyzk.com の紹介
+  event: 第2回 CAMPHOR- x KMC 合同LT会
+  date: 2016-01-11
+  link: http://camphor.connpass.com/event/24746/
+  slide: http://www.slideshare.net/yusukemiy/iotymyzkcom
+
+- title: Django から各種チャットツールに通知するライブラリを作った話
+  event: PyCon JP 2015
+  date: 2015-10-10
+  link: https://pycon.jp/2015/ja/schedule/presentation/97/
+  slide: http://www.slideshare.net/yusukemiy/django-53764947
+
+- title: CAMPHOR- のご紹介
+  event: 町家交流会「町家BAR vol.26」
+  date: 2015-05-15
+  link: https://www.facebook.com/events/864525543585858/
+  slide: null
+
+- title: iOS 開発のいま
+  event: ADF2015 LT会
+  date: 2015-03-28
+  link: http://recruit-jinji.jp/adf_fes2015/
+  slide: http://www.slideshare.net/yusukemiy/ios-adf2015
+
+- title: iOS 開発のいま
+  event: CAMPHOR- x KMC 合同LT会
+  date: 2015-03-24
+  link: https://atnd.org/events/64077
+  slide: http://www.slideshare.net/yusukemiy/20150324-camphor-ltios
+
+- title: 京大マップのご紹介
+  event: 町家交流会「町家BAR vol.24」
+  date: 2015-01-16
+  link: https://www.facebook.com/events/455714917935343/
+  slide: null
+
+- title: Swift の問題点
+  event: CAMPHOR- 秋のLT会
+  date: 2014-10-25
+  link: https://www.facebook.com/events/750833814964828/
+  slide: http://www.slideshare.net/yusukemiy/20141025-camphor-ltswift
+
+- title: 最新の iOS に対応したアプリの開発
+  event: CAMPHOR- 秋のLT会
+  date: 2014-10-25
+  link: https://www.facebook.com/events/750833814964828/
+  slide: http://www.slideshare.net/yusukemiy/20141025-camphor-ios
+
+- title: コンピューターネットワーク入門
+  event: CAMPHOR- 土曜講座
+  date: 2014-10-11
+  link: https://atnd.org/events/56810
+  slide: http://www.slideshare.net/yusukemiy/ss-40165347
+
+- title: WWDC14 レポート + α
+  event: CAMPHOR- 土曜講座
+  date: 2014-06-28
+  link: https://atnd.org/events/52473
+  slide: null
+
+- title: Python プログラミング入門
+  event: CAMPHOR-
+  date: 2014-04-20
+  link: https://atnd.org/events/49435
+  slide: null
+
+- title: サーバー構築入門
+  event: CAMPHOR- 土曜講座
+  date: 2014-03-22
+  link: https://atnd.org/events/48404
+  slide: null
+
+- title: HTML初心者講座
+  event: CAMPHOR- 土曜講座
+  date: 2013-11-15
+  link: https://www.facebook.com/events/536811879747181/
+  slide: http://www.slideshare.net/yusukemiy/html4beginners

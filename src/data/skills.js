@@ -1,23 +1,3 @@
-const skills = [
-  "C",
-  "CSS",
-  "Debian",
-  "Django",
-  // ".NET Framework",
-  "HTML",
-  "iOS",
-  "Java",
-  "JavaScript",
-  "Linux",
-  "Mac OS X",
-  "Objective-C",
-  "OCaml",
-  // "PHP",
-  "Python",
-  // "R",
-  "Ruby",
-  "Scheme",
-  "Swift",
-];
+import skills from "./skills.json";
 
 export default skills;

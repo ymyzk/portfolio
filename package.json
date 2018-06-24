@@ -23,8 +23,11 @@
     "styled-jsx": "^2.2.6"
   },
   "scripts": {
-    "dev": "next",
-    "build": "next build",
+    "dev": "run-s build:yaml2json dev:next",
+    "dev:next": "next",
+    "build": "run-s build:yaml2json build:next",
+    "build:next": "next build",
+    "build:yaml2json": "./bin/yaml2json.sh",
     "start": "next start"
   },
   "devDependencies": {
@@ -35,6 +38,8 @@
     "eslint-loader": "^2.0.0",
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.7.0"
+    "eslint-plugin-react": "^7.7.0",
+    "js-yaml": "^3.12.0",
+    "npm-run-all": "^4.1.3"
   }
 }
