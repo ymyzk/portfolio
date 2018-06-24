@@ -1,69 +1,69 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Button from "@material-ui/core/Button";
-import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
-import DialogTitle from "@material-ui/core/DialogTitle";
+
+import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
+
+import GridContainer from "../src/components/GridContainer";
+import Hero from "../src/components/Hero";
+import Links from "../src/components/Links";
+import Skills from "../src/components/Skills";
+import TalkList from "../src/components/TalkList";
+import WorkExperience from "../src/components/WorkExperience";
+import links from "../src/data/links";
+import skills from "../src/data/skills";
+import talks from "../src/data/talks";
+import works from "../src/data/works";
 import withRoot from "../src/withRoot";
 
 const styles = theme => ({
   root: {
     textAlign: "center",
-    paddingTop: theme.spacing.unit * 20,
+  },
+  section: {
+    paddingBottom: theme.spacing.unit * 3,
+    paddingTop: theme.spacing.unit * 3,
+  },
+  sectionHeader: {
+    fontSize: 34,
+    fontWeight: 300,
+    paddingBottom: theme.spacing.unit / 2,
+    paddingTop: theme.spacing.unit / 2,
   },
 });
 
-class Index extends React.Component {
-  state = {
-    open: false,
-  };
-
-  handleClose = () => {
-    this.setState({
-      open: false,
-    });
-  };
-
-  handleClick = () => {
-    this.setState({
-      open: true,
-    });
-  };
-
-  render() {
-    const { classes } = this.props;
-    const { open } = this.state;
-
-    return (
-      <div className={classes.root}>
-        <Dialog open={open} onClose={this.handleClose}>
-          <DialogTitle>Super Secret Password</DialogTitle>
-          <DialogContent>
-            <DialogContentText>1-2-3-4-5</DialogContentText>
-          </DialogContent>
-          <DialogActions>
-            <Button color="primary" onClick={this.handleClose}>
-              OK
-            </Button>
-          </DialogActions>
-        </Dialog>
-        <Typography variant="display1" gutterBottom>
-          Material-UI
+const Index = ({ classes }) => (
+  <div className={classes.root}>
+    <Hero />
+    <GridContainer>
+      <Grid item xs={12} className={classes.section}>
+        <Typography className={classes.sectionHeader} component="h2">
+          Work Experience
         </Typography>
-        <Typography variant="subheading" gutterBottom>
-          example project
+        <WorkExperience works={works} />
+      </Grid>
+      <Grid item xs={12} className={classes.section}>
+        <Typography className={classes.sectionHeader} component="h2">
+          Recent Talks
         </Typography>
-        <Button variant="raised" color="secondary" onClick={this.handleClick}>
-          Super Secret Password
-        </Button>
-      </div>
-    );
-  }
-}
+        <TalkList talks={talks.slice(0, 3)} />
+      </Grid>
+      <Grid item xs={12} className={classes.section}>
+        <Typography className={classes.sectionHeader} component="h2">
+          Skills
+        </Typography>
+        <Skills skills={skills} />
+      </Grid>
+      <Grid item xs={12} className={classes.section}>
+        <Typography className={classes.sectionHeader} component="h2">
+          Links
+        </Typography>
+        <Links links={links} />
+      </Grid>
+    </GridContainer>
+  </div>
+);
 
 Index.propTypes = {
   classes: PropTypes.object.isRequired,  // eslint-disable-line

@@ -9,6 +9,8 @@ rules:
   # Following rules may be changed in the future
   import/extensions:  # Bug??
     - off
+  react/forbid-prop-types:
+    - off
   react/jsx-filename-extension:
     - off
   react/jsx-no-target-blank:
