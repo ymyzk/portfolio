@@ -44,7 +44,7 @@ class WorkExperience extends React.Component {
         {
           works
             .filter(w => (expanded ? true : w.featured))
-            .map(w => <WorkExperienceItem work={w} key={w.title + w.company} />)
+            .map(w => <WorkExperienceItem work={w} key={w.title + w.company + w.start.unix()} />)
         }
         <ListItem button>
           <ListItemIcon>
