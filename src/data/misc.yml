@@ -1,0 +1,50 @@
+#- title: Indeed University
+#  subtitle: 日経プラス10
+#  date: 2018-04-24
+#  link: http://www.bs-j.co.jp/plus10/
+
+- title: ISUCON7 学生1位 / 総合7位
+  subtitle: ISUCON
+  date: 2017-11-25
+  link: http://isucon.net/archives/50949022.html
+  featured: true
+
+# - title: ありそでなかった100社以上「学生起業家スタートアップ 大学別マップ」
+#   subtitle: Startup Times
+#   date: 2017-05-23
+#   link: http://startuptimes.jp/100-start-ups-from-university/
+
+# - title: 大学別の学生起業家数ランキング、1位は慶応
+#   subtitle: ITmedia ビジネスオンライン
+#   date: 2017-05-23
+#   link: http://www.itmedia.co.jp/business/articles/1705/23/news132.html
+
+- title: 大学生活に役立つスマホアプリ・ツール紹介
+  subtitle: 京都大学情報環境機構広報誌「Info!」 No.5
+  date: 2015-10-26
+  link: http://www.iimc.kyoto-u.ac.jp/info5%20.pdf
+  featured: false
+
+- title: 京都のIT系学生コミュニティ"CAMPHOR-"の魅力とは!?
+  subtitle: Out;Elite
+  date: 2015-09-17
+  link: http://out-elite.com/camphor
+  featured: false
+
+- title: WWDC 2014 Student Scholarship
+  subtitle: Apple
+  date: 2014-06-02
+  link: https://developer.apple.com/wwdc/
+  featured: true
+
+- title: 株式会社Unimap、アカリクVALUATORを引受先とした第三者割当増資を実施
+  subtitle: "@Press"
+  date: 2014-04-02
+  link: http://www.atpress.ne.jp/view/44784
+  featured: false
+
+- title: 「鶉野飛行場」スマホで案内　京大生のアプリ好評
+  subtitle: 神戸新聞朝刊 北播版
+  date: 2014-01-14
+  link: http://www.kobe-np.co.jp/news/hokuban/201401/0006636797.shtml
+  featured: false
