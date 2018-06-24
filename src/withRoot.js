@@ -12,10 +12,13 @@ import getPageContext from "./getPageContext";
 
 function withRoot(Component) {
   class WithRoot extends React.Component {
+    pageContext = null;
+
     constructor(props, context) {
       super(props, context);
 
-      this.pageContext = this.props.pageContext || getPageContext();
+      const { pageContext } = this.props;
+      this.pageContext = pageContext || getPageContext();
     }
 
     componentDidMount() {
@@ -32,8 +35,6 @@ function withRoot(Component) {
         ReactGA.pageview(window.location.pathname);
       }
     }
-
-    pageContext = null;
 
     render() {
       const title = "Yusuke Miyazaki";

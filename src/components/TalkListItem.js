@@ -16,7 +16,15 @@ const TalkListItem = ({ talk }) => {
     >
       <ListItemText
         primary={talk.title}
-        secondary={<span>{talk.event} - <time dateTime={dateIso}>{dateString}</time></span>}
+        secondary={(
+          <span>
+            {talk.event}
+            {" - "}
+            <time dateTime={dateIso}>
+              {dateString}
+            </time>
+          </span>
+)}
       />
     </ListItem>
   );

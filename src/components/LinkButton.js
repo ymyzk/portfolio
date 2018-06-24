@@ -26,7 +26,11 @@ const LinkButton = ({ classes, link }) => {
   if (link.icon) {
     icon = <FontAwesomeIcon icon={link.icon} />;
   } else if (link.text) {
-    icon = <span>{ link.text }</span>;
+    icon = (
+      <span>
+        { link.text }
+      </span>
+    );
   } else {
     icon = <FontAwesomeIcon icon="globe" />;
   }

@@ -59,8 +59,11 @@ const Hero = ({ classes }) => {
       <div className={classes.background}>
         <div className={classes.titleWrapper}>
           <h1 className={classes.titleHeader}>
-            Yusuke Miyazaki<br />
-            <small className={classes.titleLead}>Software Engineer in Japan</small>
+            Yusuke Miyazaki
+            <br />
+            <small className={classes.titleLead}>
+              Software Engineer in Japan
+            </small>
           </h1>
         </div>
         <div className={classes.buttonWrapper}>
