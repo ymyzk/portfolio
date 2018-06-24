@@ -1,21 +1,11 @@
-# Next.js example
+# portfolio
 
-## How to use
+[![Build Status](https://travis-ci.org/ymyzk/portfolio.svg?branch=master)](https://travis-ci.org/ymyzk/portfolio)
+[![Dependency Status](https://david-dm.org/ymyzk/portfolio.svg)](https://david-dm.org/ymyzk/portfolio)
+[![devDependency Status](https://david-dm.org/ymyzk/portfolio/dev-status.svg)](https://david-dm.org/ymyzk/portfolio#info=devDependencies)
+[![Docker Pulls](https://img.shields.io/docker/pulls/ymyzk/portfolio.svg)](https://hub.docker.com/r/ymyzk/portfolio/)
 
-Download the example [or clone the repo](https://github.com/mui-org/material-ui):
-
-```bash
-curl https://codeload.github.com/mui-org/material-ui/tar.gz/v1-beta | tar -xz --strip=2  material-ui-1-beta/examples/nextjs
-cd nextjs
+## Development
+```console
+$ yarn dev
 ```
-
-Install it and run:
-
-```bash
-npm install
-npm run dev
-```
-
-## The idea behind the example
-
-[Next.js](https://github.com/zeit/next.js) is a framework for server-rendered React apps.
