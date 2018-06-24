@@ -4,6 +4,7 @@ node_js:
 cache: yarn
 script:
   - yarn run build
+  - yarn run flow check
 sudo: false
 notifications:
   slack:
