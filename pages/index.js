@@ -20,9 +20,7 @@ import works from "../src/data/works";
 import withRoot from "../src/withRoot";
 
 const styles = theme => ({
-  root: {
-    textAlign: "center",
-  },
+  root: {},
   section: {
     paddingBottom: theme.spacing.unit * 3,
     paddingTop: theme.spacing.unit * 3,
@@ -32,6 +30,7 @@ const styles = theme => ({
     fontWeight: 300,
     paddingBottom: theme.spacing.unit / 2,
     paddingTop: theme.spacing.unit / 2,
+    textAlign: "center",
   },
 });
 
