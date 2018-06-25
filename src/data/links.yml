@@ -1,11 +1,11 @@
-- name: Amazon
+- name: Amazon Wish List
   url: http://amzn.asia/iyNyA3h
   icon: [fab, amazon]
   color: "#ff9900"
 
-- name: Bitcoin
-  url: https://blockchain.info/address/12PPiEo7nK67694wZnS7Mw8X6XCzHmWTP9
-  icon: [fab, btc]
+#- name: Bitcoin
+#  url: https://blockchain.info/address/12PPiEo7nK67694wZnS7Mw8X6XCzHmWTP9
+#  icon: [fab, btc]
 
 - name: Blog
   url: https://blog.ymyzk.com/
@@ -38,16 +38,16 @@
 
 - name: Speaker Deck
   url: https://speakerdeck.com/ymyzk
-  text: SD
-  color: "#396"
+  icon: custom-speakerdeck
+  color: "#009287"
 
 - name: Twitter
   url: https://twitter.com/ymyzk
   icon: [fab, twitter]
   color: "#1da1f2"
 
-- name: Wantedly
-  url: https://www.wantedly.com/users/2289515
-  icon: null
-  text: W
-  color: "#00a4bb"
+#- name: Wantedly
+#  url: https://www.wantedly.com/users/2289515
+#  icon: null
+#  text: W
+#  color: "#00a4bb"

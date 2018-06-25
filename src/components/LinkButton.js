@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import Button from "@material-ui/core/Button";
 import { withStyles } from "@material-ui/core/styles";
+import SvgIcon from "@material-ui/core/SvgIcon";
 
 // Use list of icons instead of faBrands for efficiency
 library.add(faBrands, faEnvelope, faGlobe, faRss);
@@ -21,10 +22,24 @@ const style = theme => ({
   },
 });
 
+function SpeakerDeckIcon(props) {
+  return (
+    <SvgIcon viewBox="0 0 32 32" {...props}>
+      <path d="M13.37,18.5H6.25A6.25,6.25,0,0,1,6.25,6h8.3a2.5,2.5,0,0,1,0,5H6.12a1.25,1.25,0,0,0,0,2.5h7.12a6.25,6.25,0,0,1,0,12.5H2.5a2.5,2.5,0,0,1,0-5H13.37a1.25,1.25,0,0,0,0-2.5ZM18.63,26a7.5,7.5,0,0,0,3.19-5h4a1.24,1.24,0,0,0,1.22-1.25v-7.5A1.24,1.24,0,0,0,25.86,11H18.53a3.79,3.79,0,0,0,0-5h8.55A5,5,0,0,1,32,11V21a5,5,0,0,1-4.92,5Z" />
+    </SvgIcon>
+  );
+}
+
 const LinkButton = ({ classes, link }) => {
   let icon;
   if (link.icon) {
-    icon = <FontAwesomeIcon icon={link.icon} />;
+    switch (link.icon) {
+      case "custom-speakerdeck":
+        icon = <SpeakerDeckIcon />;
+        break;
+      default:
+        icon = <FontAwesomeIcon icon={link.icon} />;
+    }
   } else if (link.text) {
     icon = (
       <span>
