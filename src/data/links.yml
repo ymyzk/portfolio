@@ -1,52 +1,52 @@
-- name: Amazon Wish List
+- title: Amazon Wish List
   url: http://amzn.asia/iyNyA3h
   icon: [fab, amazon]
   color: "#ff9900"
 
-#- name: Bitcoin
+#- title: Bitcoin
 #  url: https://blockchain.info/address/12PPiEo7nK67694wZnS7Mw8X6XCzHmWTP9
 #  icon: [fab, btc]
 
-- name: Blog
+- title: Blog
   url: https://blog.ymyzk.com/
   icon: rss
   color: "#f26522"
 
-- name: E-mail
+- title: E-mail
   url: mailto:miyazaki.dev@gmail.com
   icon: envelope
 
-- name: Facebook
+- title: Facebook
   url: https://www.facebook.com/ymyzk
   icon: [fab, facebook]
   color: "#3b5998"
 
-- name: GitHub
+- title: GitHub
   url: https://github.com/ymyzk
   icon: [fab, github]
   color: "#333"
 
-- name: LinkedIn
+- title: LinkedIn
   url: https://www.linkedin.com/in/yusuke-miyazaki-4b197774
   icon: [fab, linkedin]
   color: "#0077b5"
 
-- name: Slideshare
+- title: Slideshare
   url: http://www.slideshare.net/yusukemiy/
   icon: [fab, slideshare]
   color: "#0077b5"
 
-- name: Speaker Deck
+- title: Speaker Deck
   url: https://speakerdeck.com/ymyzk
   icon: custom-speakerdeck
   color: "#009287"
 
-- name: Twitter
+- title: Twitter
   url: https://twitter.com/ymyzk
   icon: [fab, twitter]
   color: "#1da1f2"
 
-#- name: Wantedly
+#- title: Wantedly
 #  url: https://www.wantedly.com/users/2289515
 #  icon: null
 #  text: W

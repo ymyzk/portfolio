@@ -10,6 +10,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import Button from "@material-ui/core/Button";
 import { withStyles } from "@material-ui/core/styles";
 import SvgIcon from "@material-ui/core/SvgIcon";
+import Tooltip from "@material-ui/core/Tooltip";
 
 // Use list of icons instead of faBrands for efficiency
 library.add(faBrands, faEnvelope, faGlobe, faRss);
@@ -50,16 +51,18 @@ const LinkButton = ({ classes, link }) => {
     icon = <FontAwesomeIcon icon="globe" />;
   }
   return (
-    <Button
-      className={classes.button}
-      variant="fab"
-      color="primary"
-      href={link.url}
-      target="_blank"
-      style={{ backgroundColor: link.color }}
-    >
-      { icon }
-    </Button>
+    <Tooltip title={link.title}>
+      <Button
+        className={classes.button}
+        variant="fab"
+        color="primary"
+        href={link.url}
+        target="_blank"
+        style={{ backgroundColor: link.color }}
+      >
+        { icon }
+      </Button>
+    </Tooltip>
   );
 };
 
