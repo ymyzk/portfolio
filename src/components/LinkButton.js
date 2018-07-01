@@ -39,7 +39,11 @@ const LinkButton = ({ classes, link }) => {
         icon = <SpeakerDeckIcon />;
         break;
       default:
-        icon = <FontAwesomeIcon icon={link.icon} />;
+        icon = (
+          <span style={{ fontSize: 24 }}>
+            <FontAwesomeIcon icon={link.icon} />
+          </span>
+        );
     }
   } else if (link.text) {
     icon = (
@@ -48,7 +52,11 @@ const LinkButton = ({ classes, link }) => {
       </span>
     );
   } else {
-    icon = <FontAwesomeIcon icon="globe" />;
+    icon = (
+      <span style={{ fontSize: 24 }}>
+        <FontAwesomeIcon icon="globe" />
+      </span>
+    );
   }
   return (
     <Tooltip title={link.title}>
