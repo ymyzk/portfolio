@@ -23,6 +23,19 @@ class MyDocument extends Document {
               + "minimum-scale=1, width=device-width, height=device-height"
             }
           />
+          {/* Favicon */}
+          <link
+            rel="shortcut icon"
+            type="image/x-icon"
+            href="/static/images/favicon.ico"
+            sizes="16x16 32x32 48x48"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            href="/static/images/favicon.png"
+            sizes="256x256"
+          />
           {/* PWA primary color */}
           <meta name="theme-color" content={pageContext.theme.palette.primary.main} />
           <link
