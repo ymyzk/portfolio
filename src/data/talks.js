@@ -1,10 +1,10 @@
-import moment from "moment";
+import parse from "date-fns/parse";
 
 import rawTalks from "./talks.json";
 
 const talks = rawTalks.map((t, i) => Object.assign(t, {
   id: i,
-  date: moment(t.date),
+  date: parse(t.date),
 }));
 
 export default talks;

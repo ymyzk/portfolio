@@ -1,3 +1,4 @@
+import format from "date-fns/format";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -5,8 +6,8 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 
 const TalkListItem = ({ talk }) => {
-  const dateString = talk.date.format("YYYY-M-D");
-  const dateIso = talk.date.format("YYYY-MM-DD");
+  const dateString = format(talk.date, "YYYY-M-D");
+  const dateIso = format(talk.date, "YYYY-MM-DD");
   const href = talk.slide ? talk.slide : (talk.link ? talk.link : "#"); // eslint-disable-line no-nested-ternary
   return (
     <ListItem
