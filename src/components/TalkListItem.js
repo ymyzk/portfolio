@@ -19,11 +19,11 @@ const TalkListItem = ({ talk }) => {
         primary={talk.title}
         secondary={(
           <span>
-            {talk.event}
-            {" - "}
             <time dateTime={dateIso}>
               {dateString}
             </time>
+            {" — "}
+            {talk.event}
           </span>
 )}
       />
