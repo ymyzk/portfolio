@@ -46,9 +46,9 @@ const Index = ({ classes }) => (
       </Grid>
       <Grid item xs={12} className={classes.section}>
         <Typography className={classes.sectionHeader} component="h2">
-          Recent Talks
+          Talks
         </Typography>
-        <TalkList talks={talks.slice(0, 3)} />
+        <TalkList talks={talks} />
       </Grid>
       <Grid item xs={12} className={classes.section}>
         <Typography className={classes.sectionHeader} component="h2">
