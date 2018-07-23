@@ -4,6 +4,16 @@
   "description": "Portfolio",
   "author": "Yusuke Miyazaki",
   "private": true,
+  "scripts": {
+    "dev": "run-s build:yaml2json dev:next",
+    "dev:next": "next",
+    "build": "run-s build:yaml2json build:next",
+    "build:next": "next build",
+    "build:yaml2json": "./bin/yaml2json.sh",
+    "start": "next start",
+    "test": "run-s test:*",
+    "test:flow": "flow check"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.0",
     "@fortawesome/free-brands-svg-icons": "^5.1.1",
@@ -22,16 +32,6 @@
     "react-jss": "^8.4.0",
     "smoothscroll": "^0.4.0",
     "styled-jsx": "^2.2.6"
-  },
-  "scripts": {
-    "dev": "run-s build:yaml2json dev:next",
-    "dev:next": "next",
-    "build": "run-s build:yaml2json build:next",
-    "build:next": "next build",
-    "build:yaml2json": "./bin/yaml2json.sh",
-    "start": "next start",
-    "test": "run-s test:*",
-    "test:flow": "flow check"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",
