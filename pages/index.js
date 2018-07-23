@@ -41,6 +41,10 @@ const Index = ({ classes }) => (
     <Hero />
     <GridContainer>
       <Grid item xs={12} className={classes.section}>
+        <div style={{ height: 50 }} />
+        <Links links={links} />
+      </Grid>
+      <Grid item xs={12} className={classes.section}>
         <Typography className={classes.sectionHeader} component="h2">
           Work Experience
         </Typography>
@@ -63,12 +67,6 @@ const Index = ({ classes }) => (
           Skills
         </Typography>
         <Skills skills={skills} />
-      </Grid>
-      <Grid item xs={12} className={classes.section}>
-        <Typography className={classes.sectionHeader} component="h2">
-          Links
-        </Typography>
-        <Links links={links} />
       </Grid>
       <Grid item xs={12} className={classes.section}>
         <Typography className={classes.sectionHeader} component="h2">
