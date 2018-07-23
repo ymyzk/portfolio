@@ -4,6 +4,7 @@
   start: 2012-10-01
   end: null
   tags: [Django, iOS, Python, Web]
+  featured: true
   description: 京都大学内の情報共有地図アプリ。大学内の地図情報・イベント情報共有機能など。
 
 - title: 鶉野マップ
@@ -12,6 +13,7 @@
   start: 2013-06-04
   end: null
   tags: [iOS]
+  featured: true
   description: 全国でも珍しい戦争遺跡群が残る、兵庫県加西市鶉野(うずらの)飛行場跡の地図・ナビアプリ。
 
 - title: kawasemi
@@ -20,6 +22,7 @@
   start: 2015-05-03
   end: null
   tags: [Library, Python]
+  featured: true
   description: Python アプリケーションから簡単に Slack や HipChat に通知を送ることができるライブラリ。
 
 - title: wsgi_lineprof
@@ -28,13 +31,15 @@
   start: 2016-10-02
   end: null
   tags: [Library, Python]
+  featured: true
   description: WSGI ミドルウェアとして使えるラインプロファイラ。
 
 - title: python-gyazo
   link: https://github.com/ymyzk/python-gyazo
   start: 2014-07-25
-  end: null
+  end: true
   tags: [Library, Python]
+  featured: false
   description: Python から Gyazo API を利用するためのラッパーとユーティリティー。
 
 - title: CAMPHOR- Website
@@ -43,6 +48,7 @@
   start: 2014-10-16
   end: null
   tags: [Django, Python, HTML, CSS, JavaScript, Web]
+  featured: true
   description: CAMPHOR- の Web サイト。デザイン以外の実装や運用全般を担当。
 
 - title: IPSJ77Now⤴︎⤴︎
@@ -51,6 +57,7 @@
   start: 2015-01-18
   end: 2015-03-20
   tags: [Node.js, HTML, CSS, JavaScript, Web]
+  featured: true
   description: 情報処理学会第77回全国大会のために作成したサービス。主にフロントエンドとインフラ周りを担当。
 
 - title: bottle-yotoslack
@@ -59,6 +66,7 @@
   start: 2015-05-04
   end: 2016-07-02
   tags: [Bottle, Python, Web]
+  featured: false
   description: Yo を受け取った際に、Slack に通知を送信するシンプルな Web アプリケーション。
 
 - title: hanreki
@@ -66,6 +74,7 @@
   start: 2015-04-03
   end: null
   tags: [Ruby]
+  featured: false
   description: CAMPHOR- のスケジュール管理を行う CLI ツール。iCal・JSON 形式で API を提供し様々な場所で運用中。
 
 - title: YMNetworkActivityManager
@@ -73,6 +82,7 @@
   start: 2013-09-20
   end: null
   tags: [iOS, Library]
+  featured: false
   description: YMNetworkActivityManager。iOS のステータスバーの network activity indicator を管理するためのシンプルなライブラリ。
 
 - title: itcdownloader
@@ -80,6 +90,7 @@
   start: 2013-07-21
   end: null
   tags: [Bash, Utility]
+  featured: false
   description: iTunes Connect からレポートファイルを自動的にダウンロードするためのユーティリテイー。
 
 - title: tex-to-gif
@@ -87,6 +98,7 @@
   start: 2017-01-18
   end: null
   tags: [Bash]
+  featured: false
   description: Convert a TeX document into an animation GIF.
 
 - title: itgl
@@ -94,6 +106,7 @@
   start: 2016-06-10
   end: null
   tags: [OCaml]
+  featured: false
   description: Implicitly Typed Gradual Language の型推論アルゴリズムの実装。
 
 - title: fj
@@ -101,6 +114,7 @@
   start: 2015-06-29
   end: null
   tags: [Java, OCaml]
+  featured: false
   description: OCaml で実装された Featherweight Java の型検査器。
 
 - title: spim-for-kuis
@@ -108,6 +122,7 @@
   start: 2016-04-21
   end: null
   tags: [C]
+  featured: false
   description: MIPS シミュレータの spim をフォークし、機能を追加。
 
 - title: sasm
@@ -115,6 +130,7 @@
   start: 2014-05-02
   end: 2014-05-26
   tags: [Python]
+  featured: false
   description: Python で実装されたシンプルで拡張しやすいアセンブラー。
 
 - title: sasmweb
@@ -122,6 +138,7 @@
   start: 2014-05-23
   end: null
   tags: [Python, Web]
+  featured: false
   description: sasm をブラウザから簡単に利用できるようにした Web アプリケーション。
 
 - title: YMCalendarActivity
@@ -129,6 +146,7 @@
   start: 2013-07-04
   end: null
   tags: [iOS, Library]
+  featured: false
   description: カレンダーにイベントを追加する機能を追加する UIActivity。
 
 - title: yo.zsh
@@ -136,6 +154,7 @@
   start: 2015-01-31
   end: null
   tags: [Zsh]
+  featured: false
   description: コマンドラインから Yo を送るためのシェルスクリプト。補完機能も実装。
 
 - title: homebrew-ymyzk
@@ -143,6 +162,7 @@
   start: 2015-01-26
   end: null
   tags: [Ruby]
+  featured: false
   description: Some useful formulae for Homebrew.
 
 - title: iOS Compatibility Chart
@@ -150,6 +170,7 @@
   start: 2013-06-30
   end: 2013-12-31
   tags: [Python, Web]
+  featured: false
   description: iOS の各バージョンとそのバージョンに対応した iOS デバイスが簡単に分かるサービス。
 
 - title: RTConnect
@@ -157,4 +178,5 @@
   start: 2013-06-11
   end: 2014-09-20
   tags: [Library, R]
+  featured: false
   description: iTunes Connect のレポートファイルを R で解析するためのライブラリ。
