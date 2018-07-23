@@ -38,7 +38,7 @@ const ProjectCard = ({ classes, project }) => {
     }
     const endYear = getYear(project.end);
     // 終了済み
-    return endYear ? `${startYear}` : `${startYear}–${endYear}`;
+    return startYear === endYear ? `${startYear}` : `${startYear}–${endYear}`;
   })();
   const tags = [durationTag].concat(project.tags);
   return (
