@@ -2,7 +2,7 @@
   link: http://www.kyodaimap.net/
   image: kyodaimap.png
   start: 2012-10-01
-  end: null
+  end: 2017-03-31
   tags: [Django, iOS, Python, Web]
   featured: true
   description: 京都大学内の情報共有地図アプリ。大学内の地図情報・イベント情報共有機能など。
@@ -11,7 +11,7 @@
   link: https://geo.itunes.apple.com/jp/app/chun-yemappu/id655525538?mt=8
   image: uzuranomap.png
   start: 2013-06-04
-  end: null
+  end: 2017-04-07
   tags: [iOS]
   featured: true
   description: 全国でも珍しい戦争遺跡群が残る、兵庫県加西市鶉野(うずらの)飛行場跡の地図・ナビアプリ。
@@ -46,7 +46,7 @@
   link: https://camph.net
   image: camphor-website.jpg
   start: 2014-10-16
-  end: null
+  end: 2018-03-31
   tags: [Django, Python, HTML, CSS, JavaScript, Web]
   featured: true
   description: CAMPHOR- の Web サイト。デザイン以外の実装や運用全般を担当。
