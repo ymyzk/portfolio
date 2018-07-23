@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-import faBrands from "@fortawesome/fontawesome-free-brands";
+// fab represents all brand icons
+import { fab } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons/faEnvelope";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons/faGlobe";
 import { faRss } from "@fortawesome/free-solid-svg-icons/faRss";
@@ -13,7 +14,7 @@ import SvgIcon from "@material-ui/core/SvgIcon";
 import Tooltip from "@material-ui/core/Tooltip";
 
 // Use list of icons instead of faBrands for efficiency
-library.add(faBrands, faEnvelope, faGlobe, faRss);
+library.add(fab, faEnvelope, faGlobe, faRss);
 
 const style = theme => ({
   button: {

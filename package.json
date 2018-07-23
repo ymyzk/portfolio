@@ -5,8 +5,8 @@
   "author": "Yusuke Miyazaki",
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-free-brands": "^5.0.13",
     "@fortawesome/fontawesome-svg-core": "^1.2.0",
+    "@fortawesome/free-brands-svg-icons": "^5.1.1",
     "@fortawesome/free-solid-svg-icons": "^5.1.0",
     "@fortawesome/react-fontawesome": "0.1.0",
     "@material-ui/core": "^1.0.0",
