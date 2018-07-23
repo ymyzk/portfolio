@@ -13,4 +13,4 @@ RUN ["yarn", "run", "build"]
 
 EXPOSE 3000
 
-CMD ["yarn", "run", "start"]
+CMD ["yarn", "run", "start", "-H", "0.0.0.0"]
