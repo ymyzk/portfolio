@@ -9,11 +9,13 @@ import GridContainer from "../src/components/GridContainer";
 import Hero from "../src/components/Hero";
 import Links from "../src/components/Links";
 import Misc from "../src/components/Misc";
+import ProjectCardList from "../src/components/ProjectCardList";
 import Skills from "../src/components/Skills";
 import TalkList from "../src/components/TalkList";
 import WorkExperience from "../src/components/WorkExperience";
 import links from "../src/data/links";
 import misc from "../src/data/misc";
+import projects from "../src/data/projects";
 import skills from "../src/data/skills";
 import talks from "../src/data/talks";
 import works from "../src/data/works";
@@ -49,6 +51,12 @@ const Index = ({ classes }) => (
           Talks
         </Typography>
         <TalkList talks={talks} />
+      </Grid>
+      <Grid item xs={12} className={classes.section}>
+        <Typography className={classes.sectionHeader} component="h2">
+          Projects
+        </Typography>
+        <ProjectCardList projects={projects} />
       </Grid>
       <Grid item xs={12} className={classes.section}>
         <Typography className={classes.sectionHeader} component="h2">
