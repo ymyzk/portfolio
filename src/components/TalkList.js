@@ -12,7 +12,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import TalkListItem from "./TalkListItem";
 
 type Props = {
-  talks: Array<any>,
+  talks: Array<Talk>,
 };
 
 type State = {

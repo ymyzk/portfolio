@@ -6,14 +6,6 @@ import React from "react";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 
-type Talk = {
-  title: string,
-  event: string,
-  date: Date,
-  link: ?string,
-  slide: ?string,
-};
-
 type Props = {
   talk: Talk,
 };

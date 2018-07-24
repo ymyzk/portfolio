@@ -27,7 +27,7 @@ type State = {
   expanded: boolean,
 };
 
-const MiscItem = ({ misc } : { misc: Misc }) => (
+const MiscItem = ({ misc }: { misc: Misc }) => (
   <ListItem button component="a" href={misc.link}>
     <ListItemText
       primary={misc.title}

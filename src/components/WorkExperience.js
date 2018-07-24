@@ -29,7 +29,7 @@ type State = {
   expanded: boolean,
 };
 
-const WorkExperienceItem = ({ work } : { work: Work }) => (
+const WorkExperienceItem = ({ work }: { work: Work }) => (
   <ListItem button component="a" href={work.link}>
     <ListItemText
       primary={`${work.title} of ${work.company}`}
