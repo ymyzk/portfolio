@@ -13,7 +13,8 @@
     "export": "next export",
     "start": "next start",
     "test": "run-s test:*",
-    "test:flow": "flow check"
+    "test:flow": "flow check",
+    "test:lint": "eslint next.config.js pages src"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.0",
