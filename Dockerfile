@@ -10,6 +10,7 @@ RUN yarn \
 COPY . /app/
 
 RUN ["yarn", "run", "build"]
+RUN ["yarn", "run", "export"]
 
 EXPOSE 3000
 
