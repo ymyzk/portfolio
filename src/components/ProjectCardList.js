@@ -1,3 +1,4 @@
+// @flow
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -5,7 +6,11 @@ import Grid from "@material-ui/core/Grid";
 
 import ProjectCard from "./ProjectCard";
 
-const ProjectCardList = ({ projects }) => (
+type Props = {
+  projects: Array<any>,
+};
+
+const ProjectCardList = ({ projects }: Props) => (
   <Grid container spacing={16}>
     {
       projects.filter(p => p.featured).map(p => (

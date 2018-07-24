@@ -1,3 +1,4 @@
+// @flow
 import getYear from "date-fns/get_year";
 import PropTypes from "prop-types";
 import React from "react";

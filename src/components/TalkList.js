@@ -1,3 +1,4 @@
+// @flow
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -10,7 +11,15 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 import TalkListItem from "./TalkListItem";
 
-class TalkList extends React.Component {
+type Props = {
+  talks: Array<any>,
+};
+
+type State = {
+  expanded: boolean,
+};
+
+class TalkList extends React.Component<Props, State> {
   static propTypes = {
     talks: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
   };
