@@ -42,7 +42,7 @@ WorkExperienceItem.propTypes = {
   work: PropTypes.object.isRequired,
 };
 
-class WorkExperience extends React.Component<Props, State> {
+class WorkExperienceList extends React.Component<Props, State> {
   static propTypes = {
     works: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
   };
@@ -81,4 +81,4 @@ class WorkExperience extends React.Component<Props, State> {
   }
 }
 
-export default WorkExperience;
+export default WorkExperienceList;

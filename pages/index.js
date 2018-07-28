@@ -12,7 +12,7 @@ import Misc from "../src/components/Misc";
 import ProjectCardList from "../src/components/ProjectCardList";
 import Skills from "../src/components/Skills";
 import TalkList from "../src/components/TalkList";
-import WorkExperience from "../src/components/WorkExperience";
+import WorkExperienceList from "../src/components/WorkExperienceList";
 import links from "../src/data/links";
 import misc from "../src/data/misc";
 import projects from "../src/data/projects";
@@ -48,7 +48,7 @@ const Index = ({ classes }) => (
         <Typography className={classes.sectionHeader} component="h2">
           Work Experience
         </Typography>
-        <WorkExperience works={works} />
+        <WorkExperienceList works={works} />
       </Grid>
       <Grid item xs={12} className={classes.section}>
         <Typography className={classes.sectionHeader} component="h2">
