@@ -1,3 +1,4 @@
+// @flow
 import parse from "date-fns/parse";
 
 import rawTalks from "./talks.json";
