@@ -29,7 +29,12 @@ const styles = theme => ({
   },
 });
 
-const ProjectCard = ({ classes, project }) => {
+type Props = {
+  classes: Classes,
+  project: Project,
+};
+
+const ProjectCard = ({ classes, project }: Props) => {
   const image = (project.image === undefined || project.image === null) ? "placeholder.svg" : project.image;
   const durationTag = (() => {
     const startYear = getYear(project.start);
