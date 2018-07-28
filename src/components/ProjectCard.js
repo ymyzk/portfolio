@@ -12,7 +12,7 @@ import Chip from "@material-ui/core/Chip";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 
-const styles = theme => ({
+const styles = {
   media: {
     height: 0,
     paddingTop: `${100 * 222 / 360}%`, // 360x222
@@ -25,9 +25,9 @@ const styles = theme => ({
     flexWrap: "wrap",
   },
   tag: {
-    margin: theme.spacing.unit / 2,
+    margin: 3,
   },
-});
+};
 
 type Props = {
   classes: Classes,
