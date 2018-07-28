@@ -20,6 +20,20 @@ const theme = createMuiTheme({
       dark: deepOrange[700],
     },
   },
+  typography: {
+    fontFamily: [
+      "Roboto",
+      "Noto Sans Japanese",
+      "Noto Sans CJK JP",
+      "源ノ角ゴシック",
+      "Source Han Sans",
+      "Hiragino Sans",
+      "Hiragino Kaku Gothic ProN",
+      "游ゴシック", "YuGothic",
+      "メイリオ", "Meiryo",
+      "sans-serif",
+    ],
+  },
 });
 
 function createPageContext() {
