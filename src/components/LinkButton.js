@@ -68,6 +68,7 @@ const LinkButton = ({ classes, link }) => {
         color="primary"
         href={link.url}
         target="_blank"
+        rel="noopener"
         style={{ backgroundColor: link.color }}
       >
         { icon }
