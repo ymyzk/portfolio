@@ -20,7 +20,6 @@ import projects from "../src/data/projects";
 import skills from "../src/data/skills";
 import talks from "../src/data/talks";
 import works from "../src/data/works";
-import withRoot from "../src/withRoot";
 
 const styles = theme => ({
   root: {},
@@ -83,4 +82,4 @@ Index.propTypes = {
   classes: PropTypes.object.isRequired,  // eslint-disable-line
 };
 
-export default withRoot(withStyles(styles)(Index));
+export default withStyles(styles)(Index);
