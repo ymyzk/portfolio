@@ -33,7 +33,7 @@
     "react-ga": "^2.5.3",
     "react-jss": "^8.4.0",
     "smoothscroll": "^0.4.0",
-    "styled-jsx": "^2.2.6",
+    "styled-jsx": "^3.1.0",
     "webpack-bundle-analyzer": "^2.13.1"
   },
   "devDependencies": {
