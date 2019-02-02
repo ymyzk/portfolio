@@ -37,7 +37,7 @@
 - title: python-gyazo
   link: https://github.com/ymyzk/python-gyazo
   start: 2014-07-25
-  end: true
+  end: null
   tags: [Library, Python]
   featured: false
   description: Python から Gyazo API を利用するためのラッパーとユーティリティー。
