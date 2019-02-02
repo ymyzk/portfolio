@@ -1,6 +1,7 @@
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
+const withTypescript = require("@zeit/next-typescript");
 
-module.exports = {
+module.exports = withTypescript({
   webpack: (config) => {
     const { ANALYZE } = process.env;
 
@@ -17,4 +18,4 @@ module.exports = {
   exportPathMap: () => ({
     "/": { page: "/" },
   }),
-};
+});
