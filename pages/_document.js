@@ -15,9 +15,6 @@ class MyDocument extends Document {
       <html lang="en" dir="ltr" prefix="og: http://ogp.me/ns# profile: http://ogp.me/ns/profile# fb: http://ogp.me/ns/fb#">
         <Head>
           <meta charSet="utf-8" />
-          <title>
-            { title }
-          </title>
           {/* Use minimum-scale=1 to enable GPU rasterization */}
           <meta
             name="viewport"
