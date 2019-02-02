@@ -2497,10 +2497,10 @@ eslint-import-resolver-node@^0.3.2:
     debug "^2.6.9"
     resolve "^1.5.0"
 
-eslint-import-resolver-webpack@^0.10.0:
-  version "0.10.1"
-  resolved "https://registry.yarnpkg.com/eslint-import-resolver-webpack/-/eslint-import-resolver-webpack-0.10.1.tgz#4cbceed2c0c43e488a74775c30861e58e00fb290"
-  integrity sha512-RN49nnyQpBCP3TqVhct+duJjH8kaVg08fFevWvA+4Cr1xeN7OFQRse4wMvzBto9/4VmOJWvqPfdmNTEG3jc8SQ==
+eslint-import-resolver-webpack@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/eslint-import-resolver-webpack/-/eslint-import-resolver-webpack-0.11.0.tgz#75d08ee06fc55eb24bd75147b7b4b6756886b12f"
+  integrity sha512-vX8rYSPdKtTLkK2FoU1ZRyEsl6wP1FB40ytjrEgMhzUkEkBLuZAkv1KNR+2Ml7lzMOObXI3yaEDiaQ/Yvoczhw==
   dependencies:
     array-find "^1.0.0"
     debug "^2.6.8"
@@ -2936,10 +2936,10 @@ flat-cache@^1.2.1:
     rimraf "~2.6.2"
     write "^0.2.1"
 
-flow-bin@^0.83.0:
-  version "0.83.0"
-  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.83.0.tgz#fd26f5f95758d7701264b3f9a1e1a3d4cbcab1a9"
-  integrity sha512-1K83EL/U9Gh0BaXPKkZe6TRizSmNSKx9Wuws1c8gh7DJEwiburtCxYT+4o7in1+GnNEm3CZWnbnVV8n9HMpiDA==
+flow-bin@^0.92.0:
+  version "0.92.0"
+  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.92.0.tgz#f5bf3e808b17b480e067ac673829ca715a168bea"
+  integrity sha512-3ErXSAXZZlLV5/QPlaUDCWlDUXop1SiH32ifXL3SEiBwsmGbudCLim+HFVZfkegrn1nB4TcNSkMWtW8SnMPyAQ==
 
 flow-typed@^2.5.1:
   version "2.5.1"
