@@ -9,7 +9,7 @@ import { faGlobe } from "@fortawesome/free-solid-svg-icons/faGlobe";
 import { faRss } from "@fortawesome/free-solid-svg-icons/faRss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import Button from "@material-ui/core/Button";
+import Fab from "@material-ui/core/Fab";
 import { withStyles } from "@material-ui/core/styles";
 import SvgIcon from "@material-ui/core/SvgIcon";
 import Tooltip from "@material-ui/core/Tooltip";
@@ -62,9 +62,8 @@ const LinkButton = ({ classes, link }) => {
   }
   return (
     <Tooltip title={link.title}>
-      <Button
+      <Fab
         className={classes.button}
-        variant="fab"
         color="primary"
         href={link.url}
         target="_blank"
@@ -72,7 +71,7 @@ const LinkButton = ({ classes, link }) => {
         style={{ backgroundColor: link.color }}
       >
         { icon }
-      </Button>
+      </Fab>
     </Tooltip>
   );
 };

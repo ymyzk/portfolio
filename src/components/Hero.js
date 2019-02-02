@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import smoothScroll from "smoothscroll";
 
-import Button from "@material-ui/core/Button";
+import Fab from "@material-ui/core/Fab";
 import { withStyles } from "@material-ui/core/styles";
 import ArrowDownward from "@material-ui/icons/ArrowDownward";
 
@@ -68,9 +68,9 @@ const Hero = ({ classes }) => {
           </h1>
         </div>
         <div className={classes.buttonWrapper}>
-          <Button variant="fab" color="secondary" onClick={scroll}>
+          <Fab aria-label="Scroll down" color="secondary" onClick={scroll}>
             <ArrowDownward />
-          </Button>
+          </Fab>
         </div>
       </div>
       <div id={SCROLL_TARGET_ID} />
