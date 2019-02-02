@@ -21,10 +21,7 @@ class MyDocument extends Document {
           {/* Use minimum-scale=1 to enable GPU rasterization */}
           <meta
             name="viewport"
-            content={
-              "user-scalable=0, initial-scale=1, "
-              + "minimum-scale=1, width=device-width, height=device-height"
-            }
+            content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
           />
           {/* Favicon */}
           <link
@@ -61,10 +58,16 @@ class MyDocument extends Document {
           <meta name="twitter:description" content={description} />
           <meta name="twitter:image" content="/static/images/twitter.png" />
           {/* PWA primary color */}
-          <meta name="theme-color" content={pageContext.theme.palette.primary.main} />
+          <meta
+            name="theme-color"
+            content={pageContext ? pageContext.theme.palette.primary.main : null}
+          />
           {/* Windows / IE / Edge */}
           <meta name="msapplication-TileImage" content="/static/images/ms-tile-image.png" />
-          <meta name="msapplication-TileColor" content={pageContext.theme.palette.primary.main} />
+          <meta
+            name="msapplication-TileColor"
+            content={pageContext ? pageContext.theme.palette.primary.main : null}
+          />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
@@ -124,6 +127,12 @@ MyDocument.getInitialProps = (ctx) => {
     return WrappedComponent;
   });
 
+  let css;
+  // It might be undefined, e.g. after an error.
+  if (pageContext) {
+    css = pageContext.sheetsRegistry.toString();
+  }
+
   return {
     ...page,
     pageContext,
@@ -133,7 +142,7 @@ MyDocument.getInitialProps = (ctx) => {
         <style
           id="jss-server-side"
           // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: pageContext.sheetsRegistry.toString() }}
+          dangerouslySetInnerHTML={{ __html: css }}
         />
         {flush() || null}
       </React.Fragment>
