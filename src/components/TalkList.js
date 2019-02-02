@@ -11,15 +11,15 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 import TalkListItem from "./TalkListItem";
 
-type Props = {
-  talks: Array<Talk>,
-};
+// type Props = {
+//   talks: Array<Talk>,
+// };
+//
+// type State = {
+//   expanded: boolean,
+// };
 
-type State = {
-  expanded: boolean,
-};
-
-class TalkList extends React.Component<Props, State> {
+class TalkList extends React.Component {
   static propTypes = {
     talks: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
   };

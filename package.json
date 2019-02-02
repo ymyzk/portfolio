@@ -37,11 +37,9 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
-    "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "eslint": "^5.7.0",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-import-resolver-webpack": "^0.11.0",
-    "eslint-plugin-flowtype": "^3.0.0",
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",

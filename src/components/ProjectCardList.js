@@ -6,11 +6,11 @@ import Grid from "@material-ui/core/Grid";
 
 import ProjectCard from "./ProjectCard";
 
-type Props = {
-  projects: Array<any>,
-};
+// type Props = {
+//   projects: Array<any>,
+// };
 
-const ProjectCardList = ({ projects }: Props) => (
+const ProjectCardList = ({ projects }) => (
   // Hack to fix the problem related to negative margin
   // https://material-ui.com/layout/grid/#negative-margin
   <div style={{ padding: 8 }}>

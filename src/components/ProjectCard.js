@@ -29,12 +29,12 @@ const styles = {
   },
 };
 
-type Props = {
-  classes: Classes,
-  project: Project,
-};
+// type Props = {
+//   classes: Classes,
+//   project: Project,
+// };
 
-const ProjectCard = ({ classes, project }: Props) => {
+const ProjectCard = ({ classes, project }) => {
   const image = (project.image === undefined || project.image === null) ? "placeholder.svg" : project.image;
   const durationTag = (() => {
     const startYear = getYear(project.start);

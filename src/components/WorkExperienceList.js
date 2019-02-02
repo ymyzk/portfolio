@@ -10,26 +10,26 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
-type Work = {
-  id: number,
-  title: string,
-  work: ?string,
-  company: string,
-  start: Date,
-  end: ?Date,
-  featured: boolean,
-  link: ?string,
-};
+// type Work = {
+//   id: number,
+//   title: string,
+//   work: ?string,
+//   company: string,
+//   start: Date,
+//   end: ?Date,
+//   featured: boolean,
+//   link: ?string,
+// };
+//
+// type Props = {
+//   works: Array<Work>,
+// };
+//
+// type State = {
+//   expanded: boolean,
+// };
 
-type Props = {
-  works: Array<Work>,
-};
-
-type State = {
-  expanded: boolean,
-};
-
-const WorkExperienceItem = ({ work }: { work: Work }) => (
+const WorkExperienceItem = ({ work }) => (
   <ListItem button component="a" href={work.link}>
     <ListItemText
       primary={`${work.title} of ${work.company}`}
@@ -42,7 +42,7 @@ WorkExperienceItem.propTypes = {
   work: PropTypes.object.isRequired,
 };
 
-class WorkExperienceList extends React.Component<Props, State> {
+class WorkExperienceList extends React.Component {
   static propTypes = {
     works: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
   };
