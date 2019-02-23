@@ -14,12 +14,14 @@ import ProjectCardList from "../src/components/ProjectCardList";
 import Skills from "../src/components/Skills";
 import TalkList from "../src/components/TalkList";
 import WorkExperienceList from "../src/components/WorkExperienceList";
-import links from "../src/data/links";
-import misc from "../src/data/misc";
-import projects from "../src/data/projects";
-import skills from "../src/data/skills";
-import talks from "../src/data/talks";
-import works from "../src/data/works";
+import {
+  links,
+  misc,
+  projects,
+  skills,
+  talks,
+  works,
+} from "../src/data"; /* eslint-disable-line import/no-unresolved */
 
 const styles = theme => ({
   root: {},
