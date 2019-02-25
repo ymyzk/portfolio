@@ -1,0 +1,23 @@
+- title: "Yusuke Miyazaki, Taro Sekiyama, and Atsushi Igarashi. Dynamic Type Inference for Gradual Hindley–Milner Typing. Proc. of the ACM on Programming Languages 3, POPL, Article 18. Presented at ACM POPL 2019, Cascais, Portugal, January 2019."
+  link: https://dl.acm.org/citation.cfm?id=3290331
+  tags:
+    - Paper
+    - Conference
+
+- title: Yusuke Miyazaki and Atsushi Igarashi. A type reconstruction algorithm for gradually typed delimited continuations. In 第19回プログラミングおよびプログラミング言語ワークショップ (PPL2017) 論文集, Fuefuki, Japan, March 2017.
+  link: null
+  tags:
+    - Paper
+    - Workshop
+
+- title: Yusuke Miyazaki, Taro Sekiyama, and Atsushi Igarashi. Gradual typing for delimited continuations. In the 5th Script To Program Evolution Workshop, STOP, Rome, Italy, July 2016.
+  link: http://www.fos.kuis.kyoto-u.ac.jp/~miyazaki/papers/stop2016.pdf
+  tags:
+    - Short paper
+    - Workshop
+
+- title: 宮﨑 勇輔, 関山 太朗, 五十嵐 淳. 限定継続演算子 shift/reset のための漸進的型付け. In 第18回プログラミングおよびプログラミング言語ワークショップ (PPL2016), Tamano, Okayama, March 2016.
+  link: null
+  tags:
+    - Poster
+    - Workshop

@@ -4,6 +4,7 @@ import parse from "date-fns/parse";
 import rawLinks from "./links.json";
 import rawMisc from "./misc.json";
 import rawProjects from "./projects.json";
+import rawResearch from "./research.json";
 import rawSkills from "./skills.json";
 import rawTalks from "./talks.json";
 import rawWorks from "./works.json";
@@ -20,6 +21,8 @@ export const projects = rawProjects.map((t, i) => Object.assign(t, {
   start: t.start,
   end: t.end ? parse(t.end) : null,
 }));
+
+export const research = rawResearch.map((r, i) => Object.assign(r, { id: i }));
 
 export const skills = rawSkills;
 

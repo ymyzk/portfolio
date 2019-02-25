@@ -11,6 +11,7 @@ import Hero from "../src/components/Hero";
 import Links from "../src/components/Links";
 import Misc from "../src/components/Misc";
 import ProjectCardList from "../src/components/ProjectCardList";
+import Research from "../src/components/Research";
 import Skills from "../src/components/Skills";
 import TalkList from "../src/components/TalkList";
 import WorkExperienceList from "../src/components/WorkExperienceList";
@@ -18,6 +19,7 @@ import {
   links,
   misc,
   projects,
+  research,
   skills,
   talks,
   works,
@@ -69,6 +71,12 @@ const Index = ({ classes }) => (
           Skills
         </Typography>
         <Skills skills={skills} />
+      </Grid>
+      <Grid item xs={12} className={classes.section}>
+        <Typography className={classes.sectionHeader} component="h2">
+          Research
+        </Typography>
+        <Research research={research} />
       </Grid>
       <Grid item xs={12} className={classes.section}>
         <Typography className={classes.sectionHeader} component="h2">
