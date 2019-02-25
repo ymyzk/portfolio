@@ -2,17 +2,11 @@ import React from "react";
 
 import Grid from "@material-ui/core/Grid";
 import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
 import { withStyles } from "@material-ui/core/styles";
 import { Theme } from "@material-ui/core/styles/createMuiTheme";
 import Typography from "@material-ui/core/Typography";
 
-const listItemStyles = {
-  primary: {
-    fontSize: ".9rem",
-  },
-};
+import ResearchListItem from "./ResearchListItem";
 
 const styles = (theme: Theme) => ({
   root: {
@@ -24,33 +18,12 @@ const styles = (theme: Theme) => ({
   },
 });
 
-interface ResearchListItemProps {
-    classes: any;
-    research: any;
+interface Props {
+  classes: any;
+  research: any[];
 }
 
-const ResearchListItem = withStyles(listItemStyles)(
-  ({ classes, research }: ResearchListItemProps) => {
-    const tags = research.tags.join(" / ");
-    return (
-      <ListItem button>
-        {/* TODO REDUCE FONT SIZE add link */}
-        <ListItemText
-          classes={{ primary: classes.primary }}
-          primary={research.title}
-          secondary={tags}
-        />
-      </ListItem>
-    );
-  },
-);
-
-interface ResearchProps {
-    classes: any;
-    research: any[];
-}
-
-const Research = ({ classes, research }: ResearchProps) => (
+const Research = ({ classes, research }: Props) => (
   <div className={classes.root}>
     <Grid container justify="center" spacing={24}>
       <Grid item xs={12} sm={10} md={8} lg={6}>
