@@ -9,3 +9,6 @@
 ```console
 $ yarn dev
 ```
+
+### Notes
+- If you make a change to a file in `/static`, please rename it to avoid cached resource is used.`
