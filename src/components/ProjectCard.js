@@ -8,7 +8,6 @@ import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import Chip from "@material-ui/core/Chip";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 
@@ -23,11 +22,7 @@ const styles = {
     fontSize: 24,
   },
   tags: {
-    display: "flex",
-    flexWrap: "wrap",
-  },
-  tag: {
-    margin: 3,
+    marginBottom: 8,
   },
 };
 
@@ -51,28 +46,22 @@ const ProjectCard = ({ classes, project }) => {
   const tags = [durationTag].concat(project.tags);
   return (
     <Card>
-      <CardContent>
-        <Typography component="h3" className={classes.title}>
-          {project.title}
-        </Typography>
-      </CardContent>
       <CardMedia
         className={classes.media}
         image={`${getAssetPrefix()}/static/images/projects/${image}`}
         title={project.title}
       />
       <CardContent>
-        <Typography component="p">
+        <Typography component="h3" className={classes.title}>
+          {project.title}
+        </Typography>
+        <Typography color="textSecondary" className={classes.tags}>
+          {tags.join(" / ")}
+        </Typography>
+        <Typography>
           {project.description}
         </Typography>
       </CardContent>
-      <CardActions>
-        <div className={classes.tags}>
-          {
-            tags.map(t => <Chip className={classes.tag} label={t} key={t} />)
-          }
-        </div>
-      </CardActions>
       <CardActions>
         <Button size="small" color="primary" href={project.link}>
           Project Page
