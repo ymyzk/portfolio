@@ -5,16 +5,23 @@
   end: 2017-03-31
   tags: [Django, iOS, Python, Web]
   featured: true
-  description: 京都大学内の情報共有地図アプリ。大学内の地図情報・イベント情報共有機能など。
+  description: |
+    Information sharing application for Kyoto University.
+    Provides detailed map and event sharing platform.
+    Developed iOS application, web application, backend, and infrastructure.
+    Fonded a startup in 2013.
+  description_ja: 京都大学内の情報共有地図アプリ。大学内の地図情報・イベント情報共有機能など。
 
 - title: 鶉野マップ
-  link: https://geo.itunes.apple.com/jp/app/chun-yemappu/id655525538?mt=8
+  link: null
+  #link: https://geo.itunes.apple.com/jp/app/chun-yemappu/id655525538?mt=8
   image: uzuranomap.png
   start: 2013-06-04
   end: 2017-04-07
   tags: [iOS]
   featured: true
-  description: 全国でも珍しい戦争遺跡群が残る、兵庫県加西市鶉野(うずらの)飛行場跡の地図・ナビアプリ。
+  description: Navigation app for Uzurano Airbase which is known for buildings during World War II.
+  description_ja: 全国でも珍しい戦争遺跡群が残る、兵庫県加西市鶉野(うずらの)飛行場跡の地図・ナビアプリ。
 
 - title: kawasemi
   link: https://github.com/ymyzk/kawasemi
@@ -23,7 +30,8 @@
   end: null
   tags: [Library, Python]
   featured: true
-  description: Python アプリケーションから簡単に Slack や HipChat に通知を送ることができるライブラリ。
+  description: Python library to send notification to platforms like Slack or HipChat.
+  description_ja: Python アプリケーションから簡単に Slack や HipChat に通知を送ることができるライブラリ。
 
 - title: wsgi_lineprof
   link: https://github.com/ymyzk/wsgi_lineprof
@@ -32,7 +40,8 @@
   end: null
   tags: [Library, Python]
   featured: true
-  description: WSGI ミドルウェアとして使えるラインプロファイラ。
+  description: Line profiler as a WSGI middleware. Easily integrates with existing Python web applications.
+  description_jp: WSGI ミドルウェアとして使えるラインプロファイラ。
 
 - title: python-gyazo
   link: https://github.com/ymyzk/python-gyazo
@@ -49,7 +58,10 @@
   end: 2018-03-31
   tags: [Django, Python, HTML, CSS, JavaScript, Web]
   featured: true
-  description: CAMPHOR- の Web サイト。デザイン以外の実装や運用全般を担当。
+  description: |
+    Website of CAMPHOR-, a student engineers/designers community in Kyoto.
+    Implemented both front-end and back-end.
+  description_ja: CAMPHOR- の Web サイト。デザイン以外の実装や運用全般を担当。
 
 - title: IPSJ77Now⤴︎⤴︎
   link: http://ipsj.camph.net
@@ -58,7 +70,10 @@
   end: 2015-03-20
   tags: [Node.js, HTML, CSS, JavaScript, Web]
   featured: true
-  description: 情報処理学会第77回全国大会のために作成したサービス。主にフロントエンドとインフラ周りを担当。
+  description: |
+    Webapp to visualize Twitter activity during the 77th national convention of IPSJ.
+    Built front-end and infrastructure and managed the project.
+  description_ja: 情報処理学会第77回全国大会のために作成したサービス。主にフロントエンドとインフラ周りを担当。
 
 - title: bottle-yotoslack
   link: https://github.com/ymyzk/bottle-yotoslack
