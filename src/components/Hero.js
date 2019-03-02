@@ -7,13 +7,15 @@ import Fab from "@material-ui/core/Fab";
 import { withStyles } from "@material-ui/core/styles";
 import ArrowDownward from "@material-ui/icons/ArrowDownward";
 
+import { getAssetPrefix } from "../utils";
+
 const SCROLL_TARGET_ID = "scrollTarget";
 
 const styles = () => ({
   background: {
     position: "relative",
     backgroundColor: "rgb(63, 81, 181)",
-    backgroundImage: "url(/static/images/background.jpg)",
+    backgroundImage: `url(${getAssetPrefix()}/static/images/background.jpg)`,
     backgroundPosition: "center",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",

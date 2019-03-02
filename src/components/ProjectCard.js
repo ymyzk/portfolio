@@ -12,6 +12,8 @@ import Chip from "@material-ui/core/Chip";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 
+import { getAssetPrefix } from "../utils";
+
 const styles = {
   media: {
     height: 0,
@@ -56,7 +58,7 @@ const ProjectCard = ({ classes, project }) => {
       </CardContent>
       <CardMedia
         className={classes.media}
-        image={`/static/images/projects/${image}`}
+        image={`${getAssetPrefix()}/static/images/projects/${image}`}
         title={project.title}
       />
       <CardContent>
