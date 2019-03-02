@@ -11,6 +11,8 @@
     Developed iOS application, web application, backend, and infrastructure.
     Fonded a startup in 2013.
   description_ja: 京都大学内の情報共有地図アプリ。大学内の地図情報・イベント情報共有機能など。
+  links:
+    Website: http://www.kyodaimap.net/
 
 - title: 鶉野マップ
   link: null
@@ -22,6 +24,7 @@
   featured: true
   description: Navigation app for Uzurano Airbase which is known for buildings during World War II.
   description_ja: 全国でも珍しい戦争遺跡群が残る、兵庫県加西市鶉野(うずらの)飛行場跡の地図・ナビアプリ。
+  links: {}
 
 - title: kawasemi
   link: https://github.com/ymyzk/kawasemi
@@ -32,6 +35,8 @@
   featured: true
   description: Python library to send notification to platforms like Slack or HipChat.
   description_ja: Python アプリケーションから簡単に Slack や HipChat に通知を送ることができるライブラリ。
+  links:
+    GitHub: https://github.com/ymyzk/kawasemi
 
 - title: wsgi_lineprof
   link: https://github.com/ymyzk/wsgi_lineprof
@@ -42,6 +47,8 @@
   featured: true
   description: Line profiler as a WSGI middleware. Easily integrates with existing Python web applications.
   description_jp: WSGI ミドルウェアとして使えるラインプロファイラ。
+  links:
+    GitHub: https://github.com/ymyzk/wsgi_lineprof
 
 - title: python-gyazo
   link: https://github.com/ymyzk/python-gyazo
@@ -62,6 +69,8 @@
     Website of CAMPHOR-, a student engineers/designers community in Kyoto.
     Implemented both front-end and back-end.
   description_ja: CAMPHOR- の Web サイト。デザイン以外の実装や運用全般を担当。
+  links:
+    Website: https://camph.net
 
 - title: IPSJ77Now⤴︎⤴︎
   link: http://ipsj.camph.net
@@ -74,6 +83,8 @@
     Webapp to visualize Twitter activity during the 77th national convention of IPSJ.
     Built front-end and infrastructure and managed the project.
   description_ja: 情報処理学会第77回全国大会のために作成したサービス。主にフロントエンドとインフラ周りを担当。
+  links:
+    Website: http://ipsj.camph.net
 
 - title: bottle-yotoslack
   link: https://github.com/ymyzk/bottle-yotoslack

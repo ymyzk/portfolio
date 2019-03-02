@@ -17,6 +17,9 @@ const styles = {
   image: {
     width: "100%",
   },
+  content: {
+    paddingBottom: 0,
+  },
   title: {
     fontSize: 24,
   },
@@ -80,7 +83,7 @@ const ProjectCard = ({ classes, project }) => {
           />
         </picture>
       </LazyLoad>
-      <CardContent>
+      <CardContent className={classes.content}>
         <Typography component="h3" className={classes.title}>
           {project.title}
         </Typography>
@@ -92,9 +95,11 @@ const ProjectCard = ({ classes, project }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" color="primary" href={project.link}>
-          Project Page
-        </Button>
+        {
+          Object
+            .entries(project.links ? project.links : {})
+            .map(([title, url]) => <Button key={url} size="small" color="primary" href={url} target="_blank" rel="noopener">{title}</Button>)
+        }
       </CardActions>
     </Card>
   );
