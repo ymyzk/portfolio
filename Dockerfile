@@ -1,17 +1,17 @@
 FROM node:10.15-slim
 
-COPY package.json yarn.lock /app/
+COPY package.json package-lock.json /app/
 
 WORKDIR /app
 
-RUN yarn \
-        && rm -rf /root/.cache/yarn /root/.node-gyp /root/.npm /root/.yarn-cache
+RUN npm ci \
+        && rm -rf /root/.node-gyp /root/.npm
 
 COPY . /app/
 
-RUN ["yarn", "run", "build"]
-RUN ["yarn", "run", "export"]
+RUN ["npm", "run", "build"]
+RUN ["npm", "run", "export"]
 
 EXPOSE 3000
 
-CMD ["yarn", "run", "start", "-H", "0.0.0.0"]
+CMD ["npm", "run", "start", "-H", "0.0.0.0"]
