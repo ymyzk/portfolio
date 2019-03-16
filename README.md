@@ -7,7 +7,7 @@
 
 ## Development
 ```console
-$ yarn dev
+$ npm run dev
 ```
 
 ### Notes
