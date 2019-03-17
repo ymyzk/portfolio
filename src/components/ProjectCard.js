@@ -14,10 +14,6 @@ import Typography from "@material-ui/core/Typography";
 import { getAssetPrefix } from "../utils";
 
 const styles = {
-  media: {
-    height: 0,
-    paddingTop: `${100 * 222 / 360}%`, // 360x222
-  },
   title: {
     fontSize: 24,
   },
@@ -47,7 +43,7 @@ const ProjectCard = ({ classes, project }) => {
   return (
     <Card>
       <CardMedia
-        className={classes.media}
+        component="img"
         image={`${getAssetPrefix()}/static/images/projects/${image}`}
         title={project.title}
       />

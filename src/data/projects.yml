@@ -1,6 +1,6 @@
 - title: 京大マップ
   link: http://www.kyodaimap.net/
-  image: kyodaimap.png
+  image: kyodaimap.jpg
   start: 2012-10-01
   end: 2017-03-31
   tags: [Django, iOS, Python, Web]
@@ -15,7 +15,7 @@
 - title: 鶉野マップ
   link: null
   #link: https://geo.itunes.apple.com/jp/app/chun-yemappu/id655525538?mt=8
-  image: uzuranomap.png
+  image: uzuranomap.jpg
   start: 2013-06-04
   end: 2017-04-07
   tags: [iOS]
@@ -25,7 +25,7 @@
 
 - title: kawasemi
   link: https://github.com/ymyzk/kawasemi
-  image: kawasemi.png
+  image: kawasemi.jpg
   start: 2015-05-03
   end: null
   tags: [Library, Python]
@@ -35,7 +35,7 @@
 
 - title: wsgi_lineprof
   link: https://github.com/ymyzk/wsgi_lineprof
-  image: wsgi_lineprof.png
+  image: wsgi_lineprof.jpg
   start: 2016-10-02
   end: null
   tags: [Library, Python]
