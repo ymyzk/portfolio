@@ -2,6 +2,7 @@
 import getYear from "date-fns/get_year";
 import PropTypes from "prop-types";
 import React from "react";
+import LazyLoad from "react-lazyload";
 
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
@@ -67,15 +68,18 @@ const ProjectCard = ({ classes, project }) => {
   const tags = [durationTag].concat(project.tags);
   return (
     <Card>
-      <picture>
-        { source.map(s => <source key={s.srcSet} srcSet={s.srcSet} type={s.type} />) }
-        <img
-          className={classes.image}
-          src={src}
-          alt={project.title}
-          title={project.title}
-        />
-      </picture>
+      {/* Known bug?: https://github.com/twobin/react-lazyload/issues/189 */}
+      <LazyLoad height={240} offset={300} once>
+        <picture>
+          { source.map(s => <source key={s.srcSet} srcSet={s.srcSet} type={s.type} />) }
+          <img
+            className={classes.image}
+            src={src}
+            alt={project.title}
+            title={project.title}
+          />
+        </picture>
+      </LazyLoad>
       <CardContent>
         <Typography component="h3" className={classes.title}>
           {project.title}
