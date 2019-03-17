@@ -7,13 +7,15 @@ import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 
 import { getAssetPrefix } from "../utils";
 
 const styles = {
+  image: {
+    width: "100%",
+  },
   title: {
     fontSize: 24,
   },
@@ -29,7 +31,7 @@ const styles = {
 
 function createSrcSets(file) {
   const imagePrefix = `${getAssetPrefix()}/static/images/projects/`;
-  if (file === undefined || file === null) return { src: `${imagePrefix}placeholder.svg`, srcSet: [] };
+  if (file === undefined || file === null) return { src: `${imagePrefix}placeholder.svg`, source: [] };
   const image1x = `${imagePrefix}${file}`;
   const image2x = image1x.replace(/\.jpg$/, "@2x.jpg").replace(/\.png$/, "@2x.png");
   const type = file.endsWith(".jpg") ? "image/jpeg" : (file.endsWith(".png") ? "image/png" : null);
@@ -68,6 +70,7 @@ const ProjectCard = ({ classes, project }) => {
       <picture>
         { source.map(s => <source key={s.srcSet} srcSet={s.srcSet} type={s.type} />) }
         <img
+          className={classes.image}
           src={src}
           alt={project.title}
           title={project.title}
