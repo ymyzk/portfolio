@@ -27,13 +27,30 @@ const styles = {
 //   project: Project,
 // };
 
+function createSrcSets(file) {
+  const imagePrefix = `${getAssetPrefix()}/static/images/projects/`;
+  if (file === undefined || file === null) return { src: `${imagePrefix}placeholder.svg`, srcSet: [] };
+  const image1x = `${imagePrefix}${file}`;
+  const image2x = image1x.replace(/\.jpg$/, "@2x.jpg").replace(/\.png$/, "@2x.png");
+  const type = file.endsWith(".jpg") ? "image/jpeg" : (file.endsWith(".png") ? "image/png" : null);
+  return {
+    src: image1x,
+    source: [
+      {
+        srcSet: `${image1x.replace(/\.jpg$/, ".webp")}, ${image2x.replace(/\.jpg$/, ".webp")} 2x`,
+        type: "image/webp",
+      },
+      {
+        srcSet: `${image1x}, ${image2x} 2x`,
+        type,
+      },
+    ],
+  };
+}
+
 const ProjectCard = ({ classes, project }) => {
   // TODO Disallow undefined in projects.yml
-  const imageFileName1x = (project.image === undefined || project.image === null) ? "placeholder.svg" : project.image;
-  const imageFileName2x = imageFileName1x.replace(".png", "@2x.png").replace(".jpg", "@2x.jpg");
-  const imagePrefix = `${getAssetPrefix()}/static/images/projects/`;
-  const imageSrc = `${imagePrefix}${imageFileName1x}`;
-  const imageSrcSet = imageFileName1x === imageFileName2x ? null : `${imageSrc} 1x,${imagePrefix}${imageFileName2x} 2x`;
+  const { src, source } = createSrcSets(project.image);
 
   const durationTag = (() => {
     const startYear = getYear(project.start);
@@ -48,12 +65,14 @@ const ProjectCard = ({ classes, project }) => {
   const tags = [durationTag].concat(project.tags);
   return (
     <Card>
-      <img
-        src={imageSrc}
-        srcSet={imageSrcSet}
-        alt={project.title}
-        title={project.title}
-      />
+      <picture>
+        { source.map(s => <source key={s.srcSet} srcSet={s.srcSet} type={s.type} />) }
+        <img
+          src={src}
+          alt={project.title}
+          title={project.title}
+        />
+      </picture>
       <CardContent>
         <Typography component="h3" className={classes.title}>
           {project.title}
