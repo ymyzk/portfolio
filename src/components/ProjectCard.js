@@ -28,7 +28,13 @@ const styles = {
 // };
 
 const ProjectCard = ({ classes, project }) => {
-  const image = (project.image === undefined || project.image === null) ? "placeholder.svg" : project.image;
+  // TODO Disallow undefined in projects.yml
+  const imageFileName1x = (project.image === undefined || project.image === null) ? "placeholder.svg" : project.image;
+  const imageFileName2x = imageFileName1x.replace(".png", "@2x.png").replace(".jpg", "@2x.jpg");
+  const imagePrefix = `${getAssetPrefix()}/static/images/projects/`;
+  const imageSrc = `${imagePrefix}${imageFileName1x}`;
+  const imageSrcSet = imageFileName1x === imageFileName2x ? null : `${imageSrc} 1x,${imagePrefix}${imageFileName2x} 2x`;
+
   const durationTag = (() => {
     const startYear = getYear(project.start);
     if (project.end === null) {
@@ -42,9 +48,10 @@ const ProjectCard = ({ classes, project }) => {
   const tags = [durationTag].concat(project.tags);
   return (
     <Card>
-      <CardMedia
-        component="img"
-        image={`${getAssetPrefix()}/static/images/projects/${image}`}
+      <img
+        src={imageSrc}
+        srcSet={imageSrcSet}
+        alt={project.title}
         title={project.title}
       />
       <CardContent>
