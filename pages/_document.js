@@ -3,6 +3,41 @@ import PropTypes from "prop-types";
 import Document, { Head, Main, NextScript } from "next/document";
 import flush from "styled-jsx/server";
 
+const globalStyle = `
+html {
+  font-feature-settings: "palt";
+}
+
+/* Taken from https://fonts.googleapis.com/css?family=Roboto:300,400,500 */
+/* and extended with font-display */
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmSU5fBBc4AMP6lQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBBc4AMP6lQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+`;
+
 class MyDocument extends Document {
   render() {
     const { pageContext } = this.props;
@@ -65,47 +100,7 @@ class MyDocument extends Document {
             name="msapplication-TileColor"
             content={pageContext ? pageContext.theme.palette.primary.main : null}
           />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
-          />
         </Head>
-        <style jsx global>
-          {`
-          html {
-            font-feature-settings: "palt";
-          }
-
-          /* Taken from https://fonts.googleapis.com/css?family=Roboto:300,400,500 */
-          /* and extended with font-display */
-          /*
-          @font-face {
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 300;
-            font-display: fallback;
-            src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmSU5fBBc4AMP6lQ.woff2) format('woff2');
-            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-          }
-          @font-face {
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 400;
-            font-display: fallback;
-            src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format('woff2');
-            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-          }
-          @font-face {
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 500;
-            font-display: fallback;
-            src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBBc4AMP6lQ.woff2) format('woff2');
-            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-          }
-          */
-          `}
-        </style>
         <body>
           <Main />
           <NextScript />
@@ -165,6 +160,10 @@ MyDocument.getInitialProps = (ctx) => {
     // Styles fragment is rendered after the app and page rendering finish.
     styles: (
       <React.Fragment>
+        <style
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: globalStyle }}
+        />
         <style
           id="jss-server-side"
           // eslint-disable-next-line react/no-danger
