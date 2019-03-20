@@ -14,7 +14,7 @@ const SCROLL_TARGET_ID = "scrollTarget";
 const styles = () => ({
   background: {
     position: "relative",
-    backgroundColor: "rgb(63, 81, 181)",
+    backgroundColor: "#11140b",
     backgroundImage: `url(${getAssetPrefix()}/static/images/background.jpg)`,
     backgroundPosition: "center",
     backgroundSize: "cover",
