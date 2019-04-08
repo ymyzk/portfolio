@@ -65,7 +65,7 @@ const Hero = ({ classes }) => {
             Yusuke Miyazaki
             <br />
             <small className={classes.titleLead}>
-              Software Engineer in Japan
+              Site Reliability Engineer in Japan
             </small>
           </h1>
         </div>
