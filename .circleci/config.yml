@@ -16,7 +16,7 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: npm install
+      - run: npm ci
 
       - save_cache:
           paths:
@@ -24,6 +24,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: npm run build
+      - run: npm run export
       - run: npm test
 
   build-and-push-docker-image:
