@@ -50,6 +50,18 @@
   links:
     GitHub: https://github.com/ymyzk/wsgi_lineprof
 
+- title: mypy Playground
+  link: https://github.com/ymyzk/wsgi_lineprof
+  image: placeholder.svg
+  start: 2017-05-07
+  end: null
+  tags: [Web, Python]
+  featured: true
+  description: Try mypy, an experimental optional static type checker for Python, with your web browser.
+  links:
+    Website: https://mypy-play.net
+    GitHub: https://github.com/ymyzk/mypy-playground
+
 - title: python-gyazo
   link: https://github.com/ymyzk/python-gyazo
   start: 2014-07-25
