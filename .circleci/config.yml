@@ -33,11 +33,14 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - run: docker build -t ymyzk/portfolio:latest .
+      - run: docker build -t portfolio .
       - run:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+              docker tag portfolio "ymyzk/portfolio:$CIRCLE_SHA1"
+              docker push "ymyzk/portfolio:$CIRCLE_SHA1"
+              docker tag portfolio "ymyzk/portfolio:latest"
               docker push "ymyzk/portfolio:latest"
             fi
 
