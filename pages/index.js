@@ -28,14 +28,14 @@ import {
 const styles = theme => ({
   root: {},
   section: {
-    paddingBottom: theme.spacing.unit * 3,
-    paddingTop: theme.spacing.unit * 3,
+    paddingBottom: theme.spacing(3),
+    paddingTop: theme.spacing(3),
   },
   sectionHeader: {
     fontSize: 34,
     fontWeight: 300,
-    paddingBottom: theme.spacing.unit / 2,
-    paddingTop: theme.spacing.unit / 2,
+    paddingBottom: theme.spacing(0.5),
+    paddingTop: theme.spacing(0.5),
     textAlign: "center",
   },
 });
