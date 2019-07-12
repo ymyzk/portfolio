@@ -1,10 +1,17 @@
 # Day in start & end is not precise!
 
+- title: Site Reliability Engineer
+  company: Indeed
+  link: https://www.indeed.com/about
+  start: 2019-07-01
+  end: null
+  featured: true
+
 - title: Site Reliability Engineer / Software Engineer
   company: Recruit Co., Ltd. (Indeed Tokyo)
   link: https://www.indeed.com/about
   start: 2018-04-01
-  end: null
+  end: 2019-06-30
   featured: true
 
 - title: Engineer
