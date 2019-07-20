@@ -1,5 +1,3 @@
-const webpack = require("webpack");
-
 const withBundleAnalyzer = require("@zeit/next-bundle-analyzer");
 
 const isProd = process.env.NODE_ENV === "production";
@@ -19,15 +17,8 @@ module.exports = withBundleAnalyzer({
       reportFilename: "../bundles/client.html",
     },
   },
-  webpack: (config) => {
-    // To access assetPrefix in the components
-    config.plugins.push(
-      new webpack.DefinePlugin({
-        "process.env.ASSET_PREFIX": JSON.stringify(assetPrefix),
-      }),
-    );
-
-    return config;
+  env: {
+    ASSET_PREFIX: JSON.stringify(assetPrefix),
   },
   exportPathMap: () => ({
     "/": { page: "/" },
