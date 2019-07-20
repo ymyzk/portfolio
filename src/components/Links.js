@@ -1,10 +1,10 @@
-// @flow
+import dynamic from "next/dynamic";
 import PropTypes from "prop-types";
 import React from "react";
 
 import { withStyles } from "@material-ui/core/styles";
 
-import LinkButton from "./LinkButton";
+const LinkButton = dynamic(() => import("./LinkButton"));
 
 const styles = () => ({
   root: {
