@@ -4,6 +4,7 @@ import Document, { Head, Main, NextScript } from "next/document";
 import { ServerStyleSheets } from "@material-ui/styles";
 
 import theme from "../src/theme";
+import { getAssetPrefix } from "../src/utils";
 
 const globalStyle = `
 html {
@@ -70,6 +71,8 @@ class MyDocument extends Document {
             href="/static/images/favicon.png"
             sizes="256x256"
           />
+          {/* DNS prefetch */}
+          { Boolean(getAssetPrefix()) && <link rel="dns-prefetch" href={getAssetPrefix()} />}
           {/* SEO */}
           <meta name="description" content={description} />
           {/* Facebook / OGP */}

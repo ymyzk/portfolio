@@ -18,7 +18,7 @@ module.exports = withBundleAnalyzer({
     },
   },
   env: {
-    ASSET_PREFIX: JSON.stringify(assetPrefix),
+    ASSET_PREFIX: assetPrefix,
   },
   exportPathMap: () => ({
     "/": { page: "/" },
