@@ -1,6 +1,4 @@
-// @flow
 import format from "date-fns/format";
-import PropTypes from "prop-types";
 import React from "react";
 
 import List from "@material-ui/core/List";
@@ -10,24 +8,16 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
-// type Misc = {
-//   id: number,
-//   title: string,
-//   subtitle: string,
-//   date: Date,
-//   link: string,
-//   featured: boolean,
-// };
-//
-// type Props = {
-//   misc: Array<Misc>,
-// };
-//
-// type State = {
-//   expanded: boolean,
-// };
+interface Misc {
+  id: number,
+  title: string,
+  subtitle: string,
+  date: Date,
+  link: string,
+  featured: boolean,
+}
 
-const MiscItem = ({ misc }) => (
+const MiscItem = ({ misc }: { misc: Misc }) => (
   <ListItem button component="a" href={misc.link}>
     <ListItemText
       primary={misc.title}
@@ -36,15 +26,15 @@ const MiscItem = ({ misc }) => (
   </ListItem>
 );
 
-MiscItem.propTypes = {
-  misc: PropTypes.object.isRequired,
-};
+interface Props {
+  misc: Misc[],
+}
 
-class MiscList extends React.Component {
-  static propTypes = {
-    misc: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
-  };
+interface State {
+  expanded: boolean,
+}
 
+class MiscList extends React.Component<Props, State> {
   state = {
     expanded: false,
   };
