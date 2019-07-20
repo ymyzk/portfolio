@@ -1,10 +1,9 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Document, { Head, Main, NextScript } from "next/document";
-import flush from "styled-jsx/server";
 
-import { ServerStyleSheets } from "@material-ui/styles"
-import theme from "../src/theme";;
+import { ServerStyleSheets } from "@material-ui/styles";
+
+import theme from "../src/theme";
 
 const globalStyle = `
 html {
@@ -95,13 +94,13 @@ class MyDocument extends Document {
           {/* PWA primary color */}
           <meta
             name="theme-color"
-            content={pageContext ? pageContext.theme.palette.primary.main : null}
+            content={theme.palette.primary.main}
           />
           {/* Windows / IE / Edge */}
           <meta name="msapplication-TileImage" content="/static/images/ms-tile-image.png" />
           <meta
             name="msapplication-TileColor"
-            content={pageContext ? pageContext.theme.palette.primary.main : null}
+            content={theme.palette.primary.main}
           />
         </Head>
         <body>
@@ -151,14 +150,14 @@ MyDocument.getInitialProps = async ctx => {
     ...initialProps,
     // Styles fragment is rendered after the app and page rendering finish.
     styles: (
-      <React.Fragment>
+      <React.Fragment key="styles">
       { /* TODO We may have a better solution with material-ui v4 */ }
       <style
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: globalStyle }}
       />
+        {initialProps.styles}
         {sheets.getStyleElement()}
-        {flush() || null}
       </React.Fragment>
     ),
   };

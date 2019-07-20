@@ -1,12 +1,10 @@
 const webpack = require("webpack");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
-const withTypescript = require("@zeit/next-typescript");
-
 const isProd = process.env.NODE_ENV === "production";
 const assetPrefix = isProd ? "https://www.ymyzk.tokyo" : "";
 
-module.exports = withTypescript({
+module.exports = {
   assetPrefix,
   webpack: (config) => {
     const { ANALYZE } = process.env;
@@ -31,4 +29,4 @@ module.exports = withTypescript({
   exportPathMap: () => ({
     "/": { page: "/" },
   }),
-});
+};
