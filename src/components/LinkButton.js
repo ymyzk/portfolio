@@ -20,7 +20,7 @@ library.add(fab, faEnvelope, faGlobe, faRss);
 const style = theme => ({
   button: {
     color: "white",
-    margin: theme.spacing.unit / 2,
+    margin: theme.spacing(0.5),
     marginTop: 0,
   },
 });

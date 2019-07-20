@@ -12,7 +12,7 @@ const styles = theme => ({
     justifyContent: "center",
   },
   chip: {
-    margin: theme.spacing.unit / 2,
+    margin: theme.spacing(0.5),
   },
 });
 
