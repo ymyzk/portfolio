@@ -1,11 +1,9 @@
-// @flow
-import React from "react";
-import PropTypes from "prop-types";
+import React, { ReactNode } from "react";
 
 import Grid from "@material-ui/core/Grid";
-import { withStyles } from "@material-ui/core/styles";
+import { createStyles, Theme, WithStyles, withStyles } from "@material-ui/core/styles";
 
-const styles = theme => ({
+const styles = (theme: Theme) => createStyles({
   innerContainer: {
     [theme.breakpoints.up("sm")]: {
       width: 576,
@@ -19,17 +17,16 @@ const styles = theme => ({
   },
 });
 
-const GridContainer = ({ classes, children }) => (
+interface Props extends WithStyles<typeof styles> {
+  children: ReactNode,
+}
+
+const GridContainer = ({ classes, children }: Props) => (
   <Grid container justify="center">
     <Grid container className={classes.innerContainer}>
       { children }
     </Grid>
   </Grid>
 );
-
-GridContainer.propTypes = {
-  classes: PropTypes.object.isRequired,
-  children: PropTypes.node.isRequired,
-};
 
 export default withStyles(styles)(GridContainer);

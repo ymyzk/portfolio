@@ -43,8 +43,6 @@ html {
 
 class MyDocument extends Document {
   render() {
-    const { pageContext } = this.props;
-
     const title = "Yusuke Miyazaki";
     const description = "Yusuke Miyazaki's portfolio website.";
     const url = "https://www.ymyzk.com";

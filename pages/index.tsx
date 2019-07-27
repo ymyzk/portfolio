@@ -1,10 +1,8 @@
-// @flow
 import React from "react";
-import PropTypes from "prop-types";
 
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import { withStyles } from "@material-ui/core/styles";
+import { createStyles, Theme, WithStyles, withStyles } from "@material-ui/core/styles";
 
 import GridContainer from "../src/components/GridContainer";
 import Hero from "../src/components/Hero";
@@ -25,22 +23,24 @@ import {
   works,
 } from "../src/data"; /* eslint-disable-line import/no-unresolved */
 
-const styles = theme => ({
+const styles = ({ spacing }: Theme) => createStyles({
   root: {},
   section: {
-    paddingBottom: theme.spacing(3),
-    paddingTop: theme.spacing(3),
+    paddingBottom: spacing(3),
+    paddingTop: spacing(3),
   },
   sectionHeader: {
     fontSize: 34,
     fontWeight: 300,
-    paddingBottom: theme.spacing(0.5),
-    paddingTop: theme.spacing(0.5),
+    paddingBottom: spacing(0.5),
+    paddingTop: spacing(0.5),
     textAlign: "center",
   },
 });
 
-const Index = ({ classes }) => (
+interface Props extends WithStyles<typeof styles> {}
+
+const Index = ({ classes }: Props) => (
   <div className={classes.root}>
     <Hero />
     <GridContainer>
@@ -87,9 +87,5 @@ const Index = ({ classes }) => (
     </GridContainer>
   </div>
 );
-
-Index.propTypes = {
-  classes: PropTypes.object.isRequired,  // eslint-disable-line
-};
 
 export default withStyles(styles)(Index);
