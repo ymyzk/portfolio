@@ -1,6 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import parse from "date-fns/parse";
 
+import { Research } from "./types";
 import rawLinks from "./links.json";
 import rawMisc from "./misc.json";
 import rawProjects from "./projects.json";
@@ -22,7 +23,7 @@ export const projects = rawProjects.map((t, i) => Object.assign(t, {
   end: t.end ? parse(t.end) : null,
 }));
 
-export const research = rawResearch.map((r, i) => Object.assign(r, { id: i }));
+export const research: Research[] = rawResearch.map((r, i) => Object.assign(r, { id: i }));
 
 export const skills = rawSkills;
 

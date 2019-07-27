@@ -1,17 +1,15 @@
-// @flow
-import PropTypes from "prop-types";
-import React from "react";
+import React, { MouseEvent } from "react";
 import smoothScroll from "smoothscroll";
 
 import Fab from "@material-ui/core/Fab";
-import { withStyles } from "@material-ui/core/styles";
+import { createStyles, WithStyles, withStyles } from "@material-ui/core/styles";
 import ArrowDownward from "@material-ui/icons/ArrowDownward";
 
 import { getAssetPrefix } from "../utils";
 
 const SCROLL_TARGET_ID = "scrollTarget";
 
-const styles = () => ({
+const styles = createStyles({
   background: {
     position: "relative",
     backgroundColor: "#11140b",
@@ -52,10 +50,15 @@ const styles = () => ({
   },
 });
 
-const Hero = ({ classes }) => {
-  const scroll = (e) => {
+interface Props extends WithStyles<typeof styles> {}
+
+const Hero = ({ classes }: Props) => {
+  const scroll = (e: MouseEvent) => {
     e.preventDefault();
-    smoothScroll(document.querySelector(`#${SCROLL_TARGET_ID}`), 1500);
+    const scrollTarget = document.querySelector(`#${SCROLL_TARGET_ID}`);
+    if (scrollTarget !== null) {
+      smoothScroll(scrollTarget, 1500);
+    }
   };
   return (
     <div>
@@ -78,10 +81,6 @@ const Hero = ({ classes }) => {
       <div id={SCROLL_TARGET_ID} />
     </div>
   );
-};
-
-Hero.propTypes = {
-  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(Hero);

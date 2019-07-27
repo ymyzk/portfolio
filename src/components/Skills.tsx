@@ -1,22 +1,24 @@
-// @flow
-import PropTypes from "prop-types";
 import React from "react";
 
 import Chip from "@material-ui/core/Chip";
-import { withStyles } from "@material-ui/core/styles";
+import { createStyles, Theme, WithStyles, withStyles } from "@material-ui/core";
 
-const styles = theme => ({
+const styles = ({ spacing }: Theme) => createStyles({
   root: {
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "center",
   },
   chip: {
-    margin: theme.spacing(0.5),
+    margin: spacing(0.5),
   },
 });
 
-const Skills = ({ classes, skills }) => (
+interface Props extends WithStyles<typeof styles> {
+  skills: string[],
+}
+
+const Skills = ({ classes, skills }: Props) => (
   <div className={classes.root}>
     {
       skills.map(s => (
@@ -25,10 +27,5 @@ const Skills = ({ classes, skills }) => (
     }
   </div>
 );
-
-Skills.propTypes = {
-  classes: PropTypes.object.isRequired,
-  skills: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
-};
 
 export default withStyles(styles)(Skills);

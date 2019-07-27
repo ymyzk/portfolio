@@ -5,16 +5,8 @@ import { createMuiTheme } from "@material-ui/core/styles";
 // Create a theme instance.
 const theme = createMuiTheme({
   palette: {
-    primary: {
-      light: indigo[300],
-      main: indigo[500],
-      dark: indigo[700],
-    },
-    secondary: {
-      light: deepOrange[300],
-      main: deepOrange[500],
-      dark: deepOrange[700],
-    },
+    primary: indigo,
+    secondary: deepOrange,
   },
   typography: {
     fontFamily: [
@@ -28,8 +20,7 @@ const theme = createMuiTheme({
       "游ゴシック", "YuGothic",
       "メイリオ", "Meiryo",
       "sans-serif",
-    ],
-    useNextVariants: true,
+    ].join(","),
   },
 });
 
