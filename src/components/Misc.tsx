@@ -8,14 +8,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
-interface Misc {
-  id: number,
-  title: string,
-  subtitle: string,
-  date: Date,
-  link: string,
-  featured: boolean,
-}
+import { Misc } from "../data/types";
 
 const MiscItem = ({ misc }: { misc: Misc }) => (
   <ListItem button component="a" href={misc.link}>
