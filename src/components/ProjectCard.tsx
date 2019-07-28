@@ -1,6 +1,4 @@
-// @flow
 import getYear from "date-fns/get_year";
-import PropTypes from "prop-types";
 import React from "react";
 import LazyLoad from "react-lazyload";
 
@@ -8,12 +6,13 @@ import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import { withStyles } from "@material-ui/core/styles";
+import { createStyles, WithStyles, withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 
+import { Project } from "../data/types";
 import { getAssetPrefix } from "../utils";
 
-const styles = {
+const styles = createStyles({
   image: {
     width: "100%",
   },
@@ -26,19 +25,24 @@ const styles = {
   tags: {
     marginBottom: 8,
   },
-};
+});
 
-// type Props = {
-//   classes: Classes,
-//   project: Project,
-// };
+interface Props extends WithStyles<typeof styles> {
+  project: Project,
+}
 
-function createSrcSets(file) {
+interface SrcSet {
+  src: string,
+  source: { srcSet: string, type: string }[],
+}
+
+function createSrcSets(file: string | null | undefined): SrcSet | null {
   const imagePrefix = `${getAssetPrefix()}/static/images/projects/`;
   if (file === undefined || file === null) return { src: `${imagePrefix}placeholder.svg`, source: [] };
   const image1x = `${imagePrefix}${file}`;
   const image2x = image1x.replace(/\.jpg$/, "@2x.jpg").replace(/\.png$/, "@2x.png");
   const type = file.endsWith(".jpg") ? "image/jpeg" : (file.endsWith(".png") ? "image/png" : null);
+  if (type === null) return null;
   return {
     src: image1x,
     source: [
@@ -54,9 +58,11 @@ function createSrcSets(file) {
   };
 }
 
-const ProjectCard = ({ classes, project }) => {
+const ProjectCard = ({ classes, project }: Props) => {
   // TODO Disallow undefined in projects.yml
-  const { src, source } = createSrcSets(project.image);
+  const srcset = createSrcSets(project.image);
+  if (srcset == null) return null;
+  const { src, source } = srcset;
 
   const durationTag = (() => {
     const startYear = getYear(project.start);
@@ -103,11 +109,6 @@ const ProjectCard = ({ classes, project }) => {
       </CardActions>
     </Card>
   );
-};
-
-ProjectCard.propTypes = {
-  classes: PropTypes.object.isRequired,
-  project: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(ProjectCard);

@@ -46,6 +46,7 @@ export type Research = {
 }
 
 export type Talk = {
+  id: number,
   title: string,
   event: string,
   date: Date,
@@ -54,6 +55,7 @@ export type Talk = {
 }
 
 export type Work = {
+  id: number,
   title: string,
   company: string,
   link: string | null,

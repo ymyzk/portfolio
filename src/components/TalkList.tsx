@@ -1,5 +1,3 @@
-// @flow
-import PropTypes from "prop-types";
 import React from "react";
 
 import List from "@material-ui/core/List";
@@ -9,21 +7,18 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
+import { Talk } from "../data/types";
 import TalkListItem from "./TalkListItem";
 
-// type Props = {
-//   talks: Array<Talk>,
-// };
-//
-// type State = {
-//   expanded: boolean,
-// };
+interface Props {
+  talks: Talk[],
+}
 
-class TalkList extends React.Component {
-  static propTypes = {
-    talks: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
-  };
+interface State {
+  expanded: boolean,
+}
 
+class TalkList extends React.Component<Props, State> {
   state = {
     expanded: false,
   };

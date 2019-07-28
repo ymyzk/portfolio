@@ -1,6 +1,4 @@
-// @flow
 import format from "date-fns/format";
-import PropTypes from "prop-types";
 import React from "react";
 
 import List from "@material-ui/core/List";
@@ -10,26 +8,10 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
-// type Work = {
-//   id: number,
-//   title: string,
-//   work: ?string,
-//   company: string,
-//   start: Date,
-//   end: ?Date,
-//   featured: boolean,
-//   link: ?string,
-// };
-//
-// type Props = {
-//   works: Array<Work>,
-// };
-//
-// type State = {
-//   expanded: boolean,
-// };
+import { Work } from "../data/types";
 
-const WorkExperienceItem = ({ work }) => (
+const WorkExperienceItem = ({ work }: { work: Work }) => (
+  // @ts-ignore
   <ListItem button component="a" href={work.link} target="_blank" rel="noopener">
     <ListItemText
       primary={`${work.title} of ${work.company}`}
@@ -38,15 +20,15 @@ const WorkExperienceItem = ({ work }) => (
   </ListItem>
 );
 
-WorkExperienceItem.propTypes = {
-  work: PropTypes.object.isRequired,
-};
+interface Props {
+  works: Work[],
+}
 
-class WorkExperienceList extends React.Component {
-  static propTypes = {
-    works: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
-  };
+interface State {
+  expanded: boolean,
+}
 
+class WorkExperienceList extends React.Component<Props, State> {
   state = {
     expanded: false,
   };
