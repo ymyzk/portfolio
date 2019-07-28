@@ -27,20 +27,20 @@ export type Misc = {
 }
 
 export type Project = {
+  id: number,
   title: string,
-  link: string | null,
   image: string,
   start: Date,  // TODO improve
-  links: object,  // TODO improve
-}
-
-export type Research = {
-  title: string,
   end: Date | null,
   tags: string[],
   featured: boolean,
   description: string,
   description_ja?: string,
+  links: object,  // TODO improve
+}
+
+export type Research = {
+  title: string,
   link: string | null,
   tags: string[],
 }
