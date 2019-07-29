@@ -11,11 +11,11 @@ import { Talk } from "../data/types";
 import TalkListItem from "./TalkListItem";
 
 interface Props {
-  talks: Talk[],
+  talks: Talk[];
 }
 
 interface State {
-  expanded: boolean,
+  expanded: boolean;
 }
 
 class TalkList extends React.Component<Props, State> {

@@ -1,7 +1,9 @@
 /* eslint-disable import/prefer-default-export */
 import parse from "date-fns/parse";
 
-import { Link, Misc, Project, Research, Talk, Work } from "./types";
+import {
+  Link, Misc, Project, Research, Talk, Work,
+} from "./types";
 import rawLinks from "./links.json";
 import rawMisc from "./misc.json";
 import rawProjects from "./projects.json";

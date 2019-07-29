@@ -21,11 +21,11 @@ const WorkExperienceItem = ({ work }: { work: Work }) => (
 );
 
 interface Props {
-  works: Work[],
+  works: Work[];
 }
 
 interface State {
-  expanded: boolean,
+  expanded: boolean;
 }
 
 class WorkExperienceList extends React.Component<Props, State> {

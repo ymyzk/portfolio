@@ -8,7 +8,9 @@ import { faRss } from "@fortawesome/free-solid-svg-icons/faRss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import Fab from "@material-ui/core/Fab";
-import { createStyles, Theme, WithStyles, withStyles } from "@material-ui/core/styles";
+import {
+  createStyles, Theme, WithStyles, withStyles,
+} from "@material-ui/core/styles";
 import SvgIcon from "@material-ui/core/SvgIcon";
 import Tooltip from "@material-ui/core/Tooltip";
 
@@ -34,7 +36,7 @@ function SpeakerDeckIcon(props: any) {
 }
 
 interface Props extends WithStyles<typeof styles> {
-  link: Link,
+  link: Link;
 }
 
 const LinkButton = ({ classes, link }: Props) => {

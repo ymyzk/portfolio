@@ -28,12 +28,12 @@ const styles = createStyles({
 });
 
 interface Props extends WithStyles<typeof styles> {
-  project: Project,
+  project: Project;
 }
 
 interface SrcSet {
-  src: string,
-  source: { srcSet: string, type: string }[],
+  src: string;
+  source: { srcSet: string; type: string }[];
 }
 
 function createSrcSets(file: string | null | undefined): SrcSet | null {
@@ -41,6 +41,7 @@ function createSrcSets(file: string | null | undefined): SrcSet | null {
   if (file === undefined || file === null) return { src: `${imagePrefix}placeholder.svg`, source: [] };
   const image1x = `${imagePrefix}${file}`;
   const image2x = image1x.replace(/\.jpg$/, "@2x.jpg").replace(/\.png$/, "@2x.png");
+  // eslint-disable-next-line no-nested-ternary
   const type = file.endsWith(".jpg") ? "image/jpeg" : (file.endsWith(".png") ? "image/png" : null);
   if (type === null) return null;
   return {

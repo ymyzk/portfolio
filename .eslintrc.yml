@@ -1,17 +1,36 @@
+parser: "@typescript-eslint/parser"
+parserOptions:
+  project: tsconfig.json
+  tsconfigRootDir: .
+plugins:
+  - "@typescript-eslint"
+  - react
+extends:
+  - airbnb
+  - "plugin:@typescript-eslint/recommended"
 rules:
   linebreak-style:
     - error
     - unix
+  "@typescript-eslint/indent":
+    - error
+    - 2
   # Following rules override eslint-config-airbnb
   quotes:
     - error
     - double
   # Following rules may be changed in the future
+  import/no-unresolved:
+    - off
   react/forbid-prop-types:
     - off
   react/jsx-filename-extension:
     - off
   jsx-a11y/anchor-has-content:
+    - off
+  "@typescript-eslint/explicit-function-return-type":
+    - off
+  "@typescript-eslint/explicit-member-accessibility":
     - off
 env:
   browser: true
@@ -22,10 +41,5 @@ globals:
   __PRODUCTION__: true
   __CLIENT__: true
   __SERVER__: true
-plugins:
-  - react
 settings:
   import/resolver: webpack
-parser: babel-eslint
-extends:
-  - "airbnb"

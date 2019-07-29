@@ -17,7 +17,8 @@
     "minify-images": "node ./bin/minify-images.js",
     "start": "next start",
     "test": "run-s test:*",
-    "test:lint": "true || eslint next.config.js pages src",
+    "test:lint": "eslint src/** pages/** --ext .js,.jsx,.ts,.tsx",
+    "teast:lint": "true || eslint next.config.js pages src",
     "test:tsc": "tsc"
   },
   "dependencies": {
@@ -44,6 +45,8 @@
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.5",
     "@types/react-lazyload": "^2.5.0",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
     "@zeit/next-bundle-analyzer": "^0.1.2",
     "babel-eslint": "^10.0.2",
     "eslint": "^5.16.0",

@@ -50,9 +50,7 @@ const styles = createStyles({
   },
 });
 
-interface Props extends WithStyles<typeof styles> {}
-
-const Hero = ({ classes }: Props) => {
+const Hero = ({ classes }: WithStyles<typeof styles>) => {
   const scroll = (e: MouseEvent) => {
     e.preventDefault();
     const scrollTarget = document.querySelector(`#${SCROLL_TARGET_ID}`);

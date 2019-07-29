@@ -2,7 +2,9 @@ import React from "react";
 
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import { createStyles, Theme, WithStyles, withStyles } from "@material-ui/core/styles";
+import {
+  createStyles, Theme, WithStyles, withStyles,
+} from "@material-ui/core/styles";
 
 import GridContainer from "../src/components/GridContainer";
 import Hero from "../src/components/Hero";
@@ -38,9 +40,7 @@ const styles = ({ spacing }: Theme) => createStyles({
   },
 });
 
-interface Props extends WithStyles<typeof styles> {}
-
-const Index = ({ classes }: Props) => (
+const Index = ({ classes }: WithStyles<typeof styles>) => (
   <div className={classes.root}>
     <Hero />
     <GridContainer>

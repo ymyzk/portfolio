@@ -1,7 +1,9 @@
 import React, { ReactNode } from "react";
 
 import Grid from "@material-ui/core/Grid";
-import { createStyles, Theme, WithStyles, withStyles } from "@material-ui/core/styles";
+import {
+  createStyles, Theme, WithStyles, withStyles,
+} from "@material-ui/core/styles";
 
 const styles = (theme: Theme) => createStyles({
   innerContainer: {
@@ -18,7 +20,7 @@ const styles = (theme: Theme) => createStyles({
 });
 
 interface Props extends WithStyles<typeof styles> {
-  children: ReactNode,
+  children: ReactNode;
 }
 
 const GridContainer = ({ classes, children }: Props) => (

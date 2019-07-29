@@ -20,11 +20,11 @@ const MiscItem = ({ misc }: { misc: Misc }) => (
 );
 
 interface Props {
-  misc: Misc[],
+  misc: Misc[];
 }
 
 interface State {
-  expanded: boolean,
+  expanded: boolean;
 }
 
 class MiscList extends React.Component<Props, State> {

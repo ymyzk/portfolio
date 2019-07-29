@@ -1,7 +1,9 @@
 import React from "react";
 
 import Chip from "@material-ui/core/Chip";
-import { createStyles, Theme, WithStyles, withStyles } from "@material-ui/core";
+import {
+  createStyles, Theme, WithStyles, withStyles,
+} from "@material-ui/core";
 
 const styles = ({ spacing }: Theme) => createStyles({
   root: {
@@ -15,7 +17,7 @@ const styles = ({ spacing }: Theme) => createStyles({
 });
 
 interface Props extends WithStyles<typeof styles> {
-  skills: string[],
+  skills: string[];
 }
 
 const Skills = ({ classes, skills }: Props) => (

@@ -7,7 +7,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import { Talk } from "../data/types";
 
 interface Props {
-    talk: Talk,
+  talk: Talk;
 }
 
 const TalkListItem = ({ talk }: Props) => {
@@ -30,7 +30,7 @@ const TalkListItem = ({ talk }: Props) => {
             {" — "}
             {talk.event}
           </span>
-)}
+        )}
       />
     </ListItem>
   );

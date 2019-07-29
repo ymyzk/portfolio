@@ -14,7 +14,7 @@ const styles = () => createStyles({
 });
 
 interface Props extends WithStyles<typeof styles> {
-  links: Link[],
+  links: Link[];
 }
 
 const Links = ({ classes, links }: Props) => (
