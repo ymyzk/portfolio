@@ -1,26 +1,26 @@
 import dynamic from "next/dynamic";
-import PropTypes from "prop-types";
 import React from "react";
 
-import { withStyles } from "@material-ui/core/styles";
+import { createStyles, WithStyles, withStyles } from "@material-ui/core/styles";
+
+import { Link } from "../data/types";
 
 const LinkButton = dynamic(() => import("./LinkButton"));
 
-const styles = () => ({
+const styles = () => createStyles({
   root: {
     textAlign: "center",
   },
 });
 
-const Links = ({ classes, links }) => (
+interface Props extends WithStyles<typeof styles> {
+  links: Link[],
+}
+
+const Links = ({ classes, links }: Props) => (
   <div className={classes.root}>
     { links.map(l => <LinkButton key={l.url} link={l} />) }
   </div>
 );
-
-Links.propTypes = {
-  classes: PropTypes.object.isRequired,  // eslint-disable-line
-  links: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
-};
 
 export default withStyles(styles)(Links);

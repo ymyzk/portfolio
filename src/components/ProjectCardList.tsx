@@ -1,16 +1,11 @@
-// @flow
-import PropTypes from "prop-types";
 import React from "react";
 
 import Grid from "@material-ui/core/Grid";
 
+import { Project } from "../data/types";
 import ProjectCard from "./ProjectCard";
 
-// type Props = {
-//   projects: Array<any>,
-// };
-
-const ProjectCardList = ({ projects }) => (
+const ProjectCardList = ({ projects }: { projects: Project[] }) => (
   // Hack to fix the problem related to negative margin
   // https://material-ui.com/layout/grid/#negative-margin
   <div style={{ padding: 8 }}>
@@ -25,9 +20,5 @@ const ProjectCardList = ({ projects }) => (
     </Grid>
   </div>
 );
-
-ProjectCardList.propTypes = {
-  projects: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
-};
 
 export default ProjectCardList;
