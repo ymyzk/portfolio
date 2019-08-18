@@ -34,6 +34,7 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
+      - run: docker run --rm -i hadolint/hadolint < Dockerfile
       - run: docker build -t portfolio .
       - run:
           command: |
