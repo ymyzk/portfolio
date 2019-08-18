@@ -16,6 +16,6 @@ EXPOSE 3000
 
 CMD ["npm", "run", "start", "--", "-H", "0.0.0.0"]
 
-FROM busybox
+FROM busybox:1
 
 COPY --from=build /app/out /app/out
