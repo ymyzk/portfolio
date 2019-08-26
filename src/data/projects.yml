@@ -52,7 +52,7 @@
 
 - title: mypy Playground
   link: https://github.com/ymyzk/wsgi_lineprof
-  image: placeholder.svg
+  image: null
   start: 2017-05-07
   end: null
   tags: [Web, Python]

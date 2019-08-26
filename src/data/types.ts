@@ -29,7 +29,7 @@ export interface Misc {
 export interface Project {
   id: number;
   title: string;
-  image: string;
+  image: string | null;
   start: Date; // TODO improve
   end: Date | null;
   tags: string[];
