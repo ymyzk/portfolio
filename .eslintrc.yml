@@ -22,11 +22,7 @@ rules:
   # Following rules may be changed in the future
   import/no-unresolved:
     - off
-  react/forbid-prop-types:
-    - off
   react/jsx-filename-extension:
-    - off
-  jsx-a11y/anchor-has-content:
     - off
   "@typescript-eslint/explicit-function-return-type":
     - off
