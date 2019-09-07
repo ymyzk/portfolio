@@ -15,7 +15,7 @@ const WorkExperienceItem = ({ work }: { work: Work }) => (
   <ListItem button component="a" href={work.link} target="_blank" rel="noopener">
     <ListItemText
       primary={`${work.title} of ${work.company}`}
-      secondary={`${format(work.start, "MMM YYYY")}–${work.end ? format(work.end, "MMM YYYY") : "Present"}`}
+      secondary={`${format(work.start, "MMM yyyy")}–${work.end ? format(work.end, "MMM yyyy") : "Present"}`}
     />
   </ListItem>
 );

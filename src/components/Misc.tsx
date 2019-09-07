@@ -14,7 +14,7 @@ const MiscItem = ({ misc }: { misc: Misc }) => (
   <ListItem button component="a" href={misc.link}>
     <ListItemText
       primary={misc.title}
-      secondary={`${format(misc.date, "YYYY-M-D")} — ${misc.subtitle}`}
+      secondary={`${format(misc.date, "yyyy-M-d")} — ${misc.subtitle}`}
     />
   </ListItem>
 );
