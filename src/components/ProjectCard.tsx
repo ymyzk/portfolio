@@ -81,7 +81,7 @@ const ProjectCard = ({ classes, project }: Props) => {
       {/* Known bug?: https://github.com/twobin/react-lazyload/issues/189 */}
       <LazyLoad height={240} offset={300} once>
         <picture>
-          { source.map(s => <source key={s.srcSet} srcSet={s.srcSet} type={s.type} />) }
+          { source.map((s) => <source key={s.srcSet} srcSet={s.srcSet} type={s.type} />) }
           <img
             className={classes.image}
             src={src}

@@ -19,7 +19,7 @@ interface Props extends WithStyles<typeof styles> {
 
 const Links = ({ classes, links }: Props) => (
   <div className={classes.root}>
-    { links.map(l => <LinkButton key={l.url} link={l} />) }
+    { links.map((l) => <LinkButton key={l.url} link={l} />) }
   </div>
 );
 

@@ -11,7 +11,7 @@ const ProjectCardList = ({ projects }: { projects: Project[] }) => (
   <div style={{ padding: 8 }}>
     <Grid container spacing={2}>
       {
-        projects.filter(p => p.featured).map(p => (
+        projects.filter((p) => p.featured).map((p) => (
           <Grid item key={p.id} xs={12} sm={6} md={4}>
             <ProjectCard project={p} />
           </Grid>

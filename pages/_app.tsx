@@ -18,7 +18,7 @@ class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
     return (
-      <React.Fragment>
+      <>
         <Head>
           <title>Yusuke Miyazaki</title>
         </Head>
@@ -27,7 +27,7 @@ class MyApp extends App {
           <CssBaseline />
           <Component {...pageProps} />
         </ThemeProvider>
-      </React.Fragment>
+      </>
     );
   }
 }

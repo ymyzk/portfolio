@@ -33,7 +33,7 @@ class MiscList extends React.Component<Props, State> {
   };
 
   toggle = () => {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       expanded: !prevState.expanded,
     }));
   };
@@ -45,8 +45,8 @@ class MiscList extends React.Component<Props, State> {
       <List>
         {
           misc
-            .filter(m => (expanded ? true : m.featured))
-            .map(m => <MiscItem misc={m} key={m.id} />)
+            .filter((m) => (expanded ? true : m.featured))
+            .map((m) => <MiscItem misc={m} key={m.id} />)
         }
         <ListItem button>
           <ListItemIcon>

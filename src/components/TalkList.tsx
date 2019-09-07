@@ -24,7 +24,7 @@ class TalkList extends React.Component<Props, State> {
   };
 
   toggle = () => {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       expanded: !prevState.expanded,
     }));
   };
@@ -35,7 +35,7 @@ class TalkList extends React.Component<Props, State> {
     talks = expanded ? talks : talks.slice(0, 3);
     return (
       <List>
-        { talks.map(t => <TalkListItem talk={t} key={t.id} />) }
+        { talks.map((t) => <TalkListItem talk={t} key={t.id} />) }
         <ListItem button>
           <ListItemIcon>
             {expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}

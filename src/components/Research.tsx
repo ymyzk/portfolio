@@ -36,7 +36,7 @@ const Research = ({ classes, research }: Props) => (
     </Grid>
     <List>
       {
-        research.map(r => <ResearchListItem research={r} key={r.id} />)
+        research.map((r) => <ResearchListItem research={r} key={r.id} />)
       }
     </List>
   </div>

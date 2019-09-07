@@ -34,7 +34,7 @@ class WorkExperienceList extends React.Component<Props, State> {
   };
 
   toggle = () => {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       expanded: !prevState.expanded,
     }));
   };
@@ -46,8 +46,8 @@ class WorkExperienceList extends React.Component<Props, State> {
       <List>
         {
           works
-            .filter(w => (expanded ? true : w.featured))
-            .map(w => <WorkExperienceItem work={w} key={w.id} />)
+            .filter((w) => (expanded ? true : w.featured))
+            .map((w) => <WorkExperienceItem work={w} key={w.id} />)
         }
         <ListItem button>
           <ListItemIcon>

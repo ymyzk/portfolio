@@ -23,7 +23,7 @@ interface Props extends WithStyles<typeof styles> {
 const Skills = ({ classes, skills }: Props) => (
   <div className={classes.root}>
     {
-      skills.map(s => (
+      skills.map((s) => (
         <Chip className={classes.chip} label={s} key={s} />
       ))
     }
