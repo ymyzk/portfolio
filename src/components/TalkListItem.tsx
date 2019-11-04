@@ -27,7 +27,7 @@ const TalkListItem = ({ talk }: Props) => {
             <time dateTime={dateIso}>
               {dateString}
             </time>
-            {" — "}
+            &nbsp;—&nbsp;
             {talk.event}
           </span>
         )}
