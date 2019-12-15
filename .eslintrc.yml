@@ -20,6 +20,8 @@ rules:
     - error
     - double
   # Following rules may be changed in the future
+  import/extensions:
+    - off
   import/no-unresolved:
     - off
   react/jsx-filename-extension:

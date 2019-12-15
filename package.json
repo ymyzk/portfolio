@@ -18,7 +18,6 @@
     "start": "next start",
     "test": "run-s test:*",
     "test:lint": "eslint src/** pages/** --ext .js,.jsx,.ts,.tsx",
-    "teast:lint": "true || eslint next.config.js pages src",
     "test:tsc": "tsc"
   },
   "dependencies": {
