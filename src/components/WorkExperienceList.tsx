@@ -1,5 +1,5 @@
 import format from "date-fns/format";
-import React from "react";
+import React, {useState} from "react";
 
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -24,43 +24,26 @@ interface Props {
   works: Work[];
 }
 
-interface State {
-  expanded: boolean;
-}
-
-class WorkExperienceList extends React.Component<Props, State> {
-  state = {
-    expanded: false,
-  };
-
-  toggle = () => {
-    this.setState((prevState) => ({
-      expanded: !prevState.expanded,
-    }));
-  };
-
-  render() {
-    const { works } = this.props;
-    const { expanded } = this.state;
-    return (
-      <List>
-        {
-          works
-            .filter((w) => (expanded ? true : w.featured))
-            .map((w) => <WorkExperienceItem work={w} key={w.id} />)
-        }
-        <ListItem button>
-          <ListItemIcon>
-            {expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-          </ListItemIcon>
-          <ListItemText
-            primary={`Show ${expanded ? "less" : "more"}`}
-            onClick={this.toggle}
-          />
-        </ListItem>
-      </List>
-    );
-  }
-}
+const WorkExperienceList = ({ works }: Props) => {
+  const [expanded, setExpanded] = useState<boolean>(false);
+  return (
+    <List>
+      {
+        works
+          .filter((w) => (expanded ? true : w.featured))
+          .map((w) => <WorkExperienceItem work={w} key={w.id} />)
+      }
+      <ListItem button>
+        <ListItemIcon>
+          {expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+        </ListItemIcon>
+        <ListItemText
+          primary={`Show ${expanded ? "less" : "more"}`}
+          onClick={() => setExpanded(!expanded)}
+        />
+      </ListItem>
+    </List>
+  );
+};
 
 export default WorkExperienceList;

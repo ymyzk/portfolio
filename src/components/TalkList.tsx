@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -14,40 +14,23 @@ interface Props {
   talks: Talk[];
 }
 
-interface State {
-  expanded: boolean;
-}
-
-class TalkList extends React.Component<Props, State> {
-  state = {
-    expanded: false,
-  };
-
-  toggle = () => {
-    this.setState((prevState) => ({
-      expanded: !prevState.expanded,
-    }));
-  };
-
-  render() {
-    let { talks } = this.props;
-    const { expanded } = this.state;
-    talks = expanded ? talks : talks.slice(0, 3);
-    return (
-      <List>
-        { talks.map((t) => <TalkListItem talk={t} key={t.id} />) }
-        <ListItem button>
-          <ListItemIcon>
-            {expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-          </ListItemIcon>
-          <ListItemText
-            primary={`Show ${expanded ? "less" : "more"}`}
-            onClick={this.toggle}
-          />
-        </ListItem>
-      </List>
-    );
-  }
-}
+const TalkList = ({ talks }: Props) => {
+  const [expanded, setExpanded] = useState<boolean>(false);
+  const talksToShow = expanded ? talks : talks.slice(0, 3);
+  return (
+    <List>
+      { talksToShow.map((t) => <TalkListItem talk={t} key={t.id} />) }
+      <ListItem button>
+        <ListItemIcon>
+          {expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+        </ListItemIcon>
+        <ListItemText
+          primary={`Show ${expanded ? "less" : "more"}`}
+          onClick={() => setExpanded(!expanded)}
+        />
+      </ListItem>
+    </List>
+  );
+};
 
 export default TalkList;

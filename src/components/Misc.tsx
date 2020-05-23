@@ -1,5 +1,5 @@
 import format from "date-fns/format";
-import React from "react";
+import React, { useState } from "react";
 
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -23,43 +23,26 @@ interface Props {
   misc: Misc[];
 }
 
-interface State {
-  expanded: boolean;
-}
-
-class MiscList extends React.Component<Props, State> {
-  state = {
-    expanded: false,
-  };
-
-  toggle = () => {
-    this.setState((prevState) => ({
-      expanded: !prevState.expanded,
-    }));
-  };
-
-  render() {
-    const { misc } = this.props;
-    const { expanded } = this.state;
-    return (
-      <List>
-        {
-          misc
-            .filter((m) => (expanded ? true : m.featured))
-            .map((m) => <MiscItem misc={m} key={m.id} />)
-        }
-        <ListItem button>
-          <ListItemIcon>
-            {expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-          </ListItemIcon>
-          <ListItemText
-            primary={`Show ${expanded ? "less" : "more"}`}
-            onClick={this.toggle}
-          />
-        </ListItem>
-      </List>
-    );
-  }
-}
+const MiscList = ({ misc }: Props) => {
+  const [expanded, setExpanded] = useState<boolean>(false);
+  return (
+    <List>
+      {
+        misc
+          .filter((m) => (expanded ? true : m.featured))
+          .map((m) => <MiscItem misc={m} key={m.id} />)
+      }
+      <ListItem button>
+        <ListItemIcon>
+          {expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+        </ListItemIcon>
+        <ListItemText
+          primary={`Show ${expanded ? "less" : "more"}`}
+          onClick={() => setExpanded(!expanded)}
+        />
+      </ListItem>
+    </List>
+  );
+};
 
 export default MiscList;
