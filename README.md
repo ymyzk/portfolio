@@ -1,6 +1,5 @@
 # portfolio
 
-[![Build Status](https://travis-ci.org/ymyzk/portfolio.svg?branch=master)](https://travis-ci.org/ymyzk/portfolio)
 [![CircleCI](https://circleci.com/gh/ymyzk/portfolio/tree/master.svg?style=svg)](https://circleci.com/gh/ymyzk/portfolio/tree/master)
 [![Dependency Status](https://david-dm.org/ymyzk/portfolio.svg)](https://david-dm.org/ymyzk/portfolio)
 [![devDependency Status](https://david-dm.org/ymyzk/portfolio/dev-status.svg)](https://david-dm.org/ymyzk/portfolio#info=devDependencies)
