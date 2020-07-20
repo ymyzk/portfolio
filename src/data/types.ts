@@ -35,8 +35,8 @@ export interface Project {
   tags: string[];
   featured: boolean;
   description: string;
-  description_ja?: string;
-  links: object; // TODO improve
+  descriptionJa?: string;
+  links: any; // TODO improve
 }
 
 export interface Research {

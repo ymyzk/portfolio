@@ -14,7 +14,7 @@ interface Props {
   talks: Talk[];
 }
 
-const TalkList = ({ talks }: Props) => {
+const TalkList: React.FC<Props> = ({ talks }) => {
   const [expanded, setExpanded] = useState<boolean>(false);
   const talksToShow = expanded ? talks : talks.slice(0, 3);
   return (

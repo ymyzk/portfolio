@@ -23,7 +23,7 @@ interface Props {
   misc: Misc[];
 }
 
-const MiscList = ({ misc }: Props) => {
+const MiscList: React.FC<Props> = ({ misc }) => {
   const [expanded, setExpanded] = useState<boolean>(false);
   return (
     <List>

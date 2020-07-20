@@ -31,12 +31,17 @@ rules:
   react/state-in-constructor:
     - error
     - never
-  "@typescript-eslint/ban-ts-ignore":
+  "@typescript-eslint/ban-ts-comment":
     - warn
   "@typescript-eslint/explicit-function-return-type":
     - off
   "@typescript-eslint/explicit-member-accessibility":
     - off
+overrides:
+  - files:
+      - "**/*.tsx"
+    rules:
+      react/prop-types: off
 env:
   browser: true
   es6: true

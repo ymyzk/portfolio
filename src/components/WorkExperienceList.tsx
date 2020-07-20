@@ -24,7 +24,7 @@ interface Props {
   works: Work[];
 }
 
-const WorkExperienceList = ({ works }: Props) => {
+const WorkExperienceList: React.FC<Props> = ({ works }) => {
   const [expanded, setExpanded] = useState<boolean>(false);
   return (
     <List>
