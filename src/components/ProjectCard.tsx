@@ -76,6 +76,7 @@ const ProjectCard = ({ classes, project }: Props) => {
     return startYear === endYear ? `${startYear}` : `${startYear}–${endYear}`;
   })();
   const tags = [durationTag].concat(project.tags);
+  const links: ([string, string])[] = Object.entries(project.links ? project.links : {});
   return (
     <Card>
       {/* Known bug?: https://github.com/twobin/react-lazyload/issues/189 */}
@@ -103,9 +104,7 @@ const ProjectCard = ({ classes, project }: Props) => {
       </CardContent>
       <CardActions>
         {
-          Object
-            .entries(project.links ? project.links : {})
-            .map(([title, url]) => <Button key={url} size="small" color="primary" href={url} target="_blank" rel="noopener">{title}</Button>)
+          links.map(([title, url]) => <Button key={url} size="small" color="primary" href={url} target="_blank" rel="noopener">{title}</Button>)
         }
       </CardActions>
     </Card>
