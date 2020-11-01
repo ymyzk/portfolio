@@ -1,7 +1,9 @@
 const withBundleAnalyzer = require("@zeit/next-bundle-analyzer");
 
 const isProd = process.env.NODE_ENV === "production";
-const assetPrefix = isProd ? "https://www.ymyzk.tokyo" : "";
+const assetPrefix = "";
+// Example with CDN for assets in production
+// const assetPrefix = isProd ? "https://cdn.example.com" : "";
 
 module.exports = withBundleAnalyzer({
   assetPrefix,
