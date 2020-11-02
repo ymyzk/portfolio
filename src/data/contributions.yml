@@ -1,0 +1,39 @@
+- name: Django
+  link: https://www.djangoproject.com/
+  roles:
+    - Patches
+    - Translation
+
+- name: Flashlight
+  link: http://flashlight.nateparrott.com/
+  roles:
+    - Plugins
+    - Translation
+
+- name: XCGLogger
+  link: https://github.com/DaveWoodCom/XCGLogger
+  roles:
+    - Patches
+
+- name: sorl-thumbnail
+  link: https://github.com/mariocesar/sorl-thumbnail
+  roles:
+    - Patches
+
+- name: Homebrew
+  link: http://brew.sh/
+  roles:
+    - Formulae
+
+- name: Debian
+  link: http://www.debian.org/
+  roles:
+    - Translation
+
+- name: Python
+  link: https://www.python.org/
+  roles:
+    - Translation
+    - typeshed
+    - PyLadies Kyoto
+    - Python Boot Camp
