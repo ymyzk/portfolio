@@ -55,5 +55,7 @@ jobs:
           password: ${{ secrets.CR_PAT }}
       - name: Push to GitHub Container Registry
         run: |
+          docker tag portfolio ghcr.io/ymyzk/portfolio:$GITHUB_SHA
           docker tag portfolio ghcr.io/ymyzk/portfolio:latest
+          docker push ghcr.io/ymyzk/portfolio:$GITHUB_SHA
           docker push ghcr.io/ymyzk/portfolio:latest
