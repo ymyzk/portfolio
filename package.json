@@ -40,7 +40,7 @@
     "styled-jsx": "^3.3.0"
   },
   "devDependencies": {
-    "@types/node": "^12.12.50",
+    "@types/node": "^14.14.6",
     "@types/react": "^16.9.43",
     "@types/react-dom": "^16.9.8",
     "@types/react-lazyload": "^2.6.0",
