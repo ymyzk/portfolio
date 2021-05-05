@@ -1,5 +1,7 @@
 import React from "react";
-import Document, { Head, Main, NextScript } from "next/document";
+import Document, {
+  Head, Html, Main, NextScript,
+} from "next/document";
 
 import { ServerStyleSheets } from "@material-ui/styles";
 
@@ -48,7 +50,7 @@ class MyDocument extends Document {
     const url = "https://www.ymyzk.com";
 
     return (
-      <html lang="en" dir="ltr" prefix="og: http://ogp.me/ns# profile: http://ogp.me/ns/profile# fb: http://ogp.me/ns/fb#">
+      <Html lang="en" dir="ltr" prefix="og: http://ogp.me/ns# profile: http://ogp.me/ns/profile# fb: http://ogp.me/ns/fb#">
         <Head>
           <meta charSet="utf-8" />
           {/* Favicon */}
@@ -103,7 +105,7 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }
