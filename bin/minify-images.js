@@ -45,7 +45,7 @@ async function convert(input, output, options) {
 }
 
 (async () => {
-  await convert(["resources/images/background.jpg"], "static/images", {
+  await convert(["resources/images/background.jpg"], "public/static/images", {
     plugins: [
       resize({
         width: 1024,
@@ -60,7 +60,7 @@ async function convert(input, output, options) {
       forceExtension(".jpg"),
     ],
   });
-  await convert(["resources/images/projects/*.png"], "static/images/projects", {
+  await convert(["resources/images/projects/*.png"], "public/static/images/projects", {
     plugins: [
       resize({
         width: 384,
@@ -75,7 +75,7 @@ async function convert(input, output, options) {
       forceExtension(".jpg"),
     ],
   });
-  await convert(["resources/images/projects/*.png"], "static/images/projects", {
+  await convert(["resources/images/projects/*.png"], "public/static/images/projects", {
     plugins: [
       resize({
         width: 768,
@@ -91,7 +91,7 @@ async function convert(input, output, options) {
       forceExtension(".jpg"),
     ],
   });
-  await convert(["resources/images/projects/*.png"], "static/images/projects", {
+  await convert(["resources/images/projects/*.png"], "public/static/images/projects", {
     plugins: [
       resize({
         width: 384,
@@ -107,7 +107,7 @@ async function convert(input, output, options) {
       forceExtension(".webp"),
     ],
   });
-  await convert(["resources/images/projects/*.png"], "static/images/projects", {
+  await convert(["resources/images/projects/*.png"], "public/static/images/projects", {
     plugins: [
       resize({
         width: 768,

@@ -19,4 +19,4 @@ $ docker rm $container_id
 ```
 
 ### Notes
-- If you make a change to a file in `/static`, please rename it because the previous version may be cached.
+- If you make a change to a file in `/public/static`, please rename it because the previous version may be cached.
