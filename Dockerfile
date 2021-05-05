@@ -9,8 +9,7 @@ RUN npm ci \
 
 COPY . /app/
 
-RUN ["npm", "run", "build"]
-RUN ["npm", "run", "export"]
+RUN npm run build && npm run export
 
 EXPOSE 3000
 
