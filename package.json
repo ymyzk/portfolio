@@ -33,7 +33,6 @@
     "next": "^9.5.5",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "react-ga": "^2.7.0",
     "react-jss": "^10.6.0",
     "react-lazyload": "^3.2.0",
     "smoothscroll": "^0.4.0",
