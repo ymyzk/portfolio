@@ -41,6 +41,9 @@ async function convert(input, output, options) {
   for (const postPlugin of options.postPlugins || []) {
     postPlugin(files);
   }
+  for (const { path } of files) {
+    console.log("Converted:", path);
+  }
   return files;
 }
 
