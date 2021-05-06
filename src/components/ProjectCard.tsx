@@ -79,6 +79,8 @@ const ProjectCard = ({ classes, project }: Props) => {
   const links: ([string, string])[] = Object.entries(project.links ? project.links : {});
   return (
     <Card>
+      {/* We don't use next/image yet because we cannot export statically optimized images
+          using `next export`. */}
       {/* Known bug?: https://github.com/twobin/react-lazyload/issues/189 */}
       <LazyLoad height={240} offset={300} once>
         <picture>
