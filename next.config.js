@@ -1,4 +1,4 @@
-const withBundleAnalyzer = require("@zeit/next-bundle-analyzer");
+const withBundleAnalyzer = require("@next/bundle-analyzer");
 
 const isProd = process.env.NODE_ENV === "production";
 const assetPrefix = "";
