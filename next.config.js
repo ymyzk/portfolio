@@ -25,4 +25,7 @@ module.exports = withBundleAnalyzer({
   exportPathMap: () => ({
     "/": { page: "/" },
   }),
+  future: {
+    webpack5: true,
+  },
 });
