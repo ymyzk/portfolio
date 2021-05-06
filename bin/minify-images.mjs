@@ -1,10 +1,10 @@
-const fs = require("fs");
-const path = require("path");
+import fs from "fs";
+import path from "path";
 
-const imagemin = require("imagemin");
-const imageminMozjpeg = require("imagemin-mozjpeg");
-const imageminWebp = require("imagemin-webp");
-const Jimp = require("jimp");
+import imagemin from "imagemin";
+import imageminMozjpeg from "imagemin-mozjpeg";
+import imageminWebp from "imagemin-webp";
+import Jimp from "jimp";
 
 const resize = ({ width, height, mime }) => async (buffer, ...args) => {
   const image = await Jimp.read(buffer);
