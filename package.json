@@ -30,7 +30,7 @@
     "@material-ui/styles": "^4.11.4",
     "date-fns": "^2.21.2",
     "jss": "^10.6.0",
-    "next": "^9.5.5",
+    "next": "^10.2.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-jss": "^10.6.0",
