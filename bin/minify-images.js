@@ -14,35 +14,36 @@ const resize = ({ width, height, mime }) => async (buffer, ...args) => {
 
 const extendFilename = name => (files) => {
   files.map((file) => {
-    const { path: filePath } = file;
+    const { destinationPath: filePath } = file;
     const parsedPath = path.parse(filePath);
     delete parsedPath.base;
     parsedPath.name += name;
     const newFilePath = path.format(parsedPath);
     fs.renameSync(filePath, newFilePath);
-    return Object.assign(file, { path: newFilePath });
+    return Object.assign(file, { destinationPath: newFilePath });
   });
 };
 
 const forceExtension = ext => (files) => {
   files.map((file) => {
-    const { path: filePath } = file;
+    const { destinationPath: filePath } = file;
     const parsedPath = path.parse(filePath);
     delete parsedPath.base;
     parsedPath.ext = ext;
     const newFilePath = path.format(parsedPath);
     fs.renameSync(filePath, path.format(parsedPath));
-    return Object.assign(file, { path: newFilePath });
+    return Object.assign(file, { destinationPath: newFilePath });
   });
 };
 
 async function convert(input, output, options) {
-  const files = await imagemin(input, output, options);
+  options.destination = output; // Compatibility for imagemin 7+
+  const files = await imagemin(input, options);
   for (const postPlugin of options.postPlugins || []) {
     postPlugin(files);
   }
-  for (const { path } of files) {
-    console.log("Converted:", path);
+  for (const { destinationPath, sourcePath } of files) {
+    console.log(`Converted: ${sourcePath} => ${destinationPath}`);
   }
   return files;
 }
