@@ -65,7 +65,7 @@ async function convert(input, output, options) {
       resize({
         width: 384,
         height: Jimp.AUTO,
-        mime: Jimp.MIME_JPEG,
+        mime: Jimp.MIME_PNG,
       }),
       imageminMozjpeg({
         quality: 80,
@@ -80,7 +80,7 @@ async function convert(input, output, options) {
       resize({
         width: 768,
         height: Jimp.AUTO,
-        mime: Jimp.MIME_JPEG,
+        mime: Jimp.MIME_PNG,
       }),
       imageminMozjpeg({
         quality: 80,
