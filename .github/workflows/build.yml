@@ -20,6 +20,11 @@ jobs:
       - run: npm run build
       - run: npm run export
       - run: npm test
+      - if: ${{ matrix.node-version == '14.x' }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: portfolio
+          path: out
 
   test-dockerfile:
     runs-on: ubuntu-latest
@@ -59,3 +64,23 @@ jobs:
           docker tag portfolio ghcr.io/ymyzk/portfolio:latest
           docker push ghcr.io/ymyzk/portfolio:$GITHUB_SHA
           docker push ghcr.io/ymyzk/portfolio:latest
+
+  upload-to-s3:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    needs:
+      - build-app
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: portfolio
+          path: out
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+      - name: Upload files to S3
+        # TODO Tune cache duration
+        run: aws s3 sync ./out ${{ secrets.AWS_S3_BUCKET }} --cache-control "public, max-age=3600"
