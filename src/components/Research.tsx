@@ -2,8 +2,7 @@ import React from "react";
 
 import Grid from "@material-ui/core/Grid";
 import List from "@material-ui/core/List";
-import { withStyles } from "@material-ui/core/styles";
-import { Theme } from "@material-ui/core/styles/createMuiTheme";
+import { Theme, withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 
 import ResearchListItem from "./ResearchListItem";
