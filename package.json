@@ -37,7 +37,7 @@
     "styled-jsx": "^3.4.7"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^10.2.3",
+    "@next/bundle-analyzer": "^11.1.2",
     "@next/eslint-plugin-next": "^11.1.2",
     "@types/node": "^16.11.1",
     "@types/react": "^17.0.16",
