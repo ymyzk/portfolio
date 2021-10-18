@@ -24,7 +24,7 @@ interface Props extends WithStyles<typeof styles> {
 }
 
 const GridContainer = ({ classes, children }: Props) => (
-  <Grid container justify="center">
+  <Grid container justifyContent="center">
     <Grid container className={classes.innerContainer}>
       { children }
     </Grid>

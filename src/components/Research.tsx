@@ -24,7 +24,7 @@ interface Props {
 
 const Research = ({ classes, research }: Props) => (
   <div className={classes.root}>
-    <Grid container justify="center" spacing={4}>
+    <Grid container justifyContent="center" spacing={4}>
       <Grid item xs={12} sm={10} md={8} lg={6}>
         <Typography variant="body1">
           Received my Masters of Informatics and Bachelor of Engineering from Kyoto University
