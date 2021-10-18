@@ -1,13 +1,8 @@
-parser: "@typescript-eslint/parser"
-parserOptions:
-  project: tsconfig.json
-  tsconfigRootDir: .
-plugins:
-  - "@typescript-eslint"
-  - react
 extends:
   - airbnb
   - "plugin:@typescript-eslint/recommended"
+  # https://nextjs.org/docs/basic-features/eslint#additional-configurations
+  - "next/core-web-vitals"
 rules:
   linebreak-style:
     - error
@@ -42,19 +37,3 @@ rules:
     - off
   "@typescript-eslint/no-use-before-define":
     - error
-overrides:
-  - files:
-      - "**/*.tsx"
-    rules:
-      react/prop-types: off
-env:
-  browser: true
-  es6: true
-globals:
-  # See webpack.DefinePlugin settings in the webpack configuration
-  __DEBUG__: true
-  __PRODUCTION__: true
-  __CLIENT__: true
-  __SERVER__: true
-settings:
-  import/resolver: webpack
