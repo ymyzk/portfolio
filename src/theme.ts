@@ -1,11 +1,15 @@
 import { deepOrange, indigo } from "@mui/material/colors";
-import { adaptV4Theme, createTheme } from "@mui/material/styles";
+import { createTheme } from "@mui/material/styles";
 
 // Create a theme instance.
-const theme = createTheme(adaptV4Theme({
+const theme = createTheme({
   palette: {
-    primary: indigo,
-    secondary: deepOrange,
+    primary: {
+      main: indigo[500],
+    },
+    secondary: {
+      main: deepOrange[500],
+    },
   },
   typography: {
     fontFamily: [
@@ -21,6 +25,6 @@ const theme = createTheme(adaptV4Theme({
       "sans-serif",
     ].join(","),
   },
-}));
+});
 
 export default theme;
