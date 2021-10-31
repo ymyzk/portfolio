@@ -15,5 +15,4 @@ module.exports = withBundleAnalyzer({
   exportPathMap: () => ({
     "/": { page: "/" },
   }),
-  webpack5: true,
 });
