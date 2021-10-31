@@ -2,12 +2,12 @@ import getYear from "date-fns/getYear";
 import React from "react";
 import LazyLoad from "react-lazyload";
 
-import Button from "@material-ui/core/Button";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import { createStyles, WithStyles, withStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
+import Button from "@mui/material/Button";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import { createStyles, WithStyles, withStyles } from "@mui/styles";
+import Typography from "@mui/material/Typography";
 
 import { Project } from "../data/types";
 import { getAssetPrefix } from "../utils";
@@ -85,6 +85,7 @@ const ProjectCard = ({ classes, project }: Props) => {
       <LazyLoad height={240} offset={300} once>
         <picture>
           { source.map((s) => <source key={s.srcSet} srcSet={s.srcSet} type={s.type} />) }
+          {/* Use next/image but needs to learn more about it to do that. */}
           <img
             className={classes.image}
             src={src}

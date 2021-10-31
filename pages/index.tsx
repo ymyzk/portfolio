@@ -1,10 +1,9 @@
 import React from "react";
 
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import {
-  createStyles, Theme, WithStyles, withStyles,
-} from "@material-ui/core/styles";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import { Theme } from "@mui/material/styles";
+import { createStyles, WithStyles, withStyles } from "@mui/styles";
 
 import GridContainer from "../src/components/GridContainer";
 import Hero from "../src/components/Hero";

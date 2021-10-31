@@ -19,6 +19,8 @@
     "test:tsc": "tsc"
   },
   "dependencies": {
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
@@ -26,6 +28,9 @@
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/styles": "^4.11.4",
+    "@mui/icons-material": "^5.0.4",
+    "@mui/material": "^5.0.4",
+    "@mui/styles": "^5.0.1",
     "date-fns": "^2.23.0",
     "jss": "^10.7.1",
     "next": "^11.1.2",
