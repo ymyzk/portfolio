@@ -1,9 +1,8 @@
 import React from "react";
 
 import Grid from "@mui/material/Grid";
+import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
-import { Theme } from "@mui/material/styles";
-import { createStyles, WithStyles, withStyles } from "@mui/styles";
 
 import GridContainer from "../src/components/GridContainer";
 import Hero from "../src/components/Hero";
@@ -22,69 +21,67 @@ import {
   skills,
   talks,
   works,
-} from "../src/data"; /* eslint-disable-line import/no-unresolved */
+} from "../src/data";
 
-const styles = ({ spacing }: Theme) => createStyles({
-  root: {},
-  section: {
-    paddingBottom: spacing(3),
-    paddingTop: spacing(3),
-  },
-  sectionHeader: {
-    fontSize: 34,
-    fontWeight: 300,
-    paddingBottom: spacing(0.5),
-    paddingTop: spacing(0.5),
-    textAlign: "center",
-  },
-});
+const Section = styled(Grid)(({ theme }) => ({
+  paddingBottom: theme.spacing(3),
+  paddingTop: theme.spacing(3),
+}));
 
-const Index = ({ classes }: WithStyles<typeof styles>) => (
-  <div className={classes.root}>
+const SectionHeader = styled(Typography)(({ theme }) => ({
+  fontSize: 34,
+  fontWeight: 300,
+  paddingBottom: theme.spacing(0.5),
+  paddingTop: theme.spacing(0.5),
+  textAlign: "center",
+})) as typeof Typography;
+
+const Index = () => (
+  <div>
     <Hero />
     <GridContainer>
-      <Grid item xs={12} className={classes.section}>
+      <Section item xs={12}>
         <div style={{ height: 50 }} />
         <Links links={links} />
-      </Grid>
-      <Grid item xs={12} className={classes.section}>
-        <Typography className={classes.sectionHeader} component="h2">
+      </Section>
+      <Section item xs={12}>
+        <SectionHeader component="h2">
           Work Experience
-        </Typography>
+        </SectionHeader>
         <WorkExperienceList works={works} />
-      </Grid>
-      <Grid item xs={12} className={classes.section}>
-        <Typography className={classes.sectionHeader} component="h2">
+      </Section>
+      <Section item xs={12}>
+        <SectionHeader component="h2">
           Talks
-        </Typography>
+        </SectionHeader>
         <TalkList talks={talks} />
-      </Grid>
-      <Grid item xs={12} className={classes.section}>
-        <Typography className={classes.sectionHeader} component="h2">
+      </Section>
+      <Section item xs={12}>
+        <SectionHeader component="h2">
           Projects
-        </Typography>
+        </SectionHeader>
         <ProjectCardList projects={projects} />
-      </Grid>
-      <Grid item xs={12} className={classes.section}>
-        <Typography className={classes.sectionHeader} component="h2">
+      </Section>
+      <Section item xs={12}>
+        <SectionHeader component="h2">
           Skills
-        </Typography>
+        </SectionHeader>
         <Skills skills={skills} />
-      </Grid>
-      <Grid item xs={12} className={classes.section}>
-        <Typography className={classes.sectionHeader} component="h2">
+      </Section>
+      <Section item xs={12}>
+        <SectionHeader component="h2">
           Research
-        </Typography>
+        </SectionHeader>
         <Research research={research} />
-      </Grid>
-      <Grid item xs={12} className={classes.section}>
-        <Typography className={classes.sectionHeader} component="h2">
+      </Section>
+      <Section item xs={12}>
+        <SectionHeader component="h2">
           Misc
-        </Typography>
+        </SectionHeader>
         <Misc misc={misc} />
-      </Grid>
+      </Section>
     </GridContainer>
   </div>
 );
 
-export default withStyles(styles)(Index);
+export default Index;

@@ -3,54 +3,56 @@ import smoothScroll from "smoothscroll";
 
 import ArrowDownward from "@mui/icons-material/ArrowDownward";
 import Fab from "@mui/material/Fab";
-import { createStyles, WithStyles, withStyles } from "@mui/styles";
+import { styled } from "@mui/material/styles";
 
 import { getAssetPrefix } from "../utils";
 
 const SCROLL_TARGET_ID = "scrollTarget";
 
-const styles = createStyles({
-  background: {
-    position: "relative",
-    backgroundColor: "#11140b",
-    backgroundImage: `url(${getAssetPrefix()}/static/images/background.jpg)`,
-    backgroundPosition: "center",
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    zIndex: 0,
-    overflow: "hidden",
-    width: "100%",
-    height: "100vh",
-  },
-  titleWrapper: {
-    position: "absolute",
-    textAlign: "center",
-    top: "35%",
-    left: 0,
-    right: 0,
-  },
-  titleHeader: {
-    font: "normal normal 300 10vw Roboto",
-    color: "white",
-    "@media (min-width: 600px)": {
-      fontSize: 60,
-    },
-  },
-  titleLead: {
-    fontSize: "5vw",
-    "@media (min-width: 480px)": {
-      fontSize: 24,
-    },
-  },
-  buttonWrapper: {
-    position: "absolute",
-    textAlign: "center",
-    width: "100%",
-    bottom: 30,
+const Background = styled("div")({
+  position: "relative",
+  backgroundColor: "#11140b",
+  backgroundImage: `url(${getAssetPrefix()}/static/images/background.jpg)`,
+  backgroundPosition: "center",
+  backgroundSize: "cover",
+  backgroundRepeat: "no-repeat",
+  zIndex: 0,
+  overflow: "hidden",
+  width: "100%",
+  height: "100vh",
+});
+
+const TitleWrapper = styled("div")({
+  position: "absolute",
+  textAlign: "center",
+  top: "35%",
+  left: 0,
+  right: 0,
+});
+
+const TitleHeader = styled("h1")({
+  font: "normal normal 300 10vw Roboto",
+  color: "white",
+  "@media (min-width: 600px)": {
+    fontSize: 60,
   },
 });
 
-const Hero = ({ classes }: WithStyles<typeof styles>) => {
+const TitleLead = styled("small")({
+  fontSize: "5vw",
+  "@media (min-width: 480px)": {
+    fontSize: 24,
+  },
+});
+
+const ButtonWrapper = styled("div")({
+  position: "absolute",
+  textAlign: "center",
+  width: "100%",
+  bottom: 30,
+});
+
+const Hero = () => {
   const scroll = (e: MouseEvent) => {
     e.preventDefault();
     const scrollTarget = document.querySelector(`#${SCROLL_TARGET_ID}`);
@@ -60,25 +62,25 @@ const Hero = ({ classes }: WithStyles<typeof styles>) => {
   };
   return (
     <div>
-      <div className={classes.background}>
-        <div className={classes.titleWrapper}>
-          <h1 className={classes.titleHeader}>
+      <Background>
+        <TitleWrapper>
+          <TitleHeader>
             Yusuke Miyazaki
             <br />
-            <small className={classes.titleLead}>
+            <TitleLead>
               Site Reliability Engineer in Japan
-            </small>
-          </h1>
-        </div>
-        <div className={classes.buttonWrapper}>
+            </TitleLead>
+          </TitleHeader>
+        </TitleWrapper>
+        <ButtonWrapper>
           <Fab aria-label="Scroll down" color="secondary" onClick={scroll}>
             <ArrowDownward />
           </Fab>
-        </div>
-      </div>
+        </ButtonWrapper>
+      </Background>
       <div id={SCROLL_TARGET_ID} />
     </div>
   );
 };
 
-export default withStyles(styles)(Hero);
+export default Hero;

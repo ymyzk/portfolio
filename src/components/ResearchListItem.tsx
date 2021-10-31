@@ -2,28 +2,20 @@ import React from "react";
 
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
-import { createStyles, WithStyles, withStyles } from "@mui/styles";
 
 import { Research } from "../data/types";
 
-const styles = createStyles({
-  primary: {
-    fontSize: ".9rem",
-  },
-});
-
-interface Props extends WithStyles<typeof styles> {
-  classes: any;
+interface Props {
   research: Research;
 }
 
-const ResearchListItem = ({ classes, research }: Props) => {
+const ResearchListItem = ({ research }: Props) => {
   const tags = research.tags.join(" / ");
   return (
     // @ts-ignore
     <ListItem button component="a" href={research.link} target="_blank" rel="noopener">
       <ListItemText
-        classes={{ primary: classes.primary }}
+        sx={{ fontSize: ".9rem" }}
         primary={research.title}
         secondary={tags}
       />
@@ -31,4 +23,4 @@ const ResearchListItem = ({ classes, research }: Props) => {
   );
 };
 
-export default withStyles(styles)(ResearchListItem);
+export default ResearchListItem;

@@ -10,21 +10,11 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import Fab from "@mui/material/Fab";
 import SvgIcon from "@mui/material/SvgIcon";
 import Tooltip from "@mui/material/Tooltip";
-import { Theme } from "@mui/material/styles";
-import { createStyles, WithStyles, withStyles } from "@mui/styles";
 
 import { Link } from "../data/types";
 
 // Use list of icons instead of faBrands for efficiency
 library.add(fab, faEnvelope, faGlobe, faRss);
-
-const styles = ({ spacing }: Theme) => createStyles({
-  button: {
-    color: "white",
-    margin: spacing(0.5),
-    marginTop: 0,
-  },
-});
 
 function SpeakerDeckIcon(props: any) {
   return (
@@ -34,11 +24,11 @@ function SpeakerDeckIcon(props: any) {
   );
 }
 
-interface Props extends WithStyles<typeof styles> {
+interface Props {
   link: Link;
 }
 
-const LinkButton = ({ classes, link }: Props) => {
+const LinkButton = ({ link }: Props) => {
   let icon;
   if (link.icon) {
     switch (link.icon) {
@@ -62,12 +52,16 @@ const LinkButton = ({ classes, link }: Props) => {
   return (
     <Tooltip title={link.title}>
       <Fab
-        className={classes.button}
         color="primary"
         href={link.url}
         target="_blank"
         rel="noopener"
         style={{ backgroundColor: link.color }}
+        sx={{
+          color: "white",
+          margin: (theme) => theme.spacing(0.5),
+          marginTop: 0,
+        }}
       >
         { icon }
       </Fab>
@@ -75,4 +69,4 @@ const LinkButton = ({ classes, link }: Props) => {
   );
 };
 
-export default withStyles(styles)(LinkButton);
+export default LinkButton;

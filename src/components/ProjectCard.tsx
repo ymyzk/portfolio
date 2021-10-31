@@ -6,28 +6,13 @@ import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import { createStyles, WithStyles, withStyles } from "@mui/styles";
 import Typography from "@mui/material/Typography";
+import { styled } from "@mui/material/styles";
 
 import { Project } from "../data/types";
 import { getAssetPrefix } from "../utils";
 
-const styles = createStyles({
-  image: {
-    width: "100%",
-  },
-  content: {
-    paddingBottom: 0,
-  },
-  title: {
-    fontSize: 24,
-  },
-  tags: {
-    marginBottom: 8,
-  },
-});
-
-interface Props extends WithStyles<typeof styles> {
+interface Props {
   project: Project;
 }
 
@@ -35,6 +20,10 @@ interface SrcSet {
   src: string;
   source: { srcSet: string; type: string }[];
 }
+
+const Image = styled("img")({
+  width: "100%",
+});
 
 function createSrcSets(file: string | null | undefined): SrcSet | null {
   const imagePrefix = `${getAssetPrefix()}/static/images/projects/`;
@@ -59,7 +48,7 @@ function createSrcSets(file: string | null | undefined): SrcSet | null {
   };
 }
 
-const ProjectCard = ({ classes, project }: Props) => {
+const ProjectCard = ({ project }: Props) => {
   // TODO Disallow undefined in projects.yml
   const srcset = createSrcSets(project.image);
   if (srcset == null) return null;
@@ -86,19 +75,18 @@ const ProjectCard = ({ classes, project }: Props) => {
         <picture>
           { source.map((s) => <source key={s.srcSet} srcSet={s.srcSet} type={s.type} />) }
           {/* Use next/image but needs to learn more about it to do that. */}
-          <img
-            className={classes.image}
+          <Image
             src={src}
             alt={project.title}
             title={project.title}
           />
         </picture>
       </LazyLoad>
-      <CardContent className={classes.content}>
-        <Typography component="h3" className={classes.title}>
+      <CardContent sx={{ paddingBottom: 0 }}>
+        <Typography component="h3" sx={{ fontSize: "24px" }}>
           {project.title}
         </Typography>
-        <Typography color="textSecondary" className={classes.tags}>
+        <Typography color="textSecondary" sx={{ marginBottom: "8px" }}>
           {tags.join(" / ")}
         </Typography>
         <Typography>
@@ -114,4 +102,4 @@ const ProjectCard = ({ classes, project }: Props) => {
   );
 };
 
-export default withStyles(styles)(ProjectCard);
+export default ProjectCard;
