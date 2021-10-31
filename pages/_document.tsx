@@ -138,7 +138,8 @@ MyDocument.getInitialProps = async (ctx) => {
 
   const globalStyleElement = (
     <style
-    // eslint-disable-next-line react/no-danger
+      key="global-style"
+      // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{ __html: globalStyle }}
     />
   );
