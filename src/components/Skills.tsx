@@ -1,32 +1,26 @@
 import React from "react";
 
-import { Theme } from "@mui/material";
 import Chip from "@mui/material/Chip";
-import { createStyles, WithStyles, withStyles } from "@mui/styles";
+import { styled } from "@mui/material/styles";
 
-const styles = ({ spacing }: Theme) => createStyles({
-  root: {
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "center",
-  },
-  chip: {
-    margin: spacing(0.5),
-  },
-});
-
-interface Props extends WithStyles<typeof styles> {
+interface Props {
   skills: string[];
 }
 
-const Skills = ({ classes, skills }: Props) => (
-  <div className={classes.root}>
+const Root = styled("div")({
+  display: "flex",
+  flexWrap: "wrap",
+  justifyContent: "center",
+});
+
+const Skills = ({ skills }: Props) => (
+  <Root>
     {
       skills.map((s) => (
-        <Chip className={classes.chip} label={s} key={s} />
+        <Chip label={s} key={s} sx={{ margin: 0.5 }} />
       ))
     }
-  </div>
+  </Root>
 );
 
-export default withStyles(styles)(Skills);
+export default Skills;

@@ -1,26 +1,24 @@
 import dynamic from "next/dynamic";
 import React from "react";
 
-import { createStyles, WithStyles, withStyles } from "@mui/styles";
+import { styled } from "@mui/material/styles";
 
 import { Link } from "../data/types";
 
 const LinkButton = dynamic(() => import("./LinkButton"));
 
-const styles = () => createStyles({
-  root: {
-    textAlign: "center",
-  },
+const Root = styled("div")({
+  textAlign: "center",
 });
 
-interface Props extends WithStyles<typeof styles> {
+interface Props {
   links: Link[];
 }
 
-const Links = ({ classes, links }: Props) => (
-  <div className={classes.root}>
+const Links = ({ links }: Props) => (
+  <Root>
     { links.map((l) => <LinkButton key={l.url} link={l} />) }
-  </div>
+  </Root>
 );
 
-export default withStyles(styles)(Links);
+export default Links;
