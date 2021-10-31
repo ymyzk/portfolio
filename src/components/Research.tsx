@@ -1,9 +1,10 @@
 import React from "react";
 
-import Grid from "@material-ui/core/Grid";
-import List from "@material-ui/core/List";
-import { Theme, withStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
+import Grid from "@mui/material/Grid";
+import List from "@mui/material/List";
+import { Theme } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
+import withStyles from "@mui/styles/withStyles";
 
 import ResearchListItem from "./ResearchListItem";
 

@@ -1,9 +1,9 @@
 import React, { MouseEvent } from "react";
 import smoothScroll from "smoothscroll";
 
-import Fab from "@material-ui/core/Fab";
-import { createStyles, WithStyles, withStyles } from "@material-ui/core/styles";
-import ArrowDownward from "@material-ui/icons/ArrowDownward";
+import ArrowDownward from "@mui/icons-material/ArrowDownward";
+import Fab from "@mui/material/Fab";
+import { createStyles, WithStyles, withStyles } from "@mui/styles";
 
 import { getAssetPrefix } from "../utils";
 

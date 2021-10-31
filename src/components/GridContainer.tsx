@@ -1,9 +1,8 @@
 import React, { ReactNode } from "react";
 
-import Grid from "@material-ui/core/Grid";
-import {
-  createStyles, Theme, WithStyles, withStyles,
-} from "@material-ui/core/styles";
+import Grid from "@mui/material/Grid";
+import { Theme } from "@mui/material/styles";
+import { createStyles, WithStyles, withStyles } from "@mui/styles";
 
 const styles = (theme: Theme) => createStyles({
   innerContainer: {

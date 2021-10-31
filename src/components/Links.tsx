@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import React from "react";
 
-import { createStyles, WithStyles, withStyles } from "@material-ui/core/styles";
+import { createStyles, WithStyles, withStyles } from "@mui/styles";
 
 import { Link } from "../data/types";
 

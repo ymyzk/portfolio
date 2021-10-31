@@ -1,9 +1,8 @@
 import React from "react";
 
-import Chip from "@material-ui/core/Chip";
-import {
-  createStyles, Theme, WithStyles, withStyles,
-} from "@material-ui/core";
+import { Theme } from "@mui/material";
+import Chip from "@mui/material/Chip";
+import { createStyles, WithStyles, withStyles } from "@mui/styles";
 
 const styles = ({ spacing }: Theme) => createStyles({
   root: {

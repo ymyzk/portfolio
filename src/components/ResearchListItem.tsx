@@ -1,8 +1,8 @@
 import React from "react";
 
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import { createStyles, WithStyles, withStyles } from "@material-ui/core/styles";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
+import { createStyles, WithStyles, withStyles } from "@mui/styles";
 
 import { Research } from "../data/types";
 
