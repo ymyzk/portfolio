@@ -1,9 +1,10 @@
 import React from "react";
 
-import Grid from "@material-ui/core/Grid";
-import List from "@material-ui/core/List";
-import { Theme, withStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
+import Grid from "@mui/material/Grid";
+import List from "@mui/material/List";
+import { Theme } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
+import withStyles from "@mui/styles/withStyles";
 
 import ResearchListItem from "./ResearchListItem";
 
@@ -24,7 +25,7 @@ interface Props {
 
 const Research = ({ classes, research }: Props) => (
   <div className={classes.root}>
-    <Grid container justify="center" spacing={4}>
+    <Grid container justifyContent="center" spacing={4}>
       <Grid item xs={12} sm={10} md={8} lg={6}>
         <Typography variant="body1">
           Received my Masters of Informatics and Bachelor of Engineering from Kyoto University

@@ -3,7 +3,7 @@ import Document, {
   Head, Html, Main, NextScript,
 } from "next/document";
 
-import { ServerStyleSheets } from "@material-ui/styles";
+import { ServerStyleSheets } from "@mui/styles";
 
 import theme from "../src/theme";
 import { getAssetPrefix } from "../src/utils";
@@ -14,7 +14,7 @@ html {
 }
 `;
 
-class MyDocument extends Document {
+export default class MyDocument extends Document {
   render() {
     const title = "Yusuke Miyazaki";
     const description = "Yusuke Miyazaki's portfolio website.";
@@ -134,5 +134,3 @@ MyDocument.getInitialProps = async (ctx) => {
     ),
   };
 };
-
-export default MyDocument;

@@ -7,12 +7,11 @@ import { faGlobe } from "@fortawesome/free-solid-svg-icons/faGlobe";
 import { faRss } from "@fortawesome/free-solid-svg-icons/faRss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import Fab from "@material-ui/core/Fab";
-import {
-  createStyles, Theme, WithStyles, withStyles,
-} from "@material-ui/core/styles";
-import SvgIcon from "@material-ui/core/SvgIcon";
-import Tooltip from "@material-ui/core/Tooltip";
+import Fab from "@mui/material/Fab";
+import SvgIcon from "@mui/material/SvgIcon";
+import Tooltip from "@mui/material/Tooltip";
+import { Theme } from "@mui/material/styles";
+import { createStyles, WithStyles, withStyles } from "@mui/styles";
 
 import { Link } from "../data/types";
 
