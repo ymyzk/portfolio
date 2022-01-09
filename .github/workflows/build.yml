@@ -2,6 +2,11 @@ name: Build
 
 on: [push]
 
+permissions:
+  contents: read
+  id-token: write
+  packages: write
+
 jobs:
   build-app:
     runs-on: ubuntu-latest
@@ -69,9 +74,8 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
+          role-to-assume: ${{ secrets.AWS_ROLE }}
       - name: Upload files to S3
         # TODO Tune cache duration
         run: aws s3 sync ./out ${{ secrets.AWS_S3_BUCKET }} --cache-control "public, max-age=3600"
