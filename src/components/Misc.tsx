@@ -10,20 +10,22 @@ import ListItemText from "@mui/material/ListItemText";
 
 import { Misc } from "../data/types";
 
-const MiscItem = ({ misc }: { misc: Misc }) => (
-  <ListItem button component="a" href={misc.link}>
-    <ListItemText
-      primary={misc.title}
-      secondary={`${format(misc.date, "yyyy-M-d")} — ${misc.subtitle}`}
-    />
-  </ListItem>
-);
+function MiscItem({ misc }: { misc: Misc }) {
+  return (
+    <ListItem button component="a" href={misc.link}>
+      <ListItemText
+        primary={misc.title}
+        secondary={`${format(misc.date, "yyyy-M-d")} — ${misc.subtitle}`}
+      />
+    </ListItem>
+  );
+}
 
 interface Props {
   misc: Misc[];
 }
 
-const MiscList: React.FC<Props> = ({ misc }) => {
+export default function MiscList({ misc }: Props) {
   const [expanded, setExpanded] = useState<boolean>(false);
   return (
     <List>
@@ -43,6 +45,4 @@ const MiscList: React.FC<Props> = ({ misc }) => {
       </ListItem>
     </List>
   );
-};
-
-export default MiscList;
+}

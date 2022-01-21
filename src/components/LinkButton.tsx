@@ -28,7 +28,7 @@ interface Props {
   link: Link;
 }
 
-const LinkButton = ({ link }: Props) => {
+export default function LinkButton({ link }: Props) {
   let icon;
   if (link.icon) {
     switch (link.icon) {
@@ -67,6 +67,4 @@ const LinkButton = ({ link }: Props) => {
       </Fab>
     </Tooltip>
   );
-};
-
-export default LinkButton;
+}

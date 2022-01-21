@@ -9,7 +9,7 @@ interface Props {
   research: Research;
 }
 
-const ResearchListItem = ({ research }: Props) => {
+export default function ResearchListItem({ research }: Props) {
   const tags = research.tags.join(" / ");
   return (
     // @ts-ignore
@@ -21,6 +21,4 @@ const ResearchListItem = ({ research }: Props) => {
       />
     </ListItem>
   );
-};
-
-export default ResearchListItem;
+}

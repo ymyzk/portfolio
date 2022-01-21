@@ -52,7 +52,7 @@ const ButtonWrapper = styled("div")({
   bottom: 30,
 });
 
-const Hero = () => {
+export default function Hero() {
   const scroll = (e: MouseEvent) => {
     e.preventDefault();
     const scrollTarget = document.querySelector(`#${SCROLL_TARGET_ID}`);
@@ -81,6 +81,4 @@ const Hero = () => {
       <div id={SCROLL_TARGET_ID} />
     </div>
   );
-};
-
-export default Hero;
+}

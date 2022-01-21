@@ -27,7 +27,7 @@ export default class MyDocument extends Document {
           <meta charSet="utf-8" />
           {/* Favicon */}
           <link
-            rel="shortcut icon"
+            rel="icon"
             type="image/x-icon"
             href="/static/images/favicon.ico"
             sizes="16x16 32x32 48x48"
@@ -120,7 +120,9 @@ MyDocument.getInitialProps = async (ctx) => {
 
   ctx.renderPage = () => originalRenderPage({
     // eslint-disable-next-line react/display-name
-    enhanceApp: (App: any) => (props) => <App emotionCache={cache} {...props} />,
+    enhanceApp: (App: any) => function (props) {
+      return <App emotionCache={cache} {...props} />;
+    },
   });
 
   const initialProps = await Document.getInitialProps(ctx);

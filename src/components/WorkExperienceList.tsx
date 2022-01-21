@@ -10,21 +10,23 @@ import ListItemText from "@mui/material/ListItemText";
 
 import { Work } from "../data/types";
 
-const WorkExperienceItem = ({ work }: { work: Work }) => (
-  // @ts-ignore
-  <ListItem button component="a" href={work.link} target="_blank" rel="noopener">
-    <ListItemText
-      primary={`${work.title} of ${work.company}`}
-      secondary={`${format(work.start, "MMM yyyy")}–${work.end ? format(work.end, "MMM yyyy") : "Present"}`}
-    />
-  </ListItem>
-);
+function WorkExperienceItem({ work }: { work: Work }) {
+  return (
+    // @ts-ignore
+    <ListItem button component="a" href={work.link} target="_blank" rel="noopener">
+      <ListItemText
+        primary={`${work.title} of ${work.company}`}
+        secondary={`${format(work.start, "MMM yyyy")}–${work.end ? format(work.end, "MMM yyyy") : "Present"}`}
+      />
+    </ListItem>
+  );
+}
 
 interface Props {
   works: Work[];
 }
 
-const WorkExperienceList: React.FC<Props> = ({ works }) => {
+export default function WorkExperienceList({ works }: Props) {
   const [expanded, setExpanded] = useState<boolean>(false);
   return (
     <List>
@@ -44,6 +46,4 @@ const WorkExperienceList: React.FC<Props> = ({ works }) => {
       </ListItem>
     </List>
   );
-};
-
-export default WorkExperienceList;
+}

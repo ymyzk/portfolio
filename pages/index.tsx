@@ -36,52 +36,52 @@ const SectionHeader = styled(Typography)(({ theme }) => ({
   textAlign: "center",
 })) as typeof Typography;
 
-const Index = () => (
-  <div>
-    <Hero />
-    <GridContainer>
-      <Section item xs={12}>
-        <div style={{ height: 50 }} />
-        <Links links={links} />
-      </Section>
-      <Section item xs={12}>
-        <SectionHeader component="h2">
-          Work Experience
-        </SectionHeader>
-        <WorkExperienceList works={works} />
-      </Section>
-      <Section item xs={12}>
-        <SectionHeader component="h2">
-          Talks
-        </SectionHeader>
-        <TalkList talks={talks} />
-      </Section>
-      <Section item xs={12}>
-        <SectionHeader component="h2">
-          Projects
-        </SectionHeader>
-        <ProjectCardList projects={projects} />
-      </Section>
-      <Section item xs={12}>
-        <SectionHeader component="h2">
-          Skills
-        </SectionHeader>
-        <Skills skills={skills} />
-      </Section>
-      <Section item xs={12}>
-        <SectionHeader component="h2">
-          Research
-        </SectionHeader>
-        <Research research={research} />
-      </Section>
-      <Section item xs={12}>
-        <SectionHeader component="h2">
-          Misc
-        </SectionHeader>
-        <Misc misc={misc} />
-      </Section>
-    </GridContainer>
-  </div>
-);
-
-export default Index;
+export default function Index() {
+  return (
+    <div>
+      <Hero />
+      <GridContainer>
+        <Section item xs={12}>
+          <div style={{ height: 50 }} />
+          <Links links={links} />
+        </Section>
+        <Section item xs={12}>
+          <SectionHeader component="h2">
+            Work Experience
+          </SectionHeader>
+          <WorkExperienceList works={works} />
+        </Section>
+        <Section item xs={12}>
+          <SectionHeader component="h2">
+            Talks
+          </SectionHeader>
+          <TalkList talks={talks} />
+        </Section>
+        <Section item xs={12}>
+          <SectionHeader component="h2">
+            Projects
+          </SectionHeader>
+          <ProjectCardList projects={projects} />
+        </Section>
+        <Section item xs={12}>
+          <SectionHeader component="h2">
+            Skills
+          </SectionHeader>
+          <Skills skills={skills} />
+        </Section>
+        <Section item xs={12}>
+          <SectionHeader component="h2">
+            Research
+          </SectionHeader>
+          <Research research={research} />
+        </Section>
+        <Section item xs={12}>
+          <SectionHeader component="h2">
+            Misc
+          </SectionHeader>
+          <Misc misc={misc} />
+        </Section>
+      </GridContainer>
+    </div>
+  );
+}

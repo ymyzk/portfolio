@@ -10,7 +10,7 @@ interface Props {
   talk: Talk;
 }
 
-const TalkListItem: React.FC<Props> = ({ talk }) => {
+export default function TalkListItem({ talk }: Props) {
   const dateString = format(talk.date, "yyyy-M-d");
   const dateIso = format(talk.date, "yyyy-MM-dd");
   const href = talk.slide ? talk.slide : (talk.link ? talk.link : "#"); // eslint-disable-line no-nested-ternary
@@ -34,6 +34,4 @@ const TalkListItem: React.FC<Props> = ({ talk }) => {
       />
     </ListItem>
   );
-};
-
-export default TalkListItem;
+}

@@ -14,7 +14,7 @@ interface Props {
   talks: Talk[];
 }
 
-const TalkList: React.FC<Props> = ({ talks }) => {
+export default function TalkList({ talks }: Props) {
   const [expanded, setExpanded] = useState<boolean>(false);
   const talksToShow = expanded ? talks : talks.slice(0, 3);
   return (
@@ -31,6 +31,4 @@ const TalkList: React.FC<Props> = ({ talks }) => {
       </ListItem>
     </List>
   );
-};
-
-export default TalkList;
+}

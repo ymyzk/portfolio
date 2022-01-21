@@ -15,10 +15,10 @@ interface Props {
   links: Link[];
 }
 
-const Links = ({ links }: Props) => (
-  <Root>
-    { links.map((l) => <LinkButton key={l.url} link={l} />) }
-  </Root>
-);
-
-export default Links;
+export default function Links({ links }: Props) {
+  return (
+    <Root>
+      { links.map((l) => <LinkButton key={l.url} link={l} />) }
+    </Root>
+  );
+}

@@ -48,7 +48,7 @@ function createSrcSets(file: string | null | undefined): SrcSet | null {
   };
 }
 
-const ProjectCard = ({ project }: Props) => {
+export default function ProjectCard({ project }: Props) {
   // TODO Disallow undefined in projects.yml
   const srcset = createSrcSets(project.image);
   if (srcset == null) return null;
@@ -100,6 +100,4 @@ const ProjectCard = ({ project }: Props) => {
       </CardActions>
     </Card>
   );
-};
-
-export default ProjectCard;
+}
