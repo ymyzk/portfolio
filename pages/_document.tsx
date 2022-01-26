@@ -6,7 +6,7 @@ import Document, {
 import createEmotionServer from "@emotion/server/create-instance";
 
 import createEmotionCache from "../src/createEmotionCache";
-import theme from "../src/theme";
+import { lightPrimaryMain } from "../src/theme";
 import { getAssetPrefix } from "../src/utils";
 
 const globalStyle = `
@@ -68,13 +68,13 @@ export default class MyDocument extends Document {
           {/* PWA primary color */}
           <meta
             name="theme-color"
-            content={theme.palette.primary.main}
+            content={lightPrimaryMain}
           />
           {/* Windows / IE / Edge */}
           <meta name="msapplication-TileImage" content="/static/images/ms-tile-image.png" />
           <meta
             name="msapplication-TileColor"
-            content={theme.palette.primary.main}
+            content={lightPrimaryMain}
           />
         </Head>
         <body>
