@@ -2,7 +2,7 @@ extends:
   - airbnb
   - "plugin:@typescript-eslint/recommended"
   # https://nextjs.org/docs/basic-features/eslint#additional-configurations
-  - "next/core-web-vitals"
+  - "plugin:@next/next/recommended"
 rules:
   linebreak-style:
     - error
