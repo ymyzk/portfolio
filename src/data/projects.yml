@@ -1,5 +1,57 @@
+- title: mypy Playground
+  link: https://github.com/ymyzk/wsgi_lineprof
+  image: null
+  start: 2017-05-07
+  end: null
+  tags: [Web, Python]
+  featured: true
+  description: Try mypy, an experimental optional static type checker for Python, with your web browser.
+  links:
+    Website: https://mypy-play.net
+    GitHub: https://github.com/ymyzk/mypy-playground
+
+- title: tox-gh-actions
+  link: https://github.com/ymyzk/tox-gh-actions
+  image: null
+  start: 2019-09-07
+  end: null
+  tags: [Plugin, Python]
+  featured: true
+  description: |
+    A tox plugin which helps running tox on GitHub Actions
+    with multiple different Python versions on multiple workers in parallel.
+  links:
+    GitHub: https://github.com/ymyzk/tox-gh-actions
+
+- title: lambda-dti
+  link: https://github.com/ymyzk/lambda-dti
+  image: null
+  start: 2017-06-16
+  end: null
+  tags: [Programming Language, OCaml]
+  featured: true
+  description: |
+    An interpreter of the implicitly typed gradual language (ITGL)
+    which uses dynamic type inference for evaluating programs.
+    This is an artifact of a POPL 2019 paper.
+  links:
+    GitHub: https://github.com/ymyzk/lambda-dti
+    Paper: https://dl.acm.org/doi/10.1145/3290331
+
+- title: wsgi_lineprof
+  link: https://github.com/ymyzk/wsgi_lineprof
+  image: wsgi_lineprof.jpg
+  start: 2016-10-02
+  end: null
+  tags: [Library, Python]
+  featured: true
+  description: Line profiler as a WSGI middleware. Easily integrates with existing Python web applications.
+  descriptionJa: WSGI ミドルウェアとして使えるラインプロファイラ。
+  links:
+    GitHub: https://github.com/ymyzk/wsgi_lineprof
+
 - title: 京大マップ
-  link: http://www.kyodaimap.net/
+  link: https://www.kyodaimap.net/
   image: kyodaimap.jpg
   start: 2012-10-01
   end: 2017-03-31
@@ -37,30 +89,6 @@
   descriptionJa: Python アプリケーションから簡単に Slack や HipChat に通知を送ることができるライブラリ。
   links:
     GitHub: https://github.com/ymyzk/kawasemi
-
-- title: wsgi_lineprof
-  link: https://github.com/ymyzk/wsgi_lineprof
-  image: wsgi_lineprof.jpg
-  start: 2016-10-02
-  end: null
-  tags: [Library, Python]
-  featured: true
-  description: Line profiler as a WSGI middleware. Easily integrates with existing Python web applications.
-  descriptionJa: WSGI ミドルウェアとして使えるラインプロファイラ。
-  links:
-    GitHub: https://github.com/ymyzk/wsgi_lineprof
-
-- title: mypy Playground
-  link: https://github.com/ymyzk/wsgi_lineprof
-  image: null
-  start: 2017-05-07
-  end: null
-  tags: [Web, Python]
-  featured: true
-  description: Try mypy, an experimental optional static type checker for Python, with your web browser.
-  links:
-    Website: https://mypy-play.net
-    GitHub: https://github.com/ymyzk/mypy-playground
 
 #- title: python-gyazo
 #  link: https://github.com/ymyzk/python-gyazo
