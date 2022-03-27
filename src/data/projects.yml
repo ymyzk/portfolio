@@ -1,6 +1,6 @@
 - title: mypy Playground
   link: https://github.com/ymyzk/wsgi_lineprof
-  image: null
+  image: mypy-play.jpg
   start: 2017-05-07
   end: null
   tags: [Web, Python]
@@ -25,7 +25,7 @@
 
 - title: lambda-dti
   link: https://github.com/ymyzk/lambda-dti
-  image: null
+  image: lambda-dti.jpg
   start: 2017-06-16
   end: null
   tags: [Programming Language, OCaml]
