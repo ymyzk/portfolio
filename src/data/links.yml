@@ -38,7 +38,7 @@
 
 - title: Speaker Deck
   url: https://speakerdeck.com/ymyzk
-  icon: custom-speakerdeck
+  icon: [fab, speaker-deck]
   color: "#009287"
 
 - title: Twitter
