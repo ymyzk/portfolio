@@ -2,7 +2,7 @@
   event: SRE NEXT 2022
   date: 2022-05-14
   link: https://sre-next.dev/2022/
-  slide: null
+  slide: https://speakerdeck.com/ymyzk/adopting-kafka-for-the-number-1-job-site-in-the-world
 
 - title: Python ウェブアプリケーションのためのプロファイラの実装
   event: PyCon JP 2019
