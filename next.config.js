@@ -15,4 +15,8 @@ module.exports = withBundleAnalyzer({
   exportPathMap: () => ({
     "/": { page: "/" },
   }),
+  images: {
+    loader: "custom",
+    loaderFile: "./loader.js",
+  },
 });

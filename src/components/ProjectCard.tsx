@@ -1,13 +1,14 @@
 import getYear from "date-fns/getYear";
+import Image from "next/image";
 import React from "react";
-import LazyLoad from "react-lazyload";
+// import LazyLoad from "react-lazyload";
 
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { styled } from "@mui/material/styles";
+// import { styled } from "@mui/material/styles";
 
 import { Project } from "../data/types";
 import { getAssetPrefix } from "../utils";
@@ -21,9 +22,9 @@ interface SrcSet {
   source: { srcSet: string; type: string }[];
 }
 
-const Image = styled("img")({
-  width: "100%",
-});
+// const Image = styled("img")({
+//   width: "100%",
+// });
 
 function createSrcSets(file: string | null | undefined): SrcSet | null {
   const imagePrefix = `${getAssetPrefix()}/static/images/projects/`;
@@ -52,7 +53,8 @@ export default function ProjectCard({ project }: Props) {
   // TODO Disallow undefined in projects.yml
   const srcset = createSrcSets(project.image);
   if (srcset == null) return null;
-  const { src, source } = srcset;
+  const { src } = srcset;
+  // const { src, source } = srcset;
 
   const durationTag = (() => {
     const startYear = getYear(project.start);
@@ -68,20 +70,14 @@ export default function ProjectCard({ project }: Props) {
   const links: ([string, string])[] = Object.entries(project.links ? project.links : {});
   return (
     <Card>
-      {/* We don't use next/image yet because we cannot export statically optimized images
-          using `next export`. */}
-      {/* Known bug?: https://github.com/twobin/react-lazyload/issues/189 */}
-      <LazyLoad height={240} offset={300} once>
-        <picture>
-          { source.map((s) => <source key={s.srcSet} srcSet={s.srcSet} type={s.type} />) }
-          {/* Use next/image but needs to learn more about it to do that. */}
-          <Image
-            src={src}
-            alt={project.title}
-            title={project.title}
-          />
-        </picture>
-      </LazyLoad>
+      <div style={{ position: "relative", width: "100%", paddingBottom: "calc(100% * 240 / 384)" }}>
+        <Image
+          src={src}
+          alt={project.title}
+          title={project.title}
+          layout="fill"
+        />
+      </div>
       <CardContent sx={{ paddingBottom: 0 }}>
         <Typography component="h3" sx={{ fontSize: "24px" }}>
           {project.title}
