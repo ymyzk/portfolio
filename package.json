@@ -28,7 +28,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.15",
     "@mui/icons-material": "^5.0.4",
-    "@mui/material": "^5.0.4",
+    "@mui/material": "^5.10.16",
     "date-fns": "^2.29.3",
     "next": "^12.1.0",
     "react": "^17.0.2",
