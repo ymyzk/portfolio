@@ -1,6 +1,6 @@
 - title: Amazon Wish List
   url: http://amzn.asia/iyNyA3h
-  icon: [fab, amazon]
+  icon: [fa, amazon]
   color: "#ff9900"
 
 #- title: Bitcoin
@@ -9,41 +9,41 @@
 
 - title: Blog
   url: https://blog.ymyzk.com/
-  icon: rss
+  icon: [fa, rss]
   color: "#f26522"
 
 - title: E-mail
   url: mailto:miyazaki.dev@gmail.com
-  icon: envelope
+  icon: [fa, envelope]
 
 - title: Facebook
   url: https://www.facebook.com/ymyzk
-  icon: [fab, facebook]
+  icon: [fa, facebook]
   color: "#3b5998"
 
 - title: GitHub
   url: https://github.com/ymyzk
-  icon: [fab, github]
+  icon: [fa, github]
   color: "#333"
 
 - title: LinkedIn
   url: https://www.linkedin.com/in/yusuke-miyazaki-4b197774
-  icon: [fab, linkedin]
+  icon: [fa, linkedin]
   color: "#0077b5"
 
 - title: Slideshare
   url: http://www.slideshare.net/yusukemiy/
-  icon: [fab, slideshare]
+  icon: [fa, slideshare]
   color: "#0077b5"
 
 - title: Speaker Deck
   url: https://speakerdeck.com/ymyzk
-  icon: [fab, speaker-deck]
+  icon: [fa, speaker-deck]
   color: "#009287"
 
 - title: Twitter
   url: https://twitter.com/ymyzk
-  icon: [fab, twitter]
+  icon: [fa, twitter]
   color: "#1da1f2"
 
 #- title: Wantedly

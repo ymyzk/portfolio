@@ -13,16 +13,18 @@ import {
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons/faEnvelope";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons/faGlobe";
 import { faRss } from "@fortawesome/free-solid-svg-icons/faRss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { library } from "@fortawesome/fontawesome-svg-core";
 import Fab from "@mui/material/Fab";
 import SvgIcon from "@mui/material/SvgIcon";
 import Tooltip from "@mui/material/Tooltip";
 
+import { IconDefinition } from "@fortawesome/fontawesome-common-types";
 import { Link } from "../data/types";
 
-// Use list of icons instead of adding all icons in fab for bundle size
-library.add(
+// Stopped using react-fontawesome due to an issue with React 18 + react-fontawesome.
+// https://github.com/FortAwesome/react-fontawesome/issues/525
+
+// Pre-define  a list of icons instead of adding all icons in fab for bundle size
+const icons: { [key: string]: IconDefinition } = {
   faAmazon,
   faEnvelope,
   faFacebook,
@@ -33,41 +35,35 @@ library.add(
   faSpeakerDeck,
   faTwitter,
   faRss,
-);
-
-function CustomIcon(props: any) {
-  return (
-    <SvgIcon viewBox="0 0 32 32" {...props}>
-      <path d="..." />
-    </SvgIcon>
-  );
-}
+};
 
 interface Props {
   link: Link;
 }
 
-export default function LinkButton({ link }: Props) {
-  let icon;
-  if (link.icon) {
-    switch (link.icon) {
-      case "custom-icon":
-        icon = <CustomIcon />;
-        break;
-      default:
-        icon = (
-          <span style={{ fontSize: 24 }}>
-            <FontAwesomeIcon icon={link.icon as any} />
-          </span>
-        );
-    }
-  } else {
-    icon = (
-      <span style={{ fontSize: 24 }}>
-        <FontAwesomeIcon icon="globe" />
-      </span>
-    );
-  }
+function getIconDefinition([prefix, name]: [string, string]): IconDefinition {
+  const key: string = [
+    prefix,
+    ...name.split("-").map((v) => v.charAt(0).toUpperCase() + v.slice(1)),
+  ].join("");
+  return icons[key] || faGlobe;
+}
+
+function CustomFontAwesomeIcon({ icon }: { icon: [string, string] }): JSX.Element {
+  const iconDefinition = getIconDefinition(icon);
+  const width = iconDefinition.icon[0];
+  const height = iconDefinition.icon[1];
+  const pathData = iconDefinition.icon[4];
+  const paths: string[] = (typeof pathData === "string") ? [pathData] : pathData;
+  return (
+    <SvgIcon viewBox={`0 0 ${width} ${height}`}>
+      {/* eslint-disable-next-line react/no-array-index-key */}
+      {paths.map((path, index) => <path key={index} d={path} />)}
+    </SvgIcon>
+  );
+}
+
+export default function LinkButton({ link }: Props): JSX.Element {
   return (
     <Tooltip title={link.title}>
       <Fab
@@ -82,7 +78,7 @@ export default function LinkButton({ link }: Props) {
           marginTop: 0,
         }}
       >
-        { icon }
+        <CustomFontAwesomeIcon icon={link.icon ? link.icon : ["fa", "global"]} />
       </Fab>
     </Tooltip>
   );

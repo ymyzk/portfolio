@@ -12,7 +12,7 @@ import rawSkills from "./skills.json";
 import rawTalks from "./talks.json";
 import rawWorks from "./works.json";
 
-export const links: Link[] = rawLinks;
+export const links: Link[] = rawLinks as Link[];
 
 export const misc: Misc[] = rawMisc.map((m, i) => Object.assign(m, {
   id: i,

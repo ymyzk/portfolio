@@ -1,11 +1,9 @@
-import dynamic from "next/dynamic";
 import React from "react";
 
 import { styled } from "@mui/material/styles";
 
 import { Link } from "../data/types";
-
-const LinkButton = dynamic(() => import("./LinkButton"));
+import LinkButton from "./LinkButton";
 
 const Root = styled("div")({
   textAlign: "center",
