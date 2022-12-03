@@ -13,7 +13,7 @@ export interface Contributon {
 export interface Link {
   title: string;
   url: string;
-  icon: string | string[];
+  icon: [string, string];
   color?: string;
 }
 
