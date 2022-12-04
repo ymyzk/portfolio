@@ -5,14 +5,12 @@ import ArrowDownward from "@mui/icons-material/ArrowDownward";
 import Fab from "@mui/material/Fab";
 import { styled } from "@mui/material/styles";
 
-import { getAssetPrefix } from "../utils";
-
 const SCROLL_TARGET_ID = "scrollTarget";
 
 const Background = styled("div")({
   position: "relative",
   backgroundColor: "#11140b",
-  backgroundImage: `url(${getAssetPrefix()}/static/images/background.jpg)`,
+  backgroundImage: "url(/static/images/background.jpg)",
   backgroundPosition: "center",
   backgroundSize: "cover",
   backgroundRepeat: "no-repeat",
