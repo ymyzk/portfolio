@@ -47,7 +47,7 @@
     "@typescript-eslint/parser": "^5.0.0",
     "cross-env": "^7.0.3",
     "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-next": "^12.0.1",
+    "eslint-config-next": "^13.0.6",
     "imagemin": "^8.0.0",
     "imagemin-mozjpeg": "^10.0.0",
     "imagemin-webp": "^7.0.0",
