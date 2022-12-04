@@ -10,7 +10,6 @@ import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
 
 import { Project } from "../data/types";
-import { getAssetPrefix } from "../utils";
 
 interface Props {
   project: Project;
@@ -26,7 +25,7 @@ const Image = styled("img")({
 });
 
 function createSrcSets(file: string | null | undefined): SrcSet | null {
-  const imagePrefix = `${getAssetPrefix()}/static/images/projects/`;
+  const imagePrefix = "/static/images/projects/";
   if (file === undefined || file === null) return { src: `${imagePrefix}placeholder.svg`, source: [] };
   const image1x = `${imagePrefix}${file}`;
   const image2x = image1x.replace(/\.jpg$/, "@2x.jpg").replace(/\.png$/, "@2x.png");

@@ -7,7 +7,6 @@ import createEmotionServer from "@emotion/server/create-instance";
 
 import createEmotionCache from "../src/createEmotionCache";
 import { lightPrimaryMain } from "../src/theme";
-import { getAssetPrefix } from "../src/utils";
 
 const globalStyle = `
 html {
@@ -38,8 +37,6 @@ export default class MyDocument extends Document {
             href="/static/images/favicon.png"
             sizes="256x256"
           />
-          {/* DNS prefetch */}
-          { Boolean(getAssetPrefix()) && <link rel="dns-prefetch" href={getAssetPrefix()} />}
           {/* SEO */}
           <meta name="description" content={description} />
           {/* Web Fonts */}
