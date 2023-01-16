@@ -30,7 +30,7 @@
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.4",
     "date-fns": "^2.29.3",
-    "next": "^13.1.1",
+    "next": "^13.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-lazyload": "github:twobin/react-lazyload#f1faffda816180f39d3ff8cf3d9c2060f8d9d623",
