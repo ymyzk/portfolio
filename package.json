@@ -37,7 +37,7 @@
     "smoothscroll": "^0.4.0"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^13.1.2",
+    "@next/bundle-analyzer": "^13.1.5",
     "@next/eslint-plugin-next": "^13.1.1",
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.27",
