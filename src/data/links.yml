@@ -1,7 +1,7 @@
-- title: Amazon Wish List
-  url: https://amzn.asia/iyNyA3h
-  icon: [fa, amazon]
-  color: "#ff9900"
+# - title: Amazon Wish List
+#   url: https://amzn.asia/iyNyA3h
+#   icon: [fa, amazon]
+#   color: "#ff9900"
 
 #- title: Bitcoin
 #  url: https://blockchain.info/address/12PPiEo7nK67694wZnS7Mw8X6XCzHmWTP9
