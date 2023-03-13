@@ -1,6 +1,6 @@
 import React from "react";
 
-import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 
 import { Research } from "../data/types";
@@ -13,12 +13,12 @@ export default function ResearchListItem({ research }: Props) {
   const tags = research.tags.join(" / ");
   return (
     // @ts-ignore
-    <ListItem button component="a" href={research.link} target="_blank" rel="noopener">
+    <ListItemButton component="a" href={research.link} target="_blank" rel="noopener">
       <ListItemText
         sx={{ fontSize: ".9rem" }}
         primary={research.title}
         secondary={tags}
       />
-    </ListItem>
+    </ListItemButton>
   );
 }
