@@ -73,7 +73,7 @@ export default class MyDocument extends Document {
             name="msapplication-TileColor"
             content={lightPrimaryMain}
           />
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7757732440953348" crossorigin="anonymous"></script>
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7757732440953348" crossOrigin="anonymous" />
         </Head>
         <body>
           <Main />
