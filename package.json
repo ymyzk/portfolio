@@ -28,7 +28,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@mui/icons-material": "^5.11.16",
-    "@mui/material": "^5.14.3",
+    "@mui/material": "^5.14.6",
     "date-fns": "^2.30.0",
     "next": "^13.4.10",
     "react": "^18.2.0",
