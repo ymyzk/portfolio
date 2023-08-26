@@ -79,3 +79,26 @@ jobs:
       - name: Upload files to S3
         # TODO Tune cache duration
         run: aws s3 sync ./out ${{ secrets.AWS_S3_BUCKET }} --cache-control "public, max-age=3600"
+
+  upload-to-cf-pages:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    needs:
+      - build-app
+    permissions:
+      contents: read
+      deployments: write
+    name: Deploy to Cloudflare Pages
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: portfolio
+          path: out
+      - name: Publish
+        uses: cloudflare/pages-action@1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: ymyzk-portfolio
+          directory: out
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
