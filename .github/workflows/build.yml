@@ -16,7 +16,7 @@ jobs:
         node-version: [20.x]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
@@ -34,7 +34,7 @@ jobs:
   test-dockerfile:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Run hadolint
         run: docker run --rm -i hadolint/hadolint:latest < Dockerfile
 
@@ -45,7 +45,7 @@ jobs:
       - build-app
       - test-dockerfile
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: docker version
       - run: docker build -t portfolio .
       - name: Login to GitHub Container Registry
