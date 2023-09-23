@@ -40,7 +40,7 @@ jobs:
 
   build-docker-images:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/main'
     needs:
       - build-app
       - test-dockerfile
