@@ -36,10 +36,12 @@ export interface Project {
   featured: boolean;
   description: string;
   descriptionJa?: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   links: any; // TODO improve
 }
 
 export interface Research {
+  id: number,
   title: string;
   link: string | null;
   tags: string[];
