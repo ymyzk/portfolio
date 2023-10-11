@@ -1,6 +1,5 @@
 import getYear from "date-fns/getYear";
 import React from "react";
-import LazyLoad from "react-lazyload";
 
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
@@ -22,6 +21,7 @@ interface SrcSet {
 
 const Image = styled("img")({
   width: "100%",
+  aspectRatio: 384 / 240,
 });
 
 function createSrcSets(file: string | null | undefined): SrcSet | null {
@@ -67,20 +67,16 @@ export default function ProjectCard({ project }: Props) {
   const links: ([string, string])[] = Object.entries(project.links ? project.links : {});
   return (
     <Card>
-      {/* We don't use next/image yet because we cannot export statically optimized images
-          using `next export`. */}
-      {/* Known bug?: https://github.com/twobin/react-lazyload/issues/189 */}
-      <LazyLoad height={240} offset={300} once>
-        <picture>
-          { source.map((s) => <source key={s.srcSet} srcSet={s.srcSet} type={s.type} />) }
-          {/* Use next/image but needs to learn more about it to do that. */}
-          <Image
-            src={src}
-            alt={project.title}
-            title={project.title}
-          />
-        </picture>
-      </LazyLoad>
+      <picture>
+        { source.map((s) => <source key={s.srcSet} srcSet={s.srcSet} type={s.type} />) }
+        {/* Use next/image but needs to learn more about it to do that. */}
+        <Image
+          src={src}
+          alt={project.title}
+          title={project.title}
+          loading="lazy"
+        />
+      </picture>
       <CardContent sx={{ paddingBottom: 0 }}>
         <Typography component="h3" sx={{ fontSize: "24px" }}>
           {project.title}

@@ -33,7 +33,6 @@
     "next": "^13.5.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-lazyload": "github:twobin/react-lazyload#f1faffda816180f39d3ff8cf3d9c2060f8d9d623",
     "smoothscroll": "^0.4.0"
   },
   "devDependencies": {
@@ -42,7 +41,6 @@
     "@types/node": "^20.7.0",
     "@types/react": "^18.2.25",
     "@types/react-dom": "^18.2.8",
-    "@types/react-lazyload": "^3.2.1",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
     "@typescript-eslint/parser": "^5.57.1",
     "cross-env": "^7.0.3",
