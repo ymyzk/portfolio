@@ -11,7 +11,6 @@
     "build": "run-s build:yaml2json build:next",
     "build:next": "next build",
     "build:yaml2json": "./bin/yaml2json.sh",
-    "export": "next export",
     "minify-images": "node ./bin/minify-images.mjs",
     "start": "next start",
     "test": "run-s test:*",
