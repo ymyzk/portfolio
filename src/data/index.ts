@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import parseISO from "date-fns/parseISO";
+import { parseISO } from "date-fns";
 
 import {
   Link, Misc, Project, Research, Talk, Work,

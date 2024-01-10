@@ -1,4 +1,4 @@
-import format from "date-fns/format";
+import { format } from "date-fns";
 import React from "react";
 
 import ListItem from "@mui/material/ListItem";
