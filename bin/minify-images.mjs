@@ -41,14 +41,14 @@ for (const sourceFile of await glob(join(SOURCE, "projects/*.png"))) {
   await sharp(sourceFile)
     .resize(384, null)
     .webp({
-      effort: 4,
+      effort: 6,
       quality: 75,
     })
     .toFile(changeExtension(targetFile, ".webp"));
   await sharp(sourceFile)
     .resize(768, null)
     .webp({
-      effort: 4,
+      effort: 6,
       quality: 75,
     })
     .toFile(changeExtension(targetFile, "@2x.webp"));
