@@ -10,7 +10,10 @@ const SCROLL_TARGET_ID = "scrollTarget";
 const Background = styled("div")({
   position: "relative",
   backgroundColor: "#11140b",
-  backgroundImage: "url(/static/images/background.jpg)",
+  backgroundImage: [
+    "url(\"/static/images/background.jpg\")",
+    "image-set(\"/static/images/background.webp\" type(\"image/webp\"), \"/static/images/background.jpg\" type(\"image/jpeg\"))",
+  ],
   backgroundPosition: "center",
   backgroundSize: "cover",
   backgroundRepeat: "no-repeat",

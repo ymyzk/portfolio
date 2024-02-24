@@ -13,6 +13,13 @@ await sharp(join(SOURCE, "background.jpg"))
     quality: 70,
   })
   .toFile(join(TARGET, "background.jpg"));
+await sharp(join(SOURCE, "background.jpg"))
+  .resize(1024, null)
+  .webp({
+    effort: 6,
+    quality: 75,
+  })
+  .toFile(join(TARGET, "background.webp"));
 
 for (const sourceFile of await glob(join(SOURCE, "projects/*.png"))) {
   const targetFile = join(TARGET, relative(SOURCE, sourceFile));
