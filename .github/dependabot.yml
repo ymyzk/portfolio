@@ -30,6 +30,12 @@ updates:
           - "eslint-config-next"
           - "next"
           - "@next/*"
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
       typescript-eslint:
         patterns:
           - "@typescript-eslint/*"
