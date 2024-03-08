@@ -15,3 +15,21 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    groups:
+      emotion:
+        patterns:
+          - "@emotion/*"
+      fortawesome:
+        patterns:
+          - "@fortawesome/*"
+      mui:
+        patterns:
+          - "@mui/*"
+      next:
+        patterns:
+          - "eslint-config-next"
+          - "next"
+          - "@next/*"
+      typescript-eslint:
+        patterns:
+          - "@typescript-eslint/*"
