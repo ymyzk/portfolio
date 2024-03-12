@@ -18,7 +18,7 @@ import SvgIcon from "@mui/material/SvgIcon";
 import Tooltip from "@mui/material/Tooltip";
 
 import { IconDefinition } from "@fortawesome/fontawesome-common-types";
-import { Link } from "../data/types";
+import type { Link } from "../data/types";
 
 // Stopped using react-fontawesome due to an issue with React 18 + react-fontawesome.
 // https://github.com/FortAwesome/react-fontawesome/issues/525

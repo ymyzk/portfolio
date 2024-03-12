@@ -5,7 +5,7 @@ import List from "@mui/material/List";
 import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 
-import { Research } from "../data/types";
+import type { Research } from "../data/types";
 import ResearchListItem from "./ResearchListItem";
 
 const Root = styled("div")({

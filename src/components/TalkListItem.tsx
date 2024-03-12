@@ -4,7 +4,7 @@ import React from "react";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 
-import { Talk } from "../data/types";
+import type { Talk } from "../data/types";
 
 interface Props {
   talk: Talk;

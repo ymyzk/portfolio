@@ -2,7 +2,7 @@ import React from "react";
 
 import { styled } from "@mui/material/styles";
 
-import { Link } from "../data/types";
+import type { Link } from "../data/types";
 import LinkButton from "./LinkButton";
 
 const Root = styled("div")({

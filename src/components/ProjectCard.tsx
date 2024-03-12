@@ -8,7 +8,7 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
 
-import { Project } from "../data/types";
+import type { Project } from "../data/types";
 
 interface Props {
   project: Project;

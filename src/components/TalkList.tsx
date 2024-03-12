@@ -7,7 +7,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 
-import { Talk } from "../data/types";
+import type { Talk } from "../data/types";
 import TalkListItem from "./TalkListItem";
 
 interface Props {

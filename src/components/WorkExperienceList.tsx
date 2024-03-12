@@ -8,7 +8,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 
-import { Work } from "../data/types";
+import type { Work } from "../data/types";
 
 function WorkExperienceItem({ work }: { work: Work }) {
   return (

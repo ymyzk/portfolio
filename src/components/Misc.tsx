@@ -8,7 +8,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 
-import { Misc } from "../data/types";
+import type { Misc } from "../data/types";
 
 function MiscItem({ misc }: { misc: Misc }) {
   return (

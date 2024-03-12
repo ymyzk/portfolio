@@ -2,7 +2,7 @@ import React from "react";
 
 import Grid from "@mui/material/Grid";
 
-import { Project } from "../data/types";
+import type { Project } from "../data/types";
 import ProjectCard from "./ProjectCard";
 
 interface Props {

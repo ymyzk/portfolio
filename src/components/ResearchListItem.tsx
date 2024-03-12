@@ -3,7 +3,7 @@ import React from "react";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 
-import { Research } from "../data/types";
+import type { Research } from "../data/types";
 
 interface Props {
   research: Research;
