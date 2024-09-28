@@ -3,11 +3,13 @@ extends:
   - "plugin:@typescript-eslint/recommended"
   # https://nextjs.org/docs/basic-features/eslint#additional-configurations
   - "plugin:@next/next/recommended"
+plugins:
+  - "@stylistic/ts"
 rules:
   linebreak-style:
     - error
     - unix
-  "@typescript-eslint/indent":
+  "@stylistic/ts/indent":
     - error
     - 2
   # Following rules override eslint-config-airbnb
