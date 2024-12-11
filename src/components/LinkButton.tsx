@@ -49,7 +49,7 @@ function getIconDefinition([prefix, name]: [string, string]): IconDefinition {
   return icons[key] || faGlobe;
 }
 
-function CustomFontAwesomeIcon({ icon }: { icon: [string, string] }): JSX.Element {
+function CustomFontAwesomeIcon({ icon }: { icon: [string, string] }): React.JSX.Element {
   const iconDefinition = getIconDefinition(icon);
   const width = iconDefinition.icon[0];
   const height = iconDefinition.icon[1];
@@ -63,7 +63,7 @@ function CustomFontAwesomeIcon({ icon }: { icon: [string, string] }): JSX.Elemen
   );
 }
 
-export default function LinkButton({ link }: Props): JSX.Element {
+export default function LinkButton({ link }: Props): React.JSX.Element {
   return (
     <Tooltip title={link.title}>
       <Fab
