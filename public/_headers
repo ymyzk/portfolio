@@ -1,5 +1,5 @@
 /*
-  Content-Security-Policy: default-src 'none'; base-uri 'none'; connect-src https://cloudflareinsights.com/cdn-cgi/rum; font-src https://fonts.gstatic.com/; form-action 'none'; frame-ancestors 'none'; img-src 'self'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; style-src 'self' 'unsafe-inline'; report-uri https://9f6fec89668ed786e66696a5018e05dd.report-uri.com/r/d/csp/enforce
+  Content-Security-Policy: default-src 'none'; base-uri 'none'; connect-src https://cloudflareinsights.com/cdn-cgi/rum; font-src https://fonts.gstatic.com/; form-action 'none'; frame-ancestors 'none'; img-src 'self'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/css2; report-uri https://9f6fec89668ed786e66696a5018e05dd.report-uri.com/r/d/csp/enforce
   Permissions-Policy: camera=(), geolocation=(), microphone=()
   Strict-Transport-Security: max-age=15768000
   X-Content-Type-Options: nosniff
