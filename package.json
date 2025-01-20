@@ -40,7 +40,7 @@
     "@next/eslint-plugin-next": "^15.1.4",
     "@stylistic/eslint-plugin-ts": "^2.12.1",
     "@types/node": "^22.10.6",
-    "@types/react": "^19.0.6",
+    "@types/react": "^19.0.7",
     "@types/react-dom": "^19.0.3",
     "@typescript-eslint/eslint-plugin": "^8.20.0",
     "@typescript-eslint/parser": "^8.20.0",
