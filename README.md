@@ -1,6 +1,6 @@
 # portfolio
 
-![Build](https://github.com/ymyzk/portfolio/workflows/Build/badge.svg)
+![CI](https://github.com/ymyzk/portfolio/actions/workflows/ci.yml/badge.svg?branch=main)
 
 ## Development
 ```console
