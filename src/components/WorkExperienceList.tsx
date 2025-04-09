@@ -12,7 +12,7 @@ import type { Work } from "../data/types";
 
 function WorkExperienceItem({ work }: { work: Work }) {
   return (
-    // @ts-ignore
+    // @ts-expect-error link could be null
     <ListItemButton component="a" href={work.link} target="_blank" rel="noopener">
       <ListItemText
         primary={`${work.title} of ${work.company}`}

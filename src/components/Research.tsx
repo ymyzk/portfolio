@@ -21,7 +21,11 @@ export default function Research({ research }: Props) {
   return (
     <Root>
       <Grid container justifyContent="center" spacing={4}>
-        <Grid item xs={12} sm={10} md={8} lg={6}>
+        <Grid
+          size={{
+            xs: 12, sm: 10, md: 8, lg: 6,
+          }}
+        >
           <Typography variant="body1">
             Received my Masters of Informatics and Bachelor of Engineering from Kyoto University
             in 2018 and 2016, respectively. Worked on programming language theory including

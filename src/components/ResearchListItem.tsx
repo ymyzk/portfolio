@@ -12,7 +12,7 @@ interface Props {
 export default function ResearchListItem({ research }: Props) {
   const tags = research.tags.join(" / ");
   return (
-    // @ts-ignore
+    // @ts-expect-error link could be null
     <ListItemButton component="a" href={research.link} target="_blank" rel="noopener">
       <ListItemText
         sx={{ fontSize: ".9rem" }}
