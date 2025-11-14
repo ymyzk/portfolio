@@ -116,7 +116,6 @@ MyDocument.getInitialProps = async (ctx) => {
   const { extractCriticalToChunks } = createEmotionServer(cache);
 
   ctx.renderPage = () => originalRenderPage({
-    // eslint-disable-next-line react/display-name
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     enhanceApp: (App: any) => function (props) {
       return <App emotionCache={cache} {...props} />;
@@ -131,7 +130,6 @@ MyDocument.getInitialProps = async (ctx) => {
     <style
       data-emotion={`${style.key} ${style.ids.join(" ")}`}
       key={style.key}
-      // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{ __html: style.css }}
     />
   ));
@@ -139,7 +137,6 @@ MyDocument.getInitialProps = async (ctx) => {
   const globalStyleElement = (
     <style
       key="global-style"
-      // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{ __html: globalStyle }}
     />
   );

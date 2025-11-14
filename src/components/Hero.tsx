@@ -1,4 +1,4 @@
-import React, { MouseEvent } from "react";
+import { MouseEvent } from "react";
 import smoothScroll from "smoothscroll";
 
 import ArrowDownward from "@mui/icons-material/ArrowDownward";

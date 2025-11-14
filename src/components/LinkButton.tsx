@@ -57,7 +57,6 @@ function CustomFontAwesomeIcon({ icon }: { icon: [string, string] }): React.JSX.
   const paths: string[] = (typeof pathData === "string") ? [pathData] : pathData;
   return (
     <SvgIcon viewBox={`0 0 ${width} ${height}`}>
-      {/* eslint-disable-next-line react/no-array-index-key */}
       {paths.map((path, index) => <path key={index} d={path} />)}
     </SvgIcon>
   );

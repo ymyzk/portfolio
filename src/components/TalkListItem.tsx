@@ -1,5 +1,4 @@
 import { format } from "date-fns";
-import React from "react";
 
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
@@ -13,7 +12,7 @@ interface Props {
 export default function TalkListItem({ talk }: Props) {
   const dateString = format(talk.date, "yyyy-M-d");
   const dateIso = format(talk.date, "yyyy-MM-dd");
-  const href = talk.slide ? talk.slide : (talk.link ? talk.link : "#"); // eslint-disable-line no-nested-ternary
+  const href = talk.slide ? talk.slide : (talk.link ? talk.link : "#");
   return (
     <ListItemButton
       component="a"
