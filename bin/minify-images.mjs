@@ -1,4 +1,4 @@
-import { basename, extname, join, relative } from "node:path";
+import { extname, join, relative } from "node:path";
 
 import { glob } from "glob";
 import sharp from "sharp";

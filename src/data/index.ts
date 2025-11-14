@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import { parseISO } from "date-fns";
 
 import {

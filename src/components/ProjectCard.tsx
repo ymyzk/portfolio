@@ -1,5 +1,4 @@
 import { getYear } from "date-fns";
-import React from "react";
 
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
@@ -29,7 +28,6 @@ function createSrcSets(file: string | null | undefined): SrcSet | null {
   if (file === undefined || file === null) return { src: `${imagePrefix}placeholder.svg`, source: [] };
   const image1x = `${imagePrefix}${file}`;
   const image2x = image1x.replace(/\.jpg$/, "@2x.jpg").replace(/\.png$/, "@2x.png");
-  // eslint-disable-next-line no-nested-ternary
   const type = file.endsWith(".jpg") ? "image/jpeg" : (file.endsWith(".png") ? "image/png" : null);
   if (type === null) return null;
   return {
