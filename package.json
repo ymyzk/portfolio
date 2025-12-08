@@ -35,8 +35,8 @@
     "smoothscroll": "^0.4.0"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^16.0.6",
-    "@next/eslint-plugin-next": "^16.0.6",
+    "@next/bundle-analyzer": "^16.0.7",
+    "@next/eslint-plugin-next": "^16.0.7",
     "@stylistic/eslint-plugin-ts": "^4.4.1",
     "@types/node": "^24.10.0",
     "@types/react": "^19.2.7",
@@ -45,7 +45,7 @@
     "@typescript-eslint/parser": "^8.47.0",
     "cross-env": "^10.1.0",
     "eslint": "^9.39.1",
-    "eslint-config-next": "^16.0.6",
+    "eslint-config-next": "^16.0.7",
     "glob": "^13.0.0",
     "js-yaml": "^4.1.0",
     "npm-run-all": "^4.1.5",
