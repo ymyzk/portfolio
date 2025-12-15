@@ -38,7 +38,7 @@
     "@next/bundle-analyzer": "^16.0.10",
     "@next/eslint-plugin-next": "^16.0.10",
     "@stylistic/eslint-plugin-ts": "^4.4.1",
-    "@types/node": "^24.10.0",
+    "@types/node": "^25.0.2",
     "@types/react": "^19.2.7",
     "@types/react-dom": "19.2.3",
     "@typescript-eslint/eslint-plugin": "^8.50.0",
