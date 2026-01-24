@@ -43,6 +43,7 @@
     "@types/react-dom": "19.2.3",
     "@typescript-eslint/eslint-plugin": "^8.53.1",
     "@typescript-eslint/parser": "^8.47.0",
+    "baseline-browser-mapping": "^2.9.17",
     "cross-env": "^10.1.0",
     "eslint": "^9.39.2",
     "eslint-config-next": "^16.1.3",
