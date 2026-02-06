@@ -39,7 +39,7 @@
     "@next/eslint-plugin-next": "^16.1.6",
     "@stylistic/eslint-plugin-ts": "^4.4.1",
     "@types/node": "^25.1.0",
-    "@types/react": "^19.2.10",
+    "@types/react": "^19.2.13",
     "@types/react-dom": "19.2.3",
     "@typescript-eslint/eslint-plugin": "^8.54.0",
     "@typescript-eslint/parser": "^8.47.0",
