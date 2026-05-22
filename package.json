@@ -41,7 +41,7 @@
     "@types/node": "^25.6.0",
     "@types/react": "^19.2.15",
     "@types/react-dom": "19.2.3",
-    "@typescript-eslint/eslint-plugin": "^8.59.3",
+    "@typescript-eslint/eslint-plugin": "^8.59.4",
     "@typescript-eslint/parser": "^8.47.0",
     "baseline-browser-mapping": "^2.10.29",
     "cross-env": "^10.1.0",
