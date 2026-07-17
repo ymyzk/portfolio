@@ -45,7 +45,7 @@
     "@typescript-eslint/parser": "^8.60.1",
     "baseline-browser-mapping": "^2.10.38",
     "cross-env": "^10.1.0",
-    "eslint": "^9.39.2",
+    "eslint": "^10.7.0",
     "eslint-config-next": "^16.2.10",
     "glob": "^13.0.6",
     "js-yaml": "^4.2.0",
