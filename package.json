@@ -30,8 +30,8 @@
     "@mui/material": "^7.0.0",
     "date-fns": "^4.1.0",
     "next": "^16.3.0",
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
     "smoothscroll": "^0.4.0"
   },
   "devDependencies": {
@@ -39,8 +39,8 @@
     "@next/eslint-plugin-next": "^16.3.0",
     "@stylistic/eslint-plugin-ts": "^4.4.1",
     "@types/node": "^25.9.1",
-    "@types/react": "^19.2.17",
-    "@types/react-dom": "19.2.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "19.2.4",
     "@typescript-eslint/eslint-plugin": "^8.63.0",
     "@typescript-eslint/parser": "^8.60.1",
     "baseline-browser-mapping": "^2.10.38",
