@@ -18,7 +18,7 @@ interface Props {
 export default function Research({ research }: Props) {
   return (
     <Root>
-      <Grid container justifyContent="center" spacing={4}>
+      <Grid container spacing={4} sx={{ justifyContent: "center" }}>
         <Grid
           size={{
             xs: 12, sm: 10, md: 8, lg: 6,
