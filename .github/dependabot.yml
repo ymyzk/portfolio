@@ -3,39 +3,49 @@ updates:
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
+    cooldown:
+      default-days: 7
     ignore:
       - dependency-name: "node"
         versions: ["27"]
+    groups:
+      monthly-minor-patch:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+      monthly-major:
+        patterns:
+          - "*"
+        update-types:
+          - "major"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
+    cooldown:
+      default-days: 7
+    groups:
+      monthly-batch:
+        patterns:
+          - "*"
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
+    cooldown:
+      default-days: 7
     groups:
-      emotion:
+      monthly-minor-patch:
         patterns:
-          - "@emotion/*"
-      fortawesome:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+      monthly-major:
         patterns:
-          - "@fortawesome/*"
-      mui:
-        patterns:
-          - "@mui/*"
-      next:
-        patterns:
-          - "eslint-config-next"
-          - "next"
-          - "@next/*"
-      react:
-        patterns:
-          - "react"
-          - "react-dom"
-          - "@types/react"
-          - "@types/react-dom"
-      typescript-eslint:
-        patterns:
-          - "@typescript-eslint/*"
+          - "*"
+        update-types:
+          - "major"
