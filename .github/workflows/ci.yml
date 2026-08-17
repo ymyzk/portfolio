@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [25.x]
+        node-version: [26.x]
     name: Build and test the application
     steps:
       - uses: actions/checkout@v7
@@ -26,7 +26,7 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: npm test
-      - if: ${{ matrix.node-version == '25.x' }}
+      - if: ${{ matrix.node-version == '26.x' }}
         uses: actions/upload-artifact@v7
         with:
           name: portfolio
