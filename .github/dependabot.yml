@@ -37,6 +37,11 @@ updates:
       interval: "monthly"
     cooldown:
       default-days: 7
+    # eslint-config-next and its bundled plugins (eslint-plugin-react / import / jsx-a11y)
+    # do not support ESLint v10 yet: https://github.com/vercel/next.js/issues/89764
+    ignore:
+      - dependency-name: "eslint"
+        versions: ["10.x"]
     groups:
       monthly-minor-patch:
         patterns:
