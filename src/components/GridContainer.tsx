@@ -10,7 +10,7 @@ interface Props {
 export default function GridContainer({ children }: Props) {
   const theme = useTheme();
   return (
-    <Grid container justifyContent="center">
+    <Grid container sx={{ justifyContent: "center" }}>
       <Grid
         container
         sx={{

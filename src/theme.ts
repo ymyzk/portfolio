@@ -7,6 +7,15 @@ export const lightPrimaryMain = indigo[500];
 // Create a theme instance based on the design palette
 export function getDesignTokens(mode: PaletteMode): ThemeOptions {
   return {
+    components: {
+      MuiCssBaseline: {
+        styleOverrides: {
+          html: {
+            fontFeatureSettings: "\"palt\"",
+          },
+        },
+      },
+    },
     palette: {
       mode,
       primary: {
