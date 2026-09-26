@@ -52,7 +52,7 @@
     "glob": "^13.0.6",
     "js-yaml": "^5.4.0",
     "npm-run-all": "^4.1.5",
-    "sharp": "^0.35.3",
+    "sharp": "^0.35.4",
     "typescript": "npm:@typescript/typescript6@^6.0.2"
   }
 }
