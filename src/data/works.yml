@@ -1,6 +1,13 @@
 # Day in start & end is not precise!
 
-- title: Site Reliability Engineer
+- title: Staff Engineer
+  company: HERP, Inc.
+  link: https://herp.co.jp/
+  start: 2026-09-01
+  end: null
+  featured: true
+
+- title: Principal Site Reliability Engineer
   company: Indeed
   link: https://www.indeed.com/about
   start: 2019-07-01
@@ -19,7 +26,7 @@
   link: https://herp.co.jp/
   start: 2017-04-01
   end: 2018-03-31
-  featured: true
+  featured: false
 
 # Introduction to Programming / プログラミング入門
 - title: Teaching Assistant
